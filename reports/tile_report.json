@@ -1,0 +1,109 @@
+{
+  "geometry_aligned": true,
+  "source": "/home/hj/userfeedback/uid4-0022/artifacts/media/source-fragmented.mp4",
+  "grid": [
+    2,
+    2
+  ],
+  "tiles": [
+    {
+      "id": "r0c0",
+      "row": 0,
+      "column": 0,
+      "x": 0,
+      "y": 0,
+      "width": 320,
+      "height": 180,
+      "path": "artifacts/tiles/tile-r0c0.mp4",
+      "media_bytes": 81783,
+      "container_bytes": 84077,
+      "duration_s": 4.0,
+      "bitrate_kbps": 163.566,
+      "sample_count": 120,
+      "edge_energy_per_pixel": 8.72265625,
+      "strong_edge_percent": 14.739583333333334
+    },
+    {
+      "id": "r0c1",
+      "row": 0,
+      "column": 1,
+      "x": 320,
+      "y": 0,
+      "width": 320,
+      "height": 180,
+      "path": "artifacts/tiles/tile-r0c1.mp4",
+      "media_bytes": 5764,
+      "container_bytes": 8058,
+      "duration_s": 4.0,
+      "bitrate_kbps": 11.528,
+      "sample_count": 120,
+      "edge_energy_per_pixel": 0.14953125,
+      "strong_edge_percent": 0.0
+    },
+    {
+      "id": "r1c0",
+      "row": 1,
+      "column": 0,
+      "x": 0,
+      "y": 180,
+      "width": 320,
+      "height": 180,
+      "path": "artifacts/tiles/tile-r1c0.mp4",
+      "media_bytes": 144856,
+      "container_bytes": 147150,
+      "duration_s": 4.0,
+      "bitrate_kbps": 289.712,
+      "sample_count": 120,
+      "edge_energy_per_pixel": 14.840434027777778,
+      "strong_edge_percent": 11.125
+    },
+    {
+      "id": "r1c1",
+      "row": 1,
+      "column": 1,
+      "x": 320,
+      "y": 180,
+      "width": 320,
+      "height": 180,
+      "path": "artifacts/tiles/tile-r1c1.mp4",
+      "media_bytes": 27369,
+      "container_bytes": 29663,
+      "duration_s": 4.0,
+      "bitrate_kbps": 54.738,
+      "sample_count": 120,
+      "edge_energy_per_pixel": 0.5063541666666667,
+      "strong_edge_percent": 0.0
+    }
+  ],
+  "frames_checked": [
+    {
+      "frame": 0,
+      "mosaic_psnr_db": 46.99066753851273,
+      "seam_mae_rgb_sum": 4.458416833667335,
+      "interior_mae_rgb_sum": 3.4117353461410485,
+      "seam_to_interior_ratio": 1.3067885932917302
+    },
+    {
+      "frame": 60,
+      "mosaic_psnr_db": 50.690967966307234,
+      "seam_mae_rgb_sum": 3.003507014028056,
+      "interior_mae_rgb_sum": 2.2274303427260467,
+      "seam_to_interior_ratio": 1.348417930929416
+    },
+    {
+      "frame": 119,
+      "mosaic_psnr_db": 46.72005238915551,
+      "seam_mae_rgb_sum": 9.51753507014028,
+      "interior_mae_rgb_sum": 3.4767254513931456,
+      "seam_to_interior_ratio": 2.737499754640259
+    }
+  ],
+  "edge_to_bytes_spearman": 1.0,
+  "edge_and_bytes_follow_same_rank": true,
+  "mean_mosaic_psnr_db": 48.133895964658485,
+  "mean_seam_to_interior_ratio": 1.7975687596204686,
+  "max_seam_to_interior_ratio": 2.737499754640259,
+  "seams_aligned": true,
+  "comparison_image": "/home/hj/userfeedback/uid4-0022/reports/tile-comparison.png",
+  "passed": true
+}
