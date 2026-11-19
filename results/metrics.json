@@ -1,0 +1,263 @@
+{
+  "quality": {
+    "fixture": {
+      "width": 256,
+      "height": 192,
+      "edge_x": 129,
+      "band_radius": 8,
+      "lanczos_a": 3.0,
+      "generation": "hard red/blue vertical edge; 4:2:0 by 2x2 box average"
+    },
+    "methods": {
+      "nearest": {
+        "psnr_rgb_db": 31.259068617313133,
+        "psnr_rgb_edge_band_db": 19.217868790753887,
+        "psnr_cb_db": 33.216092316086154,
+        "psnr_cr_db": 34.47460773803073,
+        "pixel_psnr": {
+          "definition": "10*log10(255^2 / MSE_RGB(pixel)); inf means exact",
+          "exact_pixel_percent": 99.21875,
+          "finite_min_db": 10.169224839609958,
+          "finite_p05_db": 10.169224839609958,
+          "finite_median_db": 10.187005318319699,
+          "finite_mean_db": 10.187005318319699
+        },
+        "color_bleed": {
+          "band_x": [
+            121,
+            136
+          ],
+          "red_chroma": [
+            96.0,
+            222.0
+          ],
+          "blue_chroma": [
+            222.0,
+            113.0
+          ],
+          "red_side": {
+            "pixels": 1536,
+            "mean_leak_percent": 6.225456641567894,
+            "max_leak_percent": 49.80365313254314,
+            "bleed_area_percent_gt_2pct": 12.5,
+            "mean_channel_leak_codes": 14.0,
+            "max_channel_leak_codes": 112.0,
+            "ringing_area_percent_gt_half_code": 0.0,
+            "ringing_energy_codes": 0.0,
+            "max_ringing_overshoot_codes": 0.0
+          },
+          "blue_side": {
+            "pixels": 1536,
+            "mean_leak_percent": 6.274543358432107,
+            "max_leak_percent": 50.19634686745685,
+            "bleed_area_percent_gt_2pct": 12.5,
+            "mean_channel_leak_codes": 9.625,
+            "max_channel_leak_codes": 77.0,
+            "ringing_area_percent_gt_half_code": 0.0,
+            "ringing_energy_codes": 0.0,
+            "max_ringing_overshoot_codes": 0.0
+          },
+          "combined": {
+            "pixels": 3072,
+            "mean_leak_percent": 6.25,
+            "max_leak_percent": 50.19634686745685,
+            "bleed_area_percent_gt_2pct": 12.5,
+            "ringing_area_percent_gt_half_code": 0.0,
+            "ringing_energy_codes": 0.0,
+            "max_ringing_overshoot_codes": 0.0
+          }
+        },
+        "source_chroma_lattice_max_abs_delta_codes": 0.0,
+        "source_chroma_lattice_delta_zero": true,
+        "input_chroma_unchanged": true
+      },
+      "bilinear": {
+        "psnr_rgb_db": 32.51687010354773,
+        "psnr_rgb_edge_band_db": 20.47567027698848,
+        "psnr_cb_db": 34.46547968216915,
+        "psnr_cr_db": 35.77744288101519,
+        "pixel_psnr": {
+          "definition": "10*log10(255^2 / MSE_RGB(pixel)); inf means exact",
+          "exact_pixel_percent": 98.828125,
+          "finite_min_db": 10.204785797029439,
+          "finite_p05_db": 10.204785797029439,
+          "finite_median_db": 16.161676151563178,
+          "finite_mean_db": 14.199851997934328
+        },
+        "color_bleed": {
+          "band_x": [
+            121,
+            136
+          ],
+          "red_chroma": [
+            96.0,
+            222.0
+          ],
+          "blue_chroma": [
+            222.0,
+            113.0
+          ],
+          "red_side": {
+            "pixels": 1536,
+            "mean_leak_percent": 9.338184962351841,
+            "max_leak_percent": 49.80365313254314,
+            "bleed_area_percent_gt_2pct": 25.0,
+            "mean_channel_leak_codes": 21.0,
+            "max_channel_leak_codes": 112.0,
+            "ringing_area_percent_gt_half_code": 0.0,
+            "ringing_energy_codes": 0.0,
+            "max_ringing_overshoot_codes": 0.0
+          },
+          "blue_side": {
+            "pixels": 1536,
+            "mean_leak_percent": 3.1372716792160533,
+            "max_leak_percent": 25.098173433728427,
+            "bleed_area_percent_gt_2pct": 12.5,
+            "mean_channel_leak_codes": 4.875,
+            "max_channel_leak_codes": 39.0,
+            "ringing_area_percent_gt_half_code": 0.0,
+            "ringing_energy_codes": 0.0,
+            "max_ringing_overshoot_codes": 0.0
+          },
+          "combined": {
+            "pixels": 3072,
+            "mean_leak_percent": 6.237728320783947,
+            "max_leak_percent": 49.80365313254314,
+            "bleed_area_percent_gt_2pct": 18.75,
+            "ringing_area_percent_gt_half_code": 0.0,
+            "ringing_energy_codes": 0.0,
+            "max_ringing_overshoot_codes": 0.0
+          }
+        },
+        "source_chroma_lattice_max_abs_delta_codes": 0.0,
+        "source_chroma_lattice_delta_zero": true,
+        "input_chroma_unchanged": true
+      },
+      "lanczos3": {
+        "psnr_rgb_db": 33.077183764506024,
+        "psnr_rgb_edge_band_db": 21.035983937946774,
+        "psnr_cb_db": 35.026187944354966,
+        "psnr_cr_db": 36.34543734609055,
+        "pixel_psnr": {
+          "definition": "10*log10(255^2 / MSE_RGB(pixel)); inf means exact",
+          "exact_pixel_percent": 97.265625,
+          "finite_min_db": 10.204785797029439,
+          "finite_p05_db": 10.204785797029439,
+          "finite_median_db": 31.630968172227654,
+          "finite_mean_db": 27.735136928966426
+        },
+        "color_bleed": {
+          "band_x": [
+            121,
+            136
+          ],
+          "red_chroma": [
+            96.0,
+            222.0
+          ],
+          "blue_chroma": [
+            222.0,
+            113.0
+          ],
+          "red_side": {
+            "pixels": 1536,
+            "mean_leak_percent": 8.791372006043135,
+            "max_leak_percent": 49.80365313254314,
+            "bleed_area_percent_gt_2pct": 25.0,
+            "mean_channel_leak_codes": 19.875,
+            "max_channel_leak_codes": 112.0,
+            "ringing_area_percent_gt_half_code": 12.5,
+            "ringing_energy_codes": 0.8999025232437511,
+            "max_ringing_overshoot_codes": 7.19922018595001
+          },
+          "blue_side": {
+            "pixels": 1536,
+            "mean_leak_percent": 2.597128113785651,
+            "max_leak_percent": 19.54939686189621,
+            "bleed_area_percent_gt_2pct": 12.5,
+            "mean_channel_leak_codes": 4.0,
+            "max_channel_leak_codes": 30.0,
+            "ringing_area_percent_gt_half_code": 12.5,
+            "ringing_energy_codes": 0.9110140166762225,
+            "max_ringing_overshoot_codes": 7.2881121334097845
+          },
+          "combined": {
+            "pixels": 3072,
+            "mean_leak_percent": 5.694250059914392,
+            "max_leak_percent": 49.80365313254314,
+            "bleed_area_percent_gt_2pct": 18.75,
+            "ringing_area_percent_gt_half_code": 12.5,
+            "ringing_energy_codes": 0.9054582699599867,
+            "max_ringing_overshoot_codes": 7.2881121334097845
+          }
+        },
+        "source_chroma_lattice_max_abs_delta_codes": 0.0,
+        "source_chroma_lattice_delta_zero": true,
+        "input_chroma_unchanged": true
+      }
+    },
+    "source_control": {
+      "source_sha256_before": "8f03b44dba4ba8ab37dab1e0294b0ba84c0eed58b197899b3255334b43cf4c40",
+      "source_sha256_after": "8f03b44dba4ba8ab37dab1e0294b0ba84c0eed58b197899b3255334b43cf4c40",
+      "source_hash_unchanged": true,
+      "all_input_chroma_unchanged": true,
+      "all_source_lattice_deltas_zero": true,
+      "lanczos_is_least_ringing": false,
+      "least_ringing_methods": [
+        "nearest",
+        "bilinear"
+      ]
+    }
+  },
+  "timing": {
+    "frame": {
+      "width": 1920,
+      "height": 1080,
+      "format": "4:2:0 -> 4:4:4 + BT.601 RGB"
+    },
+    "schedule": {
+      "iterations": 100,
+      "warmups": 5,
+      "threads": 1,
+      "buffers": "preallocated"
+    },
+    "methods": {
+      "nearest": {
+        "median_ms": 6.539986,
+        "p95_ms": 8.776746,
+        "fps_from_median": 152.906,
+        "meets_30fps": true,
+        "meets_60fps": true
+      },
+      "bilinear": {
+        "median_ms": 6.613111,
+        "p95_ms": 9.288346,
+        "fps_from_median": 151.215,
+        "meets_30fps": true,
+        "meets_60fps": true
+      },
+      "lanczos3": {
+        "median_ms": 9.228577,
+        "p95_ms": 12.300606,
+        "fps_from_median": 108.359,
+        "meets_30fps": true,
+        "meets_60fps": true
+      }
+    },
+    "output_checksum_fnv1a64": "7821b2b39c8e68e3",
+    "denoising_tested": false,
+    "environment": {
+      "cpu": "Intel(R) Core(TM) Ultra 7 265K",
+      "compiler": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+      "compile_flags": [
+        "-O3",
+        "-march=native",
+        "-ffast-math",
+        "-Wall",
+        "-Wextra"
+      ],
+      "python": "3.14.4",
+      "numpy": "2.5.5"
+    }
+  }
+}

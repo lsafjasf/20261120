@@ -1,0 +1,4 @@
+method,mean_leak_percent,max_leak_percent,bleed_area_percent_gt_2pct,red_side_mean_leak_percent,red_side_max_leak_percent,blue_side_mean_leak_percent,blue_side_max_leak_percent,red_side_mean_channel_leak_codes,blue_side_mean_channel_leak_codes,ringing_area_percent_gt_half_code,ringing_energy_codes,max_ringing_overshoot_codes
+nearest,6.250000,50.196347,12.500000,6.225457,49.803653,6.274543,50.196347,14.000000,9.625000,0.000000,0.000000,0.000000
+bilinear,6.237728,49.803653,18.750000,9.338185,49.803653,3.137272,25.098173,21.000000,4.875000,0.000000,0.000000,0.000000
+lanczos3,5.694250,49.803653,18.750000,8.791372,49.803653,2.597128,19.549397,19.875000,4.000000,12.500000,0.905458,7.288112

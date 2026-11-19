@@ -1,0 +1,51 @@
+{
+  "frame": {
+    "width": 1920,
+    "height": 1080,
+    "format": "4:2:0 -> 4:4:4 + BT.601 RGB"
+  },
+  "schedule": {
+    "iterations": 100,
+    "warmups": 5,
+    "threads": 1,
+    "buffers": "preallocated"
+  },
+  "methods": {
+    "nearest": {
+      "median_ms": 6.539986,
+      "p95_ms": 8.776746,
+      "fps_from_median": 152.906,
+      "meets_30fps": true,
+      "meets_60fps": true
+    },
+    "bilinear": {
+      "median_ms": 6.613111,
+      "p95_ms": 9.288346,
+      "fps_from_median": 151.215,
+      "meets_30fps": true,
+      "meets_60fps": true
+    },
+    "lanczos3": {
+      "median_ms": 9.228577,
+      "p95_ms": 12.300606,
+      "fps_from_median": 108.359,
+      "meets_30fps": true,
+      "meets_60fps": true
+    }
+  },
+  "output_checksum_fnv1a64": "7821b2b39c8e68e3",
+  "denoising_tested": false,
+  "environment": {
+    "cpu": "Intel(R) Core(TM) Ultra 7 265K",
+    "compiler": "gcc (Ubuntu 15.2.0-16ubuntu1) 15.2.0",
+    "compile_flags": [
+      "-O3",
+      "-march=native",
+      "-ffast-math",
+      "-Wall",
+      "-Wextra"
+    ],
+    "python": "3.14.4",
+    "numpy": "2.5.5"
+  }
+}

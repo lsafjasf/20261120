@@ -1,0 +1,4 @@
+method,median_ms,p95_ms,fps_from_median
+nearest,6.539986,8.776746,152.906
+bilinear,6.613111,9.288346,151.215
+lanczos3,9.228577,12.300606,108.359

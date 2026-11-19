@@ -1,0 +1,4 @@
+method,psnr_rgb_db,psnr_edge_band_db,psnr_cb_db,psnr_cr_db,exact_pixel_percent,finite_median_pixel_psnr_db
+nearest,31.259069,19.217869,33.216092,34.474608,99.218750,10.187005
+bilinear,32.516870,20.475670,34.465480,35.777443,98.828125,16.161676
+lanczos3,33.077184,21.035984,35.026188,36.345437,97.265625,31.630968
