@@ -1,0 +1,6 @@
+/build*/
+/.deps/
+/work/
+/results/*.hevc
+/results/*.yuv
+/results/kvazaar-ctu/

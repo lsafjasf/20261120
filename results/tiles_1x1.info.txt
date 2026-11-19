@@ -1,0 +1,13 @@
+resolution=1024x512
+coded_resolution=1024x512
+bit_depth_luma=10
+bit_depth_chroma=10
+chroma_format=4:2:0
+ctu_size=64
+ctu_grid=16x8
+tile_grid=1x1
+loop_filter_across_tiles=0
+slice=4,type=I,nal_type=IDR_W_RADL,header_bits=15,data_bytes=57603,entry_points=0
+slice=6,type=I,nal_type=IDR_W_RADL,header_bits=15,data_bytes=57736,entry_points=0
+slice=8,type=I,nal_type=IDR_W_RADL,header_bits=17,data_bytes=55669,entry_points=0
+slice=10,type=I,nal_type=IDR_W_RADL,header_bits=17,data_bytes=48905,entry_points=0

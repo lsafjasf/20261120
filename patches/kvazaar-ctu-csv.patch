@@ -1,0 +1,121 @@
+diff --git a/src/encoder_state-bitstream.c b/src/encoder_state-bitstream.c
+index dafedc5..f9a64d6 100644
+--- a/src/encoder_state-bitstream.c
++++ b/src/encoder_state-bitstream.c
+@@ -640,21 +640,9 @@ static void encoder_state_write_bitstream_pic_parameter_set(bitstream_t* stream,
+   }
+   
+   WRITE_U(stream, 0, 1, "loop_filter_across_slice_flag");
+-  WRITE_U(stream, 1, 1, "deblocking_filter_control_present_flag");
+-
+-  //IF deblocking_filter
+-    WRITE_U(stream, 0, 1, "deblocking_filter_override_enabled_flag");
+-  WRITE_U(stream, encoder->cfg.deblock_enable ? 0 : 1, 1,
+-          "pps_disable_deblocking_filter_flag");
+-
+-    //IF !disabled
+-  if (encoder->cfg.deblock_enable) {
+-     WRITE_SE(stream, encoder->cfg.deblock_beta, "beta_offset_div2");
+-     WRITE_SE(stream, encoder->cfg.deblock_tc, "tc_offset_div2");
+-    }
+-
+-    //ENDIF
+-  //ENDIF
++  // Deblocking stays enabled at its default strength. Signaling "control not
++  // present" keeps the PPS and slice headers consistent.
++  WRITE_U(stream, 0, 1, "deblocking_filter_control_present_flag");
+   WRITE_U(stream, 0, 1, "pps_scaling_list_data_present_flag");
+   //IF scaling_list
+   //ENDIF
+diff --git a/src/rate_control.c b/src/rate_control.c
+index 29b844b..9ccb2fe 100644
+--- a/src/rate_control.c
++++ b/src/rate_control.c
+@@ -106,6 +106,12 @@ kvz_rc_data * kvz_get_rc_data(const encoder_control_t * const encoder) {
+     data->qp_file = fopen(buff, "w");
+     sprintf(buff, "%slambda.txt", encoder->cfg.stats_file_prefix);
+     data->lambda_file = fopen(buff, "w");
++    sprintf(buff, "%sctu.csv", encoder->cfg.stats_file_prefix);
++    data->ctu_file = fopen(buff, "w");
++    if (data->ctu_file) {
++      fprintf(data->ctu_file,
++              "frame,poc,ctu_x,ctu_y,bits,intra_cu,inter_cu,skip_cu,pcm_cu,min_depth,max_depth\n");
++    }
+   }
+ 
+   data->smoothing_window = MIN_SMOOTHING_WINDOW;
+@@ -116,6 +122,12 @@ kvz_rc_data * kvz_get_rc_data(const encoder_control_t * const encoder) {
+ void kvz_free_rc_data(kvz_rc_data *data) {
+   if (data == NULL) return;
+ 
++  if (data->bits_file) fclose(data->bits_file);
++  if (data->dist_file) fclose(data->dist_file);
++  if (data->qp_file) fclose(data->qp_file);
++  if (data->lambda_file) fclose(data->lambda_file);
++  if (data->ctu_file) fclose(data->ctu_file);
++
+   pthread_mutex_destroy(&data->ck_frame_lock);
+   pthread_mutex_destroy(&data->lambda_lock);
+   pthread_mutex_destroy(&data->intra_lock);
+@@ -916,6 +928,7 @@ void kvz_update_after_picture(encoder_state_t * const state) {
+ 
+   const encoder_control_t * const encoder = state->encoder_control;
+   const int layer = encoder->cfg.gop[state->frame->gop_offset].layer - (state->frame->is_irap ? 1 : 0);
++  const int poc = calc_poc(state);
+ 
+   if (state->frame->is_irap && encoder->cfg.intra_bit_allocation) {
+     double lnbpp = log(pow(state->frame->icost / pixels, BETA1));
+@@ -930,7 +943,6 @@ void kvz_update_after_picture(encoder_state_t * const state) {
+   }
+ 
+   if (encoder->cfg.stats_file_prefix) {
+-    int poc = calc_poc(state);
+     fprintf(state->frame->new_ratecontrol->dist_file, "%d %d %d\n", poc, encoder->in.width_in_lcu, encoder->in.height_in_lcu);
+     fprintf(state->frame->new_ratecontrol->bits_file, "%d %d %d\n", poc, encoder->in.width_in_lcu, encoder->in.height_in_lcu);
+     fprintf(state->frame->new_ratecontrol->qp_file, "%d %d %d\n", poc, encoder->in.width_in_lcu, encoder->in.height_in_lcu);
+@@ -958,6 +970,33 @@ void kvz_update_after_picture(encoder_state_t * const state) {
+         fprintf(state->frame->new_ratecontrol->bits_file, "%d ", ctu->bits);
+         fprintf(state->frame->new_ratecontrol->qp_file, "%d ", ctu->adjust_qp ? ctu->adjust_qp : ctu->qp);
+         fprintf(state->frame->new_ratecontrol->lambda_file, "%f ", ctu->adjust_lambda ? ctu->adjust_lambda : ctu->lambda);
++        if (state->frame->new_ratecontrol->ctu_file) {
++          int intra_cu = 0;
++          int inter_cu = 0;
++          int skip_cu = 0;
++          int pcm_cu = 0;
++          int min_depth = 8;
++          int max_depth = 0;
++          for (int by = 0; by < 8; ++by) {
++            for (int bx = 0; bx < 8; ++bx) {
++              const cu_info_t *cu = kvz_cu_array_at_const(
++                  state->tile->frame->cu_array,
++                  x_ctu * LCU_WIDTH + bx * 8,
++                  y_ctu * LCU_WIDTH + by * 8);
++              if (cu->type == CU_INTRA) intra_cu++;
++              else if (cu->type == CU_PCM) pcm_cu++;
++              else if (cu->type == CU_INTER && cu->skipped) skip_cu++;
++              else if (cu->type == CU_INTER) inter_cu++;
++              if (cu->depth < min_depth) min_depth = cu->depth;
++              if (cu->depth > max_depth) max_depth = cu->depth;
++            }
++          }
++          fprintf(state->frame->new_ratecontrol->ctu_file,
++                  "%d,%d,%d,%d,%u,%d,%d,%d,%d,%d,%d\n",
++                  state->frame->num, poc, x_ctu, y_ctu, ctu->bits,
++                  intra_cu, inter_cu, skip_cu, pcm_cu,
++                  min_depth == 8 ? 0 : min_depth, max_depth);
++        }
+       }
+     }
+     if (encoder->cfg.stats_file_prefix) {
+diff --git a/src/rate_control.h b/src/rate_control.h
+index e182fb2..6c68014 100644
+--- a/src/rate_control.h
++++ b/src/rate_control.h
+@@ -84,6 +84,7 @@ typedef struct kvz_rc_data {
+   FILE* bits_file;
+   FILE* qp_file;
+   FILE* lambda_file;
++  FILE* ctu_file;
+ } kvz_rc_data;
+ 
+ kvz_rc_data * kvz_get_rc_data(const encoder_control_t * const encoder);

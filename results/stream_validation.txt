@@ -1,0 +1,50 @@
+== ffprobe ==
+codec_name=hevc
+profile=Main 10
+width=1024
+height=512
+pix_fmt=yuv420p10le
+bit_rate=N/A
+== C++ parser ==
+resolution=1024x512
+coded_resolution=1024x512
+bit_depth=10 (luma), 10 (chroma)
+chroma_format=4:2:0
+ctu_size=64
+ctu_grid=16x8
+tiles=4x2 count=8
+loop_filter_across_tiles=disabled
+slice_segments=4
+  slice nal=4 type=IDR_W_RADL slice_type=I first=1 address=0 header_bits=120 entry_points=7 data_bytes=54963
+  slice nal=6 type=IDR_W_RADL slice_type=I first=1 address=0 header_bits=120 entry_points=7 data_bytes=55129
+  slice nal=8 type=IDR_W_RADL slice_type=I first=1 address=0 header_bits=120 entry_points=7 data_bytes=56322
+  slice nal=10 type=IDR_W_RADL slice_type=I first=1 address=0 header_bits=120 entry_points=7 data_bytes=55871
+  tile 0 col=0 row=0 pixel=[0,0)-[256,256) ctu=[0,0)-[4,4) ctu_count=16
+  tile 1 col=1 row=0 pixel=[256,0)-[512,256) ctu=[4,0)-[8,4) ctu_count=16
+  tile 2 col=2 row=0 pixel=[512,0)-[768,256) ctu=[8,0)-[12,4) ctu_count=16
+  tile 3 col=3 row=0 pixel=[768,0)-[1024,256) ctu=[12,0)-[16,4) ctu_count=16
+  tile 4 col=0 row=1 pixel=[0,256)-[256,512) ctu=[0,4)-[4,8) ctu_count=16
+  tile 5 col=1 row=1 pixel=[256,256)-[512,512) ctu=[4,4)-[8,8) ctu_count=16
+  tile 6 col=2 row=1 pixel=[512,256)-[768,512) ctu=[8,4)-[12,8) ctu_count=16
+  tile 7 col=3 row=1 pixel=[768,256)-[1024,512) ctu=[12,4)-[16,8) ctu_count=16
+== FFmpeg trace (first VCL header) ==
+[trace_headers @ 0x301a0c00] 16          first_slice_segment_in_pic_flag                             1 = 1
+[trace_headers @ 0x301a0c00] 19          slice_type                                                011 = 2
+[trace_headers @ 0x301a0c00] 24          slice_qp_delta                                        0001110 = 7
+[trace_headers @ 0x301a0c00] 31          num_entry_point_offsets                               0001000 = 7
+[trace_headers @ 0x301a0c00] 38          offset_len_minus1                                     0001101 = 12
+[trace_headers @ 0x301a0c00] 45          entry_point_offset_minus1[0]                    1101010010100 = 6804
+[trace_headers @ 0x301a0c00] 58          entry_point_offset_minus1[1]                    1101011101010 = 6890
+[trace_headers @ 0x301a0c00] 71          entry_point_offset_minus1[2]                    1101010110101 = 6837
+[trace_headers @ 0x301a0c00] 84          entry_point_offset_minus1[3]                    1101010111111 = 6847
+[trace_headers @ 0x301a0c00] 97          entry_point_offset_minus1[4]                    1101010110111 = 6839
+[trace_headers @ 0x301a0c00] 110         entry_point_offset_minus1[5]                    1101011011111 = 6879
+[trace_headers @ 0x301a0c00] 123         entry_point_offset_minus1[6]                    1101100100000 = 6944
+[trace_headers @ 0x301a0c00] 16          first_slice_segment_in_pic_flag                             1 = 1
+[trace_headers @ 0x301a0c00] 19          slice_type                                                011 = 2
+[trace_headers @ 0x301a0c00] 24          slice_qp_delta                                        0001110 = 7
+[trace_headers @ 0x301a0c00] 31          num_entry_point_offsets                               0001000 = 7
+[trace_headers @ 0x301a0c00] 38          offset_len_minus1                                     0001101 = 12
+[trace_headers @ 0x301a0c00] 45          entry_point_offset_minus1[0]                    1101100010000 = 6928
+[trace_headers @ 0x301a0c00] 58          entry_point_offset_minus1[1]                    1101011111000 = 6904
+[trace_headers @ 0x301a0c00] 71          entry_point_offset_minus1[2]                    1101011101010 = 6890

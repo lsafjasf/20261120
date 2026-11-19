@@ -1,0 +1,5 @@
+slice_nal,nal_type,slice_type,first_slice,slice_address,poc_lsb,header_bits,data_offset_bytes,substream_bytes,entry_index,entry_offset_minus1,entry_bytes
+4,IDR_W_RADL,I,1,0,0,40,5,54502,0,27102,27103
+6,IDR_W_RADL,I,1,0,0,40,5,54853,0,27425,27426
+8,IDR_W_RADL,I,1,0,0,40,5,56111,0,28085,28086
+10,IDR_W_RADL,I,1,0,0,40,5,55637,0,27872,27873
