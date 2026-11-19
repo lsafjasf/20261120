@@ -1,0 +1,26 @@
+{
+  "score": {
+    "importance_total": 5,
+    "long_versions": 0
+  },
+  "placements": [
+    {
+      "clip_id": "AD1",
+      "version": "short",
+      "start": 10,
+      "end": 13.5,
+      "importance": 5,
+      "locked": false,
+      "text": "主角拔枪指向门口"
+    }
+  ],
+  "rejections": [
+    {
+      "clip_id": "AD2",
+      "reason": "可用空档被更重要或已锁定的解说占用，竞争失败"
+    }
+  ],
+  "notes": [
+    "[降级] AD1: 空档容纳不下长版，选用短版以保留信息"
+  ]
+}

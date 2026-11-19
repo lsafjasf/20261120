@@ -1,0 +1,18 @@
+{
+  "score": {
+    "importance_total": 0,
+    "long_versions": 0
+  },
+  "placements": [],
+  "rejections": [
+    {
+      "clip_id": "AD1",
+      "reason": "窗口内空档被对白/音效保留区切碎，无连续可用空档"
+    },
+    {
+      "clip_id": "AD2",
+      "reason": "时间窗仅 2.00s，短版 2.50s 也放不下"
+    }
+  ],
+  "notes": []
+}

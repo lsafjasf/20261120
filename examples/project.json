@@ -1,0 +1,14 @@
+{
+  "duration": 25.0,
+  "dialogue": [[0, 6, "开场对白"], [9, 13, "争执"], [16, 25, "结尾对白"]],
+  "sfx_zones": [[13, 15, "车祸音效"]],
+  "clips": [
+    {"clip_id": "AD1", "window_start": 6, "window_end": 9,
+     "long_duration": 2.8, "short_duration": 1.8, "importance": 4,
+     "text": "车辆失控冲向护栏"},
+    {"clip_id": "AD2", "window_start": 13, "window_end": 16,
+     "long_duration": 3.0, "short_duration": 1.5, "importance": 5,
+     "text": "主角幸免于难",
+     "locked_start": 15.0, "locked_version": "short"}
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "score": {
+    "importance_total": 4,
+    "long_versions": 1
+  },
+  "placements": [
+    {
+      "clip_id": "AD1",
+      "version": "long",
+      "start": 6,
+      "end": 8.8,
+      "importance": 4,
+      "locked": false,
+      "text": "车辆失控冲向护栏"
+    },
+    {
+      "clip_id": "AD2",
+      "version": "short",
+      "start": 15.0,
+      "end": 16.5,
+      "importance": 5,
+      "locked": true,
+      "text": "主角幸免于难"
+    }
+  ],
+  "rejections": [],
+  "notes": [
+    "[警告] 锁定解说 AD2 超出其时间窗，仍按人工安排保留",
+    "[警告] 锁定解说 AD2 与保留区重叠(结尾对白)，仍按人工安排保留"
+  ]
+}
