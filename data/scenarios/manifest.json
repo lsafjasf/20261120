@@ -1,0 +1,342 @@
+{
+  "description": "AES3/BMC diagnostic fixtures: known L/R tones with separately injected timing faults",
+  "sampleRate": 8000,
+  "frames": 256,
+  "tones": {
+    "left": 1000,
+    "right": 1500
+  },
+  "channelLabels": {
+    "A": "L",
+    "B": "R"
+  },
+  "scenarios": {
+    "clean": {
+      "title": "干净链路",
+      "file": "clean.csv",
+      "edgeCount": 21358,
+      "faults": {},
+      "summary": {
+        "edgeCount": 21358,
+        "subframeCount": 512,
+        "frameCount": 256,
+        "totalFrameSlots": 256,
+        "incompleteFrames": 0,
+        "lostFrames": 0,
+        "bitClock": 512000,
+        "sampleRate": 8000,
+        "duration": 0.031998046875,
+        "lockPercent": 100,
+        "parityErrorCount": 0,
+        "dropoutCount": 0,
+        "jitterCount": 0,
+        "jitterRmsUI": 0,
+        "maxJitterUI": 0,
+        "invalidSamples": 0,
+        "channelOrder": {
+          "A": "L / 左",
+          "B": "R / 右"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "compared": 256,
+        "mismatches": 0,
+        "relockCompared": 56,
+        "relockMismatches": 0,
+        "checks": [
+          {
+            "pass": true,
+            "label": "干净段样本",
+            "detail": "256 帧逐样本一致，差异 0"
+          },
+          {
+            "pass": true,
+            "label": "故障注入基线",
+            "detail": "无抖动、反转位或断流"
+          },
+          {
+            "pass": true,
+            "label": "奇偶校验",
+            "detail": "无奇偶校验错误"
+          },
+          {
+            "pass": true,
+            "label": "锁定状态",
+            "detail": "全程锁定"
+          },
+          {
+            "pass": true,
+            "label": "重锁后声道",
+            "detail": "56 帧逐一核对，L/R 错位 0"
+          }
+        ]
+      }
+    },
+    "jitter": {
+      "title": "时钟抖动",
+      "file": "jitter.csv",
+      "edgeCount": 21358,
+      "faults": {
+        "jitter": {
+          "start": 0.00768,
+          "end": 0.01216,
+          "amplitudeUI": 0.18
+        }
+      },
+      "summary": {
+        "edgeCount": 21358,
+        "subframeCount": 512,
+        "frameCount": 256,
+        "totalFrameSlots": 256,
+        "incompleteFrames": 0,
+        "lostFrames": 0,
+        "bitClock": 512000,
+        "sampleRate": 8000,
+        "duration": 0.031998046875,
+        "lockPercent": 100,
+        "parityErrorCount": 0,
+        "dropoutCount": 0,
+        "jitterCount": 1,
+        "jitterRmsUI": 0.07015244223697935,
+        "maxJitterUI": 0.17916784769153596,
+        "invalidSamples": 0,
+        "channelOrder": {
+          "A": "L / 左",
+          "B": "R / 右"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "compared": 256,
+        "mismatches": 0,
+        "relockCompared": 56,
+        "relockMismatches": 0,
+        "checks": [
+          {
+            "pass": true,
+            "label": "干净段样本",
+            "detail": "256 帧逐样本一致，差异 0"
+          },
+          {
+            "pass": true,
+            "label": "抖动定位",
+            "detail": "E001 窗口 8.000–12.000 ms，峰值 0.179 UI"
+          },
+          {
+            "pass": true,
+            "label": "奇偶校验",
+            "detail": "无奇偶校验错误"
+          },
+          {
+            "pass": true,
+            "label": "锁定状态",
+            "detail": "全程锁定"
+          },
+          {
+            "pass": true,
+            "label": "重锁后声道",
+            "detail": "56 帧逐一核对，L/R 错位 0"
+          }
+        ]
+      }
+    },
+    "invert": {
+      "title": "反转位",
+      "file": "invert.csv",
+      "edgeCount": 21357,
+      "faults": {
+        "bitFlip": {
+          "frame": 143,
+          "channel": "A",
+          "slot": 16
+        }
+      },
+      "summary": {
+        "edgeCount": 21357,
+        "subframeCount": 512,
+        "frameCount": 256,
+        "totalFrameSlots": 256,
+        "incompleteFrames": 0,
+        "lostFrames": 0,
+        "bitClock": 512000,
+        "sampleRate": 8000,
+        "duration": 0.031998046875,
+        "lockPercent": 100,
+        "parityErrorCount": 1,
+        "dropoutCount": 0,
+        "jitterCount": 0,
+        "jitterRmsUI": 0,
+        "maxJitterUI": 0,
+        "invalidSamples": 0,
+        "channelOrder": {
+          "A": "L / 左",
+          "B": "R / 右"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "compared": 255,
+        "mismatches": 0,
+        "relockCompared": 56,
+        "relockMismatches": 0,
+        "checks": [
+          {
+            "pass": true,
+            "label": "干净段样本",
+            "detail": "255 帧逐样本一致，差异 0"
+          },
+          {
+            "pass": true,
+            "label": "反转位定位",
+            "detail": "E001 命中帧 143 / L，奇偶校验失败"
+          },
+          {
+            "pass": true,
+            "label": "锁定状态",
+            "detail": "全程锁定"
+          },
+          {
+            "pass": true,
+            "label": "重锁后声道",
+            "detail": "56 帧逐一核对，L/R 错位 0"
+          }
+        ]
+      }
+    },
+    "dropout": {
+      "title": "断流失锁",
+      "file": "dropout.csv",
+      "edgeCount": 19650,
+      "faults": {
+        "dropout": {
+          "start": 0.02176,
+          "end": 0.02432
+        }
+      },
+      "summary": {
+        "edgeCount": 19650,
+        "subframeCount": 471,
+        "frameCount": 235,
+        "totalFrameSlots": 256,
+        "incompleteFrames": 1,
+        "lostFrames": 20,
+        "bitClock": 512000,
+        "sampleRate": 8000,
+        "duration": 0.031998046875,
+        "lockPercent": 91.99780260025636,
+        "parityErrorCount": 0,
+        "dropoutCount": 1,
+        "jitterCount": 0,
+        "jitterRmsUI": 0,
+        "maxJitterUI": 0,
+        "invalidSamples": 0,
+        "channelOrder": {
+          "A": "L / 左",
+          "B": "R / 右"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "compared": 235,
+        "mismatches": 0,
+        "relockCompared": 56,
+        "relockMismatches": 0,
+        "checks": [
+          {
+            "pass": true,
+            "label": "干净段样本",
+            "detail": "235 帧逐样本一致，差异 0"
+          },
+          {
+            "pass": true,
+            "label": "奇偶校验",
+            "detail": "无奇偶校验错误"
+          },
+          {
+            "pass": true,
+            "label": "断流定位",
+            "detail": "失锁覆盖 21.760–24.320 ms"
+          },
+          {
+            "pass": true,
+            "label": "重锁后声道",
+            "detail": "56 帧逐一核对，L/R 错位 0"
+          }
+        ]
+      }
+    },
+    "composite": {
+      "title": "复合故障",
+      "file": "composite.csv",
+      "edgeCount": 19649,
+      "faults": {
+        "jitter": {
+          "start": 0.00768,
+          "end": 0.01216,
+          "amplitudeUI": 0.18
+        },
+        "bitFlip": {
+          "frame": 143,
+          "channel": "A",
+          "slot": 16
+        },
+        "dropout": {
+          "start": 0.02176,
+          "end": 0.02432
+        }
+      },
+      "summary": {
+        "edgeCount": 19649,
+        "subframeCount": 471,
+        "frameCount": 235,
+        "totalFrameSlots": 256,
+        "incompleteFrames": 1,
+        "lostFrames": 20,
+        "bitClock": 512000,
+        "sampleRate": 8000,
+        "duration": 0.031998046875,
+        "lockPercent": 91.99780260025636,
+        "parityErrorCount": 1,
+        "dropoutCount": 1,
+        "jitterCount": 1,
+        "jitterRmsUI": 0.07015244223697935,
+        "maxJitterUI": 0.17916784769153596,
+        "invalidSamples": 0,
+        "channelOrder": {
+          "A": "L / 左",
+          "B": "R / 右"
+        }
+      },
+      "validation": {
+        "passed": true,
+        "compared": 234,
+        "mismatches": 0,
+        "relockCompared": 56,
+        "relockMismatches": 0,
+        "checks": [
+          {
+            "pass": true,
+            "label": "干净段样本",
+            "detail": "234 帧逐样本一致，差异 0"
+          },
+          {
+            "pass": true,
+            "label": "反转位定位",
+            "detail": "E002 命中帧 143 / L，奇偶校验失败"
+          },
+          {
+            "pass": true,
+            "label": "断流定位",
+            "detail": "失锁覆盖 21.760–24.320 ms"
+          },
+          {
+            "pass": true,
+            "label": "重锁后声道",
+            "detail": "56 帧逐一核对，L/R 错位 0"
+          }
+        ]
+      }
+    }
+  }
+}

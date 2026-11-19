@@ -1,0 +1,12 @@
+{
+  "name": "aes3-lock-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "AES3/BMC edge timing diagnostics workbench",
+  "scripts": {
+    "generate": "node scripts/generate-fixtures.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "start": "node server.mjs"
+  }
+}

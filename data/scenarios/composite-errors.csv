@@ -1,0 +1,4 @@
+﻿id,type,severity,time_s,end_s,frame,channel,title,detail,value,unit
+E001,CLOCK_JITTER,warning,0.008,0.012,,,位时钟抖动超限,窗口 RMS 0.070 UI，峰值 0.179 UI,0.070152,UI RMS
+E002,PARITY,error,0.017875,,143,L,子帧奇偶校验失败,X 前导，L 声道，采样字 0xb4690d 可能被反转位污染,-4953843,PCM
+E003,DROPOUT,error,0.021759766,0.024320312,,,边沿断流 / 失锁,缺失约 1311 UI（2.561 ms）,1311,UI

@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b10">
+  <title>AES3 Lock Lab — 边沿时序诊断工作台</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="brand">
+      <svg class="brand-mark" viewBox="0 0 48 48" aria-hidden="true">
+        <path d="M3 25h7l3-10 5 21 5-26 4 19 4-12 4 8h10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="42" cy="25" r="2.4" fill="currentColor"/>
+      </svg>
+      <div>
+        <div class="brand-kicker">DIGITAL AUDIO FORENSICS</div>
+        <h1>AES3 <span>LOCK LAB</span></h1>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <div class="live-pill"><span class="live-dot"></span><span id="headerState">ANALYZING</span></div>
+      <div class="bench-id">BENCH <b>03</b> / REV 2.4</div>
+      <div class="clock-readout" id="utcClock">--:--:-- UTC</div>
+    </div>
+  </header>
+
+  <main class="workbench">
+    <section class="control-strip" aria-label="测试场景与导出">
+      <div class="scenario-block">
+        <div class="section-label">SIGNAL FIXTURES <span>注入序列</span></div>
+        <div class="scenario-deck" id="scenarioDeck">
+          <div class="skeleton-chip">LOADING FIXTURES</div>
+        </div>
+      </div>
+      <div class="action-block">
+        <input type="file" id="fileInput" accept=".csv,text/csv" hidden>
+        <button class="action-button ghost" id="importButton">
+          <span class="button-icon">↥</span> 导入边沿 CSV
+        </button>
+        <button class="action-button primary" id="exportWavButton">
+          <span class="button-icon">W</span> 导出双轨 WAV
+        </button>
+        <button class="action-button" id="exportErrorsButton">
+          <span class="button-icon">!</span> 错误表 CSV
+        </button>
+      </div>
+    </section>
+
+    <section class="kpi-grid" aria-label="链路摘要">
+      <article class="kpi-card lock-card" id="lockCard">
+        <div class="kpi-top"><span>LINK STATE</span><span class="status-led"></span></div>
+        <div class="kpi-value" id="lockValue">LOCKED</div>
+        <div class="kpi-detail"><span id="lockPercent">100.00%</span> 时间覆盖</div>
+        <div class="meter"><i id="lockMeter"></i></div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-top"><span>RECOVERED CLOCK</span><span>PLL</span></div>
+        <div class="kpi-value mono" id="bitClockValue">512.000<span>kHz</span></div>
+        <div class="kpi-detail">UI <b id="uiValue">1.953 µs</b> · Fs <b id="sampleRateValue">8.000 kHz</b></div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-top"><span>FRAME ACCOUNT</span><span>AES3</span></div>
+        <div class="kpi-value mono" id="frameValue">256<span>/256</span></div>
+        <div class="kpi-detail"><b id="subframeValue">512</b> 子帧 · <b id="edgeValue">0</b> 边沿</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-top"><span>TIMING MARGIN</span><span>JITTER</span></div>
+        <div class="kpi-value mono" id="jitterValue">0.000<span>UI</span></div>
+        <div class="kpi-detail">峰值偏差 · <b id="jitterEvents">0</b> 个窗口</div>
+      </article>
+      <article class="kpi-card fault-card" id="faultCard">
+        <div class="kpi-top"><span>FAULT LEDGER</span><span>Σ</span></div>
+        <div class="kpi-value mono" id="faultValue">00</div>
+        <div class="kpi-detail"><b id="parityCount">0</b> 校验 · <b id="dropoutCount">0</b> 失锁</div>
+      </article>
+    </section>
+
+    <section class="diagnostic-grid">
+      <div class="primary-stack">
+        <section class="panel timeline-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">01 / TRANSPORT TIMELINE</div>
+              <h2>边沿时序总览</h2>
+            </div>
+            <div class="legend">
+              <span><i class="legend-edge"></i>BMC 边沿</span>
+              <span><i class="legend-jitter"></i>抖动窗口</span>
+              <span><i class="legend-loss"></i>失锁 / 断流</span>
+            </div>
+          </div>
+          <div class="canvas-shell timeline-shell">
+            <canvas id="timelineCanvas" aria-label="AES3 边沿时序总览"></canvas>
+            <div class="hover-readout" id="hoverReadout"></div>
+          </div>
+          <div class="timeline-footer">
+            <span id="timelineStart">0.000 ms</span>
+            <div class="transport-rail"><i id="transportFill"></i></div>
+            <span id="timelineEnd">32.000 ms</span>
+          </div>
+        </section>
+
+        <section class="panel detail-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">02 / BIT-LEVEL INSPECTOR</div>
+              <h2>BMC 位级与子帧</h2>
+            </div>
+            <div class="selection-badge" id="selectionBadge">FRAME 000 · 0.000 ms</div>
+          </div>
+          <div class="canvas-shell detail-shell">
+            <canvas id="detailCanvas" aria-label="选中帧的 BMC 位级波形"></canvas>
+          </div>
+          <div class="frame-inspector">
+            <article class="channel-card left-channel" id="leftChannelCard">
+              <div class="channel-head">
+                <span class="channel-tag">A · L</span>
+                <span class="preamble-tag" id="leftPreamble">Z</span>
+                <span class="flag-row" id="leftFlags"></span>
+              </div>
+              <div class="pcm-value mono" id="leftPcm">0</div>
+              <div class="pcm-sub mono" id="leftDetail">0x000000 · slot 04–27</div>
+            </article>
+            <div class="frame-axis">
+              <div class="frame-axis-label">AES3 FRAME</div>
+              <div class="frame-axis-rule"><i></i><i></i><i></i><i></i><i></i></div>
+              <div class="frame-axis-meta" id="frameMeta">64 UI · 2 × 32 slots</div>
+            </div>
+            <article class="channel-card right-channel" id="rightChannelCard">
+              <div class="channel-head">
+                <span class="channel-tag">B · R</span>
+                <span class="preamble-tag" id="rightPreamble">Y</span>
+                <span class="flag-row" id="rightFlags"></span>
+              </div>
+              <div class="pcm-value mono" id="rightPcm">0</div>
+              <div class="pcm-sub mono" id="rightDetail">0x000000 · slot 04–27</div>
+            </article>
+          </div>
+        </section>
+
+        <section class="panel audio-panel">
+          <div class="panel-head">
+            <div>
+              <div class="panel-kicker">03 / PCM RECONSTRUCTION</div>
+              <h2>双声道采样输出</h2>
+            </div>
+            <div class="audio-labels">
+              <span class="left-dot">L · 1.000 kHz</span>
+              <span class="right-dot">R · 1.500 kHz</span>
+            </div>
+          </div>
+          <div class="canvas-shell audio-shell">
+            <canvas id="audioCanvas" aria-label="解码后的左右声道波形"></canvas>
+          </div>
+          <div class="sample-strip">
+            <span>SELECTED SAMPLE</span>
+            <b class="mono" id="sampleIndex">#000</b>
+            <span class="sample-divider"></span>
+            <span>L <b class="mono" id="sampleLeft">0</b></span>
+            <span>R <b class="mono" id="sampleRight">0</b></span>
+            <span class="sample-divider"></span>
+            <span>HEX <b class="mono" id="sampleHex">000000 / 000000</b></span>
+          </div>
+        </section>
+      </div>
+
+      <aside class="side-stack">
+        <section class="panel eye-panel">
+          <div class="panel-head compact">
+            <div>
+              <div class="panel-kicker">SIGNAL HEALTH</div>
+              <h2>UI 眼图</h2>
+            </div>
+            <span class="mini-status" id="eyeStatus">OPEN</span>
+          </div>
+          <div class="eye-shell"><canvas id="eyeCanvas" aria-label="AES3 单位间隔眼图"></canvas></div>
+          <div class="eye-stats">
+            <div><span>RMS</span><b class="mono" id="eyeRms">0.000 UI</b></div>
+            <div><span>PEAK</span><b class="mono" id="eyePeak">0.000 UI</b></div>
+            <div><span>LOCK</span><b class="mono" id="eyeLock">100%</b></div>
+          </div>
+        </section>
+
+        <section class="panel error-panel">
+          <div class="panel-head compact">
+            <div>
+              <div class="panel-kicker">EVENT LEDGER</div>
+              <h2>错误定位</h2>
+            </div>
+            <span class="count-badge" id="errorCountBadge">0</span>
+          </div>
+          <div class="error-list" id="errorList"></div>
+        </section>
+
+        <section class="panel qa-panel">
+          <div class="panel-head compact">
+            <div>
+              <div class="panel-kicker">FIXTURE VALIDATION</div>
+              <h2>基准核对</h2>
+            </div>
+            <span class="qa-score" id="qaScore">0/0</span>
+          </div>
+          <div class="qa-list" id="qaList"></div>
+          <div class="tone-signature">
+            <span>GENERATOR</span>
+            <b>L 1 kHz</b><i></i><b>R 1.5 kHz</b><span>8 kHz / 24-bit</span>
+          </div>
+        </section>
+
+        <section class="panel status-panel">
+          <div class="panel-head compact">
+            <div>
+              <div class="panel-kicker">CHANNEL STATUS</div>
+              <h2>子帧提取</h2>
+            </div>
+            <span class="mini-status neutral">192 BIT</span>
+          </div>
+          <div class="status-body">
+            <div class="status-row"><span>A · LEFT LABEL</span><b id="statusALabel">—</b></div>
+            <div class="status-row"><span>B · RIGHT LABEL</span><b id="statusBLabel">—</b></div>
+            <div class="status-row wide"><span>RAW BYTES</span><b class="mono" id="statusBytes">—</b></div>
+            <div class="status-row"><span>VALIDITY</span><b id="validityValue">0</b></div>
+            <div class="status-row"><span>CHANNEL MAP</span><b id="channelMap">A=L · B=R</b></div>
+          </div>
+        </section>
+      </aside>
+    </section>
+
+    <footer class="footer">
+      <span>AES3-2003 / IEC 60958-4 · BMC HALF-CELL RECOVERY</span>
+      <span id="footerFile">data/scenarios/clean.csv</span>
+      <span>EDGE → PREAMBLE → SUBFRAME → PCM</span>
+    </footer>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>

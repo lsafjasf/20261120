@@ -1,0 +1,2 @@
+﻿id,type,severity,time_s,end_s,frame,channel,title,detail,value,unit
+E001,DROPOUT,error,0.021759766,0.024320312,,,边沿断流 / 失锁,缺失约 1311 UI（2.561 ms）,1311,UI

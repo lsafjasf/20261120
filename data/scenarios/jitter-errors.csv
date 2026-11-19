@@ -1,0 +1,2 @@
+﻿id,type,severity,time_s,end_s,frame,channel,title,detail,value,unit
+E001,CLOCK_JITTER,warning,0.008,0.012,,,位时钟抖动超限,窗口 RMS 0.070 UI，峰值 0.179 UI,0.070152,UI RMS

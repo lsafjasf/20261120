@@ -1,0 +1,2 @@
+﻿id,type,severity,time_s,end_s,frame,channel,title,detail,value,unit
+E001,PARITY,error,0.017875,,143,L,子帧奇偶校验失败,X 前导，L 声道，采样字 0xb4690d 可能被反转位污染,-4953843,PCM
