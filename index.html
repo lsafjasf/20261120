@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#080b0f" />
+    <title>ALIGNCUT · 直播字幕对齐回放台</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div id="app">
+      <header class="topbar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span><span></span>
+          </div>
+          <div class="brand-copy">
+            <strong>ALIGNCUT</strong>
+            <span>直播字幕对齐回放台</span>
+          </div>
+        </div>
+
+        <div class="stream-crumb">
+          <span class="crumb-kicker">REPLAY SESSION</span>
+          <span class="crumb-name">晚高峰现场 · TEST-FEED-041</span>
+          <span class="status-dot"></span>
+          <span class="status-label">录制流</span>
+        </div>
+
+        <div class="top-actions">
+          <div class="master-clock">
+            <span>MASTER CLOCK</span>
+            <strong id="headerClock">00:54.4</strong>
+          </div>
+          <button class="icon-button" id="inspectorButton" title="查看输入数据" aria-label="查看输入数据">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7.5h16M4 12h10M4 16.5h13"/><circle cx="18" cy="12" r="2.2"/></svg>
+          </button>
+          <button class="primary-button compact" id="headerReplay">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7v10M16 7l-6 5 6 5V7Z"/></svg>
+            重播测试
+          </button>
+        </div>
+      </header>
+
+      <aside class="sidebar">
+        <div class="sidebar-head">
+          <div>
+            <span class="eyebrow">INPUT STREAM</span>
+            <h2>输入流</h2>
+          </div>
+          <span class="stream-badge">60 FPS</span>
+        </div>
+
+        <div class="stream-card">
+          <div class="stream-card-top">
+            <span class="stream-id">TEST-FEED-041</span>
+            <span class="stream-live"><i></i>READY</span>
+          </div>
+          <p>城市晚高峰连线 · 含已知发声锚点</p>
+          <div class="stream-meta">
+            <span>64.0 s</span>
+            <span>1080p</span>
+            <span>H.264</span>
+          </div>
+          <div class="stream-progress"><i id="streamProgress"></i></div>
+        </div>
+
+        <section class="sidebar-section">
+          <div class="section-label">
+            <span>源数据</span>
+            <button class="text-button" id="inspectAll">检查全部</button>
+          </div>
+          <button class="source-row" data-source="vision">
+            <span class="source-icon vision">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m8 14 2.6-3 2 2.2 2.3-3.4L18 14"/></svg>
+            </span>
+            <span class="source-copy"><strong>画面事件</strong><small>场景与发声标记</small></span>
+            <span class="source-count">23</span>
+          </button>
+          <button class="source-row" data-source="asr">
+            <span class="source-icon asr">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 8v8M9 5v14M13 9v6M17 7v10M21 10v4"/></svg>
+            </span>
+            <span class="source-copy"><strong>识别结果</strong><small>ASR + 置信度</small></span>
+            <span class="source-count">23</span>
+          </button>
+          <button class="source-row" data-source="buffer">
+            <span class="source-icon buffer">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 16 7 9l4 5 4-8 6 10"/><path d="M3 20h18"/></svg>
+            </span>
+            <span class="source-copy"><strong>播放器缓冲</strong><small>128 个采样点</small></span>
+            <span class="source-count">128</span>
+          </button>
+        </section>
+
+        <section class="sidebar-section injection-section">
+          <div class="section-label">
+            <span>场景注入</span>
+            <span class="scenario-tag">SCENARIO 03</span>
+          </div>
+          <label class="injection-row">
+            <span class="injection-mark step"></span>
+            <span class="injection-copy"><strong>阶跃延迟</strong><small>T+18.0 · +1.80 s</small></span>
+            <input type="checkbox" class="scenario-toggle" data-scenario="step" checked />
+            <span class="toggle-ui"></span>
+          </label>
+          <label class="injection-row">
+            <span class="injection-mark spike"></span>
+            <span class="injection-copy"><strong>短时尖峰</strong><small>T+34.0 · 1.2 s</small></span>
+            <input type="checkbox" class="scenario-toggle" data-scenario="spike" checked />
+            <span class="toggle-ui"></span>
+          </label>
+          <label class="injection-row">
+            <span class="injection-mark late"></span>
+            <span class="injection-copy"><strong>迟到字幕</strong><small>T+46.4 · 迟到 5.8 s</small></span>
+            <input type="checkbox" class="scenario-toggle" data-scenario="late" checked />
+            <span class="toggle-ui"></span>
+          </label>
+        </section>
+
+        <div class="sidebar-spacer"></div>
+
+        <div class="algorithm-note">
+          <div class="algo-top"><span class="algo-pulse"></span>ALIGNMENT ENGINE</div>
+          <p>短抖动由 0.9 s 滑动窗吸收；仅持续偏差进入时间轴。</p>
+          <div class="algo-pills"><span>LOCK 已播</span><span>GAP ≥ 160 ms</span></div>
+        </div>
+
+        <div class="sidebar-footer">
+          <span>v2.6.0 · replay core</span>
+          <span class="health"><i></i>系统正常</span>
+        </div>
+      </aside>
+
+      <main class="main-content">
+        <div class="page-heading">
+          <div>
+            <div class="heading-kicker"><span>SYNC REPLAY</span><i></i><span>TEST-FEED-041</span></div>
+            <h1>字幕对齐回放</h1>
+            <p>逐次观察缓冲偏移、校正余量与字幕安全约束。</p>
+          </div>
+          <div class="heading-actions">
+            <button class="ghost-button" id="methodButton">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v6M12 7.2v.2"/></svg>
+              判定依据
+            </button>
+            <button class="primary-button" id="runButton">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5.5 19 12 8 18.5v-13Z"/></svg>
+              从头回放
+            </button>
+          </div>
+        </div>
+
+        <section class="metric-strip" aria-label="对齐概况">
+          <div class="metric-block primary">
+            <span class="metric-label">应用偏移 <small>APPLIED</small></span>
+            <strong id="appliedMetric">+1,800<em>ms</em></strong>
+            <span class="metric-note" id="appliedNote">已收敛 · 步进上限 420 ms/s</span>
+          </div>
+          <div class="metric-block">
+            <span class="metric-label">剩余误差 <small>RESIDUAL</small></span>
+            <strong id="residualMetric">+18<em>ms</em></strong>
+            <span class="metric-note good" id="residualNote"><i></i>低于 80 ms 阈值</span>
+          </div>
+          <div class="metric-block">
+            <span class="metric-label">已锁定字幕 <small>LOCKED</small></span>
+            <strong id="lockedMetric">19<em>/ 23</em></strong>
+            <span class="metric-note">播出位置保持不变</span>
+          </div>
+          <div class="metric-block">
+            <span class="metric-label">下一安全间隔 <small>GAP</small></span>
+            <strong id="gapMetric">1.60<em>s</em></strong>
+            <span class="metric-note">顺序与正间隔约束</span>
+          </div>
+          <div class="buffer-health">
+            <div class="buffer-gauge"><svg viewBox="0 0 44 44"><circle cx="22" cy="22" r="17"/><circle id="bufferArc" cx="22" cy="22" r="17"/></svg><span id="bufferValue">82</span></div>
+            <div><span>缓冲健康</span><strong id="bufferState">稳定</strong></div>
+          </div>
+        </section>
+
+        <div class="content-grid">
+          <div class="primary-column">
+            <div class="top-visual-row">
+              <section class="card preview-card">
+                <div class="card-head">
+                  <div><span class="eyebrow">PROGRAM OUTPUT</span><h3>预览监看</h3></div>
+                  <div class="preview-status"><i></i><span id="playStateLabel">回放暂停</span></div>
+                </div>
+                <div class="player-stage" id="playerStage">
+                  <svg class="stage-art" viewBox="0 0 800 450" preserveAspectRatio="xMidYMid slice" aria-label="新闻演播室画面">
+                    <defs>
+                      <linearGradient id="wallGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1d2c32"/><stop offset=".55" stop-color="#101920"/><stop offset="1" stop-color="#081015"/></linearGradient>
+                      <linearGradient id="deskGrad" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#223137"/><stop offset="1" stop-color="#0b1115"/></linearGradient>
+                      <radialGradient id="lampGrad"><stop offset="0" stop-color="#d9ffad" stop-opacity=".7"/><stop offset=".45" stop-color="#7cd48f" stop-opacity=".18"/><stop offset="1" stop-color="#7cd48f" stop-opacity="0"/></radialGradient>
+                      <linearGradient id="personGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#10171b"/><stop offset="1" stop-color="#070a0d"/></linearGradient>
+                      <filter id="blur12"><feGaussianBlur stdDeviation="12"/></filter>
+                      <pattern id="scan" width="4" height="4" patternUnits="userSpaceOnUse"><rect width="4" height="1" fill="#d8ffe0" opacity=".035"/></pattern>
+                    </defs>
+                    <rect width="800" height="450" fill="url(#wallGrad)"/>
+                    <g opacity=".18" stroke="#c6f7df" stroke-width="1">
+                      <path d="M0 72h800M0 140h800M0 208h800M0 276h800M0 344h800"/>
+                      <path d="M90 0v450M210 0v450M330 0v450M450 0v450M570 0v450M690 0v450"/>
+                    </g>
+                    <circle cx="648" cy="126" r="150" fill="url(#lampGrad)" filter="url(#blur12)"/>
+                    <rect x="568" y="54" width="196" height="252" rx="8" fill="#0b1418" stroke="#2b3e43" stroke-width="2"/>
+                    <rect x="580" y="67" width="172" height="226" rx="4" fill="#132329"/>
+                    <path d="M590 185c29-55 62-32 74-67 20 40 36 18 52 39 9 13 15 40 22 47v75H590Z" fill="#1a3134"/>
+                    <circle cx="672" cy="115" r="26" fill="#b2ddc3" opacity=".42"/>
+                    <path d="M590 260h155" stroke="#3d5a5d"/>
+                    <rect x="28" y="64" width="435" height="280" rx="10" fill="#071014" stroke="#24383d" opacity=".92"/>
+                    <text x="55" y="186" fill="#f0f5ee" font-family="sans-serif" font-size="55" font-weight="700" letter-spacing="7">晚高峰</text>
+                    <text x="57" y="227" fill="#82998f" font-family="sans-serif" font-size="19" letter-spacing="4">LIVE FROM THE CITY</text>
+                    <path d="M57 248h270" stroke="#536d63"/>
+                    <rect x="57" y="273" width="78" height="25" rx="4" fill="#b6f36e"/>
+                    <text x="69" y="291" fill="#0b130c" font-family="ui-monospace,monospace" font-size="11" font-weight="700">ON AIR</text>
+                    <g>
+                      <circle cx="330" cy="265" r="46" fill="#0a0f12"/>
+                      <path d="M286 262c5-33 24-48 46-48 23 0 42 19 43 50l-17-4-14-27-30 16-8 24Z" fill="#0a0f12"/>
+                      <path d="M285 449c4-85 18-134 48-134 31 0 49 49 55 134Z" fill="url(#personGrad)"/>
+                      <path d="M306 335c11 13 42 13 55-1l12 115h-84Z" fill="#121c20"/>
+                      <path d="M305 337c8 8 23 11 33 10l-8 32-25-21Z" fill="#547468" opacity=".25"/>
+                    </g>
+                    <path d="M118 450c5-63 27-97 59-107 44-14 230-11 298 18 33 14 55 43 61 89Z" fill="url(#deskGrad)" stroke="#2a3c3f" stroke-width="2"/>
+                    <path d="M185 371h287" stroke="#526e68" opacity=".5"/>
+                    <rect width="800" height="450" fill="url(#scan)"/>
+                    <rect width="800" height="450" fill="#020708" opacity=".13"/>
+                  </svg>
+                  <div class="stage-vignette"></div>
+                  <div class="hud hud-top">
+                    <span class="live-chip"><i></i>LIVE</span>
+                    <span class="hud-chip">CAM 02</span>
+                    <span class="hud-spacer"></span>
+                    <span class="hud-chip">1080p</span>
+                    <span class="hud-chip">50 FPS</span>
+                  </div>
+                  <div class="hud hud-tc"><span>TC</span><strong id="stageTimecode">00:00:54:10</strong></div>
+                  <div class="subtitle-wrap" id="subtitleWrap">
+                    <div class="speaker-chip">主播</div>
+                    <p id="stageSubtitle">本台记者正在城市交通指挥中心发回报道。</p>
+                    <span class="subtitle-confidence" id="subtitleConfidence">ASR 96%</span>
+                  </div>
+                  <div class="stage-footer">
+                    <span><i class="ok"></i>ALIGNED</span>
+                    <span id="stageOffset">OFFSET +1.80 s</span>
+                  </div>
+                </div>
+                <div class="preview-controls">
+                  <button class="transport-button" id="seekBack" aria-label="后退 5 秒">
+                    <svg viewBox="0 0 24 24"><path d="M9 7 4 12l5 5M5 12h8a6 6 0 1 1 0 12"/></svg>
+                  </button>
+                  <button class="play-button" id="playButton" aria-label="播放">
+                    <svg class="play-icon" viewBox="0 0 24 24"><path d="M8 5.5 19 12 8 18.5v-13Z"/></svg>
+                    <svg class="pause-icon" viewBox="0 0 24 24"><path d="M8 6v12M16 6v12"/></svg>
+                  </button>
+                  <button class="transport-button" id="seekForward" aria-label="前进 5 秒">
+                    <svg viewBox="0 0 24 24"><path d="m15 7 5 5-5 5M19 12h-8a6 6 0 1 0 0 12"/></svg>
+                  </button>
+                  <div class="mini-progress"><i id="miniProgress"></i><span id="miniTime">00:54.4 / 01:04.0</span></div>
+                  <div class="speed-control" id="speedControl">
+                    <button class="speed-button" data-speed="0.5">0.5×</button>
+                    <button class="speed-button active" data-speed="1">1×</button>
+                    <button class="speed-button" data-speed="2">2×</button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="card chart-card">
+                <div class="card-head">
+                  <div><span class="eyebrow">OFFSET TRACE</span><h3>偏移校正轨迹</h3></div>
+                  <div class="chart-legend"><span class="raw">原始</span><span class="applied">应用</span><span class="spike">尖峰</span></div>
+                </div>
+                <div class="chart-value">
+                  <strong id="chartOffset">+1.80<em>s</em></strong>
+                  <span><i></i>已应用时间轴偏移</span>
+                </div>
+                <canvas id="offsetChart" aria-label="偏移校正轨迹图"></canvas>
+                <div class="chart-footer">
+                  <span>0s</span><span>16s</span><span>32s</span><span>48s</span><span>64s</span>
+                </div>
+              </section>
+            </div>
+
+            <section class="card timeline-card">
+              <div class="card-head">
+                <div><span class="eyebrow">MULTI-TRACK TIMELINE</span><h3>对齐时间轴</h3></div>
+                <div class="timeline-tools">
+                  <span class="legend-item"><i class="speech"></i>发声点</span>
+                  <span class="legend-item"><i class="asr"></i>识别</span>
+                  <span class="legend-item"><i class="air"></i>播出</span>
+                  <span class="legend-item"><i class="skip"></i>跳过</span>
+                  <button class="icon-button small" id="fitTimeline" title="适配窗口">
+                    <svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 15v5h-5M15 4h5v5M9 20H4v-5"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="timeline-canvas-wrap">
+                <canvas id="timelineCanvas" aria-label="字幕与缓冲多轨时间轴"></canvas>
+                <div class="timeline-tooltip" id="timelineTooltip"></div>
+              </div>
+              <div class="timeline-cursor-readout">
+                <span>PLAYHEAD</span><strong id="timelineTime">T+ 54.4 s</strong>
+                <span class="readout-divider"></span>
+                <span>IN VIEW</span><strong id="inViewCount">已播 19 · 待播 3</strong>
+                <span class="readout-spacer"></span>
+                <span class="scroll-hint">点击轨面定位</span>
+              </div>
+            </section>
+
+            <section class="card cues-card">
+              <div class="card-head">
+                <div><span class="eyebrow">ALIGNMENT QUEUE</span><h3>字幕对齐队列</h3></div>
+                <div class="queue-summary">
+                  <span><i class="ok"></i><b id="queueLegal">0</b> 越序</span>
+                  <span><i class="ok"></i><b id="queueOverlap">0</b> 重叠</span>
+                  <button class="text-button" id="openAsr">查看 ASR 输入</button>
+                </div>
+              </div>
+              <div class="table-wrap">
+                <table>
+                  <thead><tr><th>#</th><th>字幕文本</th><th>原始入点</th><th>累计 Δ</th><th>预计播出</th><th>邻接间隔</th><th>状态</th></tr></thead>
+                  <tbody id="queueBody"></tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+
+          <aside class="insights-column">
+            <section class="card report-card">
+              <div class="report-head">
+                <div><span class="eyebrow">TEST REPORT</span><h3>校正报告</h3></div>
+                <span class="pass-badge"><i></i>PASS</span>
+              </div>
+              <div class="report-seal">
+                <div class="seal-ring"><svg viewBox="0 0 90 90"><circle class="seal-track" cx="45" cy="45" r="36"/><circle class="seal-fill" cx="45" cy="45" r="36"/></svg><div><strong id="reportScore">98</strong><span>/ 100</span></div></div>
+                <div class="seal-copy"><strong>安全通过</strong><span>0 次重叠 · 0 次倒序</span><small>已播出字幕全部锁定</small></div>
+              </div>
+              <div class="report-kpis">
+                <div><span>校正收敛</span><strong id="convergenceMetric">5.8<em>s</em></strong><small>阶跃后</small></div>
+                <div><span>跳过字幕</span><strong id="skippedMetric">1<em> 条</em></strong><small>迟到</small></div>
+                <div><span>尖峰改写</span><strong id="spikeMetric">0<em> 次</em></strong><small>已平滑</small></div>
+                <div><span>最大间隔</span><strong id="maxGapMetric">2.4<em>s</em></strong><small>安全</small></div>
+              </div>
+              <div class="report-events">
+                <div class="report-event" data-event="step">
+                  <span class="event-icon step"><svg viewBox="0 0 24 24"><path d="M4 16h7v-8h9"/></svg></span>
+                  <div><strong>阶跃延迟</strong><small>T+18.0 · +1.80 s</small></div>
+                  <span class="event-result" id="stepResult">5.8s 收敛</span>
+                </div>
+                <div class="report-event" data-event="spike">
+                  <span class="event-icon spike"><svg viewBox="0 0 24 24"><path d="M3 17h5l3-10 4 14 3-8h3"/></svg></span>
+                  <div><strong>短时尖峰</strong><small>T+34.0 · 峰值 +650 ms</small></div>
+                  <span class="event-result" id="spikeResult">已吸收</span>
+                </div>
+                <div class="report-event" data-event="late">
+                  <span class="event-icon late"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 7v5l3 2"/></svg></span>
+                  <div><strong>迟到字幕</strong><small>C18 · 结果晚到</small></div>
+                  <span class="event-result danger" id="lateResult">已跳过</span>
+                </div>
+              </div>
+              <button class="report-detail-button" id="reportDetailButton">查看完整判定依据 <span>→</span></button>
+            </section>
+
+            <section class="card skip-card">
+              <div class="card-head">
+                <div><span class="eyebrow danger-text">SKIPPED SEGMENT</span><h3>跳过原因</h3></div>
+                <span class="count-pill danger" id="skipCount">1</span>
+              </div>
+              <div id="skipList"></div>
+            </section>
+
+            <section class="card log-card">
+              <div class="card-head">
+                <div><span class="eyebrow">CORRECTION LOG</span><h3>逐次修正</h3></div>
+                <span class="log-live"><i></i>LIVE</span>
+              </div>
+              <div class="correction-log" id="correctionLog"></div>
+              <div class="log-footer"><span id="logCount">12 次校正</span><button class="text-button" id="showAllLogs">展开全部</button></div>
+            </section>
+          </aside>
+        </div>
+      </main>
+    </div>
+
+    <div class="modal-backdrop" id="modalBackdrop" hidden>
+      <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <div class="modal-head">
+          <div><span class="eyebrow" id="modalEyebrow">DATA INSPECTOR</span><h2 id="modalTitle">输入数据</h2></div>
+          <button class="icon-button" id="modalClose" aria-label="关闭">
+            <svg viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></svg>
+          </button>
+        </div>
+        <div class="modal-tabs" id="modalTabs">
+          <button class="active" data-tab="vision">画面事件</button>
+          <button data-tab="asr">识别结果</button>
+          <button data-tab="buffer">缓冲日志</button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+      </section>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script type="module" src="/src/app.js"></script>
+  </body>
+</html>
