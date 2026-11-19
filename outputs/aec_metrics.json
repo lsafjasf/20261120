@@ -1,0 +1,9 @@
+{
+  "erle_pre_change_db": 35.81331885620302,
+  "erle_transient_0_1s_db": 17.392421806428594,
+  "erle_reconverged_last_3s_db": 34.30917339015157,
+  "reconvergence_time_s": 0.9800000000000004,
+  "echo_path_change_at_s": 10.0,
+  "misalignment_converged_db": -7.269824699041371,
+  "misalignment_peak_after_change_db": 4.838338049000662
+}
