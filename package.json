@@ -1,0 +1,26 @@
+{
+  "name": "eme-persistent-license-demo",
+  "version": "1.0.0",
+  "description": "EME persistent-license session restore demo with key-status simulation and NAL reassembly checks",
+  "main": "index.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test/run.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsafjasf/20261120.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/lsafjasf/20261120/issues"
+  },
+  "homepage": "https://github.com/lsafjasf/20261120#readme",
+  "dependencies": {
+    "puppeteer": "^25.18.1",
+    "yauzl": "^3.4.0"
+  }
+}

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<title>EME persistent-license 演示</title>
+<style>
+  body { font-family: system-ui, sans-serif; margin: 24px; background: #101418; color: #dde3ea; }
+  #status { font-size: 18px; font-weight: 600; margin: 12px 0; }
+  #prompt { padding: 10px 14px; border-radius: 8px; min-height: 20px; margin: 8px 0; }
+  #prompt.error { background: #4a1d1d; color: #ffb4b4; }
+  #prompt.ok { background: #14301c; color: #9fe6b0; }
+  #log { background: #0a0d10; padding: 12px; border-radius: 8px; font-size: 12px;
+         white-space: pre-wrap; max-height: 320px; overflow: auto; }
+  video { width: 320px; background: #000; border-radius: 8px; }
+</style>
+</head>
+<body>
+  <h2>EME persistent-license 会话演示</h2>
+  <video id="video" muted></video>
+  <div id="status">初始化…</div>
+  <div id="prompt"></div>
+  <div id="log"></div>
+
+  <script src="license-store.js"></script>
+  <script src="nal-reassembler.js"></script>
+  <script src="nal-demo.js"></script>
+  <script src="player.js"></script>
+  <script>
+    const ui = {
+      setStatus(t) { document.getElementById('status').textContent = t; },
+      showPrompt(t, kind) {
+        const el = document.getElementById('prompt');
+        el.textContent = t;
+        el.className = kind || '';
+      },
+      log(line) {
+        document.getElementById('log').textContent += line + '\n';
+      },
+    };
+
+    window.__done = (async () => {
+      const params = new URLSearchParams(location.search);
+      const scenario = params.get('scenario') || 'usable';
+      if (params.get('fresh') === '1') PersistentLicenseStore.clear();
+
+      const report = { scenario };
+      try {
+        const player = new DrmPlayer(document.getElementById('video'), ui);
+        await player.init();
+        const restored = !!PersistentLicenseStore.load();
+        ui.log(restored ? '发现持久化许可，尝试恢复会话…' : '无持久化许可，向许可服务器请求…');
+        Object.assign(report, await player.openSession(scenario));
+        report.restored = restored;
+        ui.log(`会话 ${report.sessionId} | 来源: ${report.licenseSource} | ` +
+               `耗时 ${report.loadTimeMs} ms | keyStatus=${report.keyStatus}`);
+      } catch (err) {
+        report.licenseError = err.message;
+        ui.setStatus('■ 许可加载失败');
+        ui.showPrompt(err.message, 'error');
+        ui.log('ERROR: ' + err.message);
+      }
+
+      const stats = await fetch('/api/stats').then((r) => r.json());
+      report.licenseRequests = stats.licenseRequests;
+
+      if (params.get('nal') === '1') {
+        report.nal = runNalReassemblyDemo();
+        ui.log(report.nal.summary);
+      }
+      window.__report = report;
+      return report;
+    })();
+  </script>
+</body>
+</html>
