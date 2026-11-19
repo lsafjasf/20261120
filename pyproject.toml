@@ -1,0 +1,9 @@
+[project]
+name = "dash-event-timeline"
+version = "0.1.0"
+description = "MPEG-DASH EventStream period-boundary and UTCTiming validation"
+requires-python = ">=3.11"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
