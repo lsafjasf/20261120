@@ -1,0 +1,85 @@
+{
+  "fs": 48000,
+  "duration_s": 12.0,
+  "pilot_gaps_truth": [
+    [
+      4.0,
+      4.6
+    ],
+    [
+      8.0,
+      8.9
+    ]
+  ],
+  "estimated_intervals": [
+    [
+      3.987833333333333,
+      4.612125
+    ],
+    [
+      7.987833333333334,
+      8.912166666666666
+    ]
+  ],
+  "deviation_before": {
+    "rms_pct": 0.34406675131535974,
+    "peak_pct": 0.7530506620170518,
+    "wow_rms_pct": 0.33141487657968904,
+    "flutter_rms_pct": 0.09175060036803849
+  },
+  "deviation_after": {
+    "rms_pct": 0.0025343798011905846,
+    "peak_pct": 0.014077671136747405,
+    "wow_rms_pct": 0.0004340968772926987,
+    "flutter_rms_pct": 0.00041379078777590216
+  },
+  "deviation_after_bypass": {
+    "rms_pct": 0.0025295191478856825,
+    "peak_pct": 0.01791153371933918,
+    "wow_rms_pct": 0.0004621861286165142,
+    "flutter_rms_pct": 0.0004646161264742881
+  },
+  "map_timing_err_ms": {
+    "L_rms_valid": 0.23164274684348587,
+    "R_rms_valid": 0.4326768076087961,
+    "L_max_valid": 0.3153654887091406,
+    "R_max_valid": 0.7210357113152099,
+    "L_max_in_gaps": 0.346536902803507,
+    "R_max_in_gaps": 0.7505858296177337
+  },
+  "lr_align_before": {
+    "mean_abs_lag_ms": 0.20895613755033166,
+    "max_abs_lag_ms": 0.40873325264546406,
+    "est_err_rms_ms": 0.0009152283666279055,
+    "residual_truth_rms_ms": 0.255618776046
+  },
+  "lr_align_after": {
+    "mean_abs_lag_ms": 0.20879174751467827,
+    "max_abs_lag_ms": 0.4074723229961138,
+    "est_err_rms_ms": 0.0015974924592546728,
+    "residual_truth_rms_ms": 0.255618776046
+  },
+  "continuity_corrected": {
+    "threshold": 0.33517503848283836,
+    "max_jump_near_gaps": 0.06747680953132862,
+    "violations": 0
+  },
+  "continuity_bypassed": {
+    "threshold": 0.33517990196414016,
+    "max_jump_near_gaps": 0.06841841320770843,
+    "violations": 0
+  },
+  "integrity": {
+    "lengths_preserved": true,
+    "map_strictly_monotonic": true,
+    "map_span_s": 11.999082219590676,
+    "min_per_second_corr": {
+      "L": 0.9992860820600303,
+      "R": 0.9356115369268323
+    },
+    "max_lag_step_ms_outside_gaps": {
+      "L": 0.0,
+      "R": 0.25
+    }
+  }
+}
