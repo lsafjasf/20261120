@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+EXTRA=""
+ACCOUNT_HOME="$(getent passwd "$(id -u)" | cut -d: -f6)"
+for home in "$HOME" "$ACCOUNT_HOME"; do
+  [[ -n "$home" ]] || continue
+  for site in "$home"/.local/lib/python*/site-packages; do
+    if [[ -d "$site" ]]; then
+      EXTRA="${EXTRA:+$EXTRA:}$site"
+    fi
+  done
+done
+export PYTHONPATH="$ROOT${EXTRA:+:$EXTRA}${PYTHONPATH:+:$PYTHONPATH}"
+exec python3 -m aspect_audit "$@"
