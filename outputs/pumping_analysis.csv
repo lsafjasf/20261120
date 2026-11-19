@@ -1,0 +1,4 @@
+release_s,residual_modulation_dB,gain_modulation_dB,periodicity_1_8Hz_fraction,jitter_dB_per_100ms,reversal_rate_per_s,worst_1s_window_reversals,max_gain_rate_dB_s,envelope_riding_r,verdict
+0.05,3.063,5.288,0.353,1.213,4.569,7,25.000,-0.987,NO_PUMPING
+0.2,2.783,5.042,0.301,0.892,4.397,7,25.000,-0.976,NO_PUMPING
+0.8,1.909,4.311,0.255,0.494,3.017,6,25.000,-0.909,NO_PUMPING

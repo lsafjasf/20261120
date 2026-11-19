@@ -1,0 +1,4 @@
+release_s,input_integrated_LUFS,output_integrated_LUFS,final_error_dB,ECI_intelligibility,modulation_fidelity_2_8Hz,speech_segment_RMS_error_dB,pause_floor_dbFS,speech_to_background_in_dB,speech_to_background_out_dB,pumping
+0.05,-22.19,-22.95,0.05,0.9982,0.9506,0.88,-22.94,6.00,3.27,NO_PUMPING
+0.2,-22.19,-23.51,-0.51,0.9990,0.9445,1.06,-23.85,6.00,3.55,NO_PUMPING
+0.8,-22.19,-24.38,-1.38,0.9995,0.9199,1.94,-26.34,6.00,4.79,NO_PUMPING
