@@ -1,0 +1,5 @@
+ac3_parser
+make_sample
+table_check
+*.o
+.trash/
