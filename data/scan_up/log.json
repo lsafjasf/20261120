@@ -1,0 +1,11 @@
+{
+  "fps": 48.0,
+  "exposure_s": 0.00010416666666666667,
+  "trigger_phase_s": 0.0,
+  "kind": "scan_test",
+  "note": "vertical scan, upward drifting band",
+  "take": "scan_up",
+  "frames": 48,
+  "height": 256,
+  "width": 384
+}

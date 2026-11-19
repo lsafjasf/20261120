@@ -1,0 +1,11 @@
+{
+  "fps": 48.0,
+  "exposure_s": 0.00020833333333333335,
+  "trigger_phase_s": 0.0,
+  "kind": "scan_test",
+  "note": "same wall, longer exposure: candidate scan rates overlap",
+  "take": "scan_down_exp2",
+  "frames": 48,
+  "height": 256,
+  "width": 384
+}

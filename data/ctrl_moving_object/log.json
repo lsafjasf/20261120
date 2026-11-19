@@ -1,0 +1,11 @@
+{
+  "fps": 48.0,
+  "exposure_s": 0.004166666666666667,
+  "trigger_phase_s": 0.0,
+  "kind": "control",
+  "note": "real object motion",
+  "take": "ctrl_moving_object",
+  "frames": 48,
+  "height": 256,
+  "width": 384
+}

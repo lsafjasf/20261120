@@ -1,0 +1,90 @@
+[
+  {
+    "fps": 48.0,
+    "exposure_s": 0.00010416666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "scan_test",
+    "note": "vertical scan, downward drifting band",
+    "take": "scan_down",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.00010416666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "scan_test",
+    "note": "vertical scan, upward drifting band",
+    "take": "scan_up",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.00010416666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "scan_test",
+    "note": "horizontal scan, rightward drifting band",
+    "take": "scan_right",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.00010416666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "scan_test",
+    "note": "horizontal scan, leftward drifting band",
+    "take": "scan_left",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.00020833333333333335,
+    "trigger_phase_s": 0.0,
+    "kind": "scan_test",
+    "note": "same wall, longer exposure: candidate scan rates overlap",
+    "take": "scan_down_exp2",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.004166666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "control",
+    "note": "static gradient background",
+    "take": "ctrl_gradient",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.004166666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "control",
+    "note": "real object motion",
+    "take": "ctrl_moving_object",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  },
+  {
+    "fps": 48.0,
+    "exposure_s": 0.004166666666666667,
+    "trigger_phase_s": 0.0,
+    "kind": "control",
+    "note": "static periodic stripes",
+    "take": "ctrl_static_bands",
+    "frames": 48,
+    "height": 256,
+    "width": 384
+  }
+]
