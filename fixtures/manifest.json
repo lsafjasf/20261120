@@ -1,0 +1,35 @@
+{
+  "generatedBy": "scripts/generate-fixtures.mjs",
+  "fixtures": [
+    {
+      "file": "tempo-pedal-type1.mid",
+      "format": 1,
+      "ppq": 480,
+      "title": "速度变化处松踏板",
+      "checks": [
+        {
+          "tick": 1920,
+          "seconds": 2,
+          "bpm": 60
+        },
+        {
+          "tick": 2400,
+          "seconds": 3
+        },
+        {
+          "tick": 2880,
+          "seconds": 4
+        }
+      ]
+    },
+    {
+      "file": "missing-off-type0.mid",
+      "format": 0,
+      "ppq": 480,
+      "title": "缺少 Note Off",
+      "expectedAnomalies": [
+        "missing-note-off"
+      ]
+    }
+  ]
+}

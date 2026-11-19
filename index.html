@@ -1,0 +1,231 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="SMF 踏板与速度事件检查器：统一 tick 时间线、实际秒映射、钢琴卷帘、异常定位与 WAV 导出。"
+    />
+    <title>PEDAL//TRACE · SMF 踏板与速度检查器</title>
+    <link rel="icon" href="./favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="noise-layer" aria-hidden="true"></div>
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="PEDAL TRACE 首页">
+        <span class="brand-mark" aria-hidden="true">
+          <i></i><i></i><i></i>
+        </span>
+        <span class="brand-copy">
+          <strong>PEDAL<span>//</span>TRACE</strong>
+          <small>SMF EVENT INSPECTOR</small>
+        </span>
+      </a>
+
+      <div class="file-state" id="fileState">
+        <span class="status-dot"></span>
+        <span id="fileStateText">等待载入 MIDI</span>
+      </div>
+
+      <nav class="top-actions" aria-label="文件与导出操作">
+        <button class="button button-ghost" id="loadTempoFixture" type="button">
+          速度测试
+        </button>
+        <button class="button button-ghost" id="loadMissingFixture" type="button">
+          缺失 Off
+        </button>
+        <label class="button button-primary" for="fileInput">
+          <svg viewBox="0 0 16 16" aria-hidden="true">
+            <path d="M8 10V2m0 0L5 5m3-3 3 3M2 9v4h12V9" />
+          </svg>
+          导入 MIDI
+        </label>
+        <input id="fileInput" type="file" accept=".mid,.midi,audio/midi" hidden />
+        <div class="export-menu">
+          <button class="button button-dark" id="exportButton" type="button" aria-expanded="false">
+            导出
+            <svg viewBox="0 0 12 12" aria-hidden="true"><path d="m3 5 3 3 3-3" /></svg>
+          </button>
+          <div class="export-popover" id="exportPopover" hidden>
+            <button type="button" data-export="csv">
+              <strong>事件清单</strong><span>CSV · 合并顺序与源编号</span>
+            </button>
+            <button type="button" data-export="wav">
+              <strong>参考音频</strong><span>WAV · 本地离线合成</span>
+            </button>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="app-shell">
+      <section class="workspace">
+        <div class="file-heading">
+          <div>
+            <p class="eyebrow"><span id="formatBadge">SMF</span> / ACTIVE SESSION</p>
+            <h1 id="fileTitle">载入一首 MIDI 开始检查</h1>
+            <p class="file-meta" id="fileMeta">
+              支持 Type 0 / Type 1 · 拖放文件或使用右上角导入
+            </p>
+          </div>
+          <div class="verification-badge" id="verificationBadge">
+            <span class="verification-icon">◇</span>
+            <span><small>FIXTURE CHECK</small><strong>等待固件</strong></span>
+          </div>
+        </div>
+
+        <section class="stats-grid" aria-label="文件统计">
+          <article class="stat-card">
+            <span>NOTES</span><strong id="statNotes">—</strong><small>个音符</small>
+          </article>
+          <article class="stat-card">
+            <span>SUSTAIN</span><strong id="statSustain">—</strong><small>段延音</small>
+          </article>
+          <article class="stat-card">
+            <span>ANOMALIES</span><strong id="statAnomalies">—</strong><small id="statAnomaliesSub">待检查</small>
+          </article>
+          <article class="stat-card">
+            <span>DURATION</span><strong id="statDuration">—</strong><small id="statDurationSub">实际播放长度</small>
+          </article>
+          <article class="stat-card stat-card-wide">
+            <span>TIME BASE</span><strong id="statTimeline">—</strong><small id="statTimelineSub">PPQ · 统一 tick 时间线</small>
+          </article>
+        </section>
+
+        <section class="roll-panel panel">
+          <div class="panel-header roll-header">
+            <div>
+              <p class="panel-kicker">TIMELINE / 实际播放时间</p>
+              <h2>钢琴卷帘</h2>
+            </div>
+            <div class="roll-legend" aria-label="钢琴卷帘图例">
+              <span><i class="legend-key"></i>按键段</span>
+              <span><i class="legend-sustain"></i>延音段</span>
+              <span><i class="legend-error"></i>异常</span>
+              <span><i class="legend-tempo"></i>速度点</span>
+            </div>
+          </div>
+
+          <div class="transport">
+            <button class="transport-button" id="playButton" type="button" aria-label="播放参考音频">
+              <svg class="icon-play" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M7 4.5 15 10l-8 5.5z" />
+              </svg>
+              <svg class="icon-pause" viewBox="0 0 20 20" aria-hidden="true">
+                <path d="M6 4h3v12H6zm5 0h3v12h-3z" />
+              </svg>
+            </button>
+            <button class="transport-stop" id="stopButton" type="button" aria-label="停止">
+              <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M4 4h8v8H4z" /></svg>
+            </button>
+            <div class="transport-time">
+              <strong id="currentTime">00:00.000</strong>
+              <span>/</span>
+              <span id="totalTime">00:00.000</span>
+            </div>
+            <div class="transport-track" id="transportTrack" role="slider" tabindex="0" aria-label="播放位置">
+              <span class="transport-fill" id="transportFill"></span>
+              <span class="transport-head" id="transportHead"></span>
+            </div>
+            <span class="transport-bpm" id="transportBpm">— BPM</span>
+          </div>
+
+          <div class="roll-viewport" id="rollViewport">
+            <div class="roll-empty" id="rollEmpty">
+              <span class="empty-glyph">⌁</span>
+              <strong>没有可显示的音符</strong>
+              <p>导入 Type 0 或 Type 1 MIDI，按键段与踏板延音会在这里分层显示。</p>
+            </div>
+            <div class="roll-inner" id="rollInner" hidden>
+              <div class="roll-ruler" id="rollRuler"></div>
+              <div class="piano-keys" id="pianoKeys" aria-hidden="true"></div>
+              <div class="roll-grid" id="rollGrid"></div>
+              <div class="tempo-markers" id="tempoMarkers"></div>
+              <div class="roll-playhead" id="rollPlayhead"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="lower-grid">
+          <div class="panel events-panel">
+            <div class="panel-header">
+              <div>
+                <p class="panel-kicker">MERGED EVENT STREAM</p>
+                <h2>统一事件清单</h2>
+              </div>
+              <div class="event-filters" id="eventFilters" aria-label="事件筛选">
+                <button class="is-active" type="button" data-filter="all">全部</button>
+                <button type="button" data-filter="note">音符</button>
+                <button type="button" data-filter="pedal">踏板</button>
+                <button type="button" data-filter="tempo">速度</button>
+                <button type="button" data-filter="anomaly">异常</button>
+              </div>
+            </div>
+            <div class="event-table-wrap">
+              <table class="event-table">
+                <thead>
+                  <tr>
+                    <th>ORD</th>
+                    <th>TICK</th>
+                    <th>PLAY TIME</th>
+                    <th>源轨 / 事件</th>
+                    <th>TYPE</th>
+                    <th>DATA</th>
+                  </tr>
+                </thead>
+                <tbody id="eventTableBody">
+                  <tr class="table-empty"><td colspan="6">载入 MIDI 后显示合并事件</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <footer class="table-footer">
+              <span id="eventCountLabel">0 EVENTS</span>
+              <span>同轨保留源顺序；跨轨：踏板 Up → Note Off → Note On → 踏板 Down</span>
+            </footer>
+          </div>
+
+          <div class="side-stack">
+            <section class="panel checks-panel">
+              <div class="panel-header">
+                <div>
+                  <p class="panel-kicker">FIXTURE VERIFICATION</p>
+                  <h2>预设核对</h2>
+                </div>
+                <span class="check-score" id="checkScore">—</span>
+              </div>
+              <div class="checks-list" id="checksList">
+                <p class="checks-empty">载入内置测试曲后，自动核对速度换算与异常报告。</p>
+              </div>
+            </section>
+
+            <section class="panel inspector-panel" id="inspectorPanel">
+              <div class="panel-header">
+                <div>
+                  <p class="panel-kicker">SOURCE TRACE</p>
+                  <h2>检查器</h2>
+                </div>
+                <button class="icon-button" id="clearSelection" type="button" title="清除选择" hidden>
+                  ×
+                </button>
+              </div>
+              <div class="inspector-empty" id="inspectorEmpty">
+                <span class="reticle" aria-hidden="true"></span>
+                <p>点击卷帘中的异常音符<br />或事件行以追踪源轨与事件编号</p>
+              </div>
+              <div class="inspector-content" id="inspectorContent" hidden></div>
+            </section>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <div class="drop-overlay" id="dropOverlay" hidden>
+      <div><span>＋</span><strong>释放以读取 MIDI</strong><small>Type 0 / Type 1</small></div>
+    </div>
+    <div class="toast-region" id="toastRegion" aria-live="polite"></div>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
