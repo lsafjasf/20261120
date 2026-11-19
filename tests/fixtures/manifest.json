@@ -1,0 +1,28 @@
+{
+  "sampleRate": 48000,
+  "cases": [
+    {
+      "name": "known_delay",
+      "master": "case_delay_master.wav",
+      "encoded": "case_delay_encoded.wav",
+      "expectedLagSamples": 733,
+      "expectedCommonFrames": 144000
+    },
+    {
+      "name": "identical_content",
+      "master": "case_same_master.wav",
+      "encoded": "case_same_encoded.wav",
+      "expectedLagSamples": 0,
+      "expectedCommonFrames": 144000
+    },
+    {
+      "name": "local_distortion",
+      "master": "case_distortion_master.wav",
+      "encoded": "case_distortion_encoded.wav",
+      "expectedLagSamples": 0,
+      "expectedCommonFrames": 144000,
+      "distortionStart": 1.2,
+      "distortionEnd": 1.4
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+/build/
+/build-core/
+/JUCE/
+/.cache/
+*.user
