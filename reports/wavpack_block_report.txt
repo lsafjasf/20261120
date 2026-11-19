@@ -1,0 +1,80 @@
+WavPack block scan: /home/hj/userfeedback/uid4-0004/fixtures/mono.wv
+file_size=1612 declared_total_samples=2200 total_samples_consistent=true
+
+idx  byte_off  id     flags       mode    sample_index  samples  crc         header_crc  block_csum  result
+0    0x00000000  wvpk   0x14BC1805  mono    0            512      0x92D124A8  OK         OK         OK
+1    0x000001A0  wvpk   0x14BC1805  mono    512          512      0x7515E41F  OK         OK         OK
+2    0x000002FA  wvpk   0x14BC1805  mono    1024         512      0x11C7F1CF  OK         OK         OK
+3    0x0000044C  wvpk   0x14BC1805  mono    1536         332      0x8C75736F  OK         OK         OK
+4    0x00000552  wvpk   0x14BC1805  mono    1868         332      0x06D7481B  OK         OK         OK
+
+summary: blocks=5 accepted=5 skipped=0 checksum_failures=0 declared_total_samples=2200 total_samples_consistent=true
+recovered_sample_indices=[0, 512, 1024, 1536, 1868]
+recovered_sample_span=[0, 2200]
+WavPack block scan: /home/hj/userfeedback/uid4-0004/fixtures/stereo.wv
+file_size=3076 declared_total_samples=2200 total_samples_consistent=true
+
+idx  byte_off  id     flags       mode    sample_index  samples  crc         header_crc  block_csum  result
+0    0x00000000  wvpk   0x14BC1831  stereo  0            512      0x77978982  OK         OK         OK
+1    0x000002DE  wvpk   0x14BC1831  stereo  512          512      0xE52D63AB  OK         OK         OK
+2    0x0000058E  wvpk   0x14BC1831  stereo  1024         512      0x11D940A0  OK         OK         OK
+3    0x00000836  wvpk   0x14BC1831  stereo  1536         332      0xEC1349EF  OK         OK         OK
+4    0x00000A1A  wvpk   0x14BC1831  stereo  1868         332      0x55E63B09  OK         OK         OK
+
+summary: blocks=5 accepted=5 skipped=0 checksum_failures=0 declared_total_samples=2200 total_samples_consistent=true
+recovered_sample_indices=[0, 512, 1024, 1536, 1868]
+recovered_sample_span=[0, 2200]
+WavPack block scan: /home/hj/userfeedback/uid4-0004/fixtures/hybrid.wv
+file_size=2402 declared_total_samples=2200 total_samples_consistent=true
+
+idx  byte_off  id     flags       mode    sample_index  samples  crc         header_crc  block_csum  result
+0    0x00000000  wvpk   0x34BC1E59  hybrid  0            512      0xCB7CA5A8  OK         OK         OK
+1    0x0000025C  wvpk   0x34BC1E59  hybrid  512          512      0xDAEF08EF  OK         OK         OK
+2    0x00000468  wvpk   0x34BC1E59  hybrid  1024         512      0x101B37F1  OK         OK         OK
+3    0x00000674  wvpk   0x34BC1E59  hybrid  1536         332      0x78578235  OK         OK         OK
+4    0x000007EC  wvpk   0x34BC1E59  hybrid  1868         332      0x1DD76593  OK         OK         OK
+
+summary: blocks=5 accepted=5 skipped=0 checksum_failures=0 declared_total_samples=2200 total_samples_consistent=true
+recovered_sample_indices=[0, 512, 1024, 1536, 1868]
+recovered_sample_span=[0, 2200]
+WavPack block scan: /home/hj/userfeedback/uid4-0004/fixtures/corrupt_stereo.wv
+file_size=3076 declared_total_samples=2200 total_samples_consistent=true
+
+idx  byte_off  id     flags       mode    sample_index  samples  crc         header_crc  block_csum  result
+0    0x00000000  wvpk   0x14BC1831  stereo  0            512      0x77978982  OK         OK         OK
+1    0x000002DE  wvpk   0x14BC1831  stereo  512          512      0xE52D63AB  OK         OK         OK
+2    0x0000058E  wvpk   0x14BC1831  stereo  1024         512      0x11D940A0  FAIL       FAIL       SKIP: block metadata checksum mismatch
+     damaged block start=0x58E resync=0x836 skipped_bytes=680
+3    0x00000836  wvpk   0x14BC1831  stereo  1536         332      0xEC1349EF  OK         OK         OK
+4    0x00000A1A  wvpk   0x14BC1831  stereo  1868         332      0x55E63B09  OK         OK         OK
+
+summary: blocks=5 accepted=4 skipped=1 checksum_failures=1 declared_total_samples=2200 total_samples_consistent=true
+recovered_sample_indices=[0, 512, 1536, 1868]
+recovered_sample_span=[0, 2200]
+WavPack block scan: /home/hj/userfeedback/uid4-0004/fixtures/corrupt_length_stereo.wv
+file_size=3076 declared_total_samples=2200 total_samples_consistent=true
+
+idx  byte_off  id     flags       mode    sample_index  samples  crc         header_crc  block_csum  result
+0    0x00000000  wvpk   0x14BC1831  stereo  0            512      0x77978982  OK         OK         OK
+1    0x000002DE  wvpk   0x14BC1831  stereo  512          512      0xE52D63AB  OK         OK         OK
+2    0x0000058E  wvpk   0x14BC1831  stereo  1024         512      0x11D940A0  FAIL       n/a        SKIP: declared block extends past end of file
+     damaged block start=0x58E resync=0x836 skipped_bytes=680
+3    0x00000836  wvpk   0x14BC1831  stereo  1536         332      0xEC1349EF  OK         OK         OK
+4    0x00000A1A  wvpk   0x14BC1831  stereo  1868         332      0x55E63B09  OK         OK         OK
+
+summary: blocks=5 accepted=4 skipped=1 checksum_failures=1 declared_total_samples=2200 total_samples_consistent=true
+recovered_sample_indices=[0, 512, 1536, 1868]
+recovered_sample_span=[0, 2200]
+
+verification:
+  clean_sample_indices=[0, 512, 1024, 1536, 1868]
+  damaged_block_start=0x58E
+  resync_point=0x836
+  skipped_bytes=680
+  later_sample_indices=[1536, 1868]
+  later_indices_match_clean=true
+  total_samples_before=2200
+  total_samples_after=2200
+  recovered_sample_span=[0, 2200]
+  cumulative_checksum_failures=1
+
