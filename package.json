@@ -1,0 +1,24 @@
+{
+  "name": "uid4-0032",
+  "version": "1.0.0",
+  "description": "Frame-level PSNR/SSIM/MS-SSIM metrics with PSSH/EME validation",
+  "main": "scripts/validate_eme.mjs",
+  "scripts": {
+    "validate:eme": "node scripts/validate_eme.mjs --pssh artifacts/demo/pssh_eme_initdata.bin --default-kid 01234567-89ab-cdef-0123-456789abcdef --out artifacts/demo/eme_validation.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsafjasf/20261120.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/lsafjasf/20261120/issues"
+  },
+  "homepage": "https://github.com/lsafjasf/20261120#readme",
+  "dependencies": {
+    "playwright": "^1.65.1"
+  }
+}
