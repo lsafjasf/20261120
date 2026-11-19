@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "stereo-preflight"
+version = "0.1.0"
+description = "Local stereo 3D delivery preflight for SBS and OU media"
+readme = "README.md"
+requires-python = ">=3.11"
+license = {text = "MIT"}
+authors = [{name = "Stereo Preflight"}]
+dependencies = []
+
+[project.scripts]
+stereo-preflight = "stereo_preflight.cli:main"
+
+[tool.setuptools]
+packages = ["stereo_preflight"]
+
+[tool.setuptools.package-data]
+stereo_preflight = ["static/*"]

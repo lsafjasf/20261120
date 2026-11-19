@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Stereo Preflight · 双目交付预检</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <span class="brand-mark" aria-hidden="true"><i></i><i></i></span>
+      <div>
+        <h1>Stereo Preflight</h1>
+        <p>双目交付预检台</p>
+      </div>
+    </div>
+    <div class="topbar-meta">
+      <span class="local-badge"><span></span> 本机处理，不上传素材</span>
+      <span class="fps-note">SBS / OU · 帧率保持</span>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <aside class="control-panel">
+      <section class="card source-card">
+        <div class="section-heading">
+          <span class="step">01</span>
+          <div>
+            <h2>选择素材</h2>
+            <p>输入包装后的视频绝对路径</p>
+          </div>
+        </div>
+        <label class="field">
+          <span>视频文件</span>
+          <input id="source-path" type="text" spellcheck="false" placeholder="/path/to/stereo_master.mp4">
+        </label>
+        <div class="field">
+          <span>封装</span>
+          <div class="segmented" id="packing-control">
+            <label><input type="radio" name="packing" value="sbs" checked><b>并排 SBS</b><small>左右各一眼</small></label>
+            <label><input type="radio" name="packing" value="ou"><b>上下 OU</b><small>上下各一眼</small></label>
+          </div>
+        </div>
+        <div class="form-grid two">
+          <label class="field">
+            <span>水平安全上限 <em>px</em></span>
+            <input id="max-disparity" type="number" min="1" step="1" placeholder="自动 2.5%">
+          </label>
+          <label class="field">
+            <span>垂直容差 <em>px</em></span>
+            <input id="max-vertical" type="number" min="0" step="0.5" value="2">
+          </label>
+        </div>
+        <label class="field">
+          <span>无标记时眼别判读</span>
+          <select id="assumed-order">
+            <option value="">不预设，提示人工判读</option>
+            <option value="ab">人工确认：A=左，B=右</option>
+            <option value="ba">人工确认：A=右，B=左</option>
+          </select>
+        </label>
+        <label class="field">
+          <span>同时保存 JSON 报告 <em>可选</em></span>
+          <input id="report-path" type="text" spellcheck="false" placeholder="artifacts/report.json">
+        </label>
+        <button class="primary-button" id="analyze-button">
+          <span>开始预检</span>
+          <kbd>⌘ ↵</kbd>
+        </button>
+        <p class="inline-status" id="analyze-status" aria-live="polite"></p>
+      </section>
+
+      <section class="card miniature-card" id="identity-card" hidden>
+        <div class="mini-label">眼别判读</div>
+        <div class="identity-value">
+          <strong id="identity-order">AB</strong>
+          <span id="identity-source">机读标记</span>
+        </div>
+        <div class="coverage-row">
+          <div class="coverage-track"><i id="coverage-bar"></i></div>
+          <span id="coverage-text">100% 帧有标记</span>
+        </div>
+        <p class="identity-warning" id="identity-warning" hidden></p>
+      </section>
+
+      <section class="card help-card">
+        <div class="mini-label">测试片</div>
+        <p>生成正常片、交换眼别片与漏帧片：</p>
+        <code>python3 -m stereo_preflight make-test fixtures</code>
+        <p class="muted">测试片包含 L/R、6 位帧号、红色前景与绿色背景测点。</p>
+      </section>
+    </aside>
+
+    <div class="workspace">
+      <section class="empty-state" id="empty-state">
+        <div class="stereo-glyph" aria-hidden="true">
+          <div><span>L</span><i></i></div>
+          <div><span>R</span><i></i></div>
+        </div>
+        <p class="eyebrow">DELIVERY CHECK</p>
+        <h2>先看眼别，再看每一帧。</h2>
+        <p>载入并排或上下封装素材，预检会定位眼别接反、错帧、缺帧、水平视差超限与垂直偏移。</p>
+        <div class="empty-features">
+          <span>单眼 / 红青预览</span>
+          <span>异常连续区间</span>
+          <span>原帧率修正导出</span>
+        </div>
+      </section>
+
+      <div id="results" hidden>
+        <section class="summary-strip" aria-live="polite">
+          <div class="status-block">
+            <span class="status-dot" id="status-dot"></span>
+            <div><small>交付状态</small><strong id="status-text">PASS</strong></div>
+          </div>
+          <div class="summary-item"><small>素材</small><strong id="media-summary">—</strong></div>
+          <div class="summary-item"><small>帧率</small><strong id="rate-summary">—</strong></div>
+          <div class="summary-item"><small>异常</small><strong id="anomaly-summary">—</strong></div>
+        </section>
+
+        <div class="result-grid">
+          <section class="card viewer-card">
+            <div class="viewer-head">
+              <div class="segmented compact" id="view-mode">
+                <label><input type="radio" name="view" value="anaglyph" checked><b>红青</b></label>
+                <label><input type="radio" name="view" value="left"><b>左眼</b></label>
+                <label><input type="radio" name="view" value="right"><b>右眼</b></label>
+                <label><input type="radio" name="view" value="marked"><b>并排标记</b></label>
+              </div>
+              <label class="switch">
+                <input id="show-marks" type="checkbox" checked>
+                <span></span>测点环
+              </label>
+            </div>
+            <div class="viewer-stage" id="viewer-stage">
+              <img id="preview-image" alt="当前帧立体预览">
+              <div class="viewer-loading" id="viewer-loading" hidden>读取帧…</div>
+              <div class="frame-badge" id="frame-badge">F000000</div>
+              <div class="viewer-legend">
+                <span><i class="legend-left"></i>左眼</span>
+                <span><i class="legend-right"></i>右眼</span>
+              </div>
+            </div>
+            <div class="transport">
+              <button id="prev-frame" class="icon-button" title="上一帧">−</button>
+              <input id="frame-slider" type="range" min="0" max="0" value="0">
+              <button id="next-frame" class="icon-button" title="下一帧">+</button>
+              <div class="frame-counter"><span id="frame-current">0</span><span>/</span><span id="frame-total">0</span></div>
+            </div>
+            <div class="frame-readout">
+              <div><small>帧号 A / B</small><strong id="frame-ids">— / —</strong></div>
+              <div><small>前景视差 X / Y</small><strong id="fg-readout">—</strong></div>
+              <div><small>背景视差 X / Y</small><strong id="bg-readout">—</strong></div>
+              <div><small>本帧诊断</small><strong id="frame-diagnosis">正常</strong></div>
+            </div>
+          </section>
+
+          <aside class="result-side">
+            <section class="card anomaly-card">
+              <div class="section-heading tight">
+                <span class="step">02</span>
+                <div><h2>异常区间</h2><p>点击跳到区间起点</p></div>
+              </div>
+              <div class="anomaly-list" id="anomaly-list"></div>
+            </section>
+
+            <section class="card correction-card">
+              <div class="section-heading tight">
+                <span class="step">03</span>
+                <div><h2>修正与导出</h2><p>先验证配对，再按原帧率编码</p></div>
+              </div>
+              <div class="form-grid two">
+                <label class="field">
+                  <span>眼别顺序</span>
+                  <select id="export-order">
+                    <option value="auto">跟随判读</option>
+                    <option value="ab">A 左 / B 右</option>
+                    <option value="ba">A 右 / B 左</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>输出封装</span>
+                  <select id="export-packing">
+                    <option value="">保持原封装</option>
+                    <option value="sbs">并排 SBS</option>
+                    <option value="ou">上下 OU</option>
+                  </select>
+                </label>
+                <label class="field">
+                  <span>左眼偏移 <em>帧，+ 延后</em></span>
+                  <input id="offset-left" type="number" step="1" value="0">
+                </label>
+                <label class="field">
+                  <span>右眼偏移 <em>帧，+ 延后</em></span>
+                  <input id="offset-right" type="number" step="1" value="0">
+                </label>
+              </div>
+              <div class="validation-box" id="validation-box">尚未验证修正参数。</div>
+              <label class="field">
+                <span>输出文件</span>
+                <input id="output-path" type="text" spellcheck="false" placeholder="/path/to/delivery_corrected.mp4">
+              </label>
+              <label class="check-row">
+                <input id="force-export" type="checkbox">
+                <span>已有安全异常仍允许导出 <em>（保留原异常）</em></span>
+              </label>
+              <div class="button-row">
+                <button class="secondary-button" id="validate-button">验证修正</button>
+                <button class="primary-button small" id="export-button">导出</button>
+              </div>
+              <p class="inline-status" id="export-status" aria-live="polite"></p>
+            </section>
+          </aside>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>
