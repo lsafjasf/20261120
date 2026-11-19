@@ -1,0 +1,41 @@
+{
+  "sample_rate_hz": 48000,
+  "frame_samples": 480,
+  "frame_ms": 10.0,
+  "seeds": {
+    "speech": 20261120,
+    "noise": 20261121,
+    "music": 20261122
+  },
+  "speech": {
+    "duration_s": 6.0,
+    "noise_only_lead_in_s": 0.45,
+    "mix_target_snr_db": 5.0,
+    "measured_input_snr_db": 4.999999999999999,
+    "loudness_lufs": -23.0,
+    "files": [
+      "clean_speech.wav",
+      "noise.wav",
+      "noisy_speech.wav"
+    ]
+  },
+  "music": {
+    "duration_s": 7.0,
+    "contains_speech": false,
+    "calibration_lead_in_s": 0.3,
+    "high_frequency_components_hz": [
+      9000,
+      11200,
+      13400,
+      15800
+    ],
+    "percussive_hf_band_hz": [
+      6000,
+      20000
+    ],
+    "loudness_lufs": -23.000000000000004,
+    "files": [
+      "clean_music.wav"
+    ]
+  }
+}

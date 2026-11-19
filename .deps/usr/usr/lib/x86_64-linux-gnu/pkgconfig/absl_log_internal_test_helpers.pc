@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=/usr/include
+
+Name: absl_log_internal_test_helpers
+Description: Abseil log_internal_test_helpers library
+URL: https://abseil.io/
+Version: 20260107
+Requires: absl_config = 20260107, absl_log_globals = 20260107, absl_log_initialize = 20260107, absl_log_internal_globals = 20260107, absl_log_severity = 20260107
+Libs: -L${libdir}  -labsl_log_internal_test_helpers -Wl,--push-state,--as-needed -latomic -Wl,--pop-state
+Cflags: -I${includedir} -DNOMINMAX

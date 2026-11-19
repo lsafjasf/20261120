@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=/usr/include
+
+Name: absl_random_seed_gen_exception
+Description: Abseil random_seed_gen_exception library
+URL: https://abseil.io/
+Version: 20260107
+Requires: absl_config = 20260107, absl_raw_logging_internal = 20260107
+Libs: -L${libdir}  -labsl_random_seed_gen_exception -Wl,--push-state,--as-needed -latomic -Wl,--pop-state
+Cflags: -I${includedir} -DNOMINMAX

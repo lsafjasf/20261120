@@ -1,0 +1,12 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=/usr/lib/x86_64-linux-gnu
+includedir=/usr/include
+
+Name: absl_hash_generator_testing
+Description: Abseil hash_generator_testing library
+URL: https://abseil.io/
+Version: 20260107
+Requires: absl_config = 20260107, absl_hash_policy_testing = 20260107, absl_memory = 20260107, absl_meta = 20260107, absl_no_destructor = 20260107, absl_random_random = 20260107, absl_strings = 20260107
+Libs: -L${libdir}  -labsl_hash_generator_testing 
+Cflags: -I${includedir} -DNOMINMAX
