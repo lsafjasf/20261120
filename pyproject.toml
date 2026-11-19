@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fdn-reverb-lab"
+version = "0.1.0"
+description = "Feedback-delay-network reverb with click-free room transitions"
+requires-python = ">=3.11"
+dependencies = [
+  "numpy>=2.0",
+  "scipy>=1.13",
+  "matplotlib>=3.8",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=8.0"]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fdn_reverb*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
