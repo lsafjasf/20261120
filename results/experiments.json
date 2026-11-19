@@ -1,0 +1,200 @@
+{
+ "on_off_diff": {
+  "8": {
+   "Y": {
+    "std": 0.7928701455080955,
+    "mad": 0.5404397243923612
+   },
+   "U": {
+    "std": 0.7568882050540314,
+    "mad": 0.5073849826388889
+   },
+   "V": {
+    "std": 0.7574644602006103,
+    "mad": 0.5100499131944445
+   }
+  },
+  "20": {
+   "Y": {
+    "std": 2.220057736703087,
+    "mad": 1.7440619574652778
+   },
+   "U": {
+    "std": 2.136053937375774,
+    "mad": 1.6748719618055556
+   },
+   "V": {
+    "std": 2.156002343645518,
+    "mad": 1.6943023003472222
+   }
+  },
+  "40": {
+   "Y": {
+    "std": 2.9483669282535696,
+    "mad": 2.3338484700520836
+   },
+   "U": {
+    "std": 3.0013384326849333,
+    "mad": 2.376804470486111
+   },
+   "V": {
+    "std": 3.0122473915160413,
+    "mad": 2.3878059895833332
+   }
+  }
+ },
+ "tier_timing_ms_per_frame": {
+  "8": 75.92,
+  "20": 82.42,
+  "40": 101.62
+ },
+ "sweeps": {
+  "intensity_x0.5": {
+   "reproducible": true,
+   "sha256": "1849b4e73fc535f9",
+   "ms_per_frame": 108.46,
+   "luma_noise_std": 1.153,
+   "chroma_noise_std": 1.11
+  },
+  "intensity_x1.0": {
+   "reproducible": true,
+   "sha256": "62a5e2256d86e3a1",
+   "ms_per_frame": 101.2,
+   "luma_noise_std": 2.253,
+   "chroma_noise_std": 2.16
+  },
+  "intensity_x1.5": {
+   "reproducible": true,
+   "sha256": "82e45e971fffa49c",
+   "ms_per_frame": 108.56,
+   "luma_noise_std": 3.356,
+   "chroma_noise_std": 3.231
+  },
+  "granularity_s0": {
+   "reproducible": true,
+   "sha256": "62a5e2256d86e3a1",
+   "ms_per_frame": 98.32,
+   "luma_noise_std": 2.253,
+   "chroma_noise_std": 2.16
+  },
+  "granularity_s1": {
+   "reproducible": true,
+   "sha256": "67fc46fde8d849b6",
+   "ms_per_frame": 149.98,
+   "luma_noise_std": 1.152,
+   "chroma_noise_std": 1.112
+  },
+  "granularity_s2": {
+   "reproducible": true,
+   "sha256": "8a394b56f1998e11",
+   "ms_per_frame": 106.26,
+   "luma_noise_std": 0.618,
+   "chroma_noise_std": 0.601
+  },
+  "chroma_x0.0": {
+   "reproducible": true,
+   "sha256": "0c0da9b827a762f3",
+   "ms_per_frame": 132.71,
+   "luma_noise_std": 2.253,
+   "chroma_noise_std": 0.0
+  },
+  "chroma_x1.0": {
+   "reproducible": true,
+   "sha256": "62a5e2256d86e3a1",
+   "ms_per_frame": 116.5,
+   "luma_noise_std": 2.253,
+   "chroma_noise_std": 2.16
+  },
+  "chroma_x2.0": {
+   "reproducible": true,
+   "sha256": "6f2139cdbcebec05",
+   "ms_per_frame": 113.37,
+   "luma_noise_std": 2.253,
+   "chroma_noise_std": 3.997
+  }
+ },
+ "seed_distribution": {
+  "stats": {
+   "7391": {
+    "mean": 0.0706,
+    "std": 2.3068,
+    "skew": 0.0528,
+    "kurt": 2.8855
+   },
+   "1": {
+    "mean": 0.0202,
+    "std": 2.252,
+    "skew": -0.0882,
+    "kurt": 2.9927
+   },
+   "2": {
+    "mean": 0.0105,
+    "std": 2.2323,
+    "skew": 0.0495,
+    "kurt": 2.9023
+   },
+   "12345": {
+    "mean": 0.0142,
+    "std": 2.3006,
+    "skew": -0.0215,
+    "kurt": 2.8625
+   },
+   "43690": {
+    "mean": -0.0173,
+    "std": 2.2801,
+    "skew": 0.0464,
+    "kurt": 3.135
+   },
+   "65535": {
+    "mean": -0.0259,
+    "std": 2.3055,
+    "skew": -0.0109,
+    "kurt": 2.9694
+   }
+  },
+  "ks": {
+   "7391-1": 0.0168,
+   "7391-2": 0.0161,
+   "7391-12345": 0.0109,
+   "7391-43690": 0.024,
+   "7391-65535": 0.022,
+   "1-2": 0.0135,
+   "1-12345": 0.0118,
+   "1-43690": 0.0221,
+   "1-65535": 0.0186,
+   "2-12345": 0.017,
+   "2-43690": 0.017,
+   "2-65535": 0.0169,
+   "12345-43690": 0.0221,
+   "12345-65535": 0.0158,
+   "43690-65535": 0.0149
+  }
+ },
+ "concealment": {
+  "rows": [
+   {
+    "lost_frame": 10,
+    "r_copy": 0.9689588120887673,
+    "r_copy_resynth": 0.9705116296283086,
+    "mse_copy": 200.5472265625,
+    "mse_copy_resynth": 190.566640625
+   },
+   {
+    "lost_frame": 20,
+    "r_copy": 0.9756535908415039,
+    "r_copy_resynth": 0.9771983345880065,
+    "mse_copy": 159.5318359375,
+    "mse_copy_resynth": 149.38856770833334
+   },
+   {
+    "lost_frame": 30,
+    "r_copy": 0.9714442157012779,
+    "r_copy_resynth": 0.9728391632648518,
+    "mse_copy": 187.09348958333334,
+    "mse_copy_resynth": 177.9664453125
+   }
+  ],
+  "lower_bound_copy": 0.969,
+  "lower_bound_copy_resynth": 0.9705
+ }
+}
