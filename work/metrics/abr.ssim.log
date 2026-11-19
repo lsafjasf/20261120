@@ -1,0 +1,31 @@
+[rawvideo @ 0x15cfa2c0] Estimating duration from bitrate, this may be inaccurate
+Input #0, rawvideo, from 'work/source_960x540_30.yuv':
+  Duration: 00:00:18.00, start: 0.000000, bitrate: 186624 kb/s
+  Stream #0:0: Video: rawvideo (I420 / 0x30323449), yuv420p, 960x540, 186624 kb/s, 30 tbr, 30 tbn
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from 'work/enc/abr.r1.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.1.100
+  Duration: 00:00:18.00, start: 0.000000, bitrate: 3293 kb/s
+  Stream #1:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 960x540, 3289 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.3.100 libx264
+Stream mapping:
+  Stream #0:0 (rawvideo) -> ssim
+  Stream #1:0 (h264) -> ssim
+  ssim:default -> Stream #0:0 (wrapped_avframe)
+Press [q] to stop, [?] for help
+[Parsed_ssim_0 @ 0x718b8c003380] not matching timebases found between first input: 1/30 and second input 1/15360, results may be incorrect!
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.1.100
+  Stream #0:0: Video: wrapped_avframe, yuv420p(progressive), 960x540, q=2-31, 200 kb/s, 30 fps, 30 tbn
+      Metadata:
+        encoder         : Lavc61.3.100 wrapped_avframe
+[Parsed_ssim_0 @ 0x718b8c003380] SSIM Y:0.682911 (4.988186) U:0.739777 (5.846536) V:0.743669 (5.911995) All:0.702515 (5.265347)
+[out#0/null @ 0x15d19e80] video:232KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  540 fps=0.0 q=-0.0 Lsize=N/A time=00:00:17.96 bitrate=N/A speed=75.4x    

@@ -1,0 +1,31 @@
+[rawvideo @ 0x2b757940] Estimating duration from bitrate, this may be inaccurate
+Input #0, rawvideo, from 'work/source_960x540_30.yuv':
+  Duration: 00:00:18.00, start: 0.000000, bitrate: 186624 kb/s
+  Stream #0:0: Video: rawvideo (I420 / 0x30323449), yuv420p, 960x540, 186624 kb/s, 30 tbr, 30 tbn
+Input #1, mov,mp4,m4a,3gp,3g2,mj2, from 'work/enc/abr_cap.r1.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.1.100
+  Duration: 00:00:18.00, start: 0.000000, bitrate: 2802 kb/s
+  Stream #1:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 960x540, 2799 kb/s, 30 fps, 30 tbr, 15360 tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.3.100 libx264
+Stream mapping:
+  Stream #0:0 (rawvideo) -> psnr
+  Stream #1:0 (h264) -> psnr
+  psnr:default -> Stream #0:0 (wrapped_avframe)
+Press [q] to stop, [?] for help
+[Parsed_psnr_0 @ 0x71ac70003500] not matching timebases found between first input: 1/30 and second input 1/15360, results may be incorrect!
+Output #0, null, to 'pipe:':
+  Metadata:
+    encoder         : Lavf61.1.100
+  Stream #0:0: Video: wrapped_avframe, yuv420p(progressive), 960x540, q=2-31, 200 kb/s, 30 fps, 30 tbn
+      Metadata:
+        encoder         : Lavc61.3.100 wrapped_avframe
+[Parsed_psnr_0 @ 0x71ac70003500] PSNR y:27.082539 u:29.176966 v:29.191552 average:27.676790 min:21.987815 max:53.249429
+[out#0/null @ 0x2b7a9700] video:232KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: unknown
+frame=  540 fps=0.0 q=-0.0 Lsize=N/A time=00:00:17.96 bitrate=N/A speed=77.9x    

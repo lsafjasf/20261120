@@ -1,0 +1,290 @@
+{
+  "crf": {
+    "label": "CRF (uncapped, crf23)",
+    "avg_bitrate_mbps": 18.145,
+    "peak_instant_mbps": 57.811,
+    "peak_1s_window_mbps": 44.322,
+    "bitrate_stdev_mbps": 18.589,
+    "bitrate_cv": 1.024,
+    "qp_mean": 27.64,
+    "qp_stdev": 5.09,
+    "qp_min": 9.64,
+    "qp_max": 33.21,
+    "psnr_avg": 34.848601,
+    "ssim_all": 0.957289,
+    "vbv": {
+      "maxrate_bps": 4000000,
+      "bufsize_bits": 8000000,
+      "underflows": 227,
+      "cpb_saturation_events": 186,
+      "min_fill_frac": 0.0,
+      "mean_fill_frac": 0.4744,
+      "fill_stdev_frac": 0.4617,
+      "fill_range_frac": 1.0,
+      "simulated_with": "reference bucket 4M/8M (stream itself uncapped)"
+    },
+    "loopback": {
+      "max_abs_diff_overall": 88,
+      "max_abs_y": 88,
+      "max_abs_u": 70,
+      "max_abs_v": 64,
+      "mae_all": 2.518,
+      "mae_y": 2.6908,
+      "p99_abs_all": 16,
+      "frames_with_max_ge_64": 12,
+      "frames_with_max_ge_32": 533,
+      "frame_argmax": 357
+    },
+    "timing": {
+      "wall_mean": 2.01,
+      "wall_stdev": 0.106,
+      "wall_runs": [
+        1.94,
+        2.16,
+        1.93
+      ],
+      "cpu_mean": 24.71,
+      "fps_mean": 268.7
+    }
+  },
+  "abr": {
+    "label": "ABR (2.5M, uncapped)",
+    "avg_bitrate_mbps": 3.29,
+    "peak_instant_mbps": 55.004,
+    "peak_1s_window_mbps": 34.294,
+    "bitrate_stdev_mbps": 9.058,
+    "bitrate_cv": 2.753,
+    "qp_mean": 36.27,
+    "qp_stdev": 8.31,
+    "qp_min": 5.36,
+    "qp_max": 47.12,
+    "psnr_avg": 27.38663,
+    "ssim_all": 0.702515,
+    "vbv": {
+      "maxrate_bps": 4000000,
+      "bufsize_bits": 8000000,
+      "underflows": 21,
+      "cpb_saturation_events": 407,
+      "min_fill_frac": 0.0,
+      "mean_fill_frac": 0.8819,
+      "fill_stdev_frac": 0.282,
+      "fill_range_frac": 1.0,
+      "simulated_with": "reference bucket 4M/8M (stream itself uncapped)"
+    },
+    "loopback": {
+      "max_abs_diff_overall": 214,
+      "max_abs_y": 214,
+      "max_abs_u": 149,
+      "max_abs_v": 142,
+      "mae_all": 6.1524,
+      "mae_y": 6.4703,
+      "p99_abs_all": 35,
+      "frames_with_max_ge_64": 428,
+      "frames_with_max_ge_32": 471,
+      "frame_argmax": 187
+    },
+    "timing": {
+      "wall_mean": 1.167,
+      "wall_stdev": 0.041,
+      "wall_runs": [
+        1.22,
+        1.12,
+        1.16
+      ],
+      "cpu_mean": 10.59,
+      "fps_mean": 462.9
+    }
+  },
+  "vbv_native": {
+    "label": "VBV (crf23, max4M/B8M)",
+    "avg_bitrate_mbps": 3.122,
+    "peak_instant_mbps": 31.458,
+    "peak_1s_window_mbps": 7.024,
+    "bitrate_stdev_mbps": 2.913,
+    "bitrate_cv": 0.933,
+    "qp_mean": 31.21,
+    "qp_stdev": 8.31,
+    "qp_min": 12.33,
+    "qp_max": 46.4,
+    "psnr_avg": 27.735884,
+    "ssim_all": 0.721265,
+    "vbv": {
+      "maxrate_bps": 4000000,
+      "bufsize_bits": 8000000,
+      "underflows": 0,
+      "cpb_saturation_events": 261,
+      "min_fill_frac": 0.5608,
+      "mean_fill_frac": 0.8906,
+      "fill_stdev_frac": 0.1287,
+      "fill_range_frac": 0.4392,
+      "simulated_with": "native HRD params"
+    },
+    "loopback": {
+      "max_abs_diff_overall": 197,
+      "max_abs_y": 197,
+      "max_abs_u": 115,
+      "max_abs_v": 128,
+      "mae_all": 5.8087,
+      "mae_y": 6.2167,
+      "p99_abs_all": 35,
+      "frames_with_max_ge_64": 245,
+      "frames_with_max_ge_32": 536,
+      "frame_argmax": 469
+    },
+    "timing": {
+      "wall_mean": 1.167,
+      "wall_stdev": 0.005,
+      "wall_runs": [
+        1.16,
+        1.17,
+        1.17
+      ],
+      "cpu_mean": 11.12,
+      "fps_mean": 462.9
+    }
+  },
+  "crf_cap": {
+    "label": "CRF+cap (crf23, max4M/B8M)",
+    "avg_bitrate_mbps": 3.075,
+    "peak_instant_mbps": 29.657,
+    "peak_1s_window_mbps": 6.765,
+    "bitrate_stdev_mbps": 2.816,
+    "bitrate_cv": 0.916,
+    "qp_mean": 31.22,
+    "qp_stdev": 8.31,
+    "qp_min": 11.23,
+    "qp_max": 46.0,
+    "psnr_avg": 27.736429,
+    "ssim_all": 0.720457,
+    "vbv": {
+      "maxrate_bps": 4000000,
+      "bufsize_bits": 8000000,
+      "underflows": 0,
+      "cpb_saturation_events": 268,
+      "min_fill_frac": 0.5931,
+      "mean_fill_frac": 0.8953,
+      "fill_stdev_frac": 0.1259,
+      "fill_range_frac": 0.4069,
+      "simulated_with": "native HRD params"
+    },
+    "loopback": {
+      "max_abs_diff_overall": 203,
+      "max_abs_y": 203,
+      "max_abs_u": 123,
+      "max_abs_v": 123,
+      "mae_all": 5.8143,
+      "mae_y": 6.2167,
+      "p99_abs_all": 35,
+      "frames_with_max_ge_64": 251,
+      "frames_with_max_ge_32": 536,
+      "frame_argmax": 453
+    },
+    "timing": {
+      "wall_mean": 1.237,
+      "wall_stdev": 0.029,
+      "wall_runs": [
+        1.27,
+        1.24,
+        1.2
+      ],
+      "cpu_mean": 11.7,
+      "fps_mean": 436.7
+    }
+  },
+  "abr_cap": {
+    "label": "ABR+cap (2.5M, max4M/B8M)",
+    "avg_bitrate_mbps": 2.799,
+    "peak_instant_mbps": 26.668,
+    "peak_1s_window_mbps": 7.066,
+    "bitrate_stdev_mbps": 2.752,
+    "bitrate_cv": 0.983,
+    "qp_mean": 31.79,
+    "qp_stdev": 8.36,
+    "qp_min": 5.49,
+    "qp_max": 46.78,
+    "psnr_avg": 27.67679,
+    "ssim_all": 0.714732,
+    "vbv": {
+      "maxrate_bps": 4000000,
+      "bufsize_bits": 8000000,
+      "underflows": 0,
+      "cpb_saturation_events": 322,
+      "min_fill_frac": 0.5479,
+      "mean_fill_frac": 0.9229,
+      "fill_stdev_frac": 0.1203,
+      "fill_range_frac": 0.4521,
+      "simulated_with": "native HRD params"
+    },
+    "loopback": {
+      "max_abs_diff_overall": 207,
+      "max_abs_y": 207,
+      "max_abs_u": 141,
+      "max_abs_v": 126,
+      "mae_all": 5.8927,
+      "mae_y": 6.2853,
+      "p99_abs_all": 35,
+      "frames_with_max_ge_64": 367,
+      "frames_with_max_ge_32": 492,
+      "frame_argmax": 449
+    },
+    "timing": {
+      "wall_mean": 1.203,
+      "wall_stdev": 0.069,
+      "wall_runs": [
+        1.29,
+        1.2,
+        1.12
+      ],
+      "cpu_mean": 11.34,
+      "fps_mean": 448.8
+    }
+  },
+  "vbv_tight": {
+    "label": "VBV tight (crf23, max4M/B4M)",
+    "avg_bitrate_mbps": 2.883,
+    "peak_instant_mbps": 19.33,
+    "peak_1s_window_mbps": 5.684,
+    "bitrate_stdev_mbps": 2.272,
+    "bitrate_cv": 0.788,
+    "qp_mean": 31.32,
+    "qp_stdev": 8.15,
+    "qp_min": 12.35,
+    "qp_max": 44.12,
+    "psnr_avg": 27.748588,
+    "ssim_all": 0.716357,
+    "vbv": {
+      "maxrate_bps": 4000000,
+      "bufsize_bits": 4000000,
+      "underflows": 0,
+      "cpb_saturation_events": 300,
+      "min_fill_frac": 0.5016,
+      "mean_fill_frac": 0.9308,
+      "fill_stdev_frac": 0.1114,
+      "fill_range_frac": 0.4984,
+      "simulated_with": "native HRD params"
+    },
+    "loopback": {
+      "max_abs_diff_overall": 195,
+      "max_abs_y": 195,
+      "max_abs_u": 138,
+      "max_abs_v": 112,
+      "mae_all": 5.8365,
+      "mae_y": 6.2343,
+      "p99_abs_all": 35,
+      "frames_with_max_ge_64": 256,
+      "frames_with_max_ge_32": 536,
+      "frame_argmax": 457
+    },
+    "timing": {
+      "wall_mean": 1.22,
+      "wall_stdev": 0.071,
+      "wall_runs": [
+        1.16,
+        1.32,
+        1.18
+      ],
+      "cpu_mean": 11.4,
+      "fps_mean": 442.6
+    }
+  }
+}

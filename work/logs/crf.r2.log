@@ -1,0 +1,1134 @@
+Splitting the commandline.
+Reading option '-hide_banner' ... matched as option 'hide_banner' (do not show program banner) with argument '1'.
+Reading option '-loglevel' ... matched as option 'loglevel' (set logging level) with argument 'debug'.
+Reading option '-f' ... matched as option 'f' (force container format (auto-detected otherwise)) with argument 'rawvideo'.
+Reading option '-pix_fmt' ... matched as option 'pix_fmt' (set pixel format) with argument 'yuv420p'.
+Reading option '-s' ... matched as option 's' (set frame size (WxH or abbreviation)) with argument '960x540'.
+Reading option '-r' ... matched as option 'r' (override input framerate/convert to given output framerate (Hz value, fraction or abbreviation)) with argument '30'.
+Reading option '-i' ... matched as input url with argument 'work/source_960x540_30.yuv'.
+Reading option '-an' ... matched as option 'an' (disable audio) with argument '1'.
+Reading option '-sn' ... matched as option 'sn' (disable subtitle) with argument '1'.
+Reading option '-dn' ... matched as option 'dn' (disable data) with argument '1'.
+Reading option '-c:v' ... matched as option 'c' (select encoder/decoder ('copy' to copy stream without reencoding)) with argument 'libx264'.
+Reading option '-preset' ... matched as AVOption 'preset' with argument 'medium'.
+Reading option '-g' ... matched as AVOption 'g' with argument '60'.
+Reading option '-keyint_min' ... matched as AVOption 'keyint_min' with argument '60'.
+Reading option '-sc_threshold' ... matched as AVOption 'sc_threshold' with argument '0'.
+Reading option '-pix_fmt' ... matched as option 'pix_fmt' (set pixel format) with argument 'yuv420p'.
+Reading option '-benchmark' ... matched as option 'benchmark' (add timings for benchmarking) with argument '1'.
+Reading option '-crf' ... matched as AVOption 'crf' with argument '23'.
+Reading option '-y' ... matched as option 'y' (overwrite output files) with argument '1'.
+Reading option 'work/enc/crf.r2.mp4' ... matched as output url.
+Finished splitting the commandline.
+Parsing a group of options: global .
+Applying option hide_banner (do not show program banner) with argument 1.
+Applying option loglevel (set logging level) with argument debug.
+Applying option benchmark (add timings for benchmarking) with argument 1.
+Applying option y (overwrite output files) with argument 1.
+Successfully parsed a group of options.
+Parsing a group of options: input url work/source_960x540_30.yuv.
+Applying option f (force container format (auto-detected otherwise)) with argument rawvideo.
+Applying option pix_fmt (set pixel format) with argument yuv420p.
+Applying option s (set frame size (WxH or abbreviation)) with argument 960x540.
+Applying option r (override input framerate/convert to given output framerate (Hz value, fraction or abbreviation)) with argument 30.
+Successfully parsed a group of options.
+Opening an input file: work/source_960x540_30.yuv.
+[rawvideo @ 0x2956f140] Opening 'work/source_960x540_30.yuv' for reading
+[file @ 0x2956fa80] Setting default whitelist 'file,crypto,data'
+[rawvideo @ 0x2956f140] Before avformat_find_stream_info() pos: 0 bytes read:32768 seeks:0 nb_streams:1
+[rawvideo @ 0x2956f140] All info found
+[rawvideo @ 0x2956f140] Estimating duration from bitrate, this may be inaccurate
+[rawvideo @ 0x2956f140] After avformat_find_stream_info() pos: 777600 bytes read:777600 seeks:0 frames:1
+Input #0, rawvideo, from 'work/source_960x540_30.yuv':
+  Duration: 00:00:18.00, start: 0.000000, bitrate: 186624 kb/s
+  Stream #0:0, 1, 1/30: Video: rawvideo, 1 reference frame (I420 / 0x30323449), yuv420p, 960x540, 0/1, 186624 kb/s, 30 tbr, 30 tbn
+Successfully opened the file.
+Parsing a group of options: output url work/enc/crf.r2.mp4.
+Applying option an (disable audio) with argument 1.
+Applying option sn (disable subtitle) with argument 1.
+Applying option dn (disable data) with argument 1.
+Applying option c:v (select encoder/decoder ('copy' to copy stream without reencoding)) with argument libx264.
+Applying option pix_fmt (set pixel format) with argument yuv420p.
+Successfully parsed a group of options.
+Opening an output file: work/enc/crf.r2.mp4.
+[out#0/mp4 @ 0x2957b9c0] No explicit maps, mapping streams automatically...
+[vost#0:0/libx264 @ 0x2957c6c0] Created video stream from input stream 0:0
+[file @ 0x29584f00] Setting default whitelist 'file,crypto,data'
+Successfully opened the file.
+Stream mapping:
+  Stream #0:0 -> #0:0 (rawvideo (native) -> h264 (libx264))
+[vost#0:0/libx264 @ 0x2957c6c0] Starting thread...
+[vf#0:0 @ 0x29580f80] Starting thread...
+[vist#0:0/rawvideo @ 0x2957ae80] [dec:rawvideo @ 0x29582dc0] Starting thread...
+[in#0/rawvideo @ 0x2956ee40] Starting thread...
+Press [q] to stop, [?] for help
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+detected 20 logical cores
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'video_size' to value '960x540'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'pix_fmt' to value '0'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'time_base' to value '1/30'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'pixel_aspect' to value '0/1'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'colorspace' to value '2'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'range' to value '0'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] Setting 'frame_rate' to value '30/1'
+[graph 0 input from stream 0:0 @ 0x7a173c003400] w:960 h:540 pixfmt:yuv420p tb:1/30 fr:30/1 sar:0/1 csp:unknown range:unknown
+[format @ 0x7a173c004ec0] Setting 'pix_fmts' to value 'yuv420p'
+[AVFilterGraph @ 0x7a173c0011c0] query_formats: 4 queried, 9 merged, 0 already done, 0 delayed
+[graph 0 input from stream 0:0 @ 0x7a173c003400] video frame properties congruent with link at pts_time: 0
+[libx264 @ 0x2957cb80] using mv_range_thread = 24
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 5 times
+[libx264 @ 0x2957cb80] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0x2957cb80] 264 - core 164 r3191 4613ac3 - H.264/MPEG-4 AVC codec - Copyleft 2003-2024 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=17 lookahead_threads=2 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=60 keyint_min=31 scenecut=0 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=23.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'work/enc/crf.r2.mp4':
+  Metadata:
+    encoder         : Lavf61.1.100
+  Stream #0:0, 0, 1/15360: Video: h264, 1 reference frame (avc1 / 0x31637661), yuv420p(progressive), 960x540, 0/1, q=2-31, 30 fps, 15360 tbn
+      Metadata:
+        encoder         : Lavc61.3.100 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+[out#0/mp4 @ 0x2957b9c0] Starting thread...
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 69 times
+[libx264 @ 0x2957cb80] frame=   0 QP=14.20 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=14097 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   1 QP=25.62 NAL=2 Slice:P Poc:6   I:145  P:313  SKIP:1582 size=8961 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   2 QP=29.66 NAL=2 Slice:B Poc:2   I:10   P:452  SKIP:1578 size=5998 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   3 QP=30.68 NAL=0 Slice:B Poc:4   I:5    P:335  SKIP:1700 size=4810 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   4 QP=24.67 NAL=2 Slice:P Poc:10  I:108  P:360  SKIP:1572 size=7505 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   5 QP=30.52 NAL=0 Slice:B Poc:8   I:9    P:375  SKIP:1656 size=4678 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   6 QP=22.28 NAL=2 Slice:P Poc:14  I:142  P:337  SKIP:1561 size=7633 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   7 QP=30.61 NAL=0 Slice:B Poc:12  I:1    P:356  SKIP:1683 size=4751 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   8 QP=22.47 NAL=2 Slice:P Poc:18  I:120  P:343  SKIP:1577 size=7095 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=   9 QP=29.14 NAL=0 Slice:B Poc:16  I:15   P:409  SKIP:1616 size=4486 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  10 QP=22.97 NAL=2 Slice:P Poc:22  I:153  P:348  SKIP:1539 size=7699 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  11 QP=30.03 NAL=0 Slice:B Poc:20  I:1    P:352  SKIP:1687 size=4775 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  12 QP=20.91 NAL=2 Slice:P Poc:28  I:167  P:357  SKIP:1516 size=7771 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  13 QP=30.01 NAL=2 Slice:B Poc:24  I:8    P:393  SKIP:1639 size=5578 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  14 QP=29.94 NAL=0 Slice:B Poc:26  I:5    P:346  SKIP:1689 size=4536 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  15 QP=24.09 NAL=2 Slice:P Poc:34  I:128  P:342  SKIP:1570 size=7509 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  16 QP=25.82 NAL=2 Slice:B Poc:30  I:3    P:411  SKIP:1626 size=5513 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  17 QP=30.73 NAL=0 Slice:B Poc:32  I:5    P:330  SKIP:1705 size=4806 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  18 QP=23.71 NAL=2 Slice:P Poc:38  I:93   P:328  SKIP:1619 size=7457 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  19 QP=32.11 NAL=0 Slice:B Poc:36  I:5    P:348  SKIP:1687 size=5090 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  20 QP=22.05 NAL=2 Slice:P Poc:42  I:116  P:322  SKIP:1602 size=7715 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  21 QP=31.28 NAL=0 Slice:B Poc:40  I:8    P:322  SKIP:1710 size=4977 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  22 QP=25.65 NAL=2 Slice:P Poc:50  I:158  P:343  SKIP:1539 size=7783 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  23 QP=30.10 NAL=2 Slice:B Poc:46  I:10   P:392  SKIP:1638 size=6500 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  24 QP=31.34 NAL=0 Slice:B Poc:44  I:6    P:361  SKIP:1673 size=5278 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  25 QP=31.65 NAL=0 Slice:B Poc:48  I:3    P:309  SKIP:1728 size=5026 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  26 QP=22.98 NAL=2 Slice:P Poc:56  I:139  P:326  SKIP:1575 size=7871 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  27 QP=30.89 NAL=2 Slice:B Poc:52  I:7    P:341  SKIP:1692 size=5607 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  28 QP=32.16 NAL=0 Slice:B Poc:54  I:3    P:373  SKIP:1664 size=5073 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  29 QP=25.32 NAL=2 Slice:P Poc:62  I:127  P:310  SKIP:1603 size=8112 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  30 QP=30.53 NAL=2 Slice:B Poc:58  I:8    P:318  SKIP:1714 size=5421 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  31 QP=32.63 NAL=0 Slice:B Poc:60  I:3    P:345  SKIP:1692 size=4851 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  32 QP=24.92 NAL=2 Slice:P Poc:68  I:128  P:328  SKIP:1584 size=8501 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  33 QP=30.51 NAL=2 Slice:B Poc:64  I:9    P:325  SKIP:1706 size=5611 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  34 QP=28.78 NAL=0 Slice:B Poc:66  I:11   P:369  SKIP:1660 size=4778 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  35 QP=21.06 NAL=2 Slice:P Poc:72  I:100  P:344  SKIP:1596 size=7972 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  36 QP=31.49 NAL=0 Slice:B Poc:70  I:7    P:331  SKIP:1702 size=4528 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  37 QP=24.11 NAL=2 Slice:P Poc:80  I:172  P:338  SKIP:1530 size=8723 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  38 QP=30.03 NAL=2 Slice:B Poc:76  I:6    P:421  SKIP:1613 size=6106 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  39 QP=31.20 NAL=0 Slice:B Poc:74  I:6    P:379  SKIP:1655 size=4820 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  40 QP=32.87 NAL=0 Slice:B Poc:78  I:2    P:342  SKIP:1696 size=4498 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  41 QP=27.05 NAL=2 Slice:P Poc:84  I:80   P:310  SKIP:1650 size=8119 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  42 QP=24.10 NAL=0 Slice:B Poc:82  I:5    P:371  SKIP:1664 size=4901 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  43 QP=26.15 NAL=2 Slice:P Poc:92  I:148  P:301  SKIP:1591 size=9401 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  44 QP=27.40 NAL=2 Slice:B Poc:88  I:7    P:385  SKIP:1648 size=6531 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  45 QP=29.70 NAL=0 Slice:B Poc:86  I:2    P:319  SKIP:1719 size=4996 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  46 QP=29.23 NAL=0 Slice:B Poc:90  I:7    P:337  SKIP:1696 size=5095 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  47 QP=23.56 NAL=2 Slice:P Poc:100 I:153  P:279  SKIP:1608 size=9877 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  48 QP=24.90 NAL=2 Slice:B Poc:96  I:10   P:372  SKIP:1658 size=6504 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  49 QP=33.14 NAL=0 Slice:B Poc:94  I:4    P:324  SKIP:1712 size=4964 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  50 QP=30.86 NAL=0 Slice:B Poc:98  I:11   P:341  SKIP:1688 size=5341 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  51 QP=25.28 NAL=2 Slice:P Poc:108 I:175  P:256  SKIP:1609 size=10417 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  52 QP=30.06 NAL=2 Slice:B Poc:104 I:8    P:390  SKIP:1642 size=6545 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  53 QP=33.13 NAL=0 Slice:B Poc:102 I:10   P:321  SKIP:1709 size=5352 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  54 QP=31.62 NAL=0 Slice:B Poc:106 I:12   P:339  SKIP:1689 size=5451 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  55 QP=18.41 NAL=2 Slice:P Poc:116 I:189  P:235  SKIP:1616 size=10848 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  56 QP=28.41 NAL=2 Slice:B Poc:112 I:12   P:364  SKIP:1664 size=6480 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  57 QP=30.11 NAL=0 Slice:B Poc:110 I:6    P:324  SKIP:1710 size=4975 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  58 QP=29.10 NAL=0 Slice:B Poc:114 I:7    P:333  SKIP:1700 size=5209 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  59 QP=32.91 NAL=2 Slice:P Poc:118 I:26   P:275  SKIP:1739 size=5309 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  60 QP=12.35 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=18705 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  61 QP=27.74 NAL=2 Slice:P Poc:4   I:66   P:273  SKIP:1701 size=9208 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  62 QP=29.95 NAL=0 Slice:B Poc:2   I:6    P:299  SKIP:1735 size=4950 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  63 QP=21.13 NAL=2 Slice:P Poc:12  I:222  P:264  SKIP:1554 size=11894 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  64 QP=31.44 NAL=2 Slice:B Poc:8   I:11   P:382  SKIP:1647 size=6570 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  65 QP=32.40 NAL=0 Slice:B Poc:6   I:1    P:351  SKIP:1688 size=5050 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  66 QP=30.12 NAL=0 Slice:B Poc:10  I:8    P:344  SKIP:1688 size=4664 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  67 QP=20.93 NAL=2 Slice:P Poc:20  I:231  P:267  SKIP:1542 size=11939 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  68 QP=30.10 NAL=2 Slice:B Poc:16  I:8    P:411  SKIP:1621 size=6202 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  69 QP=31.96 NAL=0 Slice:B Poc:14  I:5    P:347  SKIP:1688 size=5023 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  70 QP=32.11 NAL=0 Slice:B Poc:18  I:7    P:355  SKIP:1678 size=4887 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  71 QP=25.86 NAL=2 Slice:P Poc:28  I:238  P:265  SKIP:1537 size=11999 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  72 QP=29.79 NAL=2 Slice:B Poc:24  I:5    P:414  SKIP:1621 size=6538 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  73 QP=32.27 NAL=0 Slice:B Poc:22  I:2    P:371  SKIP:1667 size=5064 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  74 QP=31.83 NAL=0 Slice:B Poc:26  I:5    P:354  SKIP:1681 size=4757 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  75 QP=25.05 NAL=2 Slice:P Poc:36  I:212  P:266  SKIP:1562 size=11405 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  76 QP=28.76 NAL=2 Slice:B Poc:32  I:7    P:408  SKIP:1625 size=6397 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  77 QP=31.29 NAL=0 Slice:B Poc:30  I:6    P:369  SKIP:1665 size=4801 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  78 QP=30.97 NAL=0 Slice:B Poc:34  I:4    P:336  SKIP:1700 size=5162 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  79 QP=24.75 NAL=2 Slice:P Poc:44  I:238  P:254  SKIP:1548 size=11697 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  80 QP=29.82 NAL=2 Slice:B Poc:40  I:8    P:400  SKIP:1632 size=6343 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  81 QP=31.52 NAL=0 Slice:B Poc:38  I:1    P:368  SKIP:1671 size=4855 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  82 QP=31.51 NAL=0 Slice:B Poc:42  I:3    P:356  SKIP:1681 size=4833 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  83 QP=24.78 NAL=2 Slice:P Poc:52  I:226  P:254  SKIP:1560 size=10786 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  84 QP=29.41 NAL=2 Slice:B Poc:48  I:5    P:405  SKIP:1630 size=6569 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  85 QP=32.34 NAL=0 Slice:B Poc:46  I:6    P:373  SKIP:1661 size=5130 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  86 QP=31.89 NAL=0 Slice:B Poc:50  I:3    P:350  SKIP:1687 size=5071 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  87 QP=24.82 NAL=2 Slice:P Poc:58  I:175  P:329  SKIP:1536 size=9583 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  88 QP=30.75 NAL=2 Slice:B Poc:54  I:10   P:404  SKIP:1626 size=6056 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  89 QP=29.72 NAL=0 Slice:B Poc:56  I:7    P:355  SKIP:1678 size=5087 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  90 QP=30.10 NAL=2 Slice:P Poc:66  I:1848 P:192  SKIP:0    size=143067 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  91 QP=30.24 NAL=2 Slice:B Poc:62  I:1470 P:570  SKIP:0    size=136708 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  92 QP=30.78 NAL=0 Slice:B Poc:60  I:1282 P:758  SKIP:0    size=125488 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  93 QP=30.76 NAL=0 Slice:B Poc:64  I:1390 P:650  SKIP:0    size=128132 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  94 QP=30.02 NAL=2 Slice:P Poc:74  I:1834 P:206  SKIP:0    size=144346 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  95 QP=30.27 NAL=2 Slice:B Poc:70  I:1499 P:540  SKIP:1    size=137449 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  96 QP=30.82 NAL=0 Slice:B Poc:68  I:1742 P:298  SKIP:0    size=129145 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  97 QP=30.87 NAL=0 Slice:B Poc:72  I:1701 P:338  SKIP:1    size=129065 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  98 QP=30.13 NAL=2 Slice:P Poc:82  I:1815 P:225  SKIP:0    size=143396 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame=  99 QP=30.26 NAL=2 Slice:B Poc:78  I:1786 P:254  SKIP:0    size=140662 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 100 QP=30.82 NAL=0 Slice:B Poc:76  I:1742 P:297  SKIP:1    size=129261 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 101 QP=30.80 NAL=0 Slice:B Poc:80  I:1730 P:310  SKIP:0    size=130459 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 102 QP=30.19 NAL=2 Slice:P Poc:90  I:1810 P:230  SKIP:0    size=141910 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 103 QP=30.25 NAL=2 Slice:B Poc:86  I:1789 P:251  SKIP:0    size=141418 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 104 QP=30.91 NAL=0 Slice:B Poc:84  I:1716 P:324  SKIP:0    size=128640 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 105 QP=30.86 NAL=0 Slice:B Poc:88  I:1714 P:326  SKIP:0    size=128906 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 106 QP=30.28 NAL=2 Slice:P Poc:98  I:1798 P:242  SKIP:0    size=140750 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 107 QP=30.35 NAL=2 Slice:B Poc:94  I:1777 P:263  SKIP:0    size=138856 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 108 QP=30.84 NAL=0 Slice:B Poc:92  I:1749 P:290  SKIP:1    size=129399 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 109 QP=30.75 NAL=0 Slice:B Poc:96  I:1732 P:308  SKIP:0    size=131440 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 110 QP=30.17 NAL=2 Slice:P Poc:106 I:1813 P:227  SKIP:0    size=142761 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 111 QP=30.32 NAL=2 Slice:B Poc:102 I:1778 P:262  SKIP:0    size=139424 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 112 QP=30.67 NAL=0 Slice:B Poc:100 I:1726 P:314  SKIP:0    size=132698 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 113 QP=30.69 NAL=0 Slice:B Poc:104 I:1752 P:287  SKIP:1    size=132560 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 114 QP=30.15 NAL=2 Slice:P Poc:114 I:1836 P:204  SKIP:0    size=143280 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 115 QP=30.32 NAL=2 Slice:B Poc:110 I:1800 P:240  SKIP:0    size=139602 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 116 QP=30.67 NAL=0 Slice:B Poc:108 I:1754 P:285  SKIP:1    size=133109 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 117 QP=30.58 NAL=0 Slice:B Poc:112 I:1768 P:271  SKIP:1    size=134553 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 118 QP=30.13 NAL=2 Slice:P Poc:118 I:1826 P:214  SKIP:0    size=142820 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 119 QP=30.64 NAL=0 Slice:B Poc:116 I:1772 P:268  SKIP:0    size=133631 bytes
+[libx264 @ 0x2957cb80] frame= 120 QP=27.29 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=195601 bytes
+[libx264 @ 0x2957cb80] frame= 121 QP=30.10 NAL=2 Slice:P Poc:8   I:1918 P:122  SKIP:0    size=145558 bytes
+[libx264 @ 0x2957cb80] frame= 122 QP=30.47 NAL=2 Slice:B Poc:4   I:1822 P:218  SKIP:0    size=137587 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 3 times
+[libx264 @ 0x2957cb80] frame= 123 QP=30.69 NAL=0 Slice:B Poc:2   I:1773 P:266  SKIP:1    size=132374 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 124 QP=30.65 NAL=0 Slice:B Poc:6   I:1762 P:277  SKIP:1    size=133481 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 125 QP=29.99 NAL=2 Slice:P Poc:16  I:1852 P:188  SKIP:0    size=146347 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+frame=  126 fps=0.0 q=29.0 size=    5120KiB time=00:00:04.13 bitrate=10147.6kbits/s speed=8.27x    [libx264 @ 0x2957cb80] frame= 126 QP=30.25 NAL=2 Slice:B Poc:12  I:1803 P:237  SKIP:0    size=140888 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 127 QP=30.62 NAL=0 Slice:B Poc:10  I:1785 P:255  SKIP:0    size=134157 bytes
+[libx264 @ 0x2957cb80] frame= 128 QP=30.59 NAL=0 Slice:B Poc:14  I:1745 P:295  SKIP:0    size=134120 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 129 QP=30.31 NAL=2 Slice:P Poc:24  I:1847 P:193  SKIP:0    size=141039 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 130 QP=30.33 NAL=2 Slice:B Poc:20  I:1789 P:251  SKIP:0    size=139636 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 131 QP=30.57 NAL=0 Slice:B Poc:18  I:1760 P:279  SKIP:1    size=134619 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 132 QP=30.65 NAL=0 Slice:B Poc:22  I:1746 P:292  SKIP:2    size=133227 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 133 QP=30.10 NAL=2 Slice:P Poc:32  I:1844 P:196  SKIP:0    size=144368 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 134 QP=30.34 NAL=2 Slice:B Poc:28  I:1791 P:249  SKIP:0    size=139631 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 135 QP=30.87 NAL=0 Slice:B Poc:26  I:1731 P:308  SKIP:1    size=129483 bytes
+[libx264 @ 0x2957cb80] frame= 136 QP=30.85 NAL=0 Slice:B Poc:30  I:1741 P:298  SKIP:1    size=129538 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 137 QP=30.18 NAL=2 Slice:P Poc:40  I:1863 P:177  SKIP:0    size=143456 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 138 QP=30.52 NAL=2 Slice:B Poc:36  I:1805 P:235  SKIP:0    size=136876 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 139 QP=30.87 NAL=0 Slice:B Poc:34  I:1742 P:298  SKIP:0    size=129471 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 140 QP=30.85 NAL=0 Slice:B Poc:38  I:1760 P:276  SKIP:4    size=129812 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 141 QP=30.46 NAL=2 Slice:P Poc:48  I:1855 P:185  SKIP:0    size=138829 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 142 QP=30.48 NAL=2 Slice:B Poc:44  I:1811 P:229  SKIP:0    size=137728 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 143 QP=30.84 NAL=0 Slice:B Poc:42  I:1770 P:267  SKIP:3    size=130567 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 144 QP=30.82 NAL=0 Slice:B Poc:46  I:1769 P:271  SKIP:0    size=130344 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 145 QP=30.36 NAL=2 Slice:P Poc:56  I:1872 P:168  SKIP:0    size=140623 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 146 QP=30.54 NAL=2 Slice:B Poc:52  I:1824 P:216  SKIP:0    size=136610 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 147 QP=30.59 NAL=0 Slice:B Poc:50  I:1781 P:259  SKIP:0    size=134741 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 148 QP=30.65 NAL=0 Slice:B Poc:54  I:1778 P:262  SKIP:0    size=133777 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 149 QP=30.47 NAL=2 Slice:P Poc:64  I:1867 P:173  SKIP:0    size=139430 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 150 QP=30.35 NAL=2 Slice:B Poc:60  I:1808 P:232  SKIP:0    size=139691 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 151 QP=30.65 NAL=0 Slice:B Poc:58  I:1788 P:250  SKIP:2    size=133927 bytes
+[libx264 @ 0x2957cb80] frame= 152 QP=30.62 NAL=0 Slice:B Poc:62  I:1742 P:296  SKIP:2    size=133215 bytes
+[libx264 @ 0x2957cb80] frame= 153 QP=30.29 NAL=2 Slice:P Poc:72  I:1878 P:162  SKIP:0    size=142853 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 2 times
+[libx264 @ 0x2957cb80] frame= 154 QP=30.22 NAL=2 Slice:B Poc:68  I:1800 P:240  SKIP:0    size=141457 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 155 QP=30.60 NAL=0 Slice:B Poc:66  I:1753 P:284  SKIP:3    size=134427 bytes
+[libx264 @ 0x2957cb80] frame= 156 QP=30.62 NAL=0 Slice:B Poc:70  I:1742 P:298  SKIP:0    size=133851 bytes
+[libx264 @ 0x2957cb80] frame= 157 QP=30.16 NAL=2 Slice:P Poc:80  I:1890 P:150  SKIP:0    size=145307 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 2 times
+[libx264 @ 0x2957cb80] frame= 158 QP=30.35 NAL=2 Slice:B Poc:76  I:1784 P:256  SKIP:0    size=139504 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 159 QP=30.65 NAL=0 Slice:B Poc:74  I:1736 P:303  SKIP:1    size=133096 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 160 QP=30.71 NAL=0 Slice:B Poc:78  I:1727 P:312  SKIP:1    size=132453 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 161 QP=30.22 NAL=2 Slice:P Poc:88  I:1861 P:179  SKIP:0    size=144385 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 162 QP=30.48 NAL=2 Slice:B Poc:84  I:1752 P:288  SKIP:0    size=137228 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 163 QP=30.68 NAL=0 Slice:B Poc:82  I:1738 P:302  SKIP:0    size=133286 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 164 QP=30.73 NAL=0 Slice:B Poc:86  I:1686 P:353  SKIP:1    size=131778 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 165 QP=30.14 NAL=2 Slice:P Poc:96  I:1854 P:186  SKIP:0    size=145078 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 166 QP=30.41 NAL=2 Slice:B Poc:92  I:1745 P:295  SKIP:0    size=138623 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 167 QP=30.63 NAL=0 Slice:B Poc:90  I:1727 P:312  SKIP:1    size=133594 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 168 QP=30.59 NAL=0 Slice:B Poc:94  I:1710 P:329  SKIP:1    size=134395 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 169 QP=30.17 NAL=2 Slice:P Poc:104 I:1871 P:169  SKIP:0    size=144738 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 170 QP=30.45 NAL=2 Slice:B Poc:100 I:1752 P:288  SKIP:0    size=137876 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 171 QP=30.61 NAL=0 Slice:B Poc:98  I:1726 P:312  SKIP:2    size=134424 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 172 QP=30.67 NAL=0 Slice:B Poc:102 I:1726 P:314  SKIP:0    size=133227 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 173 QP=30.14 NAL=2 Slice:P Poc:112 I:1876 P:164  SKIP:0    size=145333 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 174 QP=30.43 NAL=2 Slice:B Poc:108 I:1741 P:299  SKIP:0    size=138057 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 175 QP=30.82 NAL=0 Slice:B Poc:106 I:1709 P:331  SKIP:0    size=130567 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 176 QP=30.78 NAL=0 Slice:B Poc:110 I:1726 P:314  SKIP:0    size=131488 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 177 QP=30.84 NAL=2 Slice:P Poc:118 I:1755 P:285  SKIP:0    size=131270 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 178 QP=30.77 NAL=2 Slice:B Poc:114 I:1712 P:327  SKIP:1    size=131221 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 179 QP=30.79 NAL=0 Slice:B Poc:116 I:1731 P:306  SKIP:3    size=130656 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 180 QP=27.15 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=198176 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 181 QP=30.04 NAL=2 Slice:P Poc:8   I:1945 P:95   SKIP:0    size=148188 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 182 QP=30.20 NAL=2 Slice:B Poc:4   I:1792 P:248  SKIP:0    size=142571 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 183 QP=30.83 NAL=0 Slice:B Poc:2   I:1718 P:322  SKIP:0    size=130314 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 184 QP=30.80 NAL=0 Slice:B Poc:6   I:1707 P:333  SKIP:0    size=130638 bytes
+[libx264 @ 0x2957cb80] frame= 185 QP=30.18 NAL=2 Slice:P Poc:16  I:1866 P:174  SKIP:0    size=144967 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 186 QP=30.34 NAL=2 Slice:B Poc:12  I:1748 P:292  SKIP:0    size=139801 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 187 QP=30.81 NAL=0 Slice:B Poc:10  I:1708 P:329  SKIP:3    size=130219 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 188 QP=30.83 NAL=0 Slice:B Poc:14  I:1716 P:324  SKIP:0    size=130110 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 189 QP=30.04 NAL=2 Slice:P Poc:24  I:1887 P:153  SKIP:0    size=147354 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 190 QP=30.29 NAL=2 Slice:B Poc:20  I:1735 P:304  SKIP:1    size=139976 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 191 QP=30.64 NAL=0 Slice:B Poc:18  I:1711 P:328  SKIP:1    size=133421 bytes
+[libx264 @ 0x2957cb80] frame= 192 QP=30.61 NAL=0 Slice:B Poc:22  I:1700 P:338  SKIP:2    size=133990 bytes
+[libx264 @ 0x2957cb80] frame= 193 QP=30.24 NAL=2 Slice:P Poc:32  I:1829 P:211  SKIP:0    size=143409 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 2 times
+[libx264 @ 0x2957cb80] frame= 194 QP=30.59 NAL=2 Slice:B Poc:28  I:1702 P:337  SKIP:1    size=135057 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 195 QP=30.66 NAL=0 Slice:B Poc:26  I:1705 P:335  SKIP:0    size=132336 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 196 QP=30.64 NAL=0 Slice:B Poc:30  I:1716 P:324  SKIP:0    size=133543 bytes
+[libx264 @ 0x2957cb80] frame= 197 QP=30.21 NAL=2 Slice:P Poc:40  I:1815 P:225  SKIP:0    size=143276 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 198 QP=30.27 NAL=2 Slice:B Poc:36  I:1732 P:308  SKIP:0    size=140488 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 199 QP=30.64 NAL=0 Slice:B Poc:34  I:1715 P:325  SKIP:0    size=133388 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 200 QP=30.65 NAL=0 Slice:B Poc:38  I:1699 P:341  SKIP:0    size=132983 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 201 QP=30.31 NAL=2 Slice:P Poc:48  I:1811 P:229  SKIP:0    size=140976 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 202 QP=30.46 NAL=2 Slice:B Poc:44  I:1745 P:295  SKIP:0    size=137885 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 203 QP=30.63 NAL=0 Slice:B Poc:42  I:1726 P:314  SKIP:0    size=133725 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 204 QP=30.80 NAL=0 Slice:B Poc:46  I:1730 P:309  SKIP:1    size=131163 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 205 QP=30.35 NAL=2 Slice:P Poc:56  I:1782 P:258  SKIP:0    size=139792 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 206 QP=30.38 NAL=2 Slice:B Poc:52  I:1743 P:295  SKIP:2    size=138638 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 207 QP=30.87 NAL=0 Slice:B Poc:50  I:1684 P:356  SKIP:0    size=129265 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 208 QP=30.83 NAL=0 Slice:B Poc:54  I:1720 P:319  SKIP:1    size=130471 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 209 QP=15.63 NAL=2 Slice:P Poc:64  I:1989 P:51   SKIP:0    size=14585 bytes
+[libx264 @ 0x2957cb80] frame= 210 QP=29.18 NAL=2 Slice:B Poc:60  I:47   P:261  SKIP:1732 size=6905 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 211 QP=30.79 NAL=0 Slice:B Poc:58  I:1390 P:650  SKIP:0    size=126114 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 212 QP=30.49 NAL=0 Slice:B Poc:62  I:1    P:329  SKIP:1710 size=4877 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 213 QP=24.56 NAL=2 Slice:P Poc:70  I:183  P:351  SKIP:1506 size=8225 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 214 QP=28.72 NAL=2 Slice:B Poc:66  I:3    P:387  SKIP:1650 size=5389 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 215 QP=30.47 NAL=0 Slice:B Poc:68  I:5    P:454  SKIP:1581 size=5015 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 216 QP=23.07 NAL=2 Slice:P Poc:74  I:135  P:355  SKIP:1550 size=7838 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 217 QP=31.18 NAL=0 Slice:B Poc:72  I:4    P:377  SKIP:1659 size=4670 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 218 QP=22.02 NAL=2 Slice:P Poc:78  I:100  P:381  SKIP:1559 size=7221 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 219 QP=29.69 NAL=0 Slice:B Poc:76  I:8    P:408  SKIP:1624 size=4349 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 220 QP=22.84 NAL=2 Slice:P Poc:82  I:123  P:366  SKIP:1551 size=7724 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 221 QP=30.69 NAL=0 Slice:B Poc:80  I:1    P:378  SKIP:1661 size=4629 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 222 QP=23.13 NAL=2 Slice:P Poc:88  I:144  P:381  SKIP:1515 size=7706 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 223 QP=29.79 NAL=2 Slice:B Poc:84  I:2    P:446  SKIP:1592 size=5593 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+frame=  224 fps=224 q=29.0 size=   16640KiB time=00:00:07.40 bitrate=18421.0kbits/s speed= 7.4x    [libx264 @ 0x2957cb80] frame= 224 QP=31.66 NAL=0 Slice:B Poc:86  I:0    P:347  SKIP:1693 size=4472 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 225 QP=25.29 NAL=2 Slice:P Poc:94  I:111  P:353  SKIP:1576 size=7387 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 226 QP=26.24 NAL=2 Slice:B Poc:90  I:4    P:370  SKIP:1666 size=5605 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 227 QP=31.24 NAL=0 Slice:B Poc:92  I:3    P:323  SKIP:1714 size=4800 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 228 QP=23.92 NAL=2 Slice:P Poc:98  I:89   P:341  SKIP:1610 size=7561 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 229 QP=30.91 NAL=0 Slice:B Poc:96  I:5    P:339  SKIP:1696 size=5183 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 230 QP=18.54 NAL=2 Slice:P Poc:102 I:117  P:328  SKIP:1595 size=7842 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 231 QP=31.22 NAL=0 Slice:B Poc:100 I:12   P:301  SKIP:1727 size=5014 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 232 QP=23.90 NAL=2 Slice:P Poc:110 I:160  P:341  SKIP:1539 size=7924 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 233 QP=30.23 NAL=2 Slice:B Poc:106 I:15   P:385  SKIP:1640 size=6565 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 234 QP=30.52 NAL=0 Slice:B Poc:104 I:9    P:327  SKIP:1704 size=5184 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 235 QP=30.74 NAL=0 Slice:B Poc:108 I:4    P:316  SKIP:1720 size=5214 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 236 QP=24.56 NAL=2 Slice:P Poc:116 I:137  P:317  SKIP:1586 size=7928 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 237 QP=30.54 NAL=2 Slice:B Poc:112 I:7    P:349  SKIP:1684 size=5551 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 238 QP=32.67 NAL=0 Slice:B Poc:114 I:2    P:363  SKIP:1675 size=4992 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 239 QP=21.85 NAL=2 Slice:P Poc:118 I:42   P:283  SKIP:1715 size=5623 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 240 QP=9.64 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=17241 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 241 QP=21.24 NAL=2 Slice:P Poc:8   I:240  P:216  SKIP:1584 size=11179 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 242 QP=26.04 NAL=2 Slice:B Poc:4   I:16   P:382  SKIP:1642 size=6355 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 243 QP=30.75 NAL=0 Slice:B Poc:2   I:6    P:306  SKIP:1728 size=4901 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 244 QP=29.63 NAL=0 Slice:B Poc:6   I:8    P:330  SKIP:1702 size=4807 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 245 QP=28.58 NAL=2 Slice:P Poc:12  I:95   P:333  SKIP:1612 size=7848 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 246 QP=31.03 NAL=0 Slice:B Poc:10  I:10   P:330  SKIP:1700 size=4475 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 247 QP=23.94 NAL=2 Slice:P Poc:20  I:170  P:364  SKIP:1506 size=8784 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 248 QP=30.58 NAL=2 Slice:B Poc:16  I:7    P:416  SKIP:1617 size=6162 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 249 QP=32.10 NAL=0 Slice:B Poc:14  I:9    P:369  SKIP:1662 size=4915 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 250 QP=32.62 NAL=0 Slice:B Poc:18  I:3    P:335  SKIP:1702 size=4499 bytes
+[libx264 @ 0x2957cb80] frame= 251 QP=22.47 NAL=2 Slice:P Poc:24  I:72   P:313  SKIP:1655 size=8021 bytes
+[libx264 @ 0x2957cb80] frame= 252 QP=23.52 NAL=0 Slice:B Poc:22  I:3    P:369  SKIP:1668 size=4929 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 2 times
+[libx264 @ 0x2957cb80] frame= 253 QP=19.22 NAL=2 Slice:P Poc:32  I:148  P:313  SKIP:1579 size=9332 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 254 QP=31.27 NAL=2 Slice:B Poc:28  I:8    P:367  SKIP:1665 size=6392 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 255 QP=32.64 NAL=0 Slice:B Poc:26  I:2    P:325  SKIP:1713 size=5053 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 256 QP=32.40 NAL=0 Slice:B Poc:30  I:6    P:336  SKIP:1698 size=5099 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 257 QP=25.82 NAL=2 Slice:P Poc:40  I:163  P:290  SKIP:1587 size=9811 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 258 QP=28.35 NAL=2 Slice:B Poc:36  I:13   P:358  SKIP:1669 size=6468 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 259 QP=32.13 NAL=0 Slice:B Poc:34  I:5    P:317  SKIP:1718 size=5013 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 260 QP=30.45 NAL=0 Slice:B Poc:38  I:17   P:324  SKIP:1699 size=5356 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 261 QP=19.89 NAL=2 Slice:P Poc:48  I:172  P:269  SKIP:1599 size=10337 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 262 QP=29.30 NAL=2 Slice:B Poc:44  I:13   P:376  SKIP:1651 size=6617 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 263 QP=33.21 NAL=0 Slice:B Poc:42  I:10   P:316  SKIP:1714 size=5380 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 264 QP=31.53 NAL=0 Slice:B Poc:46  I:10   P:335  SKIP:1695 size=5454 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 265 QP=23.97 NAL=2 Slice:P Poc:56  I:182  P:234  SKIP:1624 size=10901 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 266 QP=27.96 NAL=2 Slice:B Poc:52  I:18   P:353  SKIP:1669 size=6541 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 267 QP=31.99 NAL=0 Slice:B Poc:50  I:9    P:308  SKIP:1723 size=4917 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 268 QP=33.00 NAL=0 Slice:B Poc:54  I:7    P:320  SKIP:1713 size=5064 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 269 QP=26.06 NAL=2 Slice:P Poc:64  I:197  P:250  SKIP:1593 size=11958 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 270 QP=30.55 NAL=2 Slice:B Poc:60  I:14   P:385  SKIP:1641 size=6347 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 271 QP=32.59 NAL=0 Slice:B Poc:58  I:6    P:332  SKIP:1702 size=5038 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 272 QP=31.41 NAL=0 Slice:B Poc:62  I:7    P:316  SKIP:1717 size=4911 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 273 QP=19.15 NAL=2 Slice:P Poc:72  I:231  P:246  SKIP:1563 size=11709 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 274 QP=30.44 NAL=2 Slice:B Poc:68  I:7    P:421  SKIP:1612 size=6690 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 275 QP=30.95 NAL=0 Slice:B Poc:66  I:4    P:354  SKIP:1682 size=5069 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 276 QP=30.06 NAL=0 Slice:B Poc:70  I:11   P:329  SKIP:1700 size=4556 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 277 QP=22.30 NAL=2 Slice:P Poc:80  I:234  P:255  SKIP:1551 size=11946 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 278 QP=27.95 NAL=2 Slice:B Poc:76  I:5    P:413  SKIP:1622 size=6312 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 279 QP=29.43 NAL=0 Slice:B Poc:74  I:4    P:362  SKIP:1674 size=4922 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 280 QP=32.16 NAL=0 Slice:B Poc:78  I:5    P:363  SKIP:1672 size=4986 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 281 QP=25.07 NAL=2 Slice:P Poc:88  I:245  P:246  SKIP:1549 size=12017 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 282 QP=28.01 NAL=2 Slice:B Poc:84  I:9    P:434  SKIP:1597 size=6565 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 283 QP=31.76 NAL=0 Slice:B Poc:82  I:2    P:393  SKIP:1645 size=5158 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 284 QP=30.66 NAL=0 Slice:B Poc:86  I:3    P:369  SKIP:1668 size=4725 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 285 QP=25.16 NAL=2 Slice:P Poc:96  I:213  P:267  SKIP:1560 size=11522 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 286 QP=27.51 NAL=2 Slice:B Poc:92  I:1    P:429  SKIP:1610 size=6363 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 287 QP=31.68 NAL=0 Slice:B Poc:90  I:8    P:368  SKIP:1664 size=4847 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 288 QP=30.46 NAL=0 Slice:B Poc:94  I:2    P:353  SKIP:1685 size=5078 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 289 QP=23.92 NAL=2 Slice:P Poc:104 I:235  P:254  SKIP:1551 size=11735 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 290 QP=29.21 NAL=2 Slice:B Poc:100 I:4    P:425  SKIP:1611 size=6163 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 291 QP=31.07 NAL=0 Slice:B Poc:98  I:2    P:389  SKIP:1649 size=4812 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 292 QP=31.38 NAL=0 Slice:B Poc:102 I:4    P:368  SKIP:1668 size=4774 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 293 QP=25.42 NAL=2 Slice:P Poc:112 I:226  P:252  SKIP:1562 size=10790 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 294 QP=28.44 NAL=2 Slice:B Poc:108 I:8    P:422  SKIP:1610 size=6507 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 295 QP=32.03 NAL=0 Slice:B Poc:106 I:4    P:380  SKIP:1656 size=5084 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 296 QP=31.82 NAL=0 Slice:B Poc:110 I:3    P:364  SKIP:1673 size=5106 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 297 QP=26.32 NAL=2 Slice:P Poc:118 I:172  P:316  SKIP:1552 size=9554 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 298 QP=29.97 NAL=2 Slice:B Poc:114 I:8    P:437  SKIP:1595 size=6079 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 299 QP=31.92 NAL=0 Slice:B Poc:116 I:11   P:370  SKIP:1659 size=5202 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 300 QP=19.47 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=21719 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 301 QP=21.47 NAL=2 Slice:P Poc:8   I:1772 P:268  SKIP:0    size=15177 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 302 QP=20.44 NAL=2 Slice:B Poc:4   I:19   P:1432 SKIP:589  size=7625 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 303 QP=20.36 NAL=0 Slice:B Poc:2   I:14   P:785  SKIP:1241 size=6237 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 304 QP=19.75 NAL=0 Slice:B Poc:6   I:12   P:1185 SKIP:843  size=6567 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 305 QP=21.98 NAL=2 Slice:P Poc:16  I:1756 P:284  SKIP:0    size=14150 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 306 QP=18.42 NAL=2 Slice:B Poc:12  I:13   P:1192 SKIP:835  size=8393 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 307 QP=22.25 NAL=0 Slice:B Poc:10  I:9    P:617  SKIP:1414 size=5665 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 308 QP=20.12 NAL=0 Slice:B Poc:14  I:17   P:827  SKIP:1196 size=6169 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 309 QP=20.76 NAL=2 Slice:P Poc:24  I:1749 P:291  SKIP:0    size=14808 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 310 QP=18.29 NAL=2 Slice:B Poc:20  I:15   P:1446 SKIP:579  size=8939 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 311 QP=20.70 NAL=0 Slice:B Poc:18  I:5    P:822  SKIP:1213 size=5739 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 312 QP=21.78 NAL=0 Slice:B Poc:22  I:14   P:809  SKIP:1217 size=6232 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 313 QP=19.45 NAL=2 Slice:P Poc:32  I:1731 P:309  SKIP:0    size=14262 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 314 QP=18.41 NAL=2 Slice:B Poc:28  I:15   P:1061 SKIP:964  size=8616 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 315 QP=20.21 NAL=0 Slice:B Poc:26  I:12   P:954  SKIP:1074 size=5930 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 316 QP=19.43 NAL=0 Slice:B Poc:30  I:18   P:1098 SKIP:924  size=6755 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 317 QP=21.18 NAL=2 Slice:P Poc:40  I:1733 P:307  SKIP:0    size=14129 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 318 QP=19.60 NAL=2 Slice:B Poc:36  I:24   P:828  SKIP:1188 size=8602 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 319 QP=21.76 NAL=0 Slice:B Poc:34  I:11   P:688  SKIP:1341 size=6373 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 320 QP=25.65 NAL=0 Slice:B Poc:38  I:11   P:464  SKIP:1565 size=6208 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 321 QP=17.50 NAL=2 Slice:P Poc:48  I:1737 P:303  SKIP:0    size=14468 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 322 QP=19.57 NAL=2 Slice:B Poc:44  I:12   P:1064 SKIP:964  size=8897 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 323 QP=21.05 NAL=0 Slice:B Poc:42  I:10   P:804  SKIP:1226 size=6480 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 324 QP=20.66 NAL=0 Slice:B Poc:46  I:19   P:1030 SKIP:991  size=7454 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 325 QP=17.93 NAL=2 Slice:P Poc:56  I:1741 P:299  SKIP:0    size=14366 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 326 QP=18.40 NAL=2 Slice:B Poc:52  I:13   P:1456 SKIP:571  size=9232 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 327 QP=19.86 NAL=0 Slice:B Poc:50  I:7    P:932  SKIP:1101 size=6650 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 328 QP=21.65 NAL=0 Slice:B Poc:54  I:14   P:1013 SKIP:1013 size=7064 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 329 QP=18.38 NAL=2 Slice:P Poc:64  I:1747 P:293  SKIP:0    size=14189 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 330 QP=18.41 NAL=2 Slice:B Poc:60  I:27   P:1297 SKIP:716  size=8991 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 331 QP=20.62 NAL=0 Slice:B Poc:58  I:17   P:729  SKIP:1294 size=6312 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 332 QP=19.89 NAL=0 Slice:B Poc:62  I:7    P:789  SKIP:1244 size=6525 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 333 QP=16.25 NAL=2 Slice:P Poc:70  I:1720 P:320  SKIP:0    size=13715 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 334 QP=18.72 NAL=2 Slice:B Poc:66  I:19   P:1169 SKIP:852  size=7958 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 335 QP=19.77 NAL=0 Slice:B Poc:68  I:15   P:887  SKIP:1138 size=6322 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 336 QP=16.91 NAL=2 Slice:P Poc:78  I:1764 P:276  SKIP:0    size=14296 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 337 QP=19.33 NAL=2 Slice:B Poc:74  I:28   P:818  SKIP:1194 size=7997 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 338 QP=20.65 NAL=0 Slice:B Poc:72  I:18   P:787  SKIP:1235 size=5781 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 339 QP=21.89 NAL=0 Slice:B Poc:76  I:15   P:637  SKIP:1388 size=6227 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 340 QP=16.57 NAL=2 Slice:P Poc:86  I:1745 P:295  SKIP:0    size=14443 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 341 QP=18.19 NAL=2 Slice:B Poc:82  I:11   P:1082 SKIP:947  size=8473 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 342 QP=18.83 NAL=0 Slice:B Poc:80  I:12   P:1184 SKIP:844  size=6112 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 343 QP=19.49 NAL=0 Slice:B Poc:84  I:11   P:1009 SKIP:1020 size=6372 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 344 QP=15.28 NAL=2 Slice:P Poc:94  I:1751 P:289  SKIP:0    size=14218 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 345 QP=17.85 NAL=2 Slice:B Poc:90  I:19   P:1156 SKIP:865  size=9350 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 346 QP=18.73 NAL=0 Slice:B Poc:88  I:13   P:973  SKIP:1054 size=6157 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 347 QP=20.34 NAL=0 Slice:B Poc:92  I:10   P:1073 SKIP:957  size=6583 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 348 QP=16.42 NAL=2 Slice:P Poc:102 I:1770 P:270  SKIP:0    size=14641 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 349 QP=18.02 NAL=2 Slice:B Poc:98  I:26   P:1036 SKIP:978  size=9098 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 350 QP=26.83 NAL=0 Slice:B Poc:96  I:15   P:476  SKIP:1549 size=6526 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 351 QP=19.54 NAL=0 Slice:B Poc:100 I:12   P:975  SKIP:1053 size=6840 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 352 QP=20.26 NAL=2 Slice:P Poc:110 I:1789 P:251  SKIP:0    size=15438 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 353 QP=17.73 NAL=2 Slice:B Poc:106 I:25   P:1258 SKIP:757  size=9161 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 354 QP=19.85 NAL=0 Slice:B Poc:104 I:10   P:703  SKIP:1327 size=7195 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 355 QP=21.29 NAL=0 Slice:B Poc:108 I:11   P:738  SKIP:1291 size=6976 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 356 QP=19.72 NAL=2 Slice:P Poc:118 I:1779 P:261  SKIP:0    size=16047 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 357 QP=19.03 NAL=2 Slice:B Poc:114 I:21   P:1149 SKIP:870  size=9437 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 358 QP=19.97 NAL=0 Slice:B Poc:112 I:15   P:903  SKIP:1122 size=7202 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 359 QP=20.75 NAL=0 Slice:B Poc:116 I:18   P:739  SKIP:1283 size=6571 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 360 QP=17.23 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=23045 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 361 QP=19.06 NAL=2 Slice:P Poc:8   I:1786 P:254  SKIP:0    size=15971 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 362 QP=19.33 NAL=2 Slice:B Poc:4   I:16   P:1331 SKIP:693  size=7860 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 363 QP=19.83 NAL=0 Slice:B Poc:2   I:8    P:818  SKIP:1214 size=6581 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 364 QP=19.37 NAL=0 Slice:B Poc:6   I:14   P:1133 SKIP:893  size=7075 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 365 QP=18.47 NAL=2 Slice:P Poc:16  I:1793 P:247  SKIP:0    size=15808 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 366 QP=17.79 NAL=2 Slice:B Poc:12  I:24   P:1169 SKIP:847  size=8784 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 367 QP=22.04 NAL=0 Slice:B Poc:10  I:22   P:573  SKIP:1445 size=5999 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 368 QP=20.24 NAL=0 Slice:B Poc:14  I:17   P:823  SKIP:1200 size=6572 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 369 QP=17.28 NAL=2 Slice:P Poc:24  I:1776 P:264  SKIP:0    size=16390 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 370 QP=18.26 NAL=2 Slice:B Poc:20  I:15   P:1354 SKIP:671  size=9188 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 371 QP=21.46 NAL=0 Slice:B Poc:18  I:8    P:836  SKIP:1196 size=6048 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 372 QP=20.38 NAL=0 Slice:B Poc:22  I:12   P:964  SKIP:1064 size=6826 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 373 QP=17.50 NAL=2 Slice:P Poc:32  I:1767 P:273  SKIP:0    size=16873 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 374 QP=19.20 NAL=2 Slice:B Poc:28  I:25   P:1118 SKIP:897  size=9556 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 375 QP=21.52 NAL=0 Slice:B Poc:26  I:8    P:968  SKIP:1064 size=6419 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 376 QP=19.22 NAL=0 Slice:B Poc:30  I:20   P:1195 SKIP:825  size=7181 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 377 QP=16.86 NAL=2 Slice:P Poc:40  I:1766 P:274  SKIP:0    size=16853 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 378 QP=20.02 NAL=2 Slice:B Poc:36  I:21   P:960  SKIP:1059 size=9178 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 379 QP=21.92 NAL=0 Slice:B Poc:34  I:6    P:868  SKIP:1166 size=6407 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 380 QP=26.31 NAL=0 Slice:B Poc:38  I:20   P:528  SKIP:1492 size=6631 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 381 QP=19.33 NAL=2 Slice:P Poc:48  I:1762 P:278  SKIP:0    size=16944 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 382 QP=20.60 NAL=2 Slice:B Poc:44  I:17   P:1101 SKIP:922  size=9853 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 383 QP=21.78 NAL=0 Slice:B Poc:42  I:6    P:793  SKIP:1241 size=7073 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 384 QP=21.58 NAL=0 Slice:B Poc:46  I:10   P:998  SKIP:1032 size=7847 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 385 QP=16.41 NAL=2 Slice:P Poc:56  I:1759 P:281  SKIP:0    size=16700 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 386 QP=19.25 NAL=2 Slice:B Poc:52  I:14   P:1377 SKIP:649  size=9876 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 387 QP=21.18 NAL=0 Slice:B Poc:50  I:5    P:924  SKIP:1111 size=6891 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 388 QP=21.98 NAL=0 Slice:B Poc:54  I:10   P:1223 SKIP:807  size=7545 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 389 QP=17.96 NAL=2 Slice:P Poc:64  I:1773 P:267  SKIP:0    size=16334 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 390 QP=19.29 NAL=2 Slice:B Poc:60  I:22   P:1357 SKIP:661  size=9831 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 391 QP=20.30 NAL=0 Slice:B Poc:58  I:6    P:719  SKIP:1315 size=6512 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 392 QP=21.16 NAL=0 Slice:B Poc:62  I:9    P:854  SKIP:1177 size=6846 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 393 QP=18.24 NAL=2 Slice:P Poc:72  I:1771 P:266  SKIP:3    size=16176 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 394 QP=19.53 NAL=2 Slice:B Poc:68  I:25   P:1251 SKIP:764  size=9754 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 395 QP=19.19 NAL=0 Slice:B Poc:66  I:12   P:1116 SKIP:912  size=6997 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 396 QP=22.51 NAL=0 Slice:B Poc:70  I:17   P:627  SKIP:1396 size=6024 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 397 QP=16.53 NAL=2 Slice:P Poc:80  I:1730 P:275  SKIP:35   size=16147 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 398 QP=20.99 NAL=2 Slice:B Poc:76  I:44   P:1003 SKIP:993  size=8710 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 399 QP=21.32 NAL=0 Slice:B Poc:74  I:26   P:810  SKIP:1204 size=6864 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 400 QP=21.56 NAL=0 Slice:B Poc:78  I:41   P:1015 SKIP:984  size=6808 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 401 QP=18.97 NAL=2 Slice:P Poc:88  I:1628 P:284  SKIP:128  size=16832 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 402 QP=20.65 NAL=2 Slice:B Poc:84  I:12   P:1124 SKIP:904  size=9495 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 403 QP=24.04 NAL=0 Slice:B Poc:82  I:10   P:755  SKIP:1275 size=6889 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 404 QP=22.74 NAL=0 Slice:B Poc:86  I:33   P:954  SKIP:1053 size=6479 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 405 QP=19.80 NAL=2 Slice:P Poc:96  I:1583 P:304  SKIP:153  size=15605 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 406 QP=20.43 NAL=2 Slice:B Poc:92  I:32   P:1201 SKIP:807  size=9558 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 407 QP=20.86 NAL=0 Slice:B Poc:90  I:85   P:980  SKIP:975  size=7256 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 408 QP=23.80 NAL=0 Slice:B Poc:94  I:37   P:893  SKIP:1110 size=6816 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 409 QP=19.39 NAL=2 Slice:P Poc:100 I:1556 P:374  SKIP:110  size=12782 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 410 QP=25.62 NAL=0 Slice:B Poc:98  I:27   P:549  SKIP:1464 size=7174 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 411 QP=21.87 NAL=2 Slice:P Poc:106 I:1651 P:333  SKIP:56   size=14353 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 412 QP=19.90 NAL=2 Slice:B Poc:102 I:50   P:1083 SKIP:907  size=8633 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 413 QP=22.78 NAL=0 Slice:B Poc:104 I:43   P:842  SKIP:1155 size=7879 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 414 QP=21.76 NAL=2 Slice:P Poc:112 I:1668 P:356  SKIP:16   size=14025 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 415 QP=21.09 NAL=2 Slice:B Poc:108 I:37   P:794  SKIP:1209 size=8606 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 416 QP=19.95 NAL=0 Slice:B Poc:110 I:32   P:952  SKIP:1056 size=6893 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 417 QP=23.42 NAL=2 Slice:P Poc:118 I:1673 P:367  SKIP:0    size=13278 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 418 QP=20.27 NAL=2 Slice:B Poc:114 I:25   P:951  SKIP:1064 size=8373 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 419 QP=20.09 NAL=0 Slice:B Poc:116 I:17   P:790  SKIP:1233 size=6728 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 420 QP=28.82 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=233352 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 421 QP=31.54 NAL=2 Slice:P Poc:8   I:2012 P:28   SKIP:0    size=188988 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 422 QP=32.07 NAL=2 Slice:B Poc:4   I:1939 P:101  SKIP:0    size=179306 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 423 QP=32.21 NAL=0 Slice:B Poc:2   I:1942 P:98   SKIP:0    size=178593 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 424 QP=32.12 NAL=0 Slice:B Poc:6   I:1928 P:112  SKIP:0    size=179888 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 425 QP=31.64 NAL=2 Slice:P Poc:16  I:1979 P:61   SKIP:0    size=187278 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 426 QP=31.83 NAL=2 Slice:B Poc:12  I:1950 P:90   SKIP:0    size=183418 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 427 QP=32.13 NAL=0 Slice:B Poc:10  I:1937 P:103  SKIP:0    size=179303 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 428 QP=32.14 NAL=0 Slice:B Poc:14  I:1918 P:122  SKIP:0    size=179287 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 429 QP=31.61 NAL=2 Slice:P Poc:24  I:1980 P:60   SKIP:0    size=187848 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 430 QP=31.88 NAL=2 Slice:B Poc:20  I:1935 P:105  SKIP:0    size=182039 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 431 QP=32.09 NAL=0 Slice:B Poc:18  I:1928 P:112  SKIP:0    size=180277 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 432 QP=32.09 NAL=0 Slice:B Poc:22  I:1927 P:113  SKIP:0    size=178688 bytes
+[libx264 @ 0x2957cb80] frame= 433 QP=31.73 NAL=2 Slice:P Poc:32  I:1967 P:73   SKIP:0    size=185912 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 434 QP=31.92 NAL=2 Slice:B Poc:28  I:1936 P:104  SKIP:0    size=183378 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 435 QP=32.05 NAL=0 Slice:B Poc:26  I:1941 P:99   SKIP:0    size=180532 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 436 QP=32.12 NAL=0 Slice:B Poc:30  I:1930 P:110  SKIP:0    size=179265 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 437 QP=31.71 NAL=2 Slice:P Poc:40  I:1981 P:59   SKIP:0    size=186608 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 438 QP=31.78 NAL=2 Slice:B Poc:36  I:1940 P:100  SKIP:0    size=185233 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 439 QP=32.11 NAL=0 Slice:B Poc:34  I:1940 P:100  SKIP:0    size=179803 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 440 QP=32.12 NAL=0 Slice:B Poc:38  I:1924 P:116  SKIP:0    size=179693 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 441 QP=31.73 NAL=2 Slice:P Poc:48  I:1977 P:63   SKIP:0    size=186311 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 442 QP=31.53 NAL=2 Slice:B Poc:44  I:1942 P:98   SKIP:0    size=188211 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 443 QP=32.23 NAL=0 Slice:B Poc:42  I:1937 P:103  SKIP:0    size=178229 bytes
+frame=  444 fps=296 q=29.0 size=   22528KiB time=00:00:14.73 bitrate=12526.0kbits/s speed=9.82x    [rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 444 QP=32.07 NAL=0 Slice:B Poc:46  I:1933 P:107  SKIP:0    size=178810 bytes
+[libx264 @ 0x2957cb80] frame= 445 QP=31.66 NAL=2 Slice:P Poc:56  I:1981 P:59   SKIP:0    size=186823 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+    Last message repeated 1 times
+[libx264 @ 0x2957cb80] frame= 446 QP=31.77 NAL=2 Slice:B Poc:52  I:1936 P:104  SKIP:0    size=183518 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 447 QP=32.06 NAL=0 Slice:B Poc:50  I:1934 P:106  SKIP:0    size=180170 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 448 QP=32.03 NAL=0 Slice:B Poc:54  I:1923 P:117  SKIP:0    size=180929 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 449 QP=31.71 NAL=2 Slice:P Poc:64  I:1974 P:66   SKIP:0    size=185779 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 450 QP=31.87 NAL=2 Slice:B Poc:60  I:1949 P:91   SKIP:0    size=181543 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 451 QP=32.23 NAL=0 Slice:B Poc:58  I:1934 P:106  SKIP:0    size=177693 bytes
+[in#0/rawvideo @ 0x2956ee40] EOF while reading input
+[in#0/rawvideo @ 0x2956ee40] Terminating thread with return code 0 (success)
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 452 QP=32.19 NAL=0 Slice:B Poc:62  I:1932 P:108  SKIP:0    size=177338 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 453 QP=31.74 NAL=2 Slice:P Poc:72  I:1979 P:61   SKIP:0    size=185297 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 454 QP=31.56 NAL=2 Slice:B Poc:68  I:1932 P:108  SKIP:0    size=188470 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 455 QP=32.21 NAL=0 Slice:B Poc:66  I:1936 P:104  SKIP:0    size=177235 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 456 QP=32.23 NAL=0 Slice:B Poc:70  I:1924 P:116  SKIP:0    size=176242 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 457 QP=31.59 NAL=2 Slice:P Poc:80  I:1983 P:57   SKIP:0    size=188117 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 458 QP=32.01 NAL=2 Slice:B Poc:76  I:1935 P:105  SKIP:0    size=181567 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 459 QP=32.21 NAL=0 Slice:B Poc:74  I:1943 P:97   SKIP:0    size=178355 bytes
+[rawvideo @ 0x29583880] PACKET SIZE: 777600, STRIDE: 1440
+[libx264 @ 0x2957cb80] frame= 460 QP=32.20 NAL=0 Slice:B Poc:78  I:1922 P:118  SKIP:0    size=178519 bytes
+[vist#0:0/rawvideo @ 0x2957ae80] [dec:rawvideo @ 0x29582dc0] Decoder thread received EOF packet
+[vist#0:0/rawvideo @ 0x2957ae80] [dec:rawvideo @ 0x29582dc0] Decoder returned EOF, finishing
+[libx264 @ 0x2957cb80] frame= 461 QP=31.79 NAL=2 Slice:P Poc:88  I:1979 P:61   SKIP:0    size=185118 bytes
+[vist#0:0/rawvideo @ 0x2957ae80] [dec:rawvideo @ 0x29582dc0] Terminating thread with return code 0 (success)
+[libx264 @ 0x2957cb80] frame= 462 QP=31.50 NAL=2 Slice:B Poc:84  I:1929 P:111  SKIP:0    size=189258 bytes
+[libx264 @ 0x2957cb80] frame= 463 QP=32.19 NAL=0 Slice:B Poc:82  I:1924 P:116  SKIP:0    size=178308 bytes
+[libx264 @ 0x2957cb80] frame= 464 QP=32.20 NAL=0 Slice:B Poc:86  I:1933 P:107  SKIP:0    size=176636 bytes
+[libx264 @ 0x2957cb80] frame= 465 QP=31.82 NAL=2 Slice:P Poc:96  I:1986 P:54   SKIP:0    size=184673 bytes
+[libx264 @ 0x2957cb80] frame= 466 QP=31.98 NAL=2 Slice:B Poc:92  I:1949 P:91   SKIP:0    size=181936 bytes
+[libx264 @ 0x2957cb80] frame= 467 QP=32.19 NAL=0 Slice:B Poc:90  I:1944 P:96   SKIP:0    size=178376 bytes
+[libx264 @ 0x2957cb80] frame= 468 QP=32.20 NAL=0 Slice:B Poc:94  I:1947 P:93   SKIP:0    size=178854 bytes
+[libx264 @ 0x2957cb80] frame= 469 QP=31.66 NAL=2 Slice:P Poc:104 I:1997 P:43   SKIP:0    size=187209 bytes
+[out_0_0 @ 0x7a173c004b40] EOF on sink link out_0_0:default.
+[vf#0:0 @ 0x29580f80] Filtergraph returned EOF, finishing
+[vf#0:0 @ 0x29580f80] All consumers returned EOF
+[vf#0:0 @ 0x29580f80] Terminating thread with return code 0 (success)
+[libx264 @ 0x2957cb80] frame= 470 QP=31.97 NAL=2 Slice:B Poc:100 I:1953 P:87   SKIP:0    size=180937 bytes
+[libx264 @ 0x2957cb80] frame= 471 QP=32.17 NAL=0 Slice:B Poc:98  I:1951 P:89   SKIP:0    size=179229 bytes
+[libx264 @ 0x2957cb80] frame= 472 QP=32.17 NAL=0 Slice:B Poc:102 I:1940 P:100  SKIP:0    size=177489 bytes
+[libx264 @ 0x2957cb80] frame= 473 QP=31.66 NAL=2 Slice:P Poc:112 I:1996 P:44   SKIP:0    size=187366 bytes
+[libx264 @ 0x2957cb80] frame= 474 QP=32.00 NAL=2 Slice:B Poc:108 I:1953 P:87   SKIP:0    size=180204 bytes
+[libx264 @ 0x2957cb80] frame= 475 QP=32.22 NAL=0 Slice:B Poc:106 I:1946 P:94   SKIP:0    size=176536 bytes
+[libx264 @ 0x2957cb80] frame= 476 QP=32.21 NAL=0 Slice:B Poc:110 I:1942 P:98   SKIP:0    size=177653 bytes
+[libx264 @ 0x2957cb80] frame= 477 QP=32.22 NAL=2 Slice:P Poc:118 I:1985 P:55   SKIP:0    size=178452 bytes
+[libx264 @ 0x2957cb80] frame= 478 QP=32.21 NAL=2 Slice:B Poc:114 I:1939 P:101  SKIP:0    size=176569 bytes
+[vost#0:0/libx264 @ 0x2957c6c0] Encoder thread received EOF
+[libx264 @ 0x2957cb80] frame= 479 QP=32.20 NAL=0 Slice:B Poc:116 I:1925 P:115  SKIP:0    size=176281 bytes
+[libx264 @ 0x2957cb80] frame= 480 QP=28.56 NAL=3 Slice:I Poc:0   I:2040 P:0    SKIP:0    size=240879 bytes
+[libx264 @ 0x2957cb80] frame= 481 QP=31.68 NAL=2 Slice:P Poc:8   I:2024 P:16   SKIP:0    size=187655 bytes
+[libx264 @ 0x2957cb80] frame= 482 QP=31.52 NAL=2 Slice:B Poc:4   I:1945 P:95   SKIP:0    size=188604 bytes
+[libx264 @ 0x2957cb80] frame= 483 QP=32.23 NAL=0 Slice:B Poc:2   I:1920 P:120  SKIP:0    size=178085 bytes
+[libx264 @ 0x2957cb80] frame= 484 QP=32.21 NAL=0 Slice:B Poc:6   I:1936 P:104  SKIP:0    size=177266 bytes
+[libx264 @ 0x2957cb80] frame= 485 QP=31.30 NAL=2 Slice:P Poc:16  I:2017 P:23   SKIP:0    size=193358 bytes
+[libx264 @ 0x2957cb80] frame= 486 QP=31.65 NAL=2 Slice:B Poc:12  I:1943 P:97   SKIP:0    size=185735 bytes
+[libx264 @ 0x2957cb80] frame= 487 QP=32.17 NAL=0 Slice:B Poc:10  I:1934 P:106  SKIP:0    size=178728 bytes
+[libx264 @ 0x2957cb80] frame= 488 QP=32.10 NAL=0 Slice:B Poc:14  I:1913 P:127  SKIP:0    size=178469 bytes
+[libx264 @ 0x2957cb80] frame= 489 QP=31.73 NAL=2 Slice:P Poc:24  I:2012 P:28   SKIP:0    size=187490 bytes
+[libx264 @ 0x2957cb80] frame= 490 QP=31.86 NAL=2 Slice:B Poc:20  I:1940 P:100  SKIP:0    size=182888 bytes
+[libx264 @ 0x2957cb80] frame= 491 QP=32.21 NAL=0 Slice:B Poc:18  I:1922 P:118  SKIP:0    size=177818 bytes
+[libx264 @ 0x2957cb80] frame= 492 QP=32.15 NAL=0 Slice:B Poc:22  I:1934 P:106  SKIP:0    size=178087 bytes
+[libx264 @ 0x2957cb80] frame= 493 QP=31.61 NAL=2 Slice:P Poc:32  I:2010 P:30   SKIP:0    size=189172 bytes
+[libx264 @ 0x2957cb80] frame= 494 QP=32.05 NAL=2 Slice:B Poc:28  I:1936 P:104  SKIP:0    size=182075 bytes
+[libx264 @ 0x2957cb80] frame= 495 QP=32.17 NAL=0 Slice:B Poc:26  I:1908 P:132  SKIP:0    size=178970 bytes
+[libx264 @ 0x2957cb80] frame= 496 QP=32.18 NAL=0 Slice:B Poc:30  I:1914 P:126  SKIP:0    size=179314 bytes
+[libx264 @ 0x2957cb80] frame= 497 QP=31.40 NAL=2 Slice:P Poc:40  I:2004 P:36   SKIP:0    size=192176 bytes
+[libx264 @ 0x2957cb80] frame= 498 QP=31.78 NAL=2 Slice:B Poc:36  I:1928 P:112  SKIP:0    size=185467 bytes
+[libx264 @ 0x2957cb80] frame= 499 QP=32.26 NAL=0 Slice:B Poc:34  I:1915 P:125  SKIP:0    size=176507 bytes
+[libx264 @ 0x2957cb80] frame= 500 QP=32.22 NAL=0 Slice:B Poc:38  I:1918 P:122  SKIP:0    size=177174 bytes
+[libx264 @ 0x2957cb80] frame= 501 QP=31.37 NAL=2 Slice:P Poc:48  I:2010 P:30   SKIP:0    size=192733 bytes
+[libx264 @ 0x2957cb80] frame= 502 QP=31.69 NAL=2 Slice:B Poc:44  I:1932 P:108  SKIP:0    size=186472 bytes
+[libx264 @ 0x2957cb80] frame= 503 QP=32.27 NAL=0 Slice:B Poc:42  I:1927 P:113  SKIP:0    size=176387 bytes
+[libx264 @ 0x2957cb80] frame= 504 QP=32.13 NAL=0 Slice:B Poc:46  I:1916 P:124  SKIP:0    size=180084 bytes
+[libx264 @ 0x2957cb80] frame= 505 QP=31.53 NAL=2 Slice:P Poc:56  I:2011 P:29   SKIP:0    size=189863 bytes
+[libx264 @ 0x2957cb80] frame= 506 QP=31.78 NAL=2 Slice:B Poc:52  I:1927 P:113  SKIP:0    size=184945 bytes
+[libx264 @ 0x2957cb80] frame= 507 QP=32.27 NAL=0 Slice:B Poc:50  I:1928 P:112  SKIP:0    size=176481 bytes
+[libx264 @ 0x2957cb80] frame= 508 QP=32.22 NAL=0 Slice:B Poc:54  I:1914 P:126  SKIP:0    size=177183 bytes
+[libx264 @ 0x2957cb80] frame= 509 QP=31.71 NAL=2 Slice:P Poc:64  I:2010 P:30   SKIP:0    size=187527 bytes
+[libx264 @ 0x2957cb80] frame= 510 QP=31.86 NAL=2 Slice:B Poc:60  I:1930 P:110  SKIP:0    size=184459 bytes
+[libx264 @ 0x2957cb80] frame= 511 QP=32.14 NAL=0 Slice:B Poc:58  I:1935 P:105  SKIP:0    size=180231 bytes
+[libx264 @ 0x2957cb80] frame= 512 QP=32.06 NAL=0 Slice:B Poc:62  I:1924 P:116  SKIP:0    size=179150 bytes
+[libx264 @ 0x2957cb80] frame= 513 QP=31.67 NAL=2 Slice:P Poc:72  I:2012 P:28   SKIP:0    size=188121 bytes
+frame=  514 fps=257 q=29.0 size=   34816KiB time=00:00:17.06 bitrate=16711.7kbits/s speed=8.53x    [libx264 @ 0x2957cb80] frame= 514 QP=31.98 NAL=2 Slice:B Poc:68  I:1932 P:108  SKIP:0    size=181104 bytes
+[libx264 @ 0x2957cb80] frame= 515 QP=31.97 NAL=0 Slice:B Poc:66  I:1916 P:124  SKIP:0    size=180766 bytes
+[libx264 @ 0x2957cb80] frame= 516 QP=32.01 NAL=0 Slice:B Poc:70  I:1921 P:119  SKIP:0    size=180142 bytes
+[libx264 @ 0x2957cb80] frame= 517 QP=31.71 NAL=2 Slice:P Poc:80  I:2012 P:28   SKIP:0    size=187814 bytes
+[libx264 @ 0x2957cb80] frame= 518 QP=31.97 NAL=2 Slice:B Poc:76  I:1920 P:120  SKIP:0    size=182888 bytes
+[libx264 @ 0x2957cb80] frame= 519 QP=32.25 NAL=0 Slice:B Poc:74  I:1918 P:122  SKIP:0    size=176450 bytes
+[libx264 @ 0x2957cb80] frame= 520 QP=31.94 NAL=0 Slice:B Poc:78  I:1917 P:123  SKIP:0    size=182943 bytes
+[libx264 @ 0x2957cb80] frame= 521 QP=31.63 NAL=2 Slice:P Poc:88  I:2007 P:33   SKIP:0    size=189428 bytes
+[libx264 @ 0x2957cb80] frame= 522 QP=31.56 NAL=2 Slice:B Poc:84  I:1931 P:109  SKIP:0    size=188572 bytes
+[libx264 @ 0x2957cb80] frame= 523 QP=31.99 NAL=0 Slice:B Poc:82  I:1915 P:125  SKIP:0    size=182641 bytes
+[libx264 @ 0x2957cb80] frame= 524 QP=32.05 NAL=0 Slice:B Poc:86  I:1912 P:128  SKIP:0    size=181663 bytes
+[libx264 @ 0x2957cb80] frame= 525 QP=31.76 NAL=2 Slice:P Poc:96  I:1995 P:45   SKIP:0    size=187306 bytes
+[libx264 @ 0x2957cb80] frame= 526 QP=31.87 NAL=2 Slice:B Poc:92  I:1914 P:126  SKIP:0    size=184007 bytes
+[libx264 @ 0x2957cb80] frame= 527 QP=32.16 NAL=0 Slice:B Poc:90  I:1921 P:119  SKIP:0    size=179686 bytes
+[libx264 @ 0x2957cb80] frame= 528 QP=32.25 NAL=0 Slice:B Poc:94  I:1901 P:139  SKIP:0    size=178535 bytes
+[libx264 @ 0x2957cb80] frame= 529 QP=31.61 NAL=2 Slice:P Poc:104 I:1975 P:65   SKIP:0    size=188687 bytes
+[libx264 @ 0x2957cb80] frame= 530 QP=31.79 NAL=2 Slice:B Poc:100 I:1931 P:109  SKIP:0    size=185358 bytes
+[libx264 @ 0x2957cb80] frame= 531 QP=32.24 NAL=0 Slice:B Poc:98  I:1904 P:136  SKIP:0    size=178703 bytes
+[libx264 @ 0x2957cb80] frame= 532 QP=32.14 NAL=0 Slice:B Poc:102 I:1926 P:114  SKIP:0    size=178050 bytes
+[libx264 @ 0x2957cb80] frame= 533 QP=31.61 NAL=2 Slice:P Poc:112 I:1969 P:71   SKIP:0    size=188265 bytes
+[libx264 @ 0x2957cb80] frame= 534 QP=31.85 NAL=2 Slice:B Poc:108 I:1929 P:111  SKIP:0    size=183605 bytes
+[libx264 @ 0x2957cb80] frame= 535 QP=32.26 NAL=0 Slice:B Poc:106 I:1914 P:126  SKIP:0    size=178227 bytes
+[libx264 @ 0x2957cb80] frame= 536 QP=32.19 NAL=0 Slice:B Poc:110 I:1911 P:129  SKIP:0    size=179293 bytes
+[libx264 @ 0x2957cb80] frame= 537 QP=32.12 NAL=2 Slice:P Poc:118 I:1938 P:102  SKIP:0    size=179875 bytes
+[libx264 @ 0x2957cb80] frame= 538 QP=32.08 NAL=2 Slice:B Poc:114 I:1910 P:130  SKIP:0    size=180979 bytes
+[libx264 @ 0x2957cb80] frame= 539 QP=32.20 NAL=0 Slice:B Poc:116 I:1916 P:124  SKIP:0    size=177145 bytes
+[vost#0:0/libx264 @ 0x2957c6c0] Terminating thread with return code 0 (success)
+[out#0/mp4 @ 0x2957b9c0] All streams finished
+[out#0/mp4 @ 0x2957b9c0] Terminating thread with return code 0 (success)
+[AVIOContext @ 0x29579ec0] Statistics: 40833521 bytes written, 2 seeks, 159 writeouts
+[out#0/mp4 @ 0x2957b9c0] Output file #0 (work/enc/crf.r2.mp4):
+[out#0/mp4 @ 0x2957b9c0]   Output stream #0:0 (video): 540 frames encoded; 540 packets muxed (40826070 bytes); 
+[out#0/mp4 @ 0x2957b9c0]   Total: 540 packets (40826070 bytes) muxed
+[out#0/mp4 @ 0x2957b9c0] video:39869KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 0.018241%
+frame=  540 fps=251 q=-1.0 Lsize=   39876KiB time=00:00:17.93 bitrate=18215.7kbits/s speed=8.33x    
+bench: utime=25.650s stime=0.683s rtime=2.154s
+bench: maxrss=258136KiB
+[libx264 @ 0x2957cb80] frame I:9     Avg QP:20.52  size:106979
+[libx264 @ 0x2957cb80] frame P:148   Avg QP:25.60  size: 73685
+[libx264 @ 0x2957cb80] frame B:383   Avg QP:28.60  size: 75606
+[libx264 @ 0x2957cb80] consecutive B-frames:  2.0%  6.7% 10.6% 80.7%
+[libx264 @ 0x2957cb80] mb I  I16..4: 35.0% 43.5% 21.5%
+[libx264 @ 0x2957cb80] mb P  I16..4: 13.9% 38.2%  7.3%  P16..4:  5.1%  3.6%  2.4%  0.0%  0.0%    skip:29.5%
+[libx264 @ 0x2957cb80] mb B  I16..4:  2.3% 33.6%  5.6%  B16..8:  7.9%  3.1%  1.4%  direct: 8.6%  skip:37.5%  L0:44.0% L1:39.5% BI:16.6%
+[libx264 @ 0x2957cb80] 8x8 transform intra:74.0% inter:42.1%
+[libx264 @ 0x2957cb80] coded y,uvDC,uvAC intra: 86.1% 87.6% 87.1% inter: 10.6% 28.5% 16.9%
+[libx264 @ 0x2957cb80] i16 v,h,dc,p: 56% 18% 24%  2%
+[libx264 @ 0x2957cb80] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu:  4%  4% 65%  7%  4%  4%  4%  5%  4%
+[libx264 @ 0x2957cb80] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 11%  6% 37% 10%  7%  8%  7%  7%  6%
+[libx264 @ 0x2957cb80] i8c dc,h,v,p: 81%  5%  9%  5%
+[libx264 @ 0x2957cb80] Weighted P-Frames: Y:0.7% UV:0.0%
+[libx264 @ 0x2957cb80] ref P L0: 55.6%  7.0% 23.8% 13.5%  0.0%
+[libx264 @ 0x2957cb80] ref B L0: 75.5% 18.6%  5.8%
+[libx264 @ 0x2957cb80] ref B L1: 91.4%  8.6%
+[libx264 @ 0x2957cb80] kb/s:18144.61
+[in#0/rawvideo @ 0x2956ee40] Input file #0 (work/source_960x540_30.yuv):
+[in#0/rawvideo @ 0x2956ee40]   Input stream #0:0 (video): 540 packets read (419904000 bytes); 540 frames decoded; 0 decode errors; 
+[in#0/rawvideo @ 0x2956ee40]   Total: 540 packets (419904000 bytes) demuxed
+[AVIOContext @ 0x29577f40] Statistics: 419904000 bytes read, 0 seeks

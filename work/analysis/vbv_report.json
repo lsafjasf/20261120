@@ -1,0 +1,68 @@
+{
+  "crf": {
+    "maxrate_bps": 4000000,
+    "bufsize_bits": 8000000,
+    "underflows": 227,
+    "cpb_saturation_events": 186,
+    "min_fill_frac": 0.0,
+    "mean_fill_frac": 0.4744,
+    "fill_stdev_frac": 0.4617,
+    "fill_range_frac": 1.0,
+    "simulated_with": "reference bucket 4M/8M (stream itself uncapped)"
+  },
+  "abr": {
+    "maxrate_bps": 4000000,
+    "bufsize_bits": 8000000,
+    "underflows": 21,
+    "cpb_saturation_events": 407,
+    "min_fill_frac": 0.0,
+    "mean_fill_frac": 0.8819,
+    "fill_stdev_frac": 0.282,
+    "fill_range_frac": 1.0,
+    "simulated_with": "reference bucket 4M/8M (stream itself uncapped)"
+  },
+  "vbv_native": {
+    "maxrate_bps": 4000000,
+    "bufsize_bits": 8000000,
+    "underflows": 0,
+    "cpb_saturation_events": 261,
+    "min_fill_frac": 0.5608,
+    "mean_fill_frac": 0.8906,
+    "fill_stdev_frac": 0.1287,
+    "fill_range_frac": 0.4392,
+    "simulated_with": "native HRD params"
+  },
+  "crf_cap": {
+    "maxrate_bps": 4000000,
+    "bufsize_bits": 8000000,
+    "underflows": 0,
+    "cpb_saturation_events": 268,
+    "min_fill_frac": 0.5931,
+    "mean_fill_frac": 0.8953,
+    "fill_stdev_frac": 0.1259,
+    "fill_range_frac": 0.4069,
+    "simulated_with": "native HRD params"
+  },
+  "abr_cap": {
+    "maxrate_bps": 4000000,
+    "bufsize_bits": 8000000,
+    "underflows": 0,
+    "cpb_saturation_events": 322,
+    "min_fill_frac": 0.5479,
+    "mean_fill_frac": 0.9229,
+    "fill_stdev_frac": 0.1203,
+    "fill_range_frac": 0.4521,
+    "simulated_with": "native HRD params"
+  },
+  "vbv_tight": {
+    "maxrate_bps": 4000000,
+    "bufsize_bits": 4000000,
+    "underflows": 0,
+    "cpb_saturation_events": 300,
+    "min_fill_frac": 0.5016,
+    "mean_fill_frac": 0.9308,
+    "fill_stdev_frac": 0.1114,
+    "fill_range_frac": 0.4984,
+    "simulated_with": "native HRD params"
+  }
+}
