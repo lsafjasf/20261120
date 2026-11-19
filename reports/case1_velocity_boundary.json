@@ -1,0 +1,62 @@
+[
+  {
+    "seq": 1,
+    "key": 64,
+    "vel": 1,
+    "sample": "soft_c4.wav",
+    "file_exists": true,
+    "transpose": 4,
+    "rr_position": 0,
+    "rr_length": 1,
+    "rand_draw": null,
+    "measured_f0": 329.6112217728185,
+    "target_f0": 329.6275569128699,
+    "f0_cents_err": -0.08579577407580265,
+    "note": "E4"
+  },
+  {
+    "seq": 2,
+    "key": 64,
+    "vel": 63,
+    "sample": "soft_c4.wav",
+    "file_exists": true,
+    "transpose": 4,
+    "rr_position": 0,
+    "rr_length": 1,
+    "rand_draw": null,
+    "measured_f0": 329.6112217728185,
+    "target_f0": 329.6275569128699,
+    "f0_cents_err": -0.08579577407580265,
+    "note": "E4"
+  },
+  {
+    "seq": 3,
+    "key": 64,
+    "vel": 64,
+    "sample": "hard_c4.wav",
+    "file_exists": true,
+    "transpose": 4,
+    "rr_position": 0,
+    "rr_length": 1,
+    "rand_draw": null,
+    "measured_f0": 329.2117490154388,
+    "target_f0": 329.6275569128699,
+    "f0_cents_err": -2.1852396449432256,
+    "note": "E4"
+  },
+  {
+    "seq": 4,
+    "key": 64,
+    "vel": 127,
+    "sample": "hard_c4.wav",
+    "file_exists": true,
+    "transpose": 4,
+    "rr_position": 0,
+    "rr_length": 1,
+    "rand_draw": null,
+    "measured_f0": 329.2117490154388,
+    "target_f0": 329.6275569128699,
+    "f0_cents_err": -2.1852396449432256,
+    "note": "E4"
+  }
+]

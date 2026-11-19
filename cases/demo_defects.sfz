@@ -1,0 +1,8 @@
+// demo_defects: intentionally broken instrument for the matrix view
+// - keys 64..66 uncovered (hole)
+// - keys 68..70: two regions overlap with no lorand/hirand split
+// - key 72: references a sample file that does not exist
+<region> sample=demo_a_c4.wav lokey=60 hikey=63 pitch_keycenter=60
+<region> sample=demo_a_c4.wav lokey=67 hikey=71 pitch_keycenter=60
+<region> sample=demo_b_c4.wav lokey=68 hikey=70 pitch_keycenter=60
+<region> sample=ghost_missing.wav lokey=72 hikey=72 pitch_keycenter=72

@@ -1,0 +1,5 @@
+// case3: semitone transposition around two roots
+// root A3 (57) covers G3..B3  -> transpose -2..+2
+// root D4 (62) covers C4..E4  -> transpose -2..+2
+<region> sample=root_a3.wav lokey=55 hikey=59 pitch_keycenter=57
+<region> sample=root_d4.wav lokey=60 hikey=64 pitch_keycenter=62

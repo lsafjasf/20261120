@@ -1,0 +1,4 @@
+// case2: round-robin with seq_position 3 missing (gap)
+<region> sample=rr1_c4.wav key=60 seq_length=4 seq_position=1
+<region> sample=rr2_c4.wav key=60 seq_length=4 seq_position=2
+<region> sample=rr4_c4.wav key=60 seq_length=4 seq_position=4
