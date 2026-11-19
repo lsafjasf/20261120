@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>HRTF 距离衰减 / 空气吸收 / 混响预延迟 听感验证</title>
+  <style>
+    body { font-family: system-ui, "Segoe UI", sans-serif; margin: 24px; color: #1d2430; }
+    h1 { font-size: 20px; }
+    .panel { border: 1px solid #d4dae3; border-radius: 10px; padding: 16px 18px; margin-bottom: 16px; max-width: 980px; }
+    label { display: inline-block; min-width: 150px; }
+    input[type="range"] { width: 420px; vertical-align: middle; }
+    .value { display: inline-block; min-width: 110px; font-variant-numeric: tabular-nums; }
+    button { padding: 8px 18px; border-radius: 8px; border: 0; background: #2563eb; color: #fff; cursor: pointer; font-size: 14px; }
+    button.secondary { background: #475569; }
+    table { border-collapse: collapse; font-size: 13px; margin-top: 10px; }
+    th, td { border: 1px solid #cbd5e1; padding: 4px 10px; text-align: right; font-variant-numeric: tabular-nums; }
+    th:first-child, td:first-child { text-align: left; }
+    .note { color: #5b6472; font-size: 12px; }
+    canvas { width: 100%; height: 320px; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; }
+    .row { margin: 8px 0; }
+    code { background: #f1f5f9; padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>HRTF 距离衰减、空气吸收与混响预延迟 — Web Audio 听感验证</h1>
+  <div class="panel">
+    <div class="row">
+      <label>声源距离</label>
+      <input id="distance" type="range" min="1" max="32" step="0.5" value="2" />
+      <span class="value" id="distanceValue">2.0 m</span>
+    </div>
+    <div class="row">
+      <label>相对湿度</label>
+      <input id="humidity" type="range" min="10" max="90" step="1" value="50" />
+      <span class="value" id="humidityValue">50 %RH</span>
+    </div>
+    <div class="row">
+      <label>混响 RT60</label>
+      <input id="rt60" type="range" min="0.2" max="1.6" step="0.05" value="0.9" />
+      <span class="value" id="rt60Value">0.90 s</span>
+    </div>
+    <div class="row">
+      <button id="play">开始播放</button>
+      <button id="stop" class="secondary">停止</button>
+      <button id="sweep" class="secondary">A/B 对比 1 m ↔ 32 m</button>
+      <span class="note" id="status">未启动（浏览器需要用户手势后才能发声）</span>
+    </div>
+  </div>
+
+  <div class="panel">
+    <strong>实时分析器频谱（粉噪激励，AnalyserNode 输出）</strong>
+    <canvas id="spectrum" width="960" height="320"></canvas>
+  </div>
+
+  <div class="panel">
+    <strong>当前参数下的物理量</strong>
+    <table>
+      <thead><tr><th>量</th><th>数值</th><th>说明</th></tr></thead>
+      <tbody id="metrics"></tbody>
+    </table>
+    <p class="note">
+      节点链路：<code>BufferSource → PannerNode(HRTF) → GainNode(距离律)
+      → 8 × BiquadFilter(highshelf, ISO 9613-1 拟合) → 干湿混合
+      (ConvolverNode, 含预延迟) → AnalyserNode → destination</code>。
+    </p>
+  </div>
+  <script src="audio-demo.js"></script>
+</body>
+</html>

@@ -1,0 +1,11 @@
+{
+  "name": "hrtf-distance-air-absorption",
+  "version": "1.0.0",
+  "description": "Frequency-dependent HRTF distance attenuation, ISO 9613-1 air absorption and reverb predelay experiments",
+  "type": "module",
+  "scripts": {
+    "experiment": "node src/experiment.js",
+    "ranking": "node src/ranking.js",
+    "all": "node src/experiment.js && node src/ranking.js"
+  }
+}
