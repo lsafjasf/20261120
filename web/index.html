@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>设备旋转驱动空间音频 · 直接映射 vs 平滑滤波</title>
+<style>
+  :root { --blue:#2563eb; --red:#dc2626; --bg:#f8fafc; --ink:#0f172a; }
+  * { box-sizing: border-box; }
+  body { margin:0; font-family:-apple-system,"Segoe UI",Roboto,"PingFang SC",
+         "Microsoft YaHei",sans-serif; background:var(--bg); color:var(--ink); }
+  header { padding:18px 24px; background:#0f172a; color:#fff; }
+  header h1 { margin:0 0 4px; font-size:19px; }
+  header p { margin:0; font-size:13px; color:#cbd5e1; }
+  main { max-width:1080px; margin:0 auto; padding:20px;
+         display:grid; grid-template-columns:1.1fr .9fr; gap:18px; }
+  .card { background:#fff; border:1px solid #e2e8f0; border-radius:12px;
+          padding:16px; box-shadow:0 1px 3px rgba(15,23,42,.06); }
+  .card h2 { margin:0 0 12px; font-size:15px; }
+  .stage { position:relative; height:300px; border-radius:10px;
+           background:radial-gradient(circle at 50% 45%,#1e293b,#020617);
+           overflow:hidden; }
+  .listener { position:absolute; left:50%; top:50%; width:14px; height:14px;
+              margin:-7px 0 0 -7px; border-radius:50%; background:#fff; }
+  .source { position:absolute; width:40px; height:40px; margin:-20px 0 0 -20px;
+            border-radius:50%; background:var(--blue); color:#fff;
+            display:flex; align-items:center; justify-content:center;
+            font-size:11px; transition:none; }
+  .head-arc { position:absolute; left:50%; top:50%; width:120px; height:120px;
+              margin:-60px 0 0 -60px; border:2px dashed rgba(255,255,255,.35);
+              border-radius:50%; }
+  .head-dir { position:absolute; left:50%; top:50%; width:2px; height:64px;
+              background:#f59e0b; transform-origin:bottom center; }
+  .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+  button { border:0; border-radius:8px; padding:9px 14px; font-size:13px;
+           cursor:pointer; background:#e2e8f0; color:#0f172a; }
+  button.primary { background:var(--blue); color:#fff; }
+  button.danger { background:var(--red); color:#fff; }
+  label { font-size:12px; color:#475569; }
+  select,input[type=range] { font-size:13px; }
+  table { width:100%; border-collapse:collapse; font-size:12px; }
+  th,td { text-align:left; padding:6px 8px; border-bottom:1px solid #e2e8f0; }
+  th { color:#64748b; font-weight:600; }
+  .mono { font-variant-numeric:tabular-nums; font-family:ui-monospace,monospace; }
+  .pill { display:inline-block; padding:2px 8px; border-radius:999px;
+          font-size:11px; background:#ecfdf5; color:#047857; }
+  .pill.warn { background:#fef2f2; color:#b91c1c; }
+  .log { height:130px; overflow:auto; font-size:11px; background:#0f172a;
+         color:#a7f3d0; border-radius:8px; padding:8px;
+         font-family:ui-monospace,monospace; }
+  @media (max-width:860px){ main{grid-template-columns:1fr;} }
+</style>
+</head>
+<body>
+<header>
+  <h1>设备旋转 → 空间音频声源方位更新</h1>
+  <p>真实 deviceorientation 事件（或桌面模拟转头）驱动，对比直接映射与 One-Euro 平滑滤波；
+     多普勒摆率限制防止快速转头时的音高突变，全程统计更新延迟。</p>
+</header>
+<main>
+  <section class="card">
+    <h2>实时声场</h2>
+    <div class="stage" id="stage">
+      <div class="head-arc"></div>
+      <div class="head-dir" id="headDir"></div>
+      <div class="listener"></div>
+      <div class="source" id="source">声源</div>
+    </div>
+    <div class="row" style="margin-top:12px">
+      <button class="primary" id="startBtn">启动音频</button>
+      <button id="sensorBtn">启用设备方向</button>
+      <button id="simBtn">模拟快速转头</button>
+      <label>更新方式
+        <select id="modeSel">
+          <option value="direct">直接映射</option>
+          <option value="smooth" selected>One-Euro 平滑</option>
+        </select>
+      </label>
+      <label class="row">最小截止 <span class="mono" id="mcVal">1.0 Hz</span>
+        <input type="range" id="minCut" min="0.3" max="3" step="0.1" value="1">
+      </label>
+      <label class="row">β <span class="mono" id="betaVal">0.60</span>
+        <input type="range" id="beta" min="0.05" max="1.5" step="0.05" value="0.6">
+      </label>
+    </div>
+  </section>
+  <section class="card">
+    <h2>实时指标</h2>
+    <table>
+      <tr><th>指标</th><th>直接映射</th><th>平滑滤波</th></tr>
+      <tr><td>原始/输出抖动 (°)</td>
+          <td class="mono" id="jDirect">–</td><td class="mono" id="jSmooth">–</td></tr>
+      <tr><td>多普勒单拍最大跳变 (cent)</td>
+          <td class="mono" id="dDirect">–</td><td class="mono" id="dSmooth">–</td></tr>
+      <tr><td>更新延迟 p50 / p95 (ms)</td>
+          <td class="mono" id="lDirect">–</td><td class="mono" id="lSmooth">–</td></tr>
+      <tr><td>跟踪滞后 (ms)</td>
+          <td class="mono" id="lagDirect">–</td><td class="mono" id="lagSmooth">–</td></tr>
+    </table>
+    <p style="font-size:12px;color:#475569;margin:10px 0 6px">
+      状态：<span class="pill" id="statusPill">等待启动</span>
+      传感器速率 <span class="mono" id="sensorRate">0</span> Hz ·
+      渲染速率 <span class="mono" id="renderRate">0</span> Hz
+    </p>
+    <div class="log" id="log"></div>
+  </section>
+</main>
+<script src="app.js"></script>
+<script src="app-runtime.js"></script>
+</body>
+</html>
