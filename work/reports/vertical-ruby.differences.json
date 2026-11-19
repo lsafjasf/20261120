@@ -1,0 +1,154 @@
+[
+  {
+    "attribute": "xml:id",
+    "value": "vright",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "region",
+    "id": "vright"
+  },
+  {
+    "attribute": "tts:writingMode",
+    "value": "tbrl",
+    "status": "partial",
+    "reason": "lrtb/rtlbt/tblr/tbrl 需转 horizontal-tb/vertical-rl/vertical-lr",
+    "scope": "region",
+    "id": "vright"
+  },
+  {
+    "attribute": "tts:showBackground",
+    "value": "whenActive",
+    "status": "unmappable",
+    "reason": "whenActive/always 是 ISD 时间条件语义，CSS 无法按激活态自动切换",
+    "scope": "region",
+    "id": "vright"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "vlr",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "region",
+    "id": "vlr"
+  },
+  {
+    "attribute": "tts:writingMode",
+    "value": "tblr",
+    "status": "partial",
+    "reason": "lrtb/rtlbt/tblr/tbrl 需转 horizontal-tb/vertical-rl/vertical-lr",
+    "scope": "region",
+    "id": "vlr"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "vbase",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "vbase"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "rtext",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "rtext"
+  },
+  {
+    "attribute": "tts:ruby",
+    "value": "text",
+    "status": "partial",
+    "reason": "container 合并语义需 JS 预处理",
+    "scope": "style",
+    "id": "rtext"
+  },
+  {
+    "attribute": "tts:rubyPosition",
+    "value": "before",
+    "status": "partial",
+    "reason": "outside/inter-character 浏览器支持不一致",
+    "scope": "style",
+    "id": "rtext"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "rbase",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "rbase"
+  },
+  {
+    "attribute": "tts:ruby",
+    "value": "base",
+    "status": "partial",
+    "reason": "container 合并语义需 JS 预处理",
+    "scope": "style",
+    "id": "rbase"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "rcontainer",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "rcontainer"
+  },
+  {
+    "attribute": "tts:ruby",
+    "value": "container",
+    "status": "partial",
+    "reason": "container 合并语义需 JS 预处理",
+    "scope": "style",
+    "id": "rcontainer"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "ralign",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "ralign"
+  },
+  {
+    "attribute": "tts:rubyAlign",
+    "value": "spaceAround",
+    "status": "partial",
+    "reason": "Chromium 支持，旧引擎不支持",
+    "scope": "style",
+    "id": "ralign"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "shear",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "shear"
+  },
+  {
+    "attribute": "tts:fontShear",
+    "value": "10%",
+    "status": "emulated",
+    "reason": "skewX 影响布局盒，与 TTML 字体内部剪切不等价",
+    "scope": "style",
+    "id": "shear"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "multi",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "multi"
+  },
+  {
+    "attribute": "tts:multiRowAlign",
+    "value": "start end",
+    "status": "unmappable",
+    "reason": "TTML2 主/副文本行双值对齐，CSS 无对应属性",
+    "scope": "style",
+    "id": "multi"
+  }
+]

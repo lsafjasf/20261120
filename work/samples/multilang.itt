@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="en" xmlns="http://www.w3.org/ns/ttml"
+    xmlns:tts="http://www.w3.org/ns/ttml#styling"
+    xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+    ttp:timeBase="media" ttp:frameRate="24"
+    ttp:cellResolution="32 15" tts:extent="1280px 720px">
+  <head>
+    <styling>
+      <style xml:id="base" tts:fontFamily="sans-serif" tts:fontSize="1.2c"
+             tts:lineHeight="1.6c" tts:color="#FFFFFF"
+             tts:backgroundColor="rgba(0,0,0,0.72)"/>
+      <style xml:id="ja" xml:lang="ja" tts:fontFamily="sansSerif"
+             tts:fontSize="1.1c"/>
+      <style xml:id="ar" xml:lang="ar" tts:direction="rtl"
+             tts:unicodeBidi="plaintext"/>
+      <style xml:id="em" tts:fontStyle="italic"
+             tts:textDecoration="underline"
+             tts:textShadow="2px 2px 4px black"/>
+      <style xml:id="reserve" tts:rubyReserve="before 0.6c"/>
+    </styling>
+    <layout>
+      <region xml:id="bottom" tts:origin="80px 576px" tts:extent="1120px 115.2px"
+              tts:displayAlign="after" tts:padding="0.17c"
+              tts:backgroundColor="rgba(0,0,0,0.55)"
+              tts:showBackground="always" tts:writingMode="lrtb"/>
+    </layout>
+  </head>
+  <body>
+    <div region="bottom">
+      <p begin="0.5s" end="5s" style="base">
+        <span>Hello world — </span><span style="ja">こんにちは世界</span><span> — </span><span style="em">café</span>
+      </p>
+      <p begin="1s" end="6s" style="base">
+        <span>Café · Αθήνα · </span><span style="ar">مرحبا بالعالم</span>
+      </p>
+      <p begin="1.5s" end="7s" style="base">
+        <span>한국어 텍스트 line three</span>
+      </p>
+      <p begin="2s" end="8s" style="reserve">rubyReserve 行（CSS 不可直接映射）</p>
+    </div>
+  </body>
+</tt>

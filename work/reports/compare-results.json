@@ -1,0 +1,1217 @@
+[
+  {
+    "file": "multilang.itt",
+    "errors": [],
+    "analysis": {
+      "tolerancePx": 4,
+      "overallPass": true,
+      "lineHeights": [
+        {
+          "index": 0,
+          "refText": "Hello world — こんにちは世界 — café",
+          "cssText": "Hello world —こんにちは世界—café",
+          "refLineHeightCss": "76.8px",
+          "cssLineHeightCss": "76.8px",
+          "refParagraphHeightPx": 77.796875,
+          "cssParagraphHeightPx": 77.796875,
+          "absDeltaPx": 0,
+          "verdict": "pass",
+          "topDeltaPx": 1.796875,
+          "leftDeltaPx": 0,
+          "positionVerdict": "pass"
+        },
+        {
+          "index": 1,
+          "refText": "Café · Αθήνα · مرحبا بالعالم",
+          "cssText": "Café · Αθήνα ·مرحبا بالعالم",
+          "refLineHeightCss": "76.8px",
+          "cssLineHeightCss": "76.8px",
+          "refParagraphHeightPx": 76.796875,
+          "cssParagraphHeightPx": 76.796875,
+          "absDeltaPx": 0,
+          "verdict": "pass",
+          "topDeltaPx": 1.796875,
+          "leftDeltaPx": 0,
+          "positionVerdict": "pass"
+        },
+        {
+          "index": 2,
+          "refText": "한국어 텍스트 line three",
+          "cssText": "한국어 텍스트 line three",
+          "refLineHeightCss": "76.8px",
+          "cssLineHeightCss": "76.8px",
+          "refParagraphHeightPx": 76.796875,
+          "cssParagraphHeightPx": 76.796875,
+          "absDeltaPx": 0,
+          "verdict": "pass",
+          "topDeltaPx": 1.796875,
+          "leftDeltaPx": 0,
+          "positionVerdict": "pass"
+        },
+        {
+          "index": 3,
+          "refText": "​​rubyReserve 行（CSS 不可直接映射）",
+          "cssText": "​​rubyReserve 行（CSS 不可直接映射）",
+          "refLineHeightCss": "normal",
+          "cssLineHeightCss": "48px",
+          "refParagraphHeightPx": 71.203125,
+          "cssParagraphHeightPx": 73,
+          "absDeltaPx": 1.796875,
+          "verdict": "pass",
+          "topDeltaPx": 1.796875,
+          "leftDeltaPx": 0,
+          "positionVerdict": "pass"
+        }
+      ],
+      "firstLine": {
+        "available": true,
+        "ref": {
+          "x": 86.796875,
+          "y": 384.4375,
+          "width": 417.078125,
+          "height": 67,
+          "top": 384.4375,
+          "left": 86.796875,
+          "bottom": 451.4375,
+          "right": 503.875,
+          "rel": {
+            "x": 6.796875,
+            "y": -191.5625,
+            "width": 417.078125,
+            "height": 67,
+            "top": -191.5625,
+            "left": 6.796875,
+            "right": 423.875,
+            "bottom": -124.5625
+          }
+        },
+        "css": {
+          "x": 86.796875,
+          "y": 382.640625,
+          "width": 398.78125,
+          "height": 67,
+          "top": 382.640625,
+          "left": 86.796875,
+          "bottom": 449.640625,
+          "right": 485.578125,
+          "rel": {
+            "x": 6.796875,
+            "y": -193.359375,
+            "width": 398.78125,
+            "height": 67,
+            "top": -193.359375,
+            "left": 6.796875,
+            "right": 405.578125,
+            "bottom": -126.359375
+          }
+        },
+        "heightDeltaPx": 0,
+        "topDeltaPx": 1.796875,
+        "leftDeltaPx": 0,
+        "heightVerdict": "pass",
+        "positionVerdict": "pass"
+      },
+      "baseline": {
+        "available": true,
+        "method": "inline-block 探针底 - 0.21*fontSize 估计 descent",
+        "axis": "y",
+        "refBaselineY": 425.3415,
+        "cssBaselineY": 423.544625,
+        "fontSize": 57.6,
+        "baselineOffsetPx": 1.796875,
+        "verdict": "pass",
+        "note": "竖排文档中该值为块向（水平方向）坐标差，反映竖排基线（字符中轴）偏移"
+      },
+      "ruby": [],
+      "regions": {
+        "refCount": 1,
+        "cssCount": 1,
+        "ref": [
+          {
+            "x": 80,
+            "y": 576,
+            "width": 1119.984375,
+            "height": 115.1875,
+            "top": 576,
+            "left": 80,
+            "right": 1199.984375,
+            "bottom": 691.1875
+          }
+        ],
+        "css": [
+          {
+            "x": 80,
+            "y": 576,
+            "width": 1119.984375,
+            "height": 115.1875,
+            "top": 576,
+            "left": 80,
+            "right": 1199.984375,
+            "bottom": 691.1875
+          }
+        ]
+      }
+    },
+    "metrics": {
+      "ref": {
+        "paragraphs": [
+          {
+            "index": 0,
+            "text": "Hello world — こんにちは世界 — café",
+            "lineHeight": "76.8px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 380.4375,
+              "width": 1106.390625,
+              "height": 77.796875,
+              "top": 380.4375,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 458.234375
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": -195.5625,
+              "width": 1106.390625,
+              "height": 77.796875,
+              "top": -195.5625,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": -117.765625
+            },
+            "regionId": null
+          },
+          {
+            "index": 1,
+            "text": "Café · Αθήνα · مرحبا بالعالم",
+            "lineHeight": "76.8px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 458.234375,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": 458.234375,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 535.03125
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": -117.765625,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": -117.765625,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": -40.96875
+            },
+            "regionId": null
+          },
+          {
+            "index": 2,
+            "text": "한국어 텍스트 line three",
+            "lineHeight": "76.8px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 535.03125,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": 535.03125,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 611.828125
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": -40.96875,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": -40.96875,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": 35.828125
+            },
+            "regionId": null
+          },
+          {
+            "index": 3,
+            "text": "​​rubyReserve 行（CSS 不可直接映射）",
+            "lineHeight": "normal",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 611.828125,
+              "width": 1106.390625,
+              "height": 71.203125,
+              "top": 611.828125,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 683.03125
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": 35.828125,
+              "width": 1106.390625,
+              "height": 71.203125,
+              "top": 35.828125,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": 107.03125
+            },
+            "regionId": null
+          }
+        ],
+        "firstLine": {
+          "x": 86.796875,
+          "y": 384.4375,
+          "width": 417.078125,
+          "height": 67,
+          "top": 384.4375,
+          "left": 86.796875,
+          "bottom": 451.4375,
+          "right": 503.875,
+          "rel": {
+            "x": 6.796875,
+            "y": -191.5625,
+            "width": 417.078125,
+            "height": 67,
+            "top": -191.5625,
+            "left": 6.796875,
+            "right": 423.875,
+            "bottom": -124.5625
+          }
+        },
+        "baseline": {
+          "baseline": 425.3415,
+          "baselineX": 943.0625,
+          "probeBottom": 437.4375,
+          "fontSize": 57.6,
+          "writingMode": "horizontal-tb"
+        },
+        "rubies": [
+          {
+            "index": 0,
+            "rubyText": "​",
+            "baseText": "​",
+            "writingMode": "horizontal-tb",
+            "rtBox": {
+              "x": 6.796875,
+              "y": 25.03125,
+              "width": 0,
+              "height": 34,
+              "top": 25.03125,
+              "left": 6.796875,
+              "right": 6.796875,
+              "bottom": 59.03125
+            },
+            "baseBox": {
+              "x": 6.796875,
+              "y": 51.03125,
+              "width": 0,
+              "height": 56,
+              "top": 51.03125,
+              "left": 6.796875,
+              "right": 6.796875,
+              "bottom": 107.03125
+            },
+            "rtGap": -26
+          }
+        ],
+        "regionRects": [
+          {
+            "x": 80,
+            "y": 576,
+            "width": 1119.984375,
+            "height": 115.1875,
+            "top": 576,
+            "left": 80,
+            "right": 1199.984375,
+            "bottom": 691.1875
+          }
+        ]
+      },
+      "css": {
+        "paragraphs": [
+          {
+            "index": 0,
+            "text": "Hello world —こんにちは世界—café",
+            "lineHeight": "76.8px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 378.640625,
+              "width": 1106.390625,
+              "height": 77.796875,
+              "top": 378.640625,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 456.4375
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": -197.359375,
+              "width": 1106.390625,
+              "height": 77.796875,
+              "top": -197.359375,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": -119.5625
+            },
+            "regionId": "bottom"
+          },
+          {
+            "index": 1,
+            "text": "Café · Αθήνα ·مرحبا بالعالم",
+            "lineHeight": "76.8px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 456.4375,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": 456.4375,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 533.234375
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": -119.5625,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": -119.5625,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": -42.765625
+            },
+            "regionId": "bottom"
+          },
+          {
+            "index": 2,
+            "text": "한국어 텍스트 line three",
+            "lineHeight": "76.8px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 533.234375,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": 533.234375,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 610.03125
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": -42.765625,
+              "width": 1106.390625,
+              "height": 76.796875,
+              "top": -42.765625,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": 34.03125
+            },
+            "regionId": "bottom"
+          },
+          {
+            "index": 3,
+            "text": "​​rubyReserve 行（CSS 不可直接映射）",
+            "lineHeight": "48px",
+            "writingMode": "horizontal-tb",
+            "rect": {
+              "x": 86.796875,
+              "y": 610.03125,
+              "width": 1106.390625,
+              "height": 73,
+              "top": 610.03125,
+              "left": 86.796875,
+              "right": 1193.1875,
+              "bottom": 683.03125
+            },
+            "regionBox": {
+              "x": 80,
+              "y": 576,
+              "width": 1119.984375,
+              "height": 115.1875,
+              "top": 576,
+              "left": 80,
+              "right": 1199.984375,
+              "bottom": 691.1875
+            },
+            "rectRel": {
+              "x": 6.796875,
+              "y": 34.03125,
+              "width": 1106.390625,
+              "height": 73,
+              "top": 34.03125,
+              "left": 6.796875,
+              "right": 1113.1875,
+              "bottom": 107.03125
+            },
+            "regionId": "bottom"
+          }
+        ],
+        "firstLine": {
+          "x": 86.796875,
+          "y": 382.640625,
+          "width": 398.78125,
+          "height": 67,
+          "top": 382.640625,
+          "left": 86.796875,
+          "bottom": 449.640625,
+          "right": 485.578125,
+          "rel": {
+            "x": 6.796875,
+            "y": -193.359375,
+            "width": 398.78125,
+            "height": 67,
+            "top": -193.359375,
+            "left": 6.796875,
+            "right": 405.578125,
+            "bottom": -126.359375
+          }
+        },
+        "baseline": {
+          "baseline": 423.544625,
+          "baselineX": 888.140625,
+          "probeBottom": 435.640625,
+          "fontSize": 57.6,
+          "writingMode": "horizontal-tb"
+        },
+        "rubies": [
+          {
+            "index": 0,
+            "rubyText": "​",
+            "baseText": "​",
+            "writingMode": "horizontal-tb",
+            "rtBox": {
+              "x": 6.796875,
+              "y": 29.03125,
+              "width": 0,
+              "height": 34,
+              "top": 29.03125,
+              "left": 6.796875,
+              "right": 6.796875,
+              "bottom": 63.03125
+            },
+            "baseBox": {
+              "x": 6.796875,
+              "y": 55.03125,
+              "width": 0,
+              "height": 56,
+              "top": 55.03125,
+              "left": 6.796875,
+              "right": 6.796875,
+              "bottom": 111.03125
+            },
+            "rtGap": -26
+          }
+        ],
+        "regionRects": [
+          {
+            "x": 80,
+            "y": 576,
+            "width": 1119.984375,
+            "height": 115.1875,
+            "top": 576,
+            "left": 80,
+            "right": 1199.984375,
+            "bottom": 691.1875
+          }
+        ]
+      }
+    }
+  },
+  {
+    "file": "vertical-ruby.itt",
+    "errors": [],
+    "analysis": {
+      "tolerancePx": 4,
+      "overallPass": true,
+      "lineHeights": [
+        {
+          "index": 0,
+          "refText": "漢字かんじ 日本語にほんご",
+          "cssText": "漢字かんじ 日本語にほんご",
+          "refLineHeightCss": "96px",
+          "cssLineHeightCss": "96px",
+          "refParagraphHeightPx": 600,
+          "cssParagraphHeightPx": 604,
+          "absDeltaPx": 4,
+          "verdict": "pass",
+          "topDeltaPx": 2,
+          "leftDeltaPx": 2,
+          "positionVerdict": "pass"
+        },
+        {
+          "index": 1,
+          "refText": "縦組み multilrow のテスト",
+          "cssText": "縦組み multilrow のテスト",
+          "refLineHeightCss": "96px",
+          "cssLineHeightCss": "96px",
+          "refParagraphHeightPx": 600,
+          "cssParagraphHeightPx": 604,
+          "absDeltaPx": 4,
+          "verdict": "pass",
+          "topDeltaPx": 2,
+          "leftDeltaPx": 0,
+          "positionVerdict": "pass"
+        }
+      ],
+      "firstLine": {
+        "available": true,
+        "ref": {
+          "x": 1123,
+          "y": 60,
+          "width": 78,
+          "height": 156,
+          "top": 60,
+          "left": 1123,
+          "bottom": 216,
+          "right": 1201,
+          "rel": {
+            "x": 83,
+            "y": 12,
+            "width": 78,
+            "height": 156,
+            "top": 12,
+            "left": 83,
+            "right": 161,
+            "bottom": 168
+          }
+        },
+        "css": {
+          "x": 1121,
+          "y": 58,
+          "width": 78,
+          "height": 156,
+          "top": 58,
+          "left": 1121,
+          "bottom": 214,
+          "right": 1199,
+          "rel": {
+            "x": 81,
+            "y": 10,
+            "width": 78,
+            "height": 156,
+            "top": 10,
+            "left": 81,
+            "right": 159,
+            "bottom": 166
+          }
+        },
+        "heightDeltaPx": 0,
+        "topDeltaPx": 2,
+        "leftDeltaPx": 2,
+        "heightVerdict": "pass",
+        "positionVerdict": "pass"
+      },
+      "baseline": {
+        "available": true,
+        "method": "inline-block 探针底 - 0.21*fontSize 估计 descent",
+        "axis": "x (竖排块向/字符中轴)",
+        "refBaselineY": 1162,
+        "cssBaselineY": 1160,
+        "fontSize": 67.2,
+        "baselineOffsetPx": 2,
+        "verdict": "pass",
+        "note": "竖排文档中该值为块向（水平方向）坐标差，反映竖排基线（字符中轴）偏移"
+      },
+      "ruby": [
+        {
+          "index": 0,
+          "rubyText": "かんじ",
+          "baseText": "漢字",
+          "writingMode": "vertical-rl",
+          "refRtBox": {
+            "x": 153.5,
+            "y": 12,
+            "width": 39,
+            "height": 156,
+            "top": 12,
+            "left": 153.5,
+            "right": 192.5,
+            "bottom": 168
+          },
+          "cssRtBox": {
+            "x": 151.5,
+            "y": 10,
+            "width": 39,
+            "height": 156,
+            "top": 10,
+            "left": 151.5,
+            "right": 190.5,
+            "bottom": 166
+          },
+          "refBaseBox": {
+            "x": 83,
+            "y": 12,
+            "width": 78,
+            "height": 156,
+            "top": 12,
+            "left": 83,
+            "right": 161,
+            "bottom": 168
+          },
+          "cssBaseBox": {
+            "x": 81,
+            "y": 10,
+            "width": 78,
+            "height": 156,
+            "top": 10,
+            "left": 81,
+            "right": 159,
+            "bottom": 166
+          },
+          "rtTopDeltaPx": 2,
+          "rtLeftDeltaPx": 2,
+          "gapDeltaPx": 0,
+          "positionErrorPx": 2.8284271247461903,
+          "gapVerdict": "pass",
+          "verdict": "pass"
+        },
+        {
+          "index": 1,
+          "rubyText": "にほんご",
+          "baseText": "日本語",
+          "writingMode": "vertical-rl",
+          "refRtBox": {
+            "x": 153.5,
+            "y": 189.359375,
+            "width": 39,
+            "height": 234,
+            "top": 189.359375,
+            "left": 153.5,
+            "right": 192.5,
+            "bottom": 423.359375
+          },
+          "cssRtBox": {
+            "x": 151.5,
+            "y": 187.359375,
+            "width": 39,
+            "height": 234,
+            "top": 187.359375,
+            "left": 151.5,
+            "right": 190.5,
+            "bottom": 421.359375
+          },
+          "refBaseBox": {
+            "x": 83,
+            "y": 189.359375,
+            "width": 78,
+            "height": 234,
+            "top": 189.359375,
+            "left": 83,
+            "right": 161,
+            "bottom": 423.359375
+          },
+          "cssBaseBox": {
+            "x": 81,
+            "y": 187.359375,
+            "width": 78,
+            "height": 234,
+            "top": 187.359375,
+            "left": 81,
+            "right": 159,
+            "bottom": 421.359375
+          },
+          "rtTopDeltaPx": 2,
+          "rtLeftDeltaPx": 2,
+          "gapDeltaPx": 0,
+          "positionErrorPx": 2.8284271247461903,
+          "gapVerdict": "pass",
+          "verdict": "pass"
+        }
+      ],
+      "regions": {
+        "refCount": 2,
+        "cssCount": 2,
+        "ref": [
+          {
+            "x": 1040,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 1040,
+            "right": 1240,
+            "bottom": 672
+          },
+          {
+            "x": 40,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 40,
+            "right": 240,
+            "bottom": 672
+          }
+        ],
+        "css": [
+          {
+            "x": 1040,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 1040,
+            "right": 1240,
+            "bottom": 672
+          },
+          {
+            "x": 40,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 40,
+            "right": 240,
+            "bottom": 672
+          }
+        ]
+      }
+    },
+    "metrics": {
+      "ref": {
+        "paragraphs": [
+          {
+            "index": 0,
+            "text": "漢字かんじ 日本語にほんご",
+            "lineHeight": "96px",
+            "writingMode": "vertical-rl",
+            "rect": {
+              "x": 1114,
+              "y": 60,
+              "width": 116,
+              "height": 600,
+              "top": 60,
+              "left": 1114,
+              "right": 1230,
+              "bottom": 660
+            },
+            "regionBox": {
+              "x": 1040,
+              "y": 48,
+              "width": 200,
+              "height": 624,
+              "top": 48,
+              "left": 1040,
+              "right": 1240,
+              "bottom": 672
+            },
+            "rectRel": {
+              "x": 74,
+              "y": 12,
+              "width": 116,
+              "height": 600,
+              "top": 12,
+              "left": 74,
+              "right": 190,
+              "bottom": 612
+            },
+            "regionId": null
+          },
+          {
+            "index": 1,
+            "text": "縦組み multilrow のテスト",
+            "lineHeight": "96px",
+            "writingMode": "vertical-lr",
+            "rect": {
+              "x": 44,
+              "y": 60,
+              "width": 192,
+              "height": 600,
+              "top": 60,
+              "left": 44,
+              "right": 236,
+              "bottom": 660
+            },
+            "regionBox": {
+              "x": 40,
+              "y": 48,
+              "width": 200,
+              "height": 624,
+              "top": 48,
+              "left": 40,
+              "right": 240,
+              "bottom": 672
+            },
+            "rectRel": {
+              "x": 4,
+              "y": 12,
+              "width": 192,
+              "height": 600,
+              "top": 12,
+              "left": 4,
+              "right": 196,
+              "bottom": 612
+            },
+            "regionId": null
+          }
+        ],
+        "firstLine": {
+          "x": 1123,
+          "y": 60,
+          "width": 78,
+          "height": 156,
+          "top": 60,
+          "left": 1123,
+          "bottom": 216,
+          "right": 1201,
+          "rel": {
+            "x": 83,
+            "y": 12,
+            "width": 78,
+            "height": 156,
+            "top": 12,
+            "left": 83,
+            "right": 161,
+            "bottom": 168
+          }
+        },
+        "baseline": {
+          "baseline": 1161.5,
+          "baselineX": 1162,
+          "probeBottom": 472.359375,
+          "fontSize": 67.2,
+          "writingMode": "vertical-rl"
+        },
+        "rubies": [
+          {
+            "index": 0,
+            "rubyText": "かんじ",
+            "baseText": "漢字",
+            "writingMode": "vertical-rl",
+            "rtBox": {
+              "x": 153.5,
+              "y": 12,
+              "width": 39,
+              "height": 156,
+              "top": 12,
+              "left": 153.5,
+              "right": 192.5,
+              "bottom": 168
+            },
+            "baseBox": {
+              "x": 83,
+              "y": 12,
+              "width": 78,
+              "height": 156,
+              "top": 12,
+              "left": 83,
+              "right": 161,
+              "bottom": 168
+            },
+            "rtGap": 70.5
+          },
+          {
+            "index": 1,
+            "rubyText": "にほんご",
+            "baseText": "日本語",
+            "writingMode": "vertical-rl",
+            "rtBox": {
+              "x": 153.5,
+              "y": 189.359375,
+              "width": 39,
+              "height": 234,
+              "top": 189.359375,
+              "left": 153.5,
+              "right": 192.5,
+              "bottom": 423.359375
+            },
+            "baseBox": {
+              "x": 83,
+              "y": 189.359375,
+              "width": 78,
+              "height": 234,
+              "top": 189.359375,
+              "left": 83,
+              "right": 161,
+              "bottom": 423.359375
+            },
+            "rtGap": 70.5
+          }
+        ],
+        "regionRects": [
+          {
+            "x": 1040,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 1040,
+            "right": 1240,
+            "bottom": 672
+          },
+          {
+            "x": 40,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 40,
+            "right": 240,
+            "bottom": 672
+          }
+        ]
+      },
+      "css": {
+        "paragraphs": [
+          {
+            "index": 0,
+            "text": "漢字かんじ 日本語にほんご",
+            "lineHeight": "96px",
+            "writingMode": "vertical-rl",
+            "rect": {
+              "x": 1112,
+              "y": 58,
+              "width": 116,
+              "height": 604,
+              "top": 58,
+              "left": 1112,
+              "right": 1228,
+              "bottom": 662
+            },
+            "regionBox": {
+              "x": 1040,
+              "y": 48,
+              "width": 200,
+              "height": 624,
+              "top": 48,
+              "left": 1040,
+              "right": 1240,
+              "bottom": 672
+            },
+            "rectRel": {
+              "x": 72,
+              "y": 10,
+              "width": 116,
+              "height": 604,
+              "top": 10,
+              "left": 72,
+              "right": 188,
+              "bottom": 614
+            },
+            "regionId": "vright"
+          },
+          {
+            "index": 1,
+            "text": "縦組み multilrow のテスト",
+            "lineHeight": "96px",
+            "writingMode": "vertical-lr",
+            "rect": {
+              "x": 44,
+              "y": 58,
+              "width": 192,
+              "height": 604,
+              "top": 58,
+              "left": 44,
+              "right": 236,
+              "bottom": 662
+            },
+            "regionBox": {
+              "x": 40,
+              "y": 48,
+              "width": 200,
+              "height": 624,
+              "top": 48,
+              "left": 40,
+              "right": 240,
+              "bottom": 672
+            },
+            "rectRel": {
+              "x": 4,
+              "y": 10,
+              "width": 192,
+              "height": 604,
+              "top": 10,
+              "left": 4,
+              "right": 196,
+              "bottom": 614
+            },
+            "regionId": "vlr"
+          }
+        ],
+        "firstLine": {
+          "x": 1121,
+          "y": 58,
+          "width": 78,
+          "height": 156,
+          "top": 58,
+          "left": 1121,
+          "bottom": 214,
+          "right": 1199,
+          "rel": {
+            "x": 81,
+            "y": 10,
+            "width": 78,
+            "height": 156,
+            "top": 10,
+            "left": 81,
+            "right": 159,
+            "bottom": 166
+          }
+        },
+        "baseline": {
+          "baseline": 1159.5,
+          "baselineX": 1160,
+          "probeBottom": 470.359375,
+          "fontSize": 67.2,
+          "writingMode": "vertical-rl"
+        },
+        "rubies": [
+          {
+            "index": 0,
+            "rubyText": "かんじ",
+            "baseText": "漢字",
+            "writingMode": "vertical-rl",
+            "rtBox": {
+              "x": 151.5,
+              "y": 10,
+              "width": 39,
+              "height": 156,
+              "top": 10,
+              "left": 151.5,
+              "right": 190.5,
+              "bottom": 166
+            },
+            "baseBox": {
+              "x": 81,
+              "y": 10,
+              "width": 78,
+              "height": 156,
+              "top": 10,
+              "left": 81,
+              "right": 159,
+              "bottom": 166
+            },
+            "rtGap": 70.5
+          },
+          {
+            "index": 1,
+            "rubyText": "にほんご",
+            "baseText": "日本語",
+            "writingMode": "vertical-rl",
+            "rtBox": {
+              "x": 151.5,
+              "y": 187.359375,
+              "width": 39,
+              "height": 234,
+              "top": 187.359375,
+              "left": 151.5,
+              "right": 190.5,
+              "bottom": 421.359375
+            },
+            "baseBox": {
+              "x": 81,
+              "y": 187.359375,
+              "width": 78,
+              "height": 234,
+              "top": 187.359375,
+              "left": 81,
+              "right": 159,
+              "bottom": 421.359375
+            },
+            "rtGap": 70.5
+          }
+        ],
+        "regionRects": [
+          {
+            "x": 1040,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 1040,
+            "right": 1240,
+            "bottom": 672
+          },
+          {
+            "x": 40,
+            "y": 48,
+            "width": 200,
+            "height": 624,
+            "top": 48,
+            "left": 40,
+            "right": 240,
+            "bottom": 672
+          }
+        ]
+      }
+    }
+  }
+]

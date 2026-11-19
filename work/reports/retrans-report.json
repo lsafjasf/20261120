@@ -1,0 +1,67 @@
+{
+  "scenario": "deterministic loss + KMRSP drop + retransmission",
+  "sim_ms": 1620.5,
+  "forced_dropped_data": [
+    3,
+    7,
+    12
+  ],
+  "forced_dropped_kmrsp": 1,
+  "kmrsp_arrival_times_ms": [
+    368.0,
+    549.5
+  ],
+  "km_ok": {
+    "A": true,
+    "B": true
+  },
+  "retrans_window_seqs": {
+    "A": [
+      3,
+      7,
+      12,
+      3,
+      7,
+      12
+    ],
+    "B": [
+      21
+    ]
+  },
+  "retrans_counts": {
+    "A": {
+      "nak": 6,
+      "rto": 0
+    },
+    "B": {
+      "nak": 0,
+      "rto": 1
+    }
+  },
+  "delivery": {
+    "A": {
+      "count": 24,
+      "dups": 0,
+      "in_order": true
+    },
+    "B": {
+      "count": 24,
+      "dups": 0,
+      "in_order": true
+    }
+  },
+  "acked_resend_attempts": {
+    "A": 0,
+    "B": 0
+  },
+  "checks": {
+    "kmrsp_drop_recovered": true,
+    "delivery_A_contiguous": true,
+    "delivery_B_contiguous": true,
+    "no_duplicate_delivery": true,
+    "no_acked_resend": true,
+    "lost_seqs_retransmitted": true,
+    "session_completed": true
+  },
+  "all_pass": true
+}

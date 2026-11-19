@@ -1,0 +1,9 @@
+{
+  "name": "ttml-css-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "dependencies": {
+    "imsc": "^2.0.0"
+  }
+}

@@ -1,0 +1,147 @@
+<!doctype html><html><head><meta charset="utf-8">
+<script type="importmap">{"imports":{"tslib":"file:///home/hj/userfeedback/uid4-0028/work/node_modules/tslib/tslib.es6.js"}}</script>
+<style>html,body{margin:0;padding:0;background:#000}
+#stage{position:relative;width:1280px;height:720px;overflow:hidden}</style>
+</head><body><div id="stage"></div>
+<script type="module">
+const __main = async function pageMain({ imscUrl, ttmlXml, mappedHtml, mappedCss }) {
+  const imsc = await import(imscUrl);
+  const doc = imsc.fromXML(ttmlXml, e => { throw new Error('TTML parse: ' + e); });
+  const isd = imsc.generateISD(doc, 3.0);
+
+  const stage = document.getElementById('stage');
+  const ref = document.createElement('div');
+  ref.id = 'ref-root';
+  ref.style.cssText = 'position:absolute;left:0;top:0;width:1280px;height:720px';
+  stage.appendChild(ref);
+  const errs = [];
+  imsc.renderHTML(isd, ref, null, 720, 1280, false,
+    msg => errs.push(String(msg && msg.message || msg)), null, false);
+  if (errs.length) throw new Error('renderHTML error: ' + errs.join(' | '));
+  // imscJS structure: an absolutely-positioned region element (border box ==
+  // TTML origin+extent, content box == extent minus padding) containing a
+  // static body/div wrapper. Tag the region element itself so geometry is
+  // normalized against the same border box on both sides.
+  ref.querySelectorAll('div[style*="position: absolute"]').forEach(wrapper => {
+    wrapper.classList.add('ttml-region-ref');
+  });
+
+  const cssHost = document.createElement('div');
+  cssHost.id = 'css-root';
+  cssHost.style.cssText = 'position:absolute;left:0;top:0;width:1280px;height:720px';
+  const style = document.createElement('style');
+  style.textContent = mappedCss;
+  cssHost.appendChild(style);
+  const wrap = document.createElement('div');
+  wrap.innerHTML = mappedHtml;
+  cssHost.appendChild(wrap);
+  stage.appendChild(cssHost);
+
+  await new Promise(r => requestAnimationFrame(() => requestAnimationFrame(r)));
+
+  function box(el) {
+    const r = el.getBoundingClientRect();
+    return { x: r.x, y: r.y, width: r.width, height: r.height,
+      top: r.top, left: r.left, right: r.right, bottom: r.bottom };
+  }
+
+  function probeBaseline(host, sampleEl) {
+    // inline-block probe: its bottom sits on the text baseline;
+    // subtract ~0.21em descent estimate like the legacy methodology.
+    const probe = document.createElement('span');
+    probe.className = 'baseline-probe';
+    probe.style.cssText = 'display:inline-block;width:1px;height:1px;overflow:hidden';
+    sampleEl.appendChild(probe);
+    const fs = parseFloat(getComputedStyle(sampleEl).fontSize) || 0;
+    const rect = probe.getBoundingClientRect();
+    const pb = rect.bottom;
+    const wm = getComputedStyle(sampleEl).writingMode ||
+               getComputedStyle(host).writingMode || 'horizontal-tb';
+    probe.remove();
+    const vertical = wm.indexOf('vertical') === 0;
+    return {
+      baseline: vertical ? rect.left : pb - 0.21 * fs,
+      baselineX: rect.left + rect.width / 2,
+      probeBottom: pb, fontSize: fs, writingMode: wm,
+    };
+  }
+
+  function textOf(el) { return (el.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40); }
+
+  function rel(rect, origin) {
+    return { x: rect.x - origin.x, y: rect.y - origin.y,
+      width: rect.width, height: rect.height,
+      top: rect.top - origin.y, left: rect.left - origin.x,
+      right: rect.right - origin.x, bottom: rect.bottom - origin.y };
+  }
+
+  function regionOf(el, host) {
+    const byId = el.closest('.ttml-region, .ttml-region-ref');
+    if (byId) return byId;
+    let cur = el;
+    while (cur && cur !== host) {
+      if (cur.tagName === 'DIV' &&
+          getComputedStyle(cur).position === 'absolute') return cur;
+      cur = cur.parentElement;
+    }
+    return host;
+  }
+
+  function collect(host) {
+    const paras = [...host.querySelectorAll('p')].map((p, i) => {
+      const region = regionOf(p, host);
+      const rb = region.getBoundingClientRect();
+      return {
+      index: i, text: textOf(p),
+      lineHeight: getComputedStyle(p).lineHeight,
+      writingMode: getComputedStyle(p).writingMode || getComputedStyle(host).writingMode,
+      rect: box(p),
+      regionBox: box(region),
+      rectRel: rel(p.getBoundingClientRect(), rb),
+      regionId: region.id || null,
+      };
+    });
+    const firstText = host.querySelector('p, .ttml-p');
+    const firstLine = firstText ? (() => {
+      const range = document.createRange();
+      range.selectNodeContents(firstText);
+      const rects = [...range.getClientRects()];
+      const r = rects[0] || firstText.getBoundingClientRect();
+      const rb = regionOf(firstText, host).getBoundingClientRect();
+      return { x: r.x, y: r.y, width: r.width, height: r.height,
+        top: r.top, left: r.left, bottom: r.bottom, right: r.right,
+        rel: rel(r, rb) };
+    })() : null;
+    const baselineEl = firstText || host;
+    const baseline = probeBaseline(host, baselineEl);
+    const rubies = [...host.querySelectorAll('ruby')].map((rb, i) => {
+      const rt = rb.querySelector('rt');
+      const base = rb.querySelector('span, rb');
+      const rtb = rt ? rt.getBoundingClientRect() : null;
+      const bbb = base ? base.getBoundingClientRect() : rb.getBoundingClientRect();
+      const origin = regionOf(rb, host).getBoundingClientRect();
+      const cs = getComputedStyle(rb);
+      return { index: i, rubyText: rt ? textOf(rt) : null,
+        baseText: base ? textOf(base) : textOf(rb), writingMode: cs.writingMode,
+        rtBox: rtb ? rel(rtb, origin) : null,
+        baseBox: rel(bbb, origin),
+        rtGap: rtb ? (cs.writingMode.indexOf('vertical') === 0
+          ? rtb.x - bbb.x : rtb.y - bbb.y) : null };
+    });
+    const regionRects = [...host.querySelectorAll('.ttml-region, .ttml-region-ref')]
+      .filter(el => el.getBoundingClientRect().width > 0)
+      .map(box);
+    return { paragraphs: paras, firstLine, baseline, rubies, regionRects };
+  }
+
+  window.__domDump = {
+    ref: ref.innerHTML.slice(0, 4000),
+    css: cssHost.innerHTML.slice(0, 4000),
+  };
+  return { ref: collect(ref), css: collect(cssHost) };
+};
+__main({"imscUrl":"file:///home/hj/userfeedback/uid4-0028/work/node_modules/imsc/dist/main/main.js","ttmlXml":"<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tt xml:lang=\"ja\" xmlns=\"http://www.w3.org/ns/ttml\"\n    xmlns:tts=\"http://www.w3.org/ns/ttml#styling\"\n    xmlns:ttp=\"http://www.w3.org/ns/ttml#parameter\"\n    ttp:timeBase=\"media\" ttp:frameRate=\"24\"\n    ttp:cellResolution=\"32 15\" tts:extent=\"1280px 720px\">\n  <head>\n    <styling>\n      <style xml:id=\"vbase\" tts:fontFamily=\"sansSerif\"\n             tts:fontSize=\"1.4c\" tts:lineHeight=\"2c\" tts:color=\"#111111\"/>\n      <style xml:id=\"rtext\" tts:ruby=\"text\" tts:rubyPosition=\"before\"\n             tts:fontSize=\"0.7c\"/>\n      <style xml:id=\"rbase\" tts:ruby=\"base\"/>\n      <style xml:id=\"rcontainer\" tts:ruby=\"container\"/>\n      <style xml:id=\"ralign\" tts:rubyAlign=\"spaceAround\"/>\n      <style xml:id=\"shear\" tts:fontShear=\"10%\"/>\n      <style xml:id=\"multi\" tts:multiRowAlign=\"start end\"/>\n    </styling>\n    <layout>\n      <region xml:id=\"vright\" tts:origin=\"1040px 48px\" tts:extent=\"200px 624px\"\n              tts:writingMode=\"tbrl\" tts:displayAlign=\"before\"\n              tts:padding=\"0.25c\" tts:backgroundColor=\"rgba(255,255,255,0.85)\"\n              tts:showBackground=\"whenActive\"/>\n      <region xml:id=\"vlr\" tts:origin=\"40px 48px\" tts:extent=\"200px 624px\"\n              tts:writingMode=\"tblr\" tts:displayAlign=\"center\"\n              tts:padding=\"0.25c\" tts:backgroundColor=\"rgba(255,255,240,0.9)\"/>\n    </layout>\n  </head>\n  <body>\n    <div>\n      <p region=\"vright\" begin=\"0.5s\" end=\"8s\" style=\"vbase\">\n        <span style=\"rcontainer\">\n          <span style=\"rbase\">漢字</span><span style=\"rtext ralign\">かんじ</span>\n        </span>\n        <span style=\"rcontainer\">\n          <span style=\"rbase\">日本語</span><span style=\"rtext\">にほんご</span>\n        </span>\n      </p>\n      <p region=\"vlr\" begin=\"0.5s\" end=\"8s\" style=\"vbase\">\n        <span style=\"shear\">縦組み</span>\n        <span style=\"multi\">multilrow のテスト</span>\n      </p>\n    </div>\n  </body>\n</tt>\n","mappedHtml":"<div id=\"vright\" class=\"ttml-region\"><p class=\"ttml-p vbase\" data-region=\"vright\"><ruby class=\"ruby-container rcontainer\"><span class=\"ruby-base rbase\">漢字</span><rt class=\"ruby-text rtext ralign\">かんじ</rt></ruby> <ruby class=\"ruby-container rcontainer\"><span class=\"ruby-base rbase\">日本語</span><rt class=\"ruby-text rtext\">にほんご</rt></ruby></p></div>\n<div id=\"vlr\" class=\"ttml-region\"><p class=\"ttml-p vbase\" data-region=\"vlr\"><span class=\"ttml-span shear\">縦組み</span> <span class=\"ttml-span multi\">multilrow のテスト</span></p></div>","mappedCss":".ttml-region, .ttml-region p, .ttml-region span,\n.ttml-region ruby, .ttml-region rt { margin: 0; }\n.ruby-reserve rt {\n  font-size: var(--ruby-reserve, 28.8px);\n  line-height: var(--ruby-reserve, 28.8px);\n  min-height: var(--ruby-reserve, 28.8px);\n}\n.ruby-reserve { ruby-position: before; }\n\n#vright {\n  position: absolute;\n  box-sizing: content-box;\n  left: 1040px;\n  top: 48px;\n  width: 176px;\n  height: 604px;\n  writing-mode: vertical-rl;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  padding: 10px 12px 10px 12px;\n  background-color: rgba(255,255,255,0.85);\n  overflow: hidden;\n  z-index: 1;\n}\n\n#vlr {\n  position: absolute;\n  box-sizing: content-box;\n  left: 40px;\n  top: 48px;\n  width: 176px;\n  height: 604px;\n  writing-mode: vertical-lr;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  padding: 10px 12px 10px 12px;\n  background-color: rgba(255,255,240,0.9);\n  overflow: hidden;\n  z-index: 1;\n}\n\n.vbase {\n  font-family: sansSerif;\n  font-size: 67.19999999999999px;\n  line-height: 96px;\n  color: #111111;\n}\n\n.rtext {\n  font-size: 33.599999999999994px;\n  ruby-position: before;\n}\n\n.rbase {\n\n}\n\n.rcontainer {\n\n}\n\n.ralign {\n  ruby-align: center;\n}\n\n.shear {\n  transform: skewX(-10deg);\n}\n\n.multi {\n\n}"}).then(
+  r => window.__result = r,
+  e => { window.__error = String(e && e.stack || e); }
+);
+</script></body></html>

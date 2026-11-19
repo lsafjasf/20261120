@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tt xml:lang="ja" xmlns="http://www.w3.org/ns/ttml"
+    xmlns:tts="http://www.w3.org/ns/ttml#styling"
+    xmlns:ttp="http://www.w3.org/ns/ttml#parameter"
+    ttp:timeBase="media" ttp:frameRate="24"
+    ttp:cellResolution="32 15" tts:extent="1280px 720px">
+  <head>
+    <styling>
+      <style xml:id="vbase" tts:fontFamily="sansSerif"
+             tts:fontSize="1.4c" tts:lineHeight="2c" tts:color="#111111"/>
+      <style xml:id="rtext" tts:ruby="text" tts:rubyPosition="before"
+             tts:fontSize="0.7c"/>
+      <style xml:id="rbase" tts:ruby="base"/>
+      <style xml:id="rcontainer" tts:ruby="container"/>
+      <style xml:id="ralign" tts:rubyAlign="spaceAround"/>
+      <style xml:id="shear" tts:fontShear="10%"/>
+      <style xml:id="multi" tts:multiRowAlign="start end"/>
+    </styling>
+    <layout>
+      <region xml:id="vright" tts:origin="1040px 48px" tts:extent="200px 624px"
+              tts:writingMode="tbrl" tts:displayAlign="before"
+              tts:padding="0.25c" tts:backgroundColor="rgba(255,255,255,0.85)"
+              tts:showBackground="whenActive"/>
+      <region xml:id="vlr" tts:origin="40px 48px" tts:extent="200px 624px"
+              tts:writingMode="tblr" tts:displayAlign="center"
+              tts:padding="0.25c" tts:backgroundColor="rgba(255,255,240,0.9)"/>
+    </layout>
+  </head>
+  <body>
+    <div>
+      <p region="vright" begin="0.5s" end="8s" style="vbase">
+        <span style="rcontainer">
+          <span style="rbase">漢字</span><span style="rtext ralign">かんじ</span>
+        </span>
+        <span style="rcontainer">
+          <span style="rbase">日本語</span><span style="rtext">にほんご</span>
+        </span>
+      </p>
+      <p region="vlr" begin="0.5s" end="8s" style="vbase">
+        <span style="shear">縦組み</span>
+        <span style="multi">multilrow のテスト</span>
+      </p>
+    </div>
+  </body>
+</tt>

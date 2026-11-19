@@ -1,0 +1,32 @@
+[
+  {
+    "file": "multilang.itt",
+    "observedDifferences": 13,
+    "byStatus": {
+      "unknown": 6,
+      "unmappable": 1,
+      "partial": 3,
+      "emulated": 3
+    },
+    "unmappableHit": [
+      "tts:showBackground",
+      "xml:lang",
+      "tts:rubyReserve"
+    ]
+  },
+  {
+    "file": "vertical-ruby.itt",
+    "observedDifferences": 19,
+    "byStatus": {
+      "unknown": 9,
+      "partial": 7,
+      "unmappable": 2,
+      "emulated": 1
+    },
+    "unmappableHit": [
+      "tts:showBackground",
+      "tts:fontShear",
+      "tts:multiRowAlign"
+    ]
+  }
+]

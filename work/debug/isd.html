@@ -1,0 +1,27 @@
+<!doctype html><html><head><script type="importmap">
+{"imports":{"tslib":"file:///home/hj/userfeedback/uid4-0028/work/node_modules/tslib/tslib.es6.js"}}</script></head>
+<body><script type="module">
+const imsc = await import("file:///home/hj/userfeedback/uid4-0028/work/node_modules/imsc/dist/main/main.js");
+const xml = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<tt xml:lang=\"ja\" xmlns=\"http://www.w3.org/ns/ttml\"\n    xmlns:tts=\"http://www.w3.org/ns/ttml#styling\"\n    xmlns:ttp=\"http://www.w3.org/ns/ttml#parameter\"\n    ttp:timeBase=\"media\" ttp:frameRate=\"24\"\n    ttp:cellResolution=\"32 15\" ttp:extent=\"1280px 720px\">\n  <head>\n    <styling>\n      <style xml:id=\"vbase\" tts:fontFamily=\"sansSerif\"\n             tts:fontSize=\"1.4c\" tts:lineHeight=\"2c\" tts:color=\"#111111\"/>\n      <style xml:id=\"rtext\" tts:ruby=\"text\" tts:rubyPosition=\"before\"\n             tts:fontSize=\"0.7c\"/>\n      <style xml:id=\"rbase\" tts:ruby=\"base\"/>\n      <style xml:id=\"rcontainer\" tts:ruby=\"container\"/>\n      <style xml:id=\"ralign\" tts:rubyAlign=\"spaceAround\"/>\n      <style xml:id=\"shear\" tts:fontShear=\"10%\"/>\n      <style xml:id=\"multi\" tts:multiRowAlign=\"start end\"/>\n    </styling>\n    <layout>\n      <region xml:id=\"vright\" tts:origin=\"26c 1c\" tts:extent=\"5c 13c\"\n              tts:writingMode=\"tbrl\" tts:displayAlign=\"before\"\n              tts:padding=\"0.25c\" tts:backgroundColor=\"rgba(255,255,255,0.85)\"\n              tts:showBackground=\"whenActive\"/>\n      <region xml:id=\"vlr\" tts:origin=\"1c 1c\" tts:extent=\"5c 13c\"\n              tts:writingMode=\"tblr\" tts:displayAlign=\"center\"\n              tts:padding=\"0.25c\" tts:backgroundColor=\"rgba(255,255,240,0.9)\"/>\n    </layout>\n  </head>\n  <body>\n    <div>\n      <p region=\"vright\" begin=\"0.5s\" end=\"8s\" style=\"vbase\">\n        <span style=\"rcontainer\">\n          <span style=\"rbase\">漢字</span><span style=\"rtext ralign\">かんじ</span>\n        </span>\n        <span style=\"rcontainer\">\n          <span style=\"rbase\">日本語</span><span style=\"rtext\">にほんご</span>\n        </span>\n      </p>\n      <p region=\"vlr\" begin=\"0.5s\" end=\"8s\" style=\"vbase\">\n        <span style=\"shear\">縦組み</span>\n        <span style=\"multi\">multilrow のテスト</span>\n      </p>\n    </div>\n  </body>\n</tt>\n";
+const doc = imsc.fromXML(xml, e => { throw new Error(String(e)); });
+const isd = imsc.generateISD(doc, 3.0);
+function walk(n, d, out) {
+  if (d > 3) return;
+  const sa = n.styleAttrs || {};
+  const q = name => Object.keys(sa).find(k => k.split(/[# ]/).pop() === name);
+  const originQ = q('origin'), extentQ = q('extent'), padQ = q('padding');
+  const keys = originQ ? Object.keys(sa[originQ]) : [];
+  const raw = originQ ? JSON.parse(JSON.stringify(sa[originQ],
+    (k, v) => typeof v === 'number' ? v : String(v))) : null;
+  const used = o => o ? { w: o.w.toUsedLength(1280, 720), h: o.h.toUsedLength(1280, 720) } : null;
+  out.push({ d, kind: n.kind, id: n.id,
+    keys, raw,
+    originPx: originQ ? used(sa[originQ]) : null,
+    extentPx: extentQ ? used(sa[extentQ]) : null,
+    paddingPx: padQ ? sa[padQ].map(x => x.toUsedLength(1280, 720)) : null });
+  (n.contents || n.children || []).forEach(c => walk(c, d + 1, out));
+}
+const out = [];
+walk(isd, 0, out);
+window.__isd = out;
+</script></body></html>

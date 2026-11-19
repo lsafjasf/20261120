@@ -1,0 +1,74 @@
+.ttml-region, .ttml-region p, .ttml-region span,
+.ttml-region ruby, .ttml-region rt { margin: 0; }
+.ruby-reserve rt {
+  font-size: var(--ruby-reserve, 28.8px);
+  line-height: var(--ruby-reserve, 28.8px);
+  min-height: var(--ruby-reserve, 28.8px);
+}
+.ruby-reserve { ruby-position: before; }
+
+#vright {
+  position: absolute;
+  box-sizing: content-box;
+  left: 1040px;
+  top: 48px;
+  width: 176px;
+  height: 604px;
+  writing-mode: vertical-rl;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 10px 12px 10px 12px;
+  background-color: rgba(255,255,255,0.85);
+  overflow: hidden;
+  z-index: 1;
+}
+
+#vlr {
+  position: absolute;
+  box-sizing: content-box;
+  left: 40px;
+  top: 48px;
+  width: 176px;
+  height: 604px;
+  writing-mode: vertical-lr;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px 12px 10px 12px;
+  background-color: rgba(255,255,240,0.9);
+  overflow: hidden;
+  z-index: 1;
+}
+
+.vbase {
+  font-family: sansSerif;
+  font-size: 67.19999999999999px;
+  line-height: 96px;
+  color: #111111;
+}
+
+.rtext {
+  font-size: 33.599999999999994px;
+  ruby-position: before;
+}
+
+.rbase {
+
+}
+
+.rcontainer {
+
+}
+
+.ralign {
+  ruby-align: center;
+}
+
+.shear {
+  transform: skewX(-10deg);
+}
+
+.multi {
+
+}

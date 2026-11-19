@@ -1,0 +1,106 @@
+[
+  {
+    "attribute": "xml:id",
+    "value": "bottom",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "region",
+    "id": "bottom"
+  },
+  {
+    "attribute": "tts:showBackground",
+    "value": "always",
+    "status": "unmappable",
+    "reason": "whenActive/always 是 ISD 时间条件语义，CSS 无法按激活态自动切换",
+    "scope": "region",
+    "id": "bottom"
+  },
+  {
+    "attribute": "tts:writingMode",
+    "value": "lrtb",
+    "status": "partial",
+    "reason": "lrtb/rtlbt/tblr/tbrl 需转 horizontal-tb/vertical-rl/vertical-lr",
+    "scope": "region",
+    "id": "bottom"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "base",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "base"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "ja",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "ja"
+  },
+  {
+    "attribute": "xml:lang",
+    "value": "ja",
+    "status": "emulated",
+    "reason": "非样式属性，需转 HTML lang，断词/注音依赖浏览器语言引擎",
+    "scope": "style",
+    "id": "ja"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "ar",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "ar"
+  },
+  {
+    "attribute": "xml:lang",
+    "value": "ar",
+    "status": "emulated",
+    "reason": "非样式属性，需转 HTML lang，断词/注音依赖浏览器语言引擎",
+    "scope": "style",
+    "id": "ar"
+  },
+  {
+    "attribute": "tts:direction",
+    "value": "rtl",
+    "status": "partial",
+    "reason": "需配合 unicode-bidi 隔离，嵌套层级语义不完全一致",
+    "scope": "style",
+    "id": "ar"
+  },
+  {
+    "attribute": "tts:unicodeBidi",
+    "value": "plaintext",
+    "status": "partial",
+    "reason": "值名需转换（plaintext/embed/bdo/isolated...），隔离覆盖范围有差异",
+    "scope": "style",
+    "id": "ar"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "em",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "em"
+  },
+  {
+    "attribute": "xml:id",
+    "value": "reserve",
+    "status": "unknown",
+    "reason": "映射表未收录的属性",
+    "scope": "style",
+    "id": "reserve"
+  },
+  {
+    "attribute": "tts:rubyReserve",
+    "value": "before 0.6c",
+    "status": "emulated",
+    "reason": "注音预留行高只能用 padding/固定 line-height 模拟，无法按注音宽度自适应；imscJS 自身用空 ruby 占位",
+    "scope": "style",
+    "id": "reserve"
+  }
+]
