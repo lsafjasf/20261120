@@ -1,0 +1,191 @@
+{
+  "fs_hz": 48000,
+  "coefficients": {
+    "peaking": [
+      {
+        "b0": 1.0224727682198582,
+        "b1": -1.938116580557223,
+        "b2": 0.9323677439107332,
+        "a1": -1.938116580557223,
+        "a2": 0.9548405121305915,
+        "kind": "peaking",
+        "fc": 1000.0,
+        "gain_db": 6.0,
+        "q": 2.0
+      }
+    ],
+    "shelving": [
+      {
+        "b0": 1.0064455778511419,
+        "b1": -1.9686123523200318,
+        "b2": 0.9631200582728409,
+        "a1": -1.9688501073857254,
+        "a2": 0.9693278810582894,
+        "kind": "low_shelf",
+        "fc": 200.0,
+        "gain_db": 6.0,
+        "q": 1.0
+      },
+      {
+        "b0": 0.6362658064469842,
+        "b1": -0.27582767983349427,
+        "b2": 0.13042948703146537,
+        "a1": -0.7946195937468364,
+        "a2": 0.2854872073917919,
+        "kind": "high_shelf",
+        "fc": 8000.0,
+        "gain_db": -6.0,
+        "q": 1.0
+      }
+    ],
+    "combined": [
+      {
+        "b0": 1.0064455778511419,
+        "b1": -1.9686123523200318,
+        "b2": 0.9631200582728409,
+        "a1": -1.9688501073857254,
+        "a2": 0.9693278810582894,
+        "kind": "low_shelf",
+        "fc": 200.0,
+        "gain_db": 6.0,
+        "q": 1.0
+      },
+      {
+        "b0": 1.0224727682198582,
+        "b1": -1.938116580557223,
+        "b2": 0.9323677439107332,
+        "a1": -1.938116580557223,
+        "a2": 0.9548405121305915,
+        "kind": "peaking",
+        "fc": 1000.0,
+        "gain_db": 6.0,
+        "q": 2.0
+      },
+      {
+        "b0": 0.6362658064469842,
+        "b1": -0.27582767983349427,
+        "b2": 0.13042948703146537,
+        "a1": -0.7946195937468364,
+        "a2": 0.2854872073917919,
+        "kind": "high_shelf",
+        "fc": 8000.0,
+        "gain_db": -6.0,
+        "q": 1.0
+      }
+    ]
+  },
+  "design_vs_measured": {
+    "peaking": {
+      "mag_error_mean_db": -1.2460720267772677e-05,
+      "mag_error_max_abs_db": 0.001590456619787961
+    },
+    "shelving": {
+      "mag_error_mean_db": 5.8873218245025374e-05,
+      "mag_error_max_abs_db": 0.010174021833353919
+    },
+    "combined": {
+      "mag_error_mean_db": 5.7021851991329106e-05,
+      "mag_error_max_abs_db": 0.008960951711668663
+    }
+  },
+  "switch_click": {
+    "baseline_sample_step": 0.1716768680761558,
+    "hard_switch_boundary_jump": 0.2598170653402176,
+    "crossfade_boundary_jump": 0.1590856324837113,
+    "hard_jump_to_baseline_ratio": 1.5134075327199168,
+    "crossfade_jump_to_baseline_ratio": 0.9266573549858853,
+    "hard_switch_max_step": 0.2598170653402176,
+    "crossfade_max_step": 0.1593702354760068,
+    "hard_click_energy": 36.042259971735774,
+    "crossfade_click_energy": 0.0019728523660772265,
+    "step_suppression_db": 4.245209174722458,
+    "click_energy_suppression_db": 42.617174278676316,
+    "crossfade_ms": 10.0
+  },
+  "fc_and_q": {
+    "center_frequency": [
+      {
+        "design_fc_hz": 250.0,
+        "measured_peak_hz": 250.31270059674415,
+        "abs_error_hz": 0.3127005967441505,
+        "rel_error_pct": 0.12508023869766022,
+        "measured_peak_gain_db": 5.999783381725625
+      },
+      {
+        "design_fc_hz": 500.0,
+        "measured_peak_hz": 499.2662257252197,
+        "abs_error_hz": 0.7337742747802736,
+        "rel_error_pct": 0.14675485495605473,
+        "measured_peak_gain_db": 5.999736875140976
+      },
+      {
+        "design_fc_hz": 1000.0,
+        "measured_peak_hz": 998.3719935940261,
+        "abs_error_hz": 1.6280064059739061,
+        "rel_error_pct": 0.1628006405973906,
+        "measured_peak_gain_db": 5.999708337394498
+      },
+      {
+        "design_fc_hz": 2000.0,
+        "measured_peak_hz": 1996.6393232738583,
+        "abs_error_hz": 3.360676726141719,
+        "rel_error_pct": 0.16803383630708596,
+        "measured_peak_gain_db": 5.999690344111354
+      },
+      {
+        "design_fc_hz": 4000.0,
+        "measured_peak_hz": 4006.8960566974956,
+        "abs_error_hz": 6.896056697495624,
+        "rel_error_pct": 0.1724014174373906,
+        "measured_peak_gain_db": 5.999663417852671
+      },
+      {
+        "design_fc_hz": 8000.0,
+        "measured_peak_hz": 7986.1267522288745,
+        "abs_error_hz": 13.873247771125534,
+        "rel_error_pct": 0.17341559713906918,
+        "measured_peak_gain_db": 5.999541004114429
+      }
+    ],
+    "q_sweep": [
+      {
+        "q": 0.5,
+        "extremum_freq_hz": 999.9674770109136,
+        "extremum_gain_db": 5.999999993097072
+      },
+      {
+        "q": 1.0,
+        "extremum_freq_hz": 999.9674770109136,
+        "extremum_gain_db": 5.999999972388257
+      },
+      {
+        "q": 2.0,
+        "extremum_freq_hz": 999.9674770109136,
+        "extremum_gain_db": 5.999999889553058
+      },
+      {
+        "q": 4.0,
+        "extremum_freq_hz": 999.9674770109136,
+        "extremum_gain_db": 5.999999558212318
+      },
+      {
+        "q": 8.0,
+        "extremum_freq_hz": 999.9674770109136,
+        "extremum_gain_db": 5.99999823285035
+      },
+      {
+        "q": 16.0,
+        "extremum_freq_hz": 999.9674770109136,
+        "extremum_gain_db": 5.999992931407351
+      }
+    ],
+    "peak_gain_spread_db": 7.0616897209774265e-06,
+    "peak_freq_spread_hz": 0.0
+  },
+  "nyquist_phase": {
+    "nyquist_hz": 24000.0,
+    "phase_at_nyquist_deg": -1.0978640116914189e-15,
+    "magnitude_at_nyquist_db": -6.0000000000000036,
+    "phase_at_0p9_nyquist_deg": -2.86193258004768
+  }
+}

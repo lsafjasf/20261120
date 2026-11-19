@@ -1,0 +1,167 @@
+{
+  "canvas_height_px": 720,
+  "scroll_region_height_px": 170,
+  "base_scroll_region_top_px": 550,
+  "max_region_fraction_of_canvas": 0.45,
+  "font_size_px": 30,
+  "subtitle": "当播放器宽度发生变化时，滚动字幕区域内的文本必须按照新的内容宽度重新计算换行点，并且所有行始终保持在底部滚动区域内，不遮挡主画面。",
+  "scenarios": [
+    {
+      "player_width_px": 1280,
+      "content_width_px": 1232,
+      "line_count": 2,
+      "lines": [
+        "当播放器宽度发生变化时，滚动字幕区域内的文本必须按照新的内容宽度重新计算换行点，并",
+        "且所有行始终保持在底部滚动区域内，不遮挡主画面。"
+      ],
+      "line_widths_px": [
+        1230,
+        720
+      ],
+      "block_height_px": 70,
+      "base_region_top_px": 550,
+      "effective_region_height_px": 170,
+      "region_top_px": 550,
+      "block_top_px": 640,
+      "fits_scroll_region": true,
+      "occludes_picture": false,
+      "region_expanded": false,
+      "clearance_to_picture_px": 90
+    },
+    {
+      "player_width_px": 1024,
+      "content_width_px": 976,
+      "line_count": 3,
+      "lines": [
+        "当播放器宽度发生变化时，滚动字幕区域内的文本必须按照新的内容宽度",
+        "重新计算换行点，并且所有行始终保持在底部滚动区域内，不遮挡主画面",
+        "。"
+      ],
+      "line_widths_px": [
+        960,
+        960,
+        30
+      ],
+      "block_height_px": 110,
+      "base_region_top_px": 550,
+      "effective_region_height_px": 170,
+      "region_top_px": 550,
+      "block_top_px": 600,
+      "fits_scroll_region": true,
+      "occludes_picture": false,
+      "region_expanded": false,
+      "clearance_to_picture_px": 50
+    },
+    {
+      "player_width_px": 800,
+      "content_width_px": 752,
+      "line_count": 3,
+      "lines": [
+        "当播放器宽度发生变化时，滚动字幕区域内的文本必须按",
+        "照新的内容宽度重新计算换行点，并且所有行始终保持在",
+        "底部滚动区域内，不遮挡主画面。"
+      ],
+      "line_widths_px": [
+        750,
+        750,
+        450
+      ],
+      "block_height_px": 110,
+      "base_region_top_px": 550,
+      "effective_region_height_px": 170,
+      "region_top_px": 550,
+      "block_top_px": 600,
+      "fits_scroll_region": true,
+      "occludes_picture": false,
+      "region_expanded": false,
+      "clearance_to_picture_px": 50
+    },
+    {
+      "player_width_px": 640,
+      "content_width_px": 592,
+      "line_count": 4,
+      "lines": [
+        "当播放器宽度发生变化时，滚动字幕区域内",
+        "的文本必须按照新的内容宽度重新计算换行",
+        "点，并且所有行始终保持在底部滚动区域内",
+        "，不遮挡主画面。"
+      ],
+      "line_widths_px": [
+        570,
+        570,
+        570,
+        240
+      ],
+      "block_height_px": 150,
+      "base_region_top_px": 550,
+      "effective_region_height_px": 170,
+      "region_top_px": 550,
+      "block_top_px": 560,
+      "fits_scroll_region": true,
+      "occludes_picture": false,
+      "region_expanded": false,
+      "clearance_to_picture_px": 10
+    },
+    {
+      "player_width_px": 480,
+      "content_width_px": 432,
+      "line_count": 5,
+      "lines": [
+        "当播放器宽度发生变化时，滚动",
+        "字幕区域内的文本必须按照新的",
+        "内容宽度重新计算换行点，并且",
+        "所有行始终保持在底部滚动区域",
+        "内，不遮挡主画面。"
+      ],
+      "line_widths_px": [
+        420,
+        420,
+        420,
+        420,
+        270
+      ],
+      "block_height_px": 190,
+      "base_region_top_px": 550,
+      "effective_region_height_px": 210,
+      "region_top_px": 510,
+      "block_top_px": 520,
+      "fits_scroll_region": true,
+      "occludes_picture": false,
+      "region_expanded": true,
+      "clearance_to_picture_px": 10
+    },
+    {
+      "player_width_px": 360,
+      "content_width_px": 312,
+      "line_count": 7,
+      "lines": [
+        "当播放器宽度发生变化",
+        "时，滚动字幕区域内的",
+        "文本必须按照新的内容",
+        "宽度重新计算换行点，",
+        "并且所有行始终保持在",
+        "底部滚动区域内，不遮",
+        "挡主画面。"
+      ],
+      "line_widths_px": [
+        300,
+        300,
+        300,
+        300,
+        300,
+        300,
+        150
+      ],
+      "block_height_px": 270,
+      "base_region_top_px": 550,
+      "effective_region_height_px": 290,
+      "region_top_px": 430,
+      "block_top_px": 440,
+      "fits_scroll_region": true,
+      "occludes_picture": false,
+      "region_expanded": true,
+      "clearance_to_picture_px": 10
+    }
+  ],
+  "all_scenarios_no_occlusion": true
+}
