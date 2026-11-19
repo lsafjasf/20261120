@@ -1,0 +1,16 @@
+{
+  "name": "equirect-cubemap-lab",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Seam-continuous equirectangular to cube map converter with a WebGL viewer and numeric verification.",
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "generate": "node scripts/generate-assets.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "verify": "node scripts/verify.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

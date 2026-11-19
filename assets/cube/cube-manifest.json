@@ -1,0 +1,315 @@
+{
+  "source": {
+    "name": "procedural-orbit-horizon",
+    "url": "./assets/equirect.png",
+    "width": 2048,
+    "height": 1024
+  },
+  "cube": {
+    "faceSize": 512,
+    "faces": [
+      {
+        "id": "px",
+        "label": "+X",
+        "name": "Right",
+        "accent": "#ff7a59",
+        "width": 512,
+        "height": 512,
+        "url": "./assets/cube/px.png"
+      },
+      {
+        "id": "nx",
+        "label": "-X",
+        "name": "Left",
+        "accent": "#ffbd59",
+        "width": 512,
+        "height": 512,
+        "url": "./assets/cube/nx.png"
+      },
+      {
+        "id": "py",
+        "label": "+Y",
+        "name": "Top",
+        "accent": "#55d6be",
+        "width": 512,
+        "height": 512,
+        "url": "./assets/cube/py.png"
+      },
+      {
+        "id": "ny",
+        "label": "-Y",
+        "name": "Bottom",
+        "accent": "#5ba8ff",
+        "width": 512,
+        "height": 512,
+        "url": "./assets/cube/ny.png"
+      },
+      {
+        "id": "pz",
+        "label": "+Z",
+        "name": "Front",
+        "accent": "#c38cff",
+        "width": 512,
+        "height": 512,
+        "url": "./assets/cube/pz.png"
+      },
+      {
+        "id": "nz",
+        "label": "-Z",
+        "name": "Back",
+        "accent": "#ff72b6",
+        "width": 512,
+        "height": 512,
+        "url": "./assets/cube/nz.png"
+      }
+    ]
+  },
+  "metrics": {
+    "faceSize": 512,
+    "faceResolution": "512 x 512",
+    "faceCount": 6,
+    "seamCount": 12,
+    "samplesPerSeam": 512,
+    "totalComparisons": 18432,
+    "maxChannelDelta": 0,
+    "maxLumaDelta": 0,
+    "meanAbsChannelDelta": 0,
+    "maxReprojectionPx": 5.684341886080802e-14,
+    "meanReprojectionPx": 4.681440420502743e-15,
+    "maxAngularErrorDeg": 0,
+    "mismatchPixels": 0,
+    "exactZero": true,
+    "pairs": [
+      {
+        "pair": "+X left / +Z right",
+        "a": "+X left",
+        "b": "+Z right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+X right / -Z left",
+        "a": "+X right",
+        "b": "-Z left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+X top / +Y right",
+        "a": "+X top",
+        "b": "+Y right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+X bottom / -Y right",
+        "a": "+X bottom",
+        "b": "-Y right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X left / -Z right",
+        "a": "-X left",
+        "b": "-Z right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X right / +Z left",
+        "a": "-X right",
+        "b": "+Z left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X top / +Y left",
+        "a": "-X top",
+        "b": "+Y left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X bottom / -Y left",
+        "a": "-X bottom",
+        "b": "-Y left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+Y top / -Z top",
+        "a": "+Y top",
+        "b": "-Z top",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+Y bottom / +Z top",
+        "a": "+Y bottom",
+        "b": "+Z top",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-Y top / +Z bottom",
+        "a": "-Y top",
+        "b": "+Z bottom",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-Y bottom / -Z bottom",
+        "a": "-Y bottom",
+        "b": "-Z bottom",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      }
+    ],
+    "faces": [
+      {
+        "id": "px",
+        "label": "+X",
+        "name": "Right",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "nx",
+        "label": "-X",
+        "name": "Left",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "py",
+        "label": "+Y",
+        "name": "Top",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "ny",
+        "label": "-Y",
+        "name": "Bottom",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "pz",
+        "label": "+Z",
+        "name": "Front",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "nz",
+        "label": "-Z",
+        "name": "Back",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      }
+    ]
+  }
+}

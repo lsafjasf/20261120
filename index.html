@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#060a10">
+  <title>Orbital Cube Lab — Equirect to Cube Map</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="./">
+      <span class="brand-mark" aria-hidden="true">
+        <span></span><span></span><span></span>
+      </span>
+      <span class="brand-copy">
+        <strong>ORBITAL <i>/</i> CUBE LAB</strong>
+        <small>EQUIRECTANGULAR → CUBE MAP REPROJECTION</small>
+      </span>
+    </a>
+    <div class="topbar-meta">
+      <span class="live-dot"><i></i> WEBGL LIVE</span>
+      <span class="divider"></span>
+      <span id="top-source">SRC 2048 × 1024</span>
+      <span class="divider"></span>
+      <span id="top-output">512² × 6</span>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="viewer-card">
+      <div class="viewer-head">
+        <div>
+          <span class="eyebrow">SPHERICAL PROJECTION / 01</span>
+          <h1>六面方向空间</h1>
+        </div>
+        <div class="view-tabs" role="group" aria-label="显示模式">
+          <button class="active" data-view="panorama">全景</button>
+          <button data-view="cube">立方体</button>
+        </div>
+      </div>
+
+      <div class="viewport" id="viewport">
+        <canvas id="gl-canvas" aria-label="WebGL cube map viewer"></canvas>
+        <div class="scanlines" aria-hidden="true"></div>
+        <div class="webgl-badge"><i></i><span id="gl-version">WEBGL</span> / CUBE SAMPLER</div>
+        <div class="orientation" aria-hidden="true">
+          <span class="north">N</span>
+          <span class="east">E</span>
+          <span class="south">S</span>
+          <span class="west">W</span>
+          <div class="orientation-ring" id="compass-ring"></div>
+        </div>
+        <div class="reticle" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+        <div class="view-hud">
+          <div><span>YAW</span><strong id="hud-yaw">000.0°</strong></div>
+          <div><span>PITCH</span><strong id="hud-pitch">+00.0°</strong></div>
+          <div><span>FOV</span><strong id="hud-fov">78°</strong></div>
+        </div>
+        <div class="drag-hint">拖拽旋转 <span>·</span> 滚轮缩放</div>
+        <div class="loading-layer" id="loading-layer">
+          <div class="loader-cube"><i></i><i></i><i></i></div>
+          <span id="loading-text">正在解码六面纹理…</span>
+        </div>
+      </div>
+
+      <div class="viewer-controls">
+        <button class="control-button" id="rotate-toggle" aria-pressed="true">
+          <span class="pause-icon"></span><b>自动旋转</b>
+        </button>
+        <label class="speed-control">
+          <span>Ω <b id="speed-value">30</b>°/s</span>
+          <input id="speed-slider" type="range" min="0" max="120" step="1" value="30" aria-label="旋转角速度">
+        </label>
+        <button class="control-button" id="seam-toggle" aria-pressed="false">
+          <span class="grid-icon"></span><b>接缝示踪</b>
+        </button>
+        <button class="control-button" id="reset-view">
+          <span class="reset-icon"></span><b>复位</b>
+        </button>
+      </div>
+    </section>
+
+    <aside class="telemetry">
+      <section class="metric-hero">
+        <div class="metric-head">
+          <span class="eyebrow">SEAM INTEGRITY</span>
+          <span class="pass-pill" id="seam-verdict"><i></i> PASS</span>
+        </div>
+        <div class="hero-number"><span id="max-delta">0</span><small>MAX Δ</small></div>
+        <p>六面全部共享边逐通道比较的最大差值</p>
+        <div class="hero-stats">
+          <div><span>不一致像素</span><strong id="mismatch-pixels">0</strong></div>
+          <div><span>比较次数</span><strong id="comparison-count">18,432</strong></div>
+        </div>
+      </section>
+
+      <section class="metric-card">
+        <div class="card-title">
+          <span>PROJECTION FACT</span>
+          <span class="micro-icon cube-icon"></span>
+        </div>
+        <div class="fact-grid">
+          <div><span>单面分辨率</span><strong id="face-resolution">512 × 512</strong></div>
+          <div><span>重投影误差</span><strong id="reprojection">0.000 px</strong></div>
+          <div><span>方向角误差</span><strong id="angular-error">0.000°</strong></div>
+          <div><span>采样方式</span><strong>Bilinear</strong></div>
+        </div>
+      </section>
+
+      <section class="metric-card cadence-card">
+        <div class="card-title">
+          <span>ROTATION CADENCE</span>
+          <span class="pulse-icon"></span>
+        </div>
+        <div class="cadence-top">
+          <div><span>渲染刷新</span><strong><b id="live-fps">--</b> Hz</strong></div>
+          <div><span>逻辑步长</span><strong><b id="degrees-step">0.500</b>°</strong></div>
+        </div>
+        <div class="cadence-chart">
+          <svg viewBox="0 0 320 58" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="pulse-fill" x1="0" x2="0" y1="0" y2="1">
+                <stop offset="0" stop-color="#55d6be" stop-opacity=".34"/>
+                <stop offset="1" stop-color="#55d6be" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="chart-area" id="chart-area" d=""></path>
+            <path class="chart-line" id="chart-line" d=""></path>
+          </svg>
+          <div class="chart-labels"><span>60f</span><span>120f</span><span>NOW</span></div>
+        </div>
+        <div class="cadence-foot">
+          <span><i id="cadence-dot"></i> <b id="cadence-status">无跳帧</b></span>
+          <code>Δθ = Ω / f</code>
+        </div>
+      </section>
+
+      <section class="upload-card">
+        <input id="file-input" type="file" accept="image/*" hidden>
+        <button id="upload-button">
+          <span class="upload-icon"></span>
+          <span><b>载入新的 Equirect</b><small>PNG / JPEG · 2:1 全景图</small></span>
+          <span class="arrow">↗</span>
+        </button>
+      </section>
+    </aside>
+  </main>
+
+  <section class="face-section">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">FACE ATLAS / 02</span>
+        <h2>投影面阵列</h2>
+      </div>
+      <p>每面 <strong id="atlas-resolution">512 × 512</strong> · 方向向量连续映射</p>
+    </div>
+    <div class="face-grid" id="face-grid"></div>
+  </section>
+
+  <section class="seam-section">
+    <div class="section-head">
+      <div>
+        <span class="eyebrow">EDGE VERIFICATION / 03</span>
+        <h2>12 条共享边</h2>
+      </div>
+      <div class="seam-summary">
+        <span><i></i> 最大亮度差 <b id="luma-delta">0.000</b></span>
+        <span>逐像素 RGB</span>
+      </div>
+    </div>
+    <div class="seam-grid" id="seam-grid"></div>
+  </section>
+
+  <footer>
+    <span>ORBITAL CUBE LAB / DIRECTION-CONTINUOUS REPROJECTION</span>
+    <span id="statement">12 / 12 SEAMS EXACT · 6 × 512² · 0 DROPPED TICKS</span>
+  </footer>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

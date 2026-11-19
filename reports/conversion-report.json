@@ -1,0 +1,300 @@
+{
+  "title": "Equirectangular to Cube Map conversion report",
+  "generatedAt": "2026-11-19T17:55:55.115Z",
+  "conversion": {
+    "sourceProjection": "equirectangular",
+    "outputProjection": "cube map",
+    "sourceResolution": "2048 x 1024",
+    "faceResolution": "512 x 512",
+    "faceCount": 6,
+    "sampler": "bilinear, longitude-wrap, polar clamp",
+    "seamPolicy": "direction-matched edge duplication + eight-corner synchronization",
+    "directionPolicy": "continuous unit direction vectors; no Euler interpolation across faces",
+    "conversionMs": 3940.962
+  },
+  "results": {
+    "faceResolutions": [
+      {
+        "id": "px",
+        "label": "+X",
+        "name": "Right",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "nx",
+        "label": "-X",
+        "name": "Left",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "py",
+        "label": "+Y",
+        "name": "Top",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "ny",
+        "label": "-Y",
+        "name": "Bottom",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "pz",
+        "label": "+Z",
+        "name": "Front",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      },
+      {
+        "id": "nz",
+        "label": "-Z",
+        "name": "Back",
+        "width": 512,
+        "height": 512,
+        "pixels": 262144
+      }
+    ],
+    "seamError": {
+      "verdict": "PASS: all seams are exact",
+      "maxChannelDelta": 0,
+      "maxLumaDelta": 0,
+      "meanAbsChannelDelta": 0,
+      "mismatchPixels": 0,
+      "comparisons": 18432
+    },
+    "reprojectionError": {
+      "maxPx": 5.684341886080802e-14,
+      "meanPx": 4.681440420502743e-15,
+      "maxAngularErrorDeg": 0
+    },
+    "seamPairs": [
+      {
+        "pair": "+X left / +Z right",
+        "a": "+X left",
+        "b": "+Z right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+X right / -Z left",
+        "a": "+X right",
+        "b": "-Z left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+X top / +Y right",
+        "a": "+X top",
+        "b": "+Y right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+X bottom / -Y right",
+        "a": "+X bottom",
+        "b": "-Y right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X left / -Z right",
+        "a": "-X left",
+        "b": "-Z right",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X right / +Z left",
+        "a": "-X right",
+        "b": "+Z left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X top / +Y left",
+        "a": "-X top",
+        "b": "+Y left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-X bottom / -Y left",
+        "a": "-X bottom",
+        "b": "-Y left",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+Y top / -Z top",
+        "a": "+Y top",
+        "b": "-Z top",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "+Y bottom / +Z top",
+        "a": "+Y bottom",
+        "b": "+Z top",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-Y top / +Z bottom",
+        "a": "-Y top",
+        "b": "+Z bottom",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 0,
+        "meanReprojectionPx": 0,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      },
+      {
+        "pair": "-Y bottom / -Z bottom",
+        "a": "-Y bottom",
+        "b": "-Z bottom",
+        "samples": 512,
+        "maxChannelDelta": 0,
+        "maxLumaDelta": 0,
+        "meanAbsChannelDelta": 0,
+        "rmsChannelDelta": 0,
+        "maxReprojectionPx": 5.684341886080802e-14,
+        "meanReprojectionPx": 1.404432126150823e-14,
+        "maxAngularErrorDeg": 0,
+        "mismatchPixels": 0,
+        "exact": true
+      }
+    ]
+  },
+  "cadence": {
+    "relation": "degreesPerUpdate = angularVelocityDegPerSec / updateHz",
+    "angularVelocityDegPerSec": 30,
+    "rates": [
+      {
+        "updateHz": 60,
+        "angularVelocityDegPerSec": 30,
+        "degreesPerUpdate": 0.5,
+        "expectedUpdates": 600,
+        "actualUpdates": 600,
+        "droppedFrames": 0,
+        "totalRotationDeg": 300,
+        "maxStepErrorDeg": 0
+      },
+      {
+        "updateHz": 90,
+        "angularVelocityDegPerSec": 30,
+        "degreesPerUpdate": 0.3333333333333333,
+        "expectedUpdates": 900,
+        "actualUpdates": 900,
+        "droppedFrames": 0,
+        "totalRotationDeg": 300.0000000000004,
+        "maxStepErrorDeg": 0
+      },
+      {
+        "updateHz": 120,
+        "angularVelocityDegPerSec": 30,
+        "degreesPerUpdate": 0.25,
+        "expectedUpdates": 1200,
+        "actualUpdates": 1200,
+        "droppedFrames": 0,
+        "totalRotationDeg": 300,
+        "maxStepErrorDeg": 0
+      }
+    ],
+    "droppedFrames": 0,
+    "verdict": "PASS: deterministic rotation ticks have no dropped updates"
+  }
+}
