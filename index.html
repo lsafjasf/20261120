@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>H.264 RTP STAP-A / FU-A / 单 NAL + WebCodecs 演示</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 24px; color: #1f2933; }
+    h1 { font-size: 20px; }
+    .toolbar { display: flex; gap: 12px; align-items: center; margin: 16px 0; }
+    button { padding: 8px 18px; font-size: 15px; cursor: pointer; }
+    input { width: 80px; padding: 6px; }
+    #log { background: #0f172a; color: #d7e0ea; border-radius: 8px; padding: 14px;
+           height: 56vh; overflow-y: auto; font: 12px/1.6 ui-monospace, monospace; white-space: pre-wrap; }
+    .status { color: #7dd3fc; } .warn { color: #fbbf24; } .loss { color: #f87171; }
+    .frame { color: #86efac; } .decoded { color: #c4b5fd; } .timing { color: #f0abfc; font-weight: bold; }
+    .opus { color: #fed7aa; } .decoder-error { color: #fb7185; }
+    #summary { margin-top: 12px; font-size: 13px; }
+  </style>
+</head>
+<body>
+  <h1>H.264 RTP 打包/解包（STAP-A · FU-A · 单 NAL）→ WebCodecs 解码</h1>
+  <div class="toolbar">
+    <label>帧数 <input id="frameCount" type="number" value="12" min="4" max="60" /></label>
+    <label>RTP 最大负载 <input id="maxPayload" type="number" value="300" min="100" max="1400" /></label>
+    <button id="run">运行端到端演示</button>
+    <span id="support"></span>
+  </div>
+  <div id="log"></div>
+  <div id="summary"></div>
+
+  <script type="module">
+    import { runDemo } from './web/demo.js';
+
+    const logEl = document.getElementById('log');
+    const summaryEl = document.getElementById('summary');
+    document.getElementById('support').textContent =
+      ('VideoDecoder' in window && 'VideoEncoder' in window)
+        ? 'WebCodecs 可用 ✓'
+        : '当前浏览器不支持 WebCodecs（请用 Chrome/Edge 94+）';
+
+    function log(kind, message) {
+      const line = document.createElement('div');
+      line.className = kind;
+      line.textContent = message;
+      logEl.appendChild(line);
+      logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    document.getElementById('run').addEventListener('click', async (event) => {
+      event.target.disabled = true;
+      logEl.innerHTML = '';
+      summaryEl.textContent = '';
+      try {
+        const result = await runDemo({
+          frameCount: Number(document.getElementById('frameCount').value),
+          maxPayload: Number(document.getElementById('maxPayload').value),
+          log,
+        });
+        summaryEl.textContent = JSON.stringify({
+          发出RTP包: result.packetsSent,
+          重组NAL: result.depackStats.nalsReassembled,
+          送出帧: result.framesHanded,
+          丢包告警: result.depackStats.gaps,
+          时戳跳变告警: result.depackStats.timestampJumps,
+          不完整FU丢弃: result.depackStats.incompleteFuDropped,
+          重组到解码器累计耗时ms: Number(result.handoverTotalMs.toFixed(3)),
+        }, null, 2);
+      } catch (err) {
+        log('decoder-error', `运行失败: ${err.stack || err.message}`);
+      } finally {
+        event.target.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

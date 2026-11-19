@@ -1,0 +1,11 @@
+{
+  "name": "h264-rtp-webcodecs-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Browser-side H.264 RTP (STAP-A/FU-A/single NAL) pack/depack + WebCodecs decode demo",
+  "scripts": {
+    "test": "node --test",
+    "smoke": "node scripts/browser-smoke.mjs"
+  }
+}
