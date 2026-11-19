@@ -1,0 +1,192 @@
+[
+  {
+    "file": "media/sample_51_ext.thd",
+    "file_size_bytes": 278438,
+    "stream_type": "TrueHD",
+    "major_sync": {
+      "first_sync_offset_bytes": 4,
+      "header_size_bytes": 34,
+      "extension_present": true,
+      "extension_words": 2,
+      "checksum_ok": true,
+      "stored_checksum_le": 38539,
+      "calculated_crc16": 38539,
+      "checksum_residual": 0,
+      "sample_rate_hz": 48000,
+      "group2_sample_rate_hz": 0,
+      "group1_bits": 24,
+      "group2_bits": 0,
+      "access_unit_samples": 40,
+      "is_vbr": true,
+      "peak_bitrate_bps": 9597000,
+      "num_substreams": 2,
+      "extended_substream_info": 0,
+      "substream_info": "0x3c",
+      "stream1_channel_arrangement": 15,
+      "stream2_channel_arrangement": 15,
+      "channel_modifiers": [
+        0,
+        0,
+        0
+      ]
+    },
+    "frames": {
+      "total_access_units_indexed": 2381,
+      "complete_access_units": 2381,
+      "major_sync_count": 149,
+      "major_sync_frame_gap_counts": {
+        "16": 148
+      },
+      "all_parity_checks_ok": true,
+      "parity_checks": 2232,
+      "first_offsets": [
+        0,
+        364,
+        478,
+        582,
+        680,
+        778,
+        878,
+        976
+      ]
+    },
+    "substreams": [
+      {
+        "substream": 0,
+        "frames_present": 2381,
+        "frames_complete": 2381,
+        "bytes": 88910,
+        "bitrate_bps": 358478.0,
+        "bitrate_kbps": 358.48,
+        "major_sync_frames": 149,
+        "restart_headers": 149,
+        "restart_detail": {
+          "param_present": 1,
+          "restart_present": 1,
+          "sync_ok": true,
+          "noise_type": 0,
+          "min_channel": 0,
+          "max_channel": 1,
+          "max_matrix_channel": 1,
+          "noise_shift": 0,
+          "noisegen_seed": 0,
+          "data_check_present": 0,
+          "coded_channels_mask": "0x03",
+          "matrix_to_output_assignment": [
+            0,
+            1
+          ],
+          "restart_checksum_stored": 76,
+          "restart_checksum_calc": 76,
+          "checksum_ok": true,
+          "header_bits": 133
+        }
+      },
+      {
+        "substream": 1,
+        "frames_present": 2381,
+        "frames_complete": 2381,
+        "bytes": 166302,
+        "bitrate_bps": 670516.3,
+        "bitrate_kbps": 670.52,
+        "major_sync_frames": 149,
+        "restart_headers": 149,
+        "restart_detail": {
+          "param_present": 1,
+          "restart_present": 1,
+          "sync_ok": true,
+          "noise_type": 0,
+          "min_channel": 2,
+          "max_channel": 5,
+          "max_matrix_channel": 5,
+          "noise_shift": 0,
+          "noisegen_seed": 0,
+          "data_check_present": 0,
+          "coded_channels_mask": "0x3c",
+          "matrix_to_output_assignment": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5
+          ],
+          "restart_checksum_stored": 56,
+          "restart_checksum_calc": 56,
+          "checksum_ok": true,
+          "header_bits": 157
+        }
+      }
+    ],
+    "channels": {
+      "declared": {
+        "stream1_arrangement": "0x0f",
+        "stream2_arrangement": "0x0f",
+        "declared_channel_count": 6,
+        "groups": [
+          "LF",
+          "RF",
+          "C",
+          "LFE",
+          "Ls",
+          "Rs"
+        ]
+      },
+      "rebuilt_mapping": [
+        {
+          "output_index": 0,
+          "channel": "LF",
+          "substream": 0,
+          "matrix_channel": 0,
+          "coded": true
+        },
+        {
+          "output_index": 1,
+          "channel": "RF",
+          "substream": 0,
+          "matrix_channel": 1,
+          "coded": true
+        },
+        {
+          "output_index": 2,
+          "channel": "C",
+          "substream": 1,
+          "matrix_channel": 2,
+          "coded": true
+        },
+        {
+          "output_index": 3,
+          "channel": "LFE",
+          "substream": 1,
+          "matrix_channel": 3,
+          "coded": true
+        },
+        {
+          "output_index": 4,
+          "channel": "Ls",
+          "substream": 1,
+          "matrix_channel": 4,
+          "coded": true
+        },
+        {
+          "output_index": 5,
+          "channel": "Rs",
+          "substream": 1,
+          "matrix_channel": 5,
+          "coded": true
+        }
+      ],
+      "rebuilt_channel_count": 6,
+      "substream_count": 2,
+      "substream_coded_masks": [
+        "0x03",
+        "0x3c"
+      ],
+      "substream_partitions_overlap_free": true,
+      "declared_vs_rebuilt_channels_equal": true,
+      "substream_count_consistent": true
+    },
+    "duration_seconds": 1.984,
+    "truncated_tail_frames": []
+  }
+]

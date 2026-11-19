@@ -1,0 +1,58 @@
+TrueHD bitstream analysis summary
+=================================
+
+Toolchain
+- Hand-written parser: tools/truehd_parser.py + tools/analyze_truehd.py
+- External reference: ffmpeg/ffprobe 7.0.2 (static build, native truehd codec)
+- Cross validator: tools/cross_validate.py
+
+Major sync / substream structure
+- Sync word F8 72 6F BA sits 4 bytes into each access unit (after the
+  2-byte AU length/parity word and 2-byte timing word).
+- stream_type 0xBA = TrueHD; major sync every 16 access units (149 syncs),
+  each carrying a substream restart header per substream.
+- 28-byte major sync header, CRC16 poly 0x002D (FFmpeg crc_2D), residual 0
+  on every one of the 149 syncs.
+- Two substreams declared via substream_info 0x3c; restart partitions are
+  substream 0 = output channels 0-1 (mask 0x03) and
+  substream 1 = output channels 2-5 (mask 0x3c), overlap-free.
+
+Core stream parameters (read from every major sync)
+- sample rate 48000 Hz, 24-bit group 1, 40 samples per access unit, VBR,
+  peak bitrate 9,597,000 bps, 6-channel arrangement 0x0f (5.1 side).
+- With a synthesized extended major sync header (media/sample_51_ext.thd,
+  34-byte header, 2 extension words) the same core parameters parse
+  correctly and ffmpeg decodes/remuxes the file with zero errors.
+
+Rebuilt channel mapping (identical for all samples)
+- out 0 LF  <- substream 0, matrix channel 0
+- out 1 RF  <- substream 0, matrix channel 1
+- out 2 C   <- substream 1, matrix channel 2
+- out 3 LFE <- substream 1, matrix channel 3
+- out 4 Ls  <- substream 1, matrix channel 4
+- out 5 Rs  <- substream 1, matrix channel 5
+- Declared channels (6) == rebuilt channels (6); substream count (2)
+  matches the two non-empty coded channel partitions.
+
+Per-substream frame counts and bitrates
+- sample_51_48k.thd (2381 access units, 2381 complete, 1.984 s):
+  substream 0: 2381 frames, 88910 B, 358.48 kbps
+  substream 1: 2381 frames, 166302 B, 670.52 kbps
+- sample_51_48k_truncated.thd (2381 indexed, 2380 complete):
+  substream 0: 2381 present / 2380 complete, 88860 B, 358.43 kbps
+  substream 1: 2381 present / 2380 complete, 166142 B, 670.15 kbps
+
+Truncated tail frame (sample_51_48k_truncated.thd)
+- frame_index 2380, offset 278070, declared length 362 B, 80 B present.
+- present byte range (half-open): [278070, 278150)
+- present byte range (inclusive): [278070, 278149]
+- missing byte range (half-open): [278150, 278432)
+- full declared range (half-open): [278070, 278432)
+
+External cross-validation (ffmpeg/ffprobe)
+- sample rate and channel count match ffprobe on every file.
+- ffprobe packet offsets equal parser frame offsets (block boundaries align
+  byte-for-byte); packet counts match complete access-unit counts.
+- ffmpeg -c copy remux writes exactly the parser's complete-frame byte span
+  (byte-identical), and ffmpeg decode (-f null) returns zero errors.
+- See reports/cross_validation.json and reports/cross_validation_ext.json.

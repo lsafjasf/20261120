@@ -1,0 +1,102 @@
+[
+  {
+    "file": "sample_51_48k.thd",
+    "ffprobe": {
+      "codec_name": "truehd",
+      "sample_rate": 48000,
+      "channels": 6,
+      "channel_layout": "5.1(side)",
+      "bits_per_raw_sample": "24"
+    },
+    "parser": {
+      "sample_rate_hz": 48000,
+      "declared_channels": 6,
+      "num_substreams": 2,
+      "access_unit_frames": 2381,
+      "complete_frames": 2381,
+      "major_sync_checksum_ok": true,
+      "all_parity_checks_ok": true
+    },
+    "sample_rate_match": true,
+    "channel_count_match": true,
+    "external_packet_count": 2381,
+    "external_packet_offsets_first_8": [
+      0,
+      358,
+      472,
+      576,
+      674,
+      772,
+      872,
+      970
+    ],
+    "parser_frame_offsets_first_8": [
+      0,
+      358,
+      472,
+      576,
+      674,
+      772,
+      872,
+      970
+    ],
+    "block_boundary_offsets_match": true,
+    "packet_count_match": true,
+    "external_bytes_written": 278432,
+    "parser_complete_frame_bytes": 278432,
+    "remux_byte_identical_on_complete_prefix": true,
+    "remux_returncode": 0,
+    "decoder_returncode": 0,
+    "decoder_errors": []
+  },
+  {
+    "file": "sample_51_48k_truncated.thd",
+    "ffprobe": {
+      "codec_name": "truehd",
+      "sample_rate": 48000,
+      "channels": 6,
+      "channel_layout": "5.1(side)",
+      "bits_per_raw_sample": "24"
+    },
+    "parser": {
+      "sample_rate_hz": 48000,
+      "declared_channels": 6,
+      "num_substreams": 2,
+      "access_unit_frames": 2381,
+      "complete_frames": 2380,
+      "major_sync_checksum_ok": true,
+      "all_parity_checks_ok": true
+    },
+    "sample_rate_match": true,
+    "channel_count_match": true,
+    "external_packet_count": 2380,
+    "external_packet_offsets_first_8": [
+      0,
+      358,
+      472,
+      576,
+      674,
+      772,
+      872,
+      970
+    ],
+    "parser_frame_offsets_first_8": [
+      0,
+      358,
+      472,
+      576,
+      674,
+      772,
+      872,
+      970
+    ],
+    "block_boundary_offsets_match": true,
+    "packet_count_match": true,
+    "external_bytes_written": 278070,
+    "parser_complete_frame_bytes": 278070,
+    "remux_byte_identical_on_complete_prefix": true,
+    "remux_returncode": 0,
+    "decoder_returncode": 0,
+    "decoder_errors": []
+  }
+]
