@@ -1,0 +1,20 @@
+[Script Info]
+Title: Rich ASS sample
+ScriptType: v4.00+
+WrapStyle: 0
+ScaledBorderAndShadow: yes
+PlayResX: 1280
+PlayResY: 720
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Arial,48,&H00FFFFFF,&H000000FF,&H00000000,&H80000000,-1,0,0,0,100,100,0,0,1,2,2,2,20,20,30,1
+Style: Caption,Noto Sans,36,&H0000E1FF,&H000000FF,&H00101010,&H64000000,0,-1,0,1,110,95,3,0,1,1.5,1,8,20,20,20,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:01.00,0:00:03.50,Default,,0,0,0,,{\b1}Bold opening{\b0} with {\c&H0000FF&}red{\c} text
+Dialogue: 0,0:00:04.00,0:00:06.25,Caption,,0,0,0,,Italic style cue with {\pos(640,360)}fixed position
+Dialogue: 0,0:00:07.00,0:00:09.00,Default,,0,0,0,,Rotation {\frz(15)}fifteen degrees{\frz(0)} and {\fad(200,300)}fade
+Dialogue: 0,0:00:10.50,0:00:13.00,Default,,0,0,0,,Line one\NLine two with \h hard space
+Comment: 0,0:00:14.00,0:00:15.00,Default,,0,0,0,,This comment must be flagged as a loss

@@ -1,0 +1,56 @@
+{
+  "vtt": {
+    "preserved": true,
+    "tolerance_ms": 0,
+    "start_offsets_ms": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "end_offsets_ms": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ]
+  },
+  "vtt->ass->srt": {
+    "preserved": true,
+    "tolerance_ms": 5,
+    "start_offsets_ms": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "end_offsets_ms": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ]
+  },
+  "ass->vtt": {
+    "preserved": true,
+    "tolerance_ms": 5,
+    "start_offsets_ms": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ],
+    "end_offsets_ms": [
+      150,
+      150,
+      150,
+      150,
+      150
+    ]
+  }
+}

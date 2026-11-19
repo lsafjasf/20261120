@@ -1,0 +1,256 @@
+{
+  "conversion_diffs": [
+    {
+      "pair": "srt->vtt",
+      "max_timeline_drift_ms": 0,
+      "text_changed_cues": 0,
+      "cue_count": 5,
+      "losses": []
+    },
+    {
+      "pair": "srt->ass",
+      "max_timeline_drift_ms": 0,
+      "text_changed_cues": 0,
+      "cue_count": 5,
+      "losses": []
+    }
+  ],
+  "loss_inventory": [
+    {
+      "scope": "style",
+      "feature": "ass-scale",
+      "detail": "style 'Caption': scale_x/scale_y not mapped",
+      "cue_index": null
+    },
+    {
+      "scope": "style",
+      "feature": "ass-strikeout",
+      "detail": "style 'Caption': strikeout not mapped",
+      "cue_index": null
+    },
+    {
+      "scope": "style",
+      "feature": "ass-spacing",
+      "detail": "style 'Caption': character spacing not mapped",
+      "cue_index": null
+    },
+    {
+      "scope": "cue",
+      "feature": "ass-pos",
+      "detail": "ASS override \\pos(640,360) has no SRT/VTT mapping",
+      "cue_index": 1
+    },
+    {
+      "scope": "cue",
+      "feature": "ass-fad",
+      "detail": "\\fad animation not representable in SRT/VTT",
+      "cue_index": 2
+    },
+    {
+      "scope": "cue",
+      "feature": "ass-frz",
+      "detail": "ASS override \\frz(15) has no SRT/VTT mapping",
+      "cue_index": 2
+    },
+    {
+      "scope": "cue",
+      "feature": "ass-frz",
+      "detail": "ASS override \\frz(0) has no SRT/VTT mapping",
+      "cue_index": 2
+    },
+    {
+      "scope": "cue",
+      "feature": "ass-fad",
+      "detail": "ASS override \\fad(200,300) has no SRT/VTT mapping",
+      "cue_index": 2
+    },
+    {
+      "scope": "cue",
+      "feature": "ass-comment",
+      "detail": "Comment event dropped",
+      "cue_index": 4
+    }
+  ],
+  "roundtrips": [
+    {
+      "scenario": "srt_vtt_ass_x3",
+      "chain": [
+        "vtt",
+        "ass",
+        "srt"
+      ],
+      "cycles": 3,
+      "cumulative_drift_ms": 0,
+      "text_changed_cues": 0,
+      "per_leg_drift_ms": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "ass_identity_x2",
+      "chain": [
+        "ass"
+      ],
+      "cycles": 2,
+      "cumulative_drift_ms": 0,
+      "text_changed_cues": 0,
+      "per_leg_drift_ms": [
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "ass_via_srt_x2",
+      "chain": [
+        "srt",
+        "ass"
+      ],
+      "cycles": 2,
+      "cumulative_drift_ms": 0,
+      "text_changed_cues": 0,
+      "per_leg_drift_ms": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "scenario": "srt_ass_quantization",
+      "chain": [
+        "ass",
+        "srt"
+      ],
+      "cycles": 2,
+      "cumulative_drift_ms": 4,
+      "text_changed_cues": 0,
+      "per_leg_drift_ms": [
+        4,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "bilingual": {
+    "vtt": {
+      "preserved": true,
+      "tolerance_ms": 0,
+      "start_offsets_ms": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ],
+      "end_offsets_ms": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ]
+    },
+    "vtt->ass->srt": {
+      "preserved": true,
+      "tolerance_ms": 5,
+      "start_offsets_ms": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ],
+      "end_offsets_ms": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ]
+    },
+    "ass->vtt": {
+      "preserved": true,
+      "tolerance_ms": 5,
+      "start_offsets_ms": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ],
+      "end_offsets_ms": [
+        150,
+        150,
+        150,
+        150,
+        150
+      ]
+    }
+  },
+  "network": [
+    {
+      "loss_rate": 0.0,
+      "chunk_first_frame_mean_ms": 32.0,
+      "chunk_first_frame_p95_ms": 32.0,
+      "whole_first_frame_mean_ms": 113.6,
+      "whole_first_frame_p95_ms": 113.6,
+      "mean_gain_ms": 81.6,
+      "trials_chunk_earlier": 500,
+      "trials_tied": 0,
+      "trials": 500
+    },
+    {
+      "loss_rate": 0.02,
+      "chunk_first_frame_mean_ms": 46.064,
+      "chunk_first_frame_p95_ms": 147.2,
+      "whole_first_frame_mean_ms": 160.179,
+      "whole_first_frame_p95_ms": 233.6,
+      "mean_gain_ms": 114.115,
+      "trials_chunk_earlier": 470,
+      "trials_tied": 30,
+      "trials": 500
+    },
+    {
+      "loss_rate": 0.05,
+      "chunk_first_frame_mean_ms": 65.005,
+      "chunk_first_frame_p95_ms": 152.0,
+      "whole_first_frame_mean_ms": 201.488,
+      "whole_first_frame_p95_ms": 300.8,
+      "mean_gain_ms": 136.483,
+      "trials_chunk_earlier": 471,
+      "trials_tied": 29,
+      "trials": 500
+    },
+    {
+      "loss_rate": 0.1,
+      "chunk_first_frame_mean_ms": 94.962,
+      "chunk_first_frame_p95_ms": 262.4,
+      "whole_first_frame_mean_ms": 245.638,
+      "whole_first_frame_p95_ms": 351.2,
+      "mean_gain_ms": 150.677,
+      "trials_chunk_earlier": 474,
+      "trials_tied": 26,
+      "trials": 500
+    },
+    {
+      "loss_rate": 0.2,
+      "chunk_first_frame_mean_ms": 149.096,
+      "chunk_first_frame_p95_ms": 272.0,
+      "whole_first_frame_mean_ms": 339.733,
+      "whole_first_frame_p95_ms": 502.4,
+      "mean_gain_ms": 190.637,
+      "trials_chunk_earlier": 466,
+      "trials_tied": 34,
+      "trials": 500
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+First-frame arrival at identical loss trace (500 paired trials)
+loss  chunk(mean/p95)   whole(mean/p95)   gain   chunk-earlier
+0.00     32.0/   32.0    113.6/  113.6    81.6  500/500 (tied 0)
+0.02     46.1/  147.2    160.2/  233.6   114.1  470/500 (tied 30)
+0.05     65.0/  152.0    201.5/  300.8   136.5  471/500 (tied 29)
+0.10     95.0/  262.4    245.6/  351.2   150.7  474/500 (tied 26)
+0.20    149.1/  272.0    339.7/  502.4   190.6  466/500 (tied 34)

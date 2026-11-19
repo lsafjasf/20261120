@@ -1,0 +1,11 @@
+Non-lossless style/feature inventory (rich.ass -> SRT/VTT)
+==========================================================
+[style   ] document/style ass-scale        style 'Caption': scale_x/scale_y not mapped
+[style   ] document/style ass-strikeout    style 'Caption': strikeout not mapped
+[style   ] document/style ass-spacing      style 'Caption': character spacing not mapped
+[cue     ] event 2   ass-pos          ASS override \pos(640,360) has no SRT/VTT mapping
+[cue     ] event 3   ass-fad          \fad animation not representable in SRT/VTT
+[cue     ] event 3   ass-frz          ASS override \frz(15) has no SRT/VTT mapping
+[cue     ] event 3   ass-frz          ASS override \frz(0) has no SRT/VTT mapping
+[cue     ] event 3   ass-fad          ASS override \fad(200,300) has no SRT/VTT mapping
+[cue     ] event 5   ass-comment      Comment event dropped

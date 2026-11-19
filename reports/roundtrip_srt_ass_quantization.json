@@ -1,0 +1,12 @@
+[
+  {
+    "index": 0,
+    "start_before": "00:00:01,234",
+    "start_after": "00:00:01,230",
+    "start_delta_ms": -4,
+    "end_before": "00:00:03,567",
+    "end_after": "00:00:03,570",
+    "end_delta_ms": 3,
+    "text_changed": false
+  }
+]
