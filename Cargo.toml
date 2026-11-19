@@ -1,0 +1,11 @@
+[package]
+name = "alac_harness"
+version = "0.1.0"
+edition = "2024"
+default-run = "alac_harness"
+
+[dependencies]
+symphonia = { version = "0.5.4", default-features = false, features = ["alac", "isomp4"] }
+
+[profile.release]
+opt-level = 3
