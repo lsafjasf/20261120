@@ -1,0 +1,325 @@
+{
+  "method": "For every nonzero magnitude compare code(+m), code(-m), decoded magnitudes and PCM loopback magnitudes; also compare all 128 codebook sign pairs.",
+  "codecs": {
+    "mulaw": {
+      "positive_magnitudes_tested": 32767,
+      "code_xor_sign_bit_mismatches": 0,
+      "decoded_magnitude_mismatches": 0,
+      "loopback_magnitude_mismatches": 0,
+      "max_decoded_magnitude_difference_lsb": 0,
+      "max_loopback_magnitude_difference_lsb": 0,
+      "codebook_sign_pairs_tested": 128,
+      "codebook_sign_pair_mismatches": 0,
+      "mismatch_examples": [],
+      "passed": true,
+      "zero_behavior": {
+        "zero_input_code": 255,
+        "zero_input_pcm": 0,
+        "negative_one_input_code": 127,
+        "negative_one_input_pcm": 0,
+        "zero_level_in_codebook": true,
+        "zero_codes_in_codebook": [
+          "0x7f",
+          "0xff"
+        ]
+      },
+      "representative_rows": [
+        {
+          "magnitude": 1,
+          "positive_code": 255,
+          "negative_code": 127,
+          "positive_pcm": 0,
+          "negative_pcm": 0,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 2,
+          "positive_code": 255,
+          "negative_code": 127,
+          "positive_pcm": 0,
+          "negative_pcm": 0,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 3,
+          "positive_code": 255,
+          "negative_code": 127,
+          "positive_pcm": 0,
+          "negative_pcm": 0,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 4,
+          "positive_code": 254,
+          "negative_code": 126,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 5,
+          "positive_code": 254,
+          "negative_code": 126,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 8,
+          "positive_code": 254,
+          "negative_code": 126,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 16,
+          "positive_code": 253,
+          "negative_code": 125,
+          "positive_pcm": 16,
+          "negative_pcm": -16,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 24,
+          "positive_code": 252,
+          "negative_code": 124,
+          "positive_pcm": 24,
+          "negative_pcm": -24,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 32,
+          "positive_code": 251,
+          "negative_code": 123,
+          "positive_pcm": 32,
+          "negative_pcm": -32,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 64,
+          "positive_code": 247,
+          "negative_code": 119,
+          "positive_pcm": 64,
+          "negative_pcm": -64,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 128,
+          "positive_code": 239,
+          "negative_code": 111,
+          "positive_pcm": 132,
+          "negative_pcm": -132,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 256,
+          "positive_code": 231,
+          "negative_code": 103,
+          "positive_pcm": 260,
+          "negative_pcm": -260,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 512,
+          "positive_code": 219,
+          "negative_code": 91,
+          "positive_pcm": 524,
+          "negative_pcm": -524,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 1024,
+          "positive_code": 205,
+          "negative_code": 77,
+          "positive_pcm": 1052,
+          "negative_pcm": -1052,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 16384,
+          "positive_code": 143,
+          "negative_code": 15,
+          "positive_pcm": 16764,
+          "negative_pcm": -16764,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 32635,
+          "positive_code": 128,
+          "negative_code": 0,
+          "positive_pcm": 32124,
+          "negative_pcm": -32124,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 32767,
+          "positive_code": 128,
+          "negative_code": 0,
+          "positive_pcm": 32124,
+          "negative_pcm": -32124,
+          "code_xor": 128
+        }
+      ]
+    },
+    "alaw": {
+      "positive_magnitudes_tested": 32767,
+      "code_xor_sign_bit_mismatches": 0,
+      "decoded_magnitude_mismatches": 0,
+      "loopback_magnitude_mismatches": 0,
+      "max_decoded_magnitude_difference_lsb": 0,
+      "max_loopback_magnitude_difference_lsb": 0,
+      "codebook_sign_pairs_tested": 128,
+      "codebook_sign_pair_mismatches": 0,
+      "mismatch_examples": [],
+      "passed": true,
+      "zero_behavior": {
+        "zero_input_code": 213,
+        "zero_input_pcm": 8,
+        "negative_one_input_code": 85,
+        "negative_one_input_pcm": -8,
+        "zero_level_in_codebook": false,
+        "zero_codes_in_codebook": []
+      },
+      "representative_rows": [
+        {
+          "magnitude": 1,
+          "positive_code": 213,
+          "negative_code": 85,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 2,
+          "positive_code": 213,
+          "negative_code": 85,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 3,
+          "positive_code": 213,
+          "negative_code": 85,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 4,
+          "positive_code": 213,
+          "negative_code": 85,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 5,
+          "positive_code": 213,
+          "negative_code": 85,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 8,
+          "positive_code": 213,
+          "negative_code": 85,
+          "positive_pcm": 8,
+          "negative_pcm": -8,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 16,
+          "positive_code": 212,
+          "negative_code": 84,
+          "positive_pcm": 24,
+          "negative_pcm": -24,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 24,
+          "positive_code": 212,
+          "negative_code": 84,
+          "positive_pcm": 24,
+          "negative_pcm": -24,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 32,
+          "positive_code": 215,
+          "negative_code": 87,
+          "positive_pcm": 40,
+          "negative_pcm": -40,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 64,
+          "positive_code": 209,
+          "negative_code": 81,
+          "positive_pcm": 72,
+          "negative_pcm": -72,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 128,
+          "positive_code": 221,
+          "negative_code": 93,
+          "positive_pcm": 136,
+          "negative_pcm": -136,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 256,
+          "positive_code": 197,
+          "negative_code": 69,
+          "positive_pcm": 264,
+          "negative_pcm": -264,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 512,
+          "positive_code": 245,
+          "negative_code": 117,
+          "positive_pcm": 528,
+          "negative_pcm": -528,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 1024,
+          "positive_code": 229,
+          "negative_code": 101,
+          "positive_pcm": 1056,
+          "negative_pcm": -1056,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 16384,
+          "positive_code": 165,
+          "negative_code": 37,
+          "positive_pcm": 16896,
+          "negative_pcm": -16896,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 32635,
+          "positive_code": 170,
+          "negative_code": 42,
+          "positive_pcm": 32256,
+          "negative_pcm": -32256,
+          "code_xor": 128
+        },
+        {
+          "magnitude": 32767,
+          "positive_code": 170,
+          "negative_code": 42,
+          "positive_pcm": 32256,
+          "negative_pcm": -32256,
+          "code_xor": 128
+        }
+      ]
+    }
+  },
+  "passed": true
+}

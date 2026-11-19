@@ -1,0 +1,42 @@
+{
+  "pcm_samples_tested": 65536,
+  "code_words_tested": 256,
+  "codecs": {
+    "mulaw": {
+      "scalar_mismatches": 0,
+      "scalar_mismatch_examples": [],
+      "batch_encode_mismatches": 0,
+      "batch_encode_mismatch_examples": [],
+      "batch_decode_mismatches": 0,
+      "batch_decode_mismatch_examples": [],
+      "batch_loopback_mismatches": 0,
+      "batch_loopback_mismatch_examples": [],
+      "codebook_decode_mismatches": 0,
+      "codebook_decode_mismatch_examples": [],
+      "codebook_decoded_values": 256,
+      "codebook_stable_values": 256,
+      "pcm_code_rewrite_stable": false,
+      "pcm_code_rewrite_stable_samples": 65533,
+      "pcm_loopback_idempotent": true,
+      "pcm_loopback_idempotent_samples": 65536
+    },
+    "alaw": {
+      "scalar_mismatches": 0,
+      "scalar_mismatch_examples": [],
+      "batch_encode_mismatches": 0,
+      "batch_encode_mismatch_examples": [],
+      "batch_decode_mismatches": 0,
+      "batch_decode_mismatch_examples": [],
+      "batch_loopback_mismatches": 0,
+      "batch_loopback_mismatch_examples": [],
+      "codebook_decode_mismatches": 0,
+      "codebook_decode_mismatch_examples": [],
+      "codebook_decoded_values": 256,
+      "codebook_stable_values": 256,
+      "pcm_code_rewrite_stable": true,
+      "pcm_code_rewrite_stable_samples": 65536,
+      "pcm_loopback_idempotent": true,
+      "pcm_loopback_idempotent_samples": 65536
+    }
+  }
+}

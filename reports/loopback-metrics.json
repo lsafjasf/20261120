@@ -1,0 +1,5120 @@
+{
+  "generated_at_utc": "2026-11-19T19:05:26.045Z",
+  "sample_rate_hz": 8000,
+  "methodology": {
+    "pcm_format": "signed 16-bit little-endian",
+    "loopback": "PCM -> G.711 -> PCM, both directions executed in WASM",
+    "error": "loopback_pcm - input_pcm",
+    "snr": "10 * log10(sum(input^2) / sum(error^2))",
+    "silent_snr": "undefined because input signal power is zero"
+  },
+  "full_domain_validation_passed": true,
+  "signals": {
+    "silence": {
+      "description": "50 ms of digital silence",
+      "sample_rate": 8000,
+      "samples": 400,
+      "codecs": {
+        "mulaw": {
+          "samples": 400,
+          "input_peak_lsb": 0,
+          "output_peak_lsb": 0,
+          "signal_power_lsb2": 0,
+          "noise_power_lsb2": 0,
+          "snr_db": null,
+          "snr_note": "undefined: all-zero input",
+          "max_abs_error_lsb": 0,
+          "rmse_lsb": 0,
+          "mean_error_lsb": 0,
+          "input_dc_offset_lsb": 0,
+          "output_dc_offset_lsb": 0,
+          "unique_output_levels": 1,
+          "encoded_codes": [
+            255
+          ],
+          "encoded_code_count": 1,
+          "loopback_batch_equals_decode_of_encoded": true
+        },
+        "alaw": {
+          "samples": 400,
+          "input_peak_lsb": 0,
+          "output_peak_lsb": 8,
+          "signal_power_lsb2": 0,
+          "noise_power_lsb2": 64,
+          "snr_db": null,
+          "snr_note": "undefined: all-zero input",
+          "max_abs_error_lsb": 8,
+          "rmse_lsb": 8,
+          "mean_error_lsb": 8,
+          "input_dc_offset_lsb": 0,
+          "output_dc_offset_lsb": 8,
+          "unique_output_levels": 1,
+          "encoded_codes": [
+            213
+          ],
+          "encoded_code_count": 1,
+          "loopback_batch_equals_decode_of_encoded": true
+        }
+      }
+    },
+    "sine": {
+      "description": "1 kHz sine, 50% full scale, 1 second",
+      "sample_rate": 8000,
+      "samples": 8000,
+      "codecs": {
+        "mulaw": {
+          "samples": 8000,
+          "input_peak_lsb": 16384,
+          "output_peak_lsb": 16764,
+          "signal_power_lsb2": 134214976.5,
+          "noise_power_lsb2": 55504.5,
+          "snr_db": 33.834728,
+          "snr_note": null,
+          "max_abs_error_lsb": 380,
+          "rmse_lsb": 235.59393,
+          "mean_error_lsb": 0,
+          "input_dc_offset_lsb": 0,
+          "output_dc_offset_lsb": 0,
+          "unique_output_levels": 5,
+          "encoded_codes": [
+            15,
+            25,
+            143,
+            153,
+            255
+          ],
+          "encoded_code_count": 5,
+          "loopback_batch_equals_decode_of_encoded": true
+        },
+        "alaw": {
+          "samples": 8000,
+          "input_peak_lsb": 16384,
+          "output_peak_lsb": 16896,
+          "signal_power_lsb2": 134214976.5,
+          "noise_power_lsb2": 67664.5,
+          "snr_db": 32.974401,
+          "snr_note": null,
+          "max_abs_error_lsb": 512,
+          "rmse_lsb": 260.124009,
+          "mean_error_lsb": 2,
+          "input_dc_offset_lsb": 0,
+          "output_dc_offset_lsb": 2,
+          "unique_output_levels": 5,
+          "encoded_codes": [
+            37,
+            51,
+            165,
+            179,
+            213
+          ],
+          "encoded_code_count": 5,
+          "loopback_batch_equals_decode_of_encoded": true
+        }
+      }
+    },
+    "speech": {
+      "description": "FSDD 0_jackson_0.wav, real speech",
+      "sample_rate": 8000,
+      "samples": 5148,
+      "codecs": {
+        "mulaw": {
+          "samples": 5148,
+          "input_peak_lsb": 24163,
+          "output_peak_lsb": 23932,
+          "signal_power_lsb2": 20092230.712898,
+          "noise_power_lsb2": 3765.609557,
+          "snr_db": 37.271929,
+          "snr_note": null,
+          "max_abs_error_lsb": 502,
+          "rmse_lsb": 61.364563,
+          "mean_error_lsb": -1.420746,
+          "input_dc_offset_lsb": -0.237374,
+          "output_dc_offset_lsb": -1.65812,
+          "unique_output_levels": 235,
+          "encoded_codes": [
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            136,
+            138,
+            139,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255
+          ],
+          "encoded_code_count": 236,
+          "loopback_batch_equals_decode_of_encoded": true
+        },
+        "alaw": {
+          "samples": 5148,
+          "input_peak_lsb": 24163,
+          "output_peak_lsb": 24064,
+          "signal_power_lsb2": 20092230.712898,
+          "noise_power_lsb2": 3583.303419,
+          "snr_db": 37.487446,
+          "snr_note": null,
+          "max_abs_error_lsb": 505,
+          "rmse_lsb": 59.8607,
+          "mean_error_lsb": 0.43007,
+          "input_dc_offset_lsb": -0.237374,
+          "output_dc_offset_lsb": 0.192696,
+          "unique_output_levels": 236,
+          "encoded_codes": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            36,
+            37,
+            38,
+            39,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            164,
+            165,
+            167,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255
+          ],
+          "encoded_code_count": 236,
+          "loopback_batch_equals_decode_of_encoded": true
+        }
+      }
+    },
+    "sineSmall": {
+      "description": "1 kHz sine, amplitude 32 LSB, 1 second",
+      "sample_rate": 8000,
+      "samples": 8000,
+      "codecs": {
+        "mulaw": {
+          "samples": 8000,
+          "input_peak_lsb": 32,
+          "output_peak_lsb": 32,
+          "signal_power_lsb2": 520.5,
+          "noise_power_lsb2": 0.5,
+          "snr_db": 30.174507,
+          "snr_note": null,
+          "max_abs_error_lsb": 1,
+          "rmse_lsb": 0.707107,
+          "mean_error_lsb": 0,
+          "input_dc_offset_lsb": 0,
+          "output_dc_offset_lsb": 0,
+          "unique_output_levels": 5,
+          "encoded_codes": [
+            123,
+            124,
+            251,
+            252,
+            255
+          ],
+          "encoded_code_count": 5,
+          "loopback_batch_equals_decode_of_encoded": true
+        },
+        "alaw": {
+          "samples": 8000,
+          "input_peak_lsb": 32,
+          "output_peak_lsb": 40,
+          "signal_power_lsb2": 520.5,
+          "noise_power_lsb2": 32.5,
+          "snr_db": 12.045374,
+          "snr_note": null,
+          "max_abs_error_lsb": 8,
+          "rmse_lsb": 5.700877,
+          "mean_error_lsb": 2,
+          "input_dc_offset_lsb": 0,
+          "output_dc_offset_lsb": 2,
+          "unique_output_levels": 5,
+          "encoded_codes": [
+            84,
+            87,
+            212,
+            213,
+            215
+          ],
+          "encoded_code_count": 5,
+          "loopback_batch_equals_decode_of_encoded": true
+        }
+      }
+    }
+  },
+  "quantization_near_zero": {
+    "mulaw": {
+      "distinct_levels": 255,
+      "zero_level": true,
+      "zero_code_count": 2,
+      "zero_codes": [
+        "0x7f",
+        "0xff"
+      ],
+      "nearest_negative_level": -8,
+      "nearest_positive_level": 8,
+      "step_across_zero_lsb": 16,
+      "smallest_positive_step_lsb": 8,
+      "smallest_negative_step_lsb": 8,
+      "first_segment_positive_step_lsb": 8,
+      "core_levels": [
+        {
+          "pcm": -244,
+          "codes": [
+            "0x68"
+          ]
+        },
+        {
+          "pcm": -228,
+          "codes": [
+            "0x69"
+          ]
+        },
+        {
+          "pcm": -212,
+          "codes": [
+            "0x6a"
+          ]
+        },
+        {
+          "pcm": -196,
+          "codes": [
+            "0x6b"
+          ]
+        },
+        {
+          "pcm": -180,
+          "codes": [
+            "0x6c"
+          ]
+        },
+        {
+          "pcm": -164,
+          "codes": [
+            "0x6d"
+          ]
+        },
+        {
+          "pcm": -148,
+          "codes": [
+            "0x6e"
+          ]
+        },
+        {
+          "pcm": -132,
+          "codes": [
+            "0x6f"
+          ]
+        },
+        {
+          "pcm": -120,
+          "codes": [
+            "0x70"
+          ]
+        },
+        {
+          "pcm": -112,
+          "codes": [
+            "0x71"
+          ]
+        },
+        {
+          "pcm": -104,
+          "codes": [
+            "0x72"
+          ]
+        },
+        {
+          "pcm": -96,
+          "codes": [
+            "0x73"
+          ]
+        },
+        {
+          "pcm": -88,
+          "codes": [
+            "0x74"
+          ]
+        },
+        {
+          "pcm": -80,
+          "codes": [
+            "0x75"
+          ]
+        },
+        {
+          "pcm": -72,
+          "codes": [
+            "0x76"
+          ]
+        },
+        {
+          "pcm": -64,
+          "codes": [
+            "0x77"
+          ]
+        },
+        {
+          "pcm": -56,
+          "codes": [
+            "0x78"
+          ]
+        },
+        {
+          "pcm": -48,
+          "codes": [
+            "0x79"
+          ]
+        },
+        {
+          "pcm": -40,
+          "codes": [
+            "0x7a"
+          ]
+        },
+        {
+          "pcm": -32,
+          "codes": [
+            "0x7b"
+          ]
+        },
+        {
+          "pcm": -24,
+          "codes": [
+            "0x7c"
+          ]
+        },
+        {
+          "pcm": -16,
+          "codes": [
+            "0x7d"
+          ]
+        },
+        {
+          "pcm": -8,
+          "codes": [
+            "0x7e"
+          ]
+        },
+        {
+          "pcm": 0,
+          "codes": [
+            "0x7f",
+            "0xff"
+          ]
+        },
+        {
+          "pcm": 8,
+          "codes": [
+            "0xfe"
+          ]
+        },
+        {
+          "pcm": 16,
+          "codes": [
+            "0xfd"
+          ]
+        },
+        {
+          "pcm": 24,
+          "codes": [
+            "0xfc"
+          ]
+        },
+        {
+          "pcm": 32,
+          "codes": [
+            "0xfb"
+          ]
+        },
+        {
+          "pcm": 40,
+          "codes": [
+            "0xfa"
+          ]
+        },
+        {
+          "pcm": 48,
+          "codes": [
+            "0xf9"
+          ]
+        },
+        {
+          "pcm": 56,
+          "codes": [
+            "0xf8"
+          ]
+        },
+        {
+          "pcm": 64,
+          "codes": [
+            "0xf7"
+          ]
+        },
+        {
+          "pcm": 72,
+          "codes": [
+            "0xf6"
+          ]
+        },
+        {
+          "pcm": 80,
+          "codes": [
+            "0xf5"
+          ]
+        },
+        {
+          "pcm": 88,
+          "codes": [
+            "0xf4"
+          ]
+        },
+        {
+          "pcm": 96,
+          "codes": [
+            "0xf3"
+          ]
+        },
+        {
+          "pcm": 104,
+          "codes": [
+            "0xf2"
+          ]
+        },
+        {
+          "pcm": 112,
+          "codes": [
+            "0xf1"
+          ]
+        },
+        {
+          "pcm": 120,
+          "codes": [
+            "0xf0"
+          ]
+        },
+        {
+          "pcm": 132,
+          "codes": [
+            "0xef"
+          ]
+        },
+        {
+          "pcm": 148,
+          "codes": [
+            "0xee"
+          ]
+        },
+        {
+          "pcm": 164,
+          "codes": [
+            "0xed"
+          ]
+        },
+        {
+          "pcm": 180,
+          "codes": [
+            "0xec"
+          ]
+        },
+        {
+          "pcm": 196,
+          "codes": [
+            "0xeb"
+          ]
+        },
+        {
+          "pcm": 212,
+          "codes": [
+            "0xea"
+          ]
+        },
+        {
+          "pcm": 228,
+          "codes": [
+            "0xe9"
+          ]
+        },
+        {
+          "pcm": 244,
+          "codes": [
+            "0xe8"
+          ]
+        }
+      ],
+      "all_levels": [
+        {
+          "pcm": -32124,
+          "codes": [
+            "0x00"
+          ]
+        },
+        {
+          "pcm": -31100,
+          "codes": [
+            "0x01"
+          ]
+        },
+        {
+          "pcm": -30076,
+          "codes": [
+            "0x02"
+          ]
+        },
+        {
+          "pcm": -29052,
+          "codes": [
+            "0x03"
+          ]
+        },
+        {
+          "pcm": -28028,
+          "codes": [
+            "0x04"
+          ]
+        },
+        {
+          "pcm": -27004,
+          "codes": [
+            "0x05"
+          ]
+        },
+        {
+          "pcm": -25980,
+          "codes": [
+            "0x06"
+          ]
+        },
+        {
+          "pcm": -24956,
+          "codes": [
+            "0x07"
+          ]
+        },
+        {
+          "pcm": -23932,
+          "codes": [
+            "0x08"
+          ]
+        },
+        {
+          "pcm": -22908,
+          "codes": [
+            "0x09"
+          ]
+        },
+        {
+          "pcm": -21884,
+          "codes": [
+            "0x0a"
+          ]
+        },
+        {
+          "pcm": -20860,
+          "codes": [
+            "0x0b"
+          ]
+        },
+        {
+          "pcm": -19836,
+          "codes": [
+            "0x0c"
+          ]
+        },
+        {
+          "pcm": -18812,
+          "codes": [
+            "0x0d"
+          ]
+        },
+        {
+          "pcm": -17788,
+          "codes": [
+            "0x0e"
+          ]
+        },
+        {
+          "pcm": -16764,
+          "codes": [
+            "0x0f"
+          ]
+        },
+        {
+          "pcm": -15996,
+          "codes": [
+            "0x10"
+          ]
+        },
+        {
+          "pcm": -15484,
+          "codes": [
+            "0x11"
+          ]
+        },
+        {
+          "pcm": -14972,
+          "codes": [
+            "0x12"
+          ]
+        },
+        {
+          "pcm": -14460,
+          "codes": [
+            "0x13"
+          ]
+        },
+        {
+          "pcm": -13948,
+          "codes": [
+            "0x14"
+          ]
+        },
+        {
+          "pcm": -13436,
+          "codes": [
+            "0x15"
+          ]
+        },
+        {
+          "pcm": -12924,
+          "codes": [
+            "0x16"
+          ]
+        },
+        {
+          "pcm": -12412,
+          "codes": [
+            "0x17"
+          ]
+        },
+        {
+          "pcm": -11900,
+          "codes": [
+            "0x18"
+          ]
+        },
+        {
+          "pcm": -11388,
+          "codes": [
+            "0x19"
+          ]
+        },
+        {
+          "pcm": -10876,
+          "codes": [
+            "0x1a"
+          ]
+        },
+        {
+          "pcm": -10364,
+          "codes": [
+            "0x1b"
+          ]
+        },
+        {
+          "pcm": -9852,
+          "codes": [
+            "0x1c"
+          ]
+        },
+        {
+          "pcm": -9340,
+          "codes": [
+            "0x1d"
+          ]
+        },
+        {
+          "pcm": -8828,
+          "codes": [
+            "0x1e"
+          ]
+        },
+        {
+          "pcm": -8316,
+          "codes": [
+            "0x1f"
+          ]
+        },
+        {
+          "pcm": -7932,
+          "codes": [
+            "0x20"
+          ]
+        },
+        {
+          "pcm": -7676,
+          "codes": [
+            "0x21"
+          ]
+        },
+        {
+          "pcm": -7420,
+          "codes": [
+            "0x22"
+          ]
+        },
+        {
+          "pcm": -7164,
+          "codes": [
+            "0x23"
+          ]
+        },
+        {
+          "pcm": -6908,
+          "codes": [
+            "0x24"
+          ]
+        },
+        {
+          "pcm": -6652,
+          "codes": [
+            "0x25"
+          ]
+        },
+        {
+          "pcm": -6396,
+          "codes": [
+            "0x26"
+          ]
+        },
+        {
+          "pcm": -6140,
+          "codes": [
+            "0x27"
+          ]
+        },
+        {
+          "pcm": -5884,
+          "codes": [
+            "0x28"
+          ]
+        },
+        {
+          "pcm": -5628,
+          "codes": [
+            "0x29"
+          ]
+        },
+        {
+          "pcm": -5372,
+          "codes": [
+            "0x2a"
+          ]
+        },
+        {
+          "pcm": -5116,
+          "codes": [
+            "0x2b"
+          ]
+        },
+        {
+          "pcm": -4860,
+          "codes": [
+            "0x2c"
+          ]
+        },
+        {
+          "pcm": -4604,
+          "codes": [
+            "0x2d"
+          ]
+        },
+        {
+          "pcm": -4348,
+          "codes": [
+            "0x2e"
+          ]
+        },
+        {
+          "pcm": -4092,
+          "codes": [
+            "0x2f"
+          ]
+        },
+        {
+          "pcm": -3900,
+          "codes": [
+            "0x30"
+          ]
+        },
+        {
+          "pcm": -3772,
+          "codes": [
+            "0x31"
+          ]
+        },
+        {
+          "pcm": -3644,
+          "codes": [
+            "0x32"
+          ]
+        },
+        {
+          "pcm": -3516,
+          "codes": [
+            "0x33"
+          ]
+        },
+        {
+          "pcm": -3388,
+          "codes": [
+            "0x34"
+          ]
+        },
+        {
+          "pcm": -3260,
+          "codes": [
+            "0x35"
+          ]
+        },
+        {
+          "pcm": -3132,
+          "codes": [
+            "0x36"
+          ]
+        },
+        {
+          "pcm": -3004,
+          "codes": [
+            "0x37"
+          ]
+        },
+        {
+          "pcm": -2876,
+          "codes": [
+            "0x38"
+          ]
+        },
+        {
+          "pcm": -2748,
+          "codes": [
+            "0x39"
+          ]
+        },
+        {
+          "pcm": -2620,
+          "codes": [
+            "0x3a"
+          ]
+        },
+        {
+          "pcm": -2492,
+          "codes": [
+            "0x3b"
+          ]
+        },
+        {
+          "pcm": -2364,
+          "codes": [
+            "0x3c"
+          ]
+        },
+        {
+          "pcm": -2236,
+          "codes": [
+            "0x3d"
+          ]
+        },
+        {
+          "pcm": -2108,
+          "codes": [
+            "0x3e"
+          ]
+        },
+        {
+          "pcm": -1980,
+          "codes": [
+            "0x3f"
+          ]
+        },
+        {
+          "pcm": -1884,
+          "codes": [
+            "0x40"
+          ]
+        },
+        {
+          "pcm": -1820,
+          "codes": [
+            "0x41"
+          ]
+        },
+        {
+          "pcm": -1756,
+          "codes": [
+            "0x42"
+          ]
+        },
+        {
+          "pcm": -1692,
+          "codes": [
+            "0x43"
+          ]
+        },
+        {
+          "pcm": -1628,
+          "codes": [
+            "0x44"
+          ]
+        },
+        {
+          "pcm": -1564,
+          "codes": [
+            "0x45"
+          ]
+        },
+        {
+          "pcm": -1500,
+          "codes": [
+            "0x46"
+          ]
+        },
+        {
+          "pcm": -1436,
+          "codes": [
+            "0x47"
+          ]
+        },
+        {
+          "pcm": -1372,
+          "codes": [
+            "0x48"
+          ]
+        },
+        {
+          "pcm": -1308,
+          "codes": [
+            "0x49"
+          ]
+        },
+        {
+          "pcm": -1244,
+          "codes": [
+            "0x4a"
+          ]
+        },
+        {
+          "pcm": -1180,
+          "codes": [
+            "0x4b"
+          ]
+        },
+        {
+          "pcm": -1116,
+          "codes": [
+            "0x4c"
+          ]
+        },
+        {
+          "pcm": -1052,
+          "codes": [
+            "0x4d"
+          ]
+        },
+        {
+          "pcm": -988,
+          "codes": [
+            "0x4e"
+          ]
+        },
+        {
+          "pcm": -924,
+          "codes": [
+            "0x4f"
+          ]
+        },
+        {
+          "pcm": -876,
+          "codes": [
+            "0x50"
+          ]
+        },
+        {
+          "pcm": -844,
+          "codes": [
+            "0x51"
+          ]
+        },
+        {
+          "pcm": -812,
+          "codes": [
+            "0x52"
+          ]
+        },
+        {
+          "pcm": -780,
+          "codes": [
+            "0x53"
+          ]
+        },
+        {
+          "pcm": -748,
+          "codes": [
+            "0x54"
+          ]
+        },
+        {
+          "pcm": -716,
+          "codes": [
+            "0x55"
+          ]
+        },
+        {
+          "pcm": -684,
+          "codes": [
+            "0x56"
+          ]
+        },
+        {
+          "pcm": -652,
+          "codes": [
+            "0x57"
+          ]
+        },
+        {
+          "pcm": -620,
+          "codes": [
+            "0x58"
+          ]
+        },
+        {
+          "pcm": -588,
+          "codes": [
+            "0x59"
+          ]
+        },
+        {
+          "pcm": -556,
+          "codes": [
+            "0x5a"
+          ]
+        },
+        {
+          "pcm": -524,
+          "codes": [
+            "0x5b"
+          ]
+        },
+        {
+          "pcm": -492,
+          "codes": [
+            "0x5c"
+          ]
+        },
+        {
+          "pcm": -460,
+          "codes": [
+            "0x5d"
+          ]
+        },
+        {
+          "pcm": -428,
+          "codes": [
+            "0x5e"
+          ]
+        },
+        {
+          "pcm": -396,
+          "codes": [
+            "0x5f"
+          ]
+        },
+        {
+          "pcm": -372,
+          "codes": [
+            "0x60"
+          ]
+        },
+        {
+          "pcm": -356,
+          "codes": [
+            "0x61"
+          ]
+        },
+        {
+          "pcm": -340,
+          "codes": [
+            "0x62"
+          ]
+        },
+        {
+          "pcm": -324,
+          "codes": [
+            "0x63"
+          ]
+        },
+        {
+          "pcm": -308,
+          "codes": [
+            "0x64"
+          ]
+        },
+        {
+          "pcm": -292,
+          "codes": [
+            "0x65"
+          ]
+        },
+        {
+          "pcm": -276,
+          "codes": [
+            "0x66"
+          ]
+        },
+        {
+          "pcm": -260,
+          "codes": [
+            "0x67"
+          ]
+        },
+        {
+          "pcm": -244,
+          "codes": [
+            "0x68"
+          ]
+        },
+        {
+          "pcm": -228,
+          "codes": [
+            "0x69"
+          ]
+        },
+        {
+          "pcm": -212,
+          "codes": [
+            "0x6a"
+          ]
+        },
+        {
+          "pcm": -196,
+          "codes": [
+            "0x6b"
+          ]
+        },
+        {
+          "pcm": -180,
+          "codes": [
+            "0x6c"
+          ]
+        },
+        {
+          "pcm": -164,
+          "codes": [
+            "0x6d"
+          ]
+        },
+        {
+          "pcm": -148,
+          "codes": [
+            "0x6e"
+          ]
+        },
+        {
+          "pcm": -132,
+          "codes": [
+            "0x6f"
+          ]
+        },
+        {
+          "pcm": -120,
+          "codes": [
+            "0x70"
+          ]
+        },
+        {
+          "pcm": -112,
+          "codes": [
+            "0x71"
+          ]
+        },
+        {
+          "pcm": -104,
+          "codes": [
+            "0x72"
+          ]
+        },
+        {
+          "pcm": -96,
+          "codes": [
+            "0x73"
+          ]
+        },
+        {
+          "pcm": -88,
+          "codes": [
+            "0x74"
+          ]
+        },
+        {
+          "pcm": -80,
+          "codes": [
+            "0x75"
+          ]
+        },
+        {
+          "pcm": -72,
+          "codes": [
+            "0x76"
+          ]
+        },
+        {
+          "pcm": -64,
+          "codes": [
+            "0x77"
+          ]
+        },
+        {
+          "pcm": -56,
+          "codes": [
+            "0x78"
+          ]
+        },
+        {
+          "pcm": -48,
+          "codes": [
+            "0x79"
+          ]
+        },
+        {
+          "pcm": -40,
+          "codes": [
+            "0x7a"
+          ]
+        },
+        {
+          "pcm": -32,
+          "codes": [
+            "0x7b"
+          ]
+        },
+        {
+          "pcm": -24,
+          "codes": [
+            "0x7c"
+          ]
+        },
+        {
+          "pcm": -16,
+          "codes": [
+            "0x7d"
+          ]
+        },
+        {
+          "pcm": -8,
+          "codes": [
+            "0x7e"
+          ]
+        },
+        {
+          "pcm": 0,
+          "codes": [
+            "0x7f",
+            "0xff"
+          ]
+        },
+        {
+          "pcm": 8,
+          "codes": [
+            "0xfe"
+          ]
+        },
+        {
+          "pcm": 16,
+          "codes": [
+            "0xfd"
+          ]
+        },
+        {
+          "pcm": 24,
+          "codes": [
+            "0xfc"
+          ]
+        },
+        {
+          "pcm": 32,
+          "codes": [
+            "0xfb"
+          ]
+        },
+        {
+          "pcm": 40,
+          "codes": [
+            "0xfa"
+          ]
+        },
+        {
+          "pcm": 48,
+          "codes": [
+            "0xf9"
+          ]
+        },
+        {
+          "pcm": 56,
+          "codes": [
+            "0xf8"
+          ]
+        },
+        {
+          "pcm": 64,
+          "codes": [
+            "0xf7"
+          ]
+        },
+        {
+          "pcm": 72,
+          "codes": [
+            "0xf6"
+          ]
+        },
+        {
+          "pcm": 80,
+          "codes": [
+            "0xf5"
+          ]
+        },
+        {
+          "pcm": 88,
+          "codes": [
+            "0xf4"
+          ]
+        },
+        {
+          "pcm": 96,
+          "codes": [
+            "0xf3"
+          ]
+        },
+        {
+          "pcm": 104,
+          "codes": [
+            "0xf2"
+          ]
+        },
+        {
+          "pcm": 112,
+          "codes": [
+            "0xf1"
+          ]
+        },
+        {
+          "pcm": 120,
+          "codes": [
+            "0xf0"
+          ]
+        },
+        {
+          "pcm": 132,
+          "codes": [
+            "0xef"
+          ]
+        },
+        {
+          "pcm": 148,
+          "codes": [
+            "0xee"
+          ]
+        },
+        {
+          "pcm": 164,
+          "codes": [
+            "0xed"
+          ]
+        },
+        {
+          "pcm": 180,
+          "codes": [
+            "0xec"
+          ]
+        },
+        {
+          "pcm": 196,
+          "codes": [
+            "0xeb"
+          ]
+        },
+        {
+          "pcm": 212,
+          "codes": [
+            "0xea"
+          ]
+        },
+        {
+          "pcm": 228,
+          "codes": [
+            "0xe9"
+          ]
+        },
+        {
+          "pcm": 244,
+          "codes": [
+            "0xe8"
+          ]
+        },
+        {
+          "pcm": 260,
+          "codes": [
+            "0xe7"
+          ]
+        },
+        {
+          "pcm": 276,
+          "codes": [
+            "0xe6"
+          ]
+        },
+        {
+          "pcm": 292,
+          "codes": [
+            "0xe5"
+          ]
+        },
+        {
+          "pcm": 308,
+          "codes": [
+            "0xe4"
+          ]
+        },
+        {
+          "pcm": 324,
+          "codes": [
+            "0xe3"
+          ]
+        },
+        {
+          "pcm": 340,
+          "codes": [
+            "0xe2"
+          ]
+        },
+        {
+          "pcm": 356,
+          "codes": [
+            "0xe1"
+          ]
+        },
+        {
+          "pcm": 372,
+          "codes": [
+            "0xe0"
+          ]
+        },
+        {
+          "pcm": 396,
+          "codes": [
+            "0xdf"
+          ]
+        },
+        {
+          "pcm": 428,
+          "codes": [
+            "0xde"
+          ]
+        },
+        {
+          "pcm": 460,
+          "codes": [
+            "0xdd"
+          ]
+        },
+        {
+          "pcm": 492,
+          "codes": [
+            "0xdc"
+          ]
+        },
+        {
+          "pcm": 524,
+          "codes": [
+            "0xdb"
+          ]
+        },
+        {
+          "pcm": 556,
+          "codes": [
+            "0xda"
+          ]
+        },
+        {
+          "pcm": 588,
+          "codes": [
+            "0xd9"
+          ]
+        },
+        {
+          "pcm": 620,
+          "codes": [
+            "0xd8"
+          ]
+        },
+        {
+          "pcm": 652,
+          "codes": [
+            "0xd7"
+          ]
+        },
+        {
+          "pcm": 684,
+          "codes": [
+            "0xd6"
+          ]
+        },
+        {
+          "pcm": 716,
+          "codes": [
+            "0xd5"
+          ]
+        },
+        {
+          "pcm": 748,
+          "codes": [
+            "0xd4"
+          ]
+        },
+        {
+          "pcm": 780,
+          "codes": [
+            "0xd3"
+          ]
+        },
+        {
+          "pcm": 812,
+          "codes": [
+            "0xd2"
+          ]
+        },
+        {
+          "pcm": 844,
+          "codes": [
+            "0xd1"
+          ]
+        },
+        {
+          "pcm": 876,
+          "codes": [
+            "0xd0"
+          ]
+        },
+        {
+          "pcm": 924,
+          "codes": [
+            "0xcf"
+          ]
+        },
+        {
+          "pcm": 988,
+          "codes": [
+            "0xce"
+          ]
+        },
+        {
+          "pcm": 1052,
+          "codes": [
+            "0xcd"
+          ]
+        },
+        {
+          "pcm": 1116,
+          "codes": [
+            "0xcc"
+          ]
+        },
+        {
+          "pcm": 1180,
+          "codes": [
+            "0xcb"
+          ]
+        },
+        {
+          "pcm": 1244,
+          "codes": [
+            "0xca"
+          ]
+        },
+        {
+          "pcm": 1308,
+          "codes": [
+            "0xc9"
+          ]
+        },
+        {
+          "pcm": 1372,
+          "codes": [
+            "0xc8"
+          ]
+        },
+        {
+          "pcm": 1436,
+          "codes": [
+            "0xc7"
+          ]
+        },
+        {
+          "pcm": 1500,
+          "codes": [
+            "0xc6"
+          ]
+        },
+        {
+          "pcm": 1564,
+          "codes": [
+            "0xc5"
+          ]
+        },
+        {
+          "pcm": 1628,
+          "codes": [
+            "0xc4"
+          ]
+        },
+        {
+          "pcm": 1692,
+          "codes": [
+            "0xc3"
+          ]
+        },
+        {
+          "pcm": 1756,
+          "codes": [
+            "0xc2"
+          ]
+        },
+        {
+          "pcm": 1820,
+          "codes": [
+            "0xc1"
+          ]
+        },
+        {
+          "pcm": 1884,
+          "codes": [
+            "0xc0"
+          ]
+        },
+        {
+          "pcm": 1980,
+          "codes": [
+            "0xbf"
+          ]
+        },
+        {
+          "pcm": 2108,
+          "codes": [
+            "0xbe"
+          ]
+        },
+        {
+          "pcm": 2236,
+          "codes": [
+            "0xbd"
+          ]
+        },
+        {
+          "pcm": 2364,
+          "codes": [
+            "0xbc"
+          ]
+        },
+        {
+          "pcm": 2492,
+          "codes": [
+            "0xbb"
+          ]
+        },
+        {
+          "pcm": 2620,
+          "codes": [
+            "0xba"
+          ]
+        },
+        {
+          "pcm": 2748,
+          "codes": [
+            "0xb9"
+          ]
+        },
+        {
+          "pcm": 2876,
+          "codes": [
+            "0xb8"
+          ]
+        },
+        {
+          "pcm": 3004,
+          "codes": [
+            "0xb7"
+          ]
+        },
+        {
+          "pcm": 3132,
+          "codes": [
+            "0xb6"
+          ]
+        },
+        {
+          "pcm": 3260,
+          "codes": [
+            "0xb5"
+          ]
+        },
+        {
+          "pcm": 3388,
+          "codes": [
+            "0xb4"
+          ]
+        },
+        {
+          "pcm": 3516,
+          "codes": [
+            "0xb3"
+          ]
+        },
+        {
+          "pcm": 3644,
+          "codes": [
+            "0xb2"
+          ]
+        },
+        {
+          "pcm": 3772,
+          "codes": [
+            "0xb1"
+          ]
+        },
+        {
+          "pcm": 3900,
+          "codes": [
+            "0xb0"
+          ]
+        },
+        {
+          "pcm": 4092,
+          "codes": [
+            "0xaf"
+          ]
+        },
+        {
+          "pcm": 4348,
+          "codes": [
+            "0xae"
+          ]
+        },
+        {
+          "pcm": 4604,
+          "codes": [
+            "0xad"
+          ]
+        },
+        {
+          "pcm": 4860,
+          "codes": [
+            "0xac"
+          ]
+        },
+        {
+          "pcm": 5116,
+          "codes": [
+            "0xab"
+          ]
+        },
+        {
+          "pcm": 5372,
+          "codes": [
+            "0xaa"
+          ]
+        },
+        {
+          "pcm": 5628,
+          "codes": [
+            "0xa9"
+          ]
+        },
+        {
+          "pcm": 5884,
+          "codes": [
+            "0xa8"
+          ]
+        },
+        {
+          "pcm": 6140,
+          "codes": [
+            "0xa7"
+          ]
+        },
+        {
+          "pcm": 6396,
+          "codes": [
+            "0xa6"
+          ]
+        },
+        {
+          "pcm": 6652,
+          "codes": [
+            "0xa5"
+          ]
+        },
+        {
+          "pcm": 6908,
+          "codes": [
+            "0xa4"
+          ]
+        },
+        {
+          "pcm": 7164,
+          "codes": [
+            "0xa3"
+          ]
+        },
+        {
+          "pcm": 7420,
+          "codes": [
+            "0xa2"
+          ]
+        },
+        {
+          "pcm": 7676,
+          "codes": [
+            "0xa1"
+          ]
+        },
+        {
+          "pcm": 7932,
+          "codes": [
+            "0xa0"
+          ]
+        },
+        {
+          "pcm": 8316,
+          "codes": [
+            "0x9f"
+          ]
+        },
+        {
+          "pcm": 8828,
+          "codes": [
+            "0x9e"
+          ]
+        },
+        {
+          "pcm": 9340,
+          "codes": [
+            "0x9d"
+          ]
+        },
+        {
+          "pcm": 9852,
+          "codes": [
+            "0x9c"
+          ]
+        },
+        {
+          "pcm": 10364,
+          "codes": [
+            "0x9b"
+          ]
+        },
+        {
+          "pcm": 10876,
+          "codes": [
+            "0x9a"
+          ]
+        },
+        {
+          "pcm": 11388,
+          "codes": [
+            "0x99"
+          ]
+        },
+        {
+          "pcm": 11900,
+          "codes": [
+            "0x98"
+          ]
+        },
+        {
+          "pcm": 12412,
+          "codes": [
+            "0x97"
+          ]
+        },
+        {
+          "pcm": 12924,
+          "codes": [
+            "0x96"
+          ]
+        },
+        {
+          "pcm": 13436,
+          "codes": [
+            "0x95"
+          ]
+        },
+        {
+          "pcm": 13948,
+          "codes": [
+            "0x94"
+          ]
+        },
+        {
+          "pcm": 14460,
+          "codes": [
+            "0x93"
+          ]
+        },
+        {
+          "pcm": 14972,
+          "codes": [
+            "0x92"
+          ]
+        },
+        {
+          "pcm": 15484,
+          "codes": [
+            "0x91"
+          ]
+        },
+        {
+          "pcm": 15996,
+          "codes": [
+            "0x90"
+          ]
+        },
+        {
+          "pcm": 16764,
+          "codes": [
+            "0x8f"
+          ]
+        },
+        {
+          "pcm": 17788,
+          "codes": [
+            "0x8e"
+          ]
+        },
+        {
+          "pcm": 18812,
+          "codes": [
+            "0x8d"
+          ]
+        },
+        {
+          "pcm": 19836,
+          "codes": [
+            "0x8c"
+          ]
+        },
+        {
+          "pcm": 20860,
+          "codes": [
+            "0x8b"
+          ]
+        },
+        {
+          "pcm": 21884,
+          "codes": [
+            "0x8a"
+          ]
+        },
+        {
+          "pcm": 22908,
+          "codes": [
+            "0x89"
+          ]
+        },
+        {
+          "pcm": 23932,
+          "codes": [
+            "0x88"
+          ]
+        },
+        {
+          "pcm": 24956,
+          "codes": [
+            "0x87"
+          ]
+        },
+        {
+          "pcm": 25980,
+          "codes": [
+            "0x86"
+          ]
+        },
+        {
+          "pcm": 27004,
+          "codes": [
+            "0x85"
+          ]
+        },
+        {
+          "pcm": 28028,
+          "codes": [
+            "0x84"
+          ]
+        },
+        {
+          "pcm": 29052,
+          "codes": [
+            "0x83"
+          ]
+        },
+        {
+          "pcm": 30076,
+          "codes": [
+            "0x82"
+          ]
+        },
+        {
+          "pcm": 31100,
+          "codes": [
+            "0x81"
+          ]
+        },
+        {
+          "pcm": 32124,
+          "codes": [
+            "0x80"
+          ]
+        }
+      ]
+    },
+    "alaw": {
+      "distinct_levels": 256,
+      "zero_level": false,
+      "zero_code_count": 0,
+      "zero_codes": [],
+      "nearest_negative_level": -8,
+      "nearest_positive_level": 8,
+      "step_across_zero_lsb": 16,
+      "smallest_positive_step_lsb": 16,
+      "smallest_negative_step_lsb": 16,
+      "first_segment_positive_step_lsb": 16,
+      "core_levels": [
+        {
+          "pcm": -248,
+          "codes": [
+            "0x5a"
+          ]
+        },
+        {
+          "pcm": -232,
+          "codes": [
+            "0x5b"
+          ]
+        },
+        {
+          "pcm": -216,
+          "codes": [
+            "0x58"
+          ]
+        },
+        {
+          "pcm": -200,
+          "codes": [
+            "0x59"
+          ]
+        },
+        {
+          "pcm": -184,
+          "codes": [
+            "0x5e"
+          ]
+        },
+        {
+          "pcm": -168,
+          "codes": [
+            "0x5f"
+          ]
+        },
+        {
+          "pcm": -152,
+          "codes": [
+            "0x5c"
+          ]
+        },
+        {
+          "pcm": -136,
+          "codes": [
+            "0x5d"
+          ]
+        },
+        {
+          "pcm": -120,
+          "codes": [
+            "0x52"
+          ]
+        },
+        {
+          "pcm": -104,
+          "codes": [
+            "0x53"
+          ]
+        },
+        {
+          "pcm": -88,
+          "codes": [
+            "0x50"
+          ]
+        },
+        {
+          "pcm": -72,
+          "codes": [
+            "0x51"
+          ]
+        },
+        {
+          "pcm": -56,
+          "codes": [
+            "0x56"
+          ]
+        },
+        {
+          "pcm": -40,
+          "codes": [
+            "0x57"
+          ]
+        },
+        {
+          "pcm": -24,
+          "codes": [
+            "0x54"
+          ]
+        },
+        {
+          "pcm": -8,
+          "codes": [
+            "0x55"
+          ]
+        },
+        {
+          "pcm": 8,
+          "codes": [
+            "0xd5"
+          ]
+        },
+        {
+          "pcm": 24,
+          "codes": [
+            "0xd4"
+          ]
+        },
+        {
+          "pcm": 40,
+          "codes": [
+            "0xd7"
+          ]
+        },
+        {
+          "pcm": 56,
+          "codes": [
+            "0xd6"
+          ]
+        },
+        {
+          "pcm": 72,
+          "codes": [
+            "0xd1"
+          ]
+        },
+        {
+          "pcm": 88,
+          "codes": [
+            "0xd0"
+          ]
+        },
+        {
+          "pcm": 104,
+          "codes": [
+            "0xd3"
+          ]
+        },
+        {
+          "pcm": 120,
+          "codes": [
+            "0xd2"
+          ]
+        },
+        {
+          "pcm": 136,
+          "codes": [
+            "0xdd"
+          ]
+        },
+        {
+          "pcm": 152,
+          "codes": [
+            "0xdc"
+          ]
+        },
+        {
+          "pcm": 168,
+          "codes": [
+            "0xdf"
+          ]
+        },
+        {
+          "pcm": 184,
+          "codes": [
+            "0xde"
+          ]
+        },
+        {
+          "pcm": 200,
+          "codes": [
+            "0xd9"
+          ]
+        },
+        {
+          "pcm": 216,
+          "codes": [
+            "0xd8"
+          ]
+        },
+        {
+          "pcm": 232,
+          "codes": [
+            "0xdb"
+          ]
+        },
+        {
+          "pcm": 248,
+          "codes": [
+            "0xda"
+          ]
+        }
+      ],
+      "all_levels": [
+        {
+          "pcm": -32256,
+          "codes": [
+            "0x2a"
+          ]
+        },
+        {
+          "pcm": -31232,
+          "codes": [
+            "0x2b"
+          ]
+        },
+        {
+          "pcm": -30208,
+          "codes": [
+            "0x28"
+          ]
+        },
+        {
+          "pcm": -29184,
+          "codes": [
+            "0x29"
+          ]
+        },
+        {
+          "pcm": -28160,
+          "codes": [
+            "0x2e"
+          ]
+        },
+        {
+          "pcm": -27136,
+          "codes": [
+            "0x2f"
+          ]
+        },
+        {
+          "pcm": -26112,
+          "codes": [
+            "0x2c"
+          ]
+        },
+        {
+          "pcm": -25088,
+          "codes": [
+            "0x2d"
+          ]
+        },
+        {
+          "pcm": -24064,
+          "codes": [
+            "0x22"
+          ]
+        },
+        {
+          "pcm": -23040,
+          "codes": [
+            "0x23"
+          ]
+        },
+        {
+          "pcm": -22016,
+          "codes": [
+            "0x20"
+          ]
+        },
+        {
+          "pcm": -20992,
+          "codes": [
+            "0x21"
+          ]
+        },
+        {
+          "pcm": -19968,
+          "codes": [
+            "0x26"
+          ]
+        },
+        {
+          "pcm": -18944,
+          "codes": [
+            "0x27"
+          ]
+        },
+        {
+          "pcm": -17920,
+          "codes": [
+            "0x24"
+          ]
+        },
+        {
+          "pcm": -16896,
+          "codes": [
+            "0x25"
+          ]
+        },
+        {
+          "pcm": -16128,
+          "codes": [
+            "0x3a"
+          ]
+        },
+        {
+          "pcm": -15616,
+          "codes": [
+            "0x3b"
+          ]
+        },
+        {
+          "pcm": -15104,
+          "codes": [
+            "0x38"
+          ]
+        },
+        {
+          "pcm": -14592,
+          "codes": [
+            "0x39"
+          ]
+        },
+        {
+          "pcm": -14080,
+          "codes": [
+            "0x3e"
+          ]
+        },
+        {
+          "pcm": -13568,
+          "codes": [
+            "0x3f"
+          ]
+        },
+        {
+          "pcm": -13056,
+          "codes": [
+            "0x3c"
+          ]
+        },
+        {
+          "pcm": -12544,
+          "codes": [
+            "0x3d"
+          ]
+        },
+        {
+          "pcm": -12032,
+          "codes": [
+            "0x32"
+          ]
+        },
+        {
+          "pcm": -11520,
+          "codes": [
+            "0x33"
+          ]
+        },
+        {
+          "pcm": -11008,
+          "codes": [
+            "0x30"
+          ]
+        },
+        {
+          "pcm": -10496,
+          "codes": [
+            "0x31"
+          ]
+        },
+        {
+          "pcm": -9984,
+          "codes": [
+            "0x36"
+          ]
+        },
+        {
+          "pcm": -9472,
+          "codes": [
+            "0x37"
+          ]
+        },
+        {
+          "pcm": -8960,
+          "codes": [
+            "0x34"
+          ]
+        },
+        {
+          "pcm": -8448,
+          "codes": [
+            "0x35"
+          ]
+        },
+        {
+          "pcm": -8064,
+          "codes": [
+            "0x0a"
+          ]
+        },
+        {
+          "pcm": -7808,
+          "codes": [
+            "0x0b"
+          ]
+        },
+        {
+          "pcm": -7552,
+          "codes": [
+            "0x08"
+          ]
+        },
+        {
+          "pcm": -7296,
+          "codes": [
+            "0x09"
+          ]
+        },
+        {
+          "pcm": -7040,
+          "codes": [
+            "0x0e"
+          ]
+        },
+        {
+          "pcm": -6784,
+          "codes": [
+            "0x0f"
+          ]
+        },
+        {
+          "pcm": -6528,
+          "codes": [
+            "0x0c"
+          ]
+        },
+        {
+          "pcm": -6272,
+          "codes": [
+            "0x0d"
+          ]
+        },
+        {
+          "pcm": -6016,
+          "codes": [
+            "0x02"
+          ]
+        },
+        {
+          "pcm": -5760,
+          "codes": [
+            "0x03"
+          ]
+        },
+        {
+          "pcm": -5504,
+          "codes": [
+            "0x00"
+          ]
+        },
+        {
+          "pcm": -5248,
+          "codes": [
+            "0x01"
+          ]
+        },
+        {
+          "pcm": -4992,
+          "codes": [
+            "0x06"
+          ]
+        },
+        {
+          "pcm": -4736,
+          "codes": [
+            "0x07"
+          ]
+        },
+        {
+          "pcm": -4480,
+          "codes": [
+            "0x04"
+          ]
+        },
+        {
+          "pcm": -4224,
+          "codes": [
+            "0x05"
+          ]
+        },
+        {
+          "pcm": -4032,
+          "codes": [
+            "0x1a"
+          ]
+        },
+        {
+          "pcm": -3904,
+          "codes": [
+            "0x1b"
+          ]
+        },
+        {
+          "pcm": -3776,
+          "codes": [
+            "0x18"
+          ]
+        },
+        {
+          "pcm": -3648,
+          "codes": [
+            "0x19"
+          ]
+        },
+        {
+          "pcm": -3520,
+          "codes": [
+            "0x1e"
+          ]
+        },
+        {
+          "pcm": -3392,
+          "codes": [
+            "0x1f"
+          ]
+        },
+        {
+          "pcm": -3264,
+          "codes": [
+            "0x1c"
+          ]
+        },
+        {
+          "pcm": -3136,
+          "codes": [
+            "0x1d"
+          ]
+        },
+        {
+          "pcm": -3008,
+          "codes": [
+            "0x12"
+          ]
+        },
+        {
+          "pcm": -2880,
+          "codes": [
+            "0x13"
+          ]
+        },
+        {
+          "pcm": -2752,
+          "codes": [
+            "0x10"
+          ]
+        },
+        {
+          "pcm": -2624,
+          "codes": [
+            "0x11"
+          ]
+        },
+        {
+          "pcm": -2496,
+          "codes": [
+            "0x16"
+          ]
+        },
+        {
+          "pcm": -2368,
+          "codes": [
+            "0x17"
+          ]
+        },
+        {
+          "pcm": -2240,
+          "codes": [
+            "0x14"
+          ]
+        },
+        {
+          "pcm": -2112,
+          "codes": [
+            "0x15"
+          ]
+        },
+        {
+          "pcm": -2016,
+          "codes": [
+            "0x6a"
+          ]
+        },
+        {
+          "pcm": -1952,
+          "codes": [
+            "0x6b"
+          ]
+        },
+        {
+          "pcm": -1888,
+          "codes": [
+            "0x68"
+          ]
+        },
+        {
+          "pcm": -1824,
+          "codes": [
+            "0x69"
+          ]
+        },
+        {
+          "pcm": -1760,
+          "codes": [
+            "0x6e"
+          ]
+        },
+        {
+          "pcm": -1696,
+          "codes": [
+            "0x6f"
+          ]
+        },
+        {
+          "pcm": -1632,
+          "codes": [
+            "0x6c"
+          ]
+        },
+        {
+          "pcm": -1568,
+          "codes": [
+            "0x6d"
+          ]
+        },
+        {
+          "pcm": -1504,
+          "codes": [
+            "0x62"
+          ]
+        },
+        {
+          "pcm": -1440,
+          "codes": [
+            "0x63"
+          ]
+        },
+        {
+          "pcm": -1376,
+          "codes": [
+            "0x60"
+          ]
+        },
+        {
+          "pcm": -1312,
+          "codes": [
+            "0x61"
+          ]
+        },
+        {
+          "pcm": -1248,
+          "codes": [
+            "0x66"
+          ]
+        },
+        {
+          "pcm": -1184,
+          "codes": [
+            "0x67"
+          ]
+        },
+        {
+          "pcm": -1120,
+          "codes": [
+            "0x64"
+          ]
+        },
+        {
+          "pcm": -1056,
+          "codes": [
+            "0x65"
+          ]
+        },
+        {
+          "pcm": -1008,
+          "codes": [
+            "0x7a"
+          ]
+        },
+        {
+          "pcm": -976,
+          "codes": [
+            "0x7b"
+          ]
+        },
+        {
+          "pcm": -944,
+          "codes": [
+            "0x78"
+          ]
+        },
+        {
+          "pcm": -912,
+          "codes": [
+            "0x79"
+          ]
+        },
+        {
+          "pcm": -880,
+          "codes": [
+            "0x7e"
+          ]
+        },
+        {
+          "pcm": -848,
+          "codes": [
+            "0x7f"
+          ]
+        },
+        {
+          "pcm": -816,
+          "codes": [
+            "0x7c"
+          ]
+        },
+        {
+          "pcm": -784,
+          "codes": [
+            "0x7d"
+          ]
+        },
+        {
+          "pcm": -752,
+          "codes": [
+            "0x72"
+          ]
+        },
+        {
+          "pcm": -720,
+          "codes": [
+            "0x73"
+          ]
+        },
+        {
+          "pcm": -688,
+          "codes": [
+            "0x70"
+          ]
+        },
+        {
+          "pcm": -656,
+          "codes": [
+            "0x71"
+          ]
+        },
+        {
+          "pcm": -624,
+          "codes": [
+            "0x76"
+          ]
+        },
+        {
+          "pcm": -592,
+          "codes": [
+            "0x77"
+          ]
+        },
+        {
+          "pcm": -560,
+          "codes": [
+            "0x74"
+          ]
+        },
+        {
+          "pcm": -528,
+          "codes": [
+            "0x75"
+          ]
+        },
+        {
+          "pcm": -504,
+          "codes": [
+            "0x4a"
+          ]
+        },
+        {
+          "pcm": -488,
+          "codes": [
+            "0x4b"
+          ]
+        },
+        {
+          "pcm": -472,
+          "codes": [
+            "0x48"
+          ]
+        },
+        {
+          "pcm": -456,
+          "codes": [
+            "0x49"
+          ]
+        },
+        {
+          "pcm": -440,
+          "codes": [
+            "0x4e"
+          ]
+        },
+        {
+          "pcm": -424,
+          "codes": [
+            "0x4f"
+          ]
+        },
+        {
+          "pcm": -408,
+          "codes": [
+            "0x4c"
+          ]
+        },
+        {
+          "pcm": -392,
+          "codes": [
+            "0x4d"
+          ]
+        },
+        {
+          "pcm": -376,
+          "codes": [
+            "0x42"
+          ]
+        },
+        {
+          "pcm": -360,
+          "codes": [
+            "0x43"
+          ]
+        },
+        {
+          "pcm": -344,
+          "codes": [
+            "0x40"
+          ]
+        },
+        {
+          "pcm": -328,
+          "codes": [
+            "0x41"
+          ]
+        },
+        {
+          "pcm": -312,
+          "codes": [
+            "0x46"
+          ]
+        },
+        {
+          "pcm": -296,
+          "codes": [
+            "0x47"
+          ]
+        },
+        {
+          "pcm": -280,
+          "codes": [
+            "0x44"
+          ]
+        },
+        {
+          "pcm": -264,
+          "codes": [
+            "0x45"
+          ]
+        },
+        {
+          "pcm": -248,
+          "codes": [
+            "0x5a"
+          ]
+        },
+        {
+          "pcm": -232,
+          "codes": [
+            "0x5b"
+          ]
+        },
+        {
+          "pcm": -216,
+          "codes": [
+            "0x58"
+          ]
+        },
+        {
+          "pcm": -200,
+          "codes": [
+            "0x59"
+          ]
+        },
+        {
+          "pcm": -184,
+          "codes": [
+            "0x5e"
+          ]
+        },
+        {
+          "pcm": -168,
+          "codes": [
+            "0x5f"
+          ]
+        },
+        {
+          "pcm": -152,
+          "codes": [
+            "0x5c"
+          ]
+        },
+        {
+          "pcm": -136,
+          "codes": [
+            "0x5d"
+          ]
+        },
+        {
+          "pcm": -120,
+          "codes": [
+            "0x52"
+          ]
+        },
+        {
+          "pcm": -104,
+          "codes": [
+            "0x53"
+          ]
+        },
+        {
+          "pcm": -88,
+          "codes": [
+            "0x50"
+          ]
+        },
+        {
+          "pcm": -72,
+          "codes": [
+            "0x51"
+          ]
+        },
+        {
+          "pcm": -56,
+          "codes": [
+            "0x56"
+          ]
+        },
+        {
+          "pcm": -40,
+          "codes": [
+            "0x57"
+          ]
+        },
+        {
+          "pcm": -24,
+          "codes": [
+            "0x54"
+          ]
+        },
+        {
+          "pcm": -8,
+          "codes": [
+            "0x55"
+          ]
+        },
+        {
+          "pcm": 8,
+          "codes": [
+            "0xd5"
+          ]
+        },
+        {
+          "pcm": 24,
+          "codes": [
+            "0xd4"
+          ]
+        },
+        {
+          "pcm": 40,
+          "codes": [
+            "0xd7"
+          ]
+        },
+        {
+          "pcm": 56,
+          "codes": [
+            "0xd6"
+          ]
+        },
+        {
+          "pcm": 72,
+          "codes": [
+            "0xd1"
+          ]
+        },
+        {
+          "pcm": 88,
+          "codes": [
+            "0xd0"
+          ]
+        },
+        {
+          "pcm": 104,
+          "codes": [
+            "0xd3"
+          ]
+        },
+        {
+          "pcm": 120,
+          "codes": [
+            "0xd2"
+          ]
+        },
+        {
+          "pcm": 136,
+          "codes": [
+            "0xdd"
+          ]
+        },
+        {
+          "pcm": 152,
+          "codes": [
+            "0xdc"
+          ]
+        },
+        {
+          "pcm": 168,
+          "codes": [
+            "0xdf"
+          ]
+        },
+        {
+          "pcm": 184,
+          "codes": [
+            "0xde"
+          ]
+        },
+        {
+          "pcm": 200,
+          "codes": [
+            "0xd9"
+          ]
+        },
+        {
+          "pcm": 216,
+          "codes": [
+            "0xd8"
+          ]
+        },
+        {
+          "pcm": 232,
+          "codes": [
+            "0xdb"
+          ]
+        },
+        {
+          "pcm": 248,
+          "codes": [
+            "0xda"
+          ]
+        },
+        {
+          "pcm": 264,
+          "codes": [
+            "0xc5"
+          ]
+        },
+        {
+          "pcm": 280,
+          "codes": [
+            "0xc4"
+          ]
+        },
+        {
+          "pcm": 296,
+          "codes": [
+            "0xc7"
+          ]
+        },
+        {
+          "pcm": 312,
+          "codes": [
+            "0xc6"
+          ]
+        },
+        {
+          "pcm": 328,
+          "codes": [
+            "0xc1"
+          ]
+        },
+        {
+          "pcm": 344,
+          "codes": [
+            "0xc0"
+          ]
+        },
+        {
+          "pcm": 360,
+          "codes": [
+            "0xc3"
+          ]
+        },
+        {
+          "pcm": 376,
+          "codes": [
+            "0xc2"
+          ]
+        },
+        {
+          "pcm": 392,
+          "codes": [
+            "0xcd"
+          ]
+        },
+        {
+          "pcm": 408,
+          "codes": [
+            "0xcc"
+          ]
+        },
+        {
+          "pcm": 424,
+          "codes": [
+            "0xcf"
+          ]
+        },
+        {
+          "pcm": 440,
+          "codes": [
+            "0xce"
+          ]
+        },
+        {
+          "pcm": 456,
+          "codes": [
+            "0xc9"
+          ]
+        },
+        {
+          "pcm": 472,
+          "codes": [
+            "0xc8"
+          ]
+        },
+        {
+          "pcm": 488,
+          "codes": [
+            "0xcb"
+          ]
+        },
+        {
+          "pcm": 504,
+          "codes": [
+            "0xca"
+          ]
+        },
+        {
+          "pcm": 528,
+          "codes": [
+            "0xf5"
+          ]
+        },
+        {
+          "pcm": 560,
+          "codes": [
+            "0xf4"
+          ]
+        },
+        {
+          "pcm": 592,
+          "codes": [
+            "0xf7"
+          ]
+        },
+        {
+          "pcm": 624,
+          "codes": [
+            "0xf6"
+          ]
+        },
+        {
+          "pcm": 656,
+          "codes": [
+            "0xf1"
+          ]
+        },
+        {
+          "pcm": 688,
+          "codes": [
+            "0xf0"
+          ]
+        },
+        {
+          "pcm": 720,
+          "codes": [
+            "0xf3"
+          ]
+        },
+        {
+          "pcm": 752,
+          "codes": [
+            "0xf2"
+          ]
+        },
+        {
+          "pcm": 784,
+          "codes": [
+            "0xfd"
+          ]
+        },
+        {
+          "pcm": 816,
+          "codes": [
+            "0xfc"
+          ]
+        },
+        {
+          "pcm": 848,
+          "codes": [
+            "0xff"
+          ]
+        },
+        {
+          "pcm": 880,
+          "codes": [
+            "0xfe"
+          ]
+        },
+        {
+          "pcm": 912,
+          "codes": [
+            "0xf9"
+          ]
+        },
+        {
+          "pcm": 944,
+          "codes": [
+            "0xf8"
+          ]
+        },
+        {
+          "pcm": 976,
+          "codes": [
+            "0xfb"
+          ]
+        },
+        {
+          "pcm": 1008,
+          "codes": [
+            "0xfa"
+          ]
+        },
+        {
+          "pcm": 1056,
+          "codes": [
+            "0xe5"
+          ]
+        },
+        {
+          "pcm": 1120,
+          "codes": [
+            "0xe4"
+          ]
+        },
+        {
+          "pcm": 1184,
+          "codes": [
+            "0xe7"
+          ]
+        },
+        {
+          "pcm": 1248,
+          "codes": [
+            "0xe6"
+          ]
+        },
+        {
+          "pcm": 1312,
+          "codes": [
+            "0xe1"
+          ]
+        },
+        {
+          "pcm": 1376,
+          "codes": [
+            "0xe0"
+          ]
+        },
+        {
+          "pcm": 1440,
+          "codes": [
+            "0xe3"
+          ]
+        },
+        {
+          "pcm": 1504,
+          "codes": [
+            "0xe2"
+          ]
+        },
+        {
+          "pcm": 1568,
+          "codes": [
+            "0xed"
+          ]
+        },
+        {
+          "pcm": 1632,
+          "codes": [
+            "0xec"
+          ]
+        },
+        {
+          "pcm": 1696,
+          "codes": [
+            "0xef"
+          ]
+        },
+        {
+          "pcm": 1760,
+          "codes": [
+            "0xee"
+          ]
+        },
+        {
+          "pcm": 1824,
+          "codes": [
+            "0xe9"
+          ]
+        },
+        {
+          "pcm": 1888,
+          "codes": [
+            "0xe8"
+          ]
+        },
+        {
+          "pcm": 1952,
+          "codes": [
+            "0xeb"
+          ]
+        },
+        {
+          "pcm": 2016,
+          "codes": [
+            "0xea"
+          ]
+        },
+        {
+          "pcm": 2112,
+          "codes": [
+            "0x95"
+          ]
+        },
+        {
+          "pcm": 2240,
+          "codes": [
+            "0x94"
+          ]
+        },
+        {
+          "pcm": 2368,
+          "codes": [
+            "0x97"
+          ]
+        },
+        {
+          "pcm": 2496,
+          "codes": [
+            "0x96"
+          ]
+        },
+        {
+          "pcm": 2624,
+          "codes": [
+            "0x91"
+          ]
+        },
+        {
+          "pcm": 2752,
+          "codes": [
+            "0x90"
+          ]
+        },
+        {
+          "pcm": 2880,
+          "codes": [
+            "0x93"
+          ]
+        },
+        {
+          "pcm": 3008,
+          "codes": [
+            "0x92"
+          ]
+        },
+        {
+          "pcm": 3136,
+          "codes": [
+            "0x9d"
+          ]
+        },
+        {
+          "pcm": 3264,
+          "codes": [
+            "0x9c"
+          ]
+        },
+        {
+          "pcm": 3392,
+          "codes": [
+            "0x9f"
+          ]
+        },
+        {
+          "pcm": 3520,
+          "codes": [
+            "0x9e"
+          ]
+        },
+        {
+          "pcm": 3648,
+          "codes": [
+            "0x99"
+          ]
+        },
+        {
+          "pcm": 3776,
+          "codes": [
+            "0x98"
+          ]
+        },
+        {
+          "pcm": 3904,
+          "codes": [
+            "0x9b"
+          ]
+        },
+        {
+          "pcm": 4032,
+          "codes": [
+            "0x9a"
+          ]
+        },
+        {
+          "pcm": 4224,
+          "codes": [
+            "0x85"
+          ]
+        },
+        {
+          "pcm": 4480,
+          "codes": [
+            "0x84"
+          ]
+        },
+        {
+          "pcm": 4736,
+          "codes": [
+            "0x87"
+          ]
+        },
+        {
+          "pcm": 4992,
+          "codes": [
+            "0x86"
+          ]
+        },
+        {
+          "pcm": 5248,
+          "codes": [
+            "0x81"
+          ]
+        },
+        {
+          "pcm": 5504,
+          "codes": [
+            "0x80"
+          ]
+        },
+        {
+          "pcm": 5760,
+          "codes": [
+            "0x83"
+          ]
+        },
+        {
+          "pcm": 6016,
+          "codes": [
+            "0x82"
+          ]
+        },
+        {
+          "pcm": 6272,
+          "codes": [
+            "0x8d"
+          ]
+        },
+        {
+          "pcm": 6528,
+          "codes": [
+            "0x8c"
+          ]
+        },
+        {
+          "pcm": 6784,
+          "codes": [
+            "0x8f"
+          ]
+        },
+        {
+          "pcm": 7040,
+          "codes": [
+            "0x8e"
+          ]
+        },
+        {
+          "pcm": 7296,
+          "codes": [
+            "0x89"
+          ]
+        },
+        {
+          "pcm": 7552,
+          "codes": [
+            "0x88"
+          ]
+        },
+        {
+          "pcm": 7808,
+          "codes": [
+            "0x8b"
+          ]
+        },
+        {
+          "pcm": 8064,
+          "codes": [
+            "0x8a"
+          ]
+        },
+        {
+          "pcm": 8448,
+          "codes": [
+            "0xb5"
+          ]
+        },
+        {
+          "pcm": 8960,
+          "codes": [
+            "0xb4"
+          ]
+        },
+        {
+          "pcm": 9472,
+          "codes": [
+            "0xb7"
+          ]
+        },
+        {
+          "pcm": 9984,
+          "codes": [
+            "0xb6"
+          ]
+        },
+        {
+          "pcm": 10496,
+          "codes": [
+            "0xb1"
+          ]
+        },
+        {
+          "pcm": 11008,
+          "codes": [
+            "0xb0"
+          ]
+        },
+        {
+          "pcm": 11520,
+          "codes": [
+            "0xb3"
+          ]
+        },
+        {
+          "pcm": 12032,
+          "codes": [
+            "0xb2"
+          ]
+        },
+        {
+          "pcm": 12544,
+          "codes": [
+            "0xbd"
+          ]
+        },
+        {
+          "pcm": 13056,
+          "codes": [
+            "0xbc"
+          ]
+        },
+        {
+          "pcm": 13568,
+          "codes": [
+            "0xbf"
+          ]
+        },
+        {
+          "pcm": 14080,
+          "codes": [
+            "0xbe"
+          ]
+        },
+        {
+          "pcm": 14592,
+          "codes": [
+            "0xb9"
+          ]
+        },
+        {
+          "pcm": 15104,
+          "codes": [
+            "0xb8"
+          ]
+        },
+        {
+          "pcm": 15616,
+          "codes": [
+            "0xbb"
+          ]
+        },
+        {
+          "pcm": 16128,
+          "codes": [
+            "0xba"
+          ]
+        },
+        {
+          "pcm": 16896,
+          "codes": [
+            "0xa5"
+          ]
+        },
+        {
+          "pcm": 17920,
+          "codes": [
+            "0xa4"
+          ]
+        },
+        {
+          "pcm": 18944,
+          "codes": [
+            "0xa7"
+          ]
+        },
+        {
+          "pcm": 19968,
+          "codes": [
+            "0xa6"
+          ]
+        },
+        {
+          "pcm": 20992,
+          "codes": [
+            "0xa1"
+          ]
+        },
+        {
+          "pcm": 22016,
+          "codes": [
+            "0xa0"
+          ]
+        },
+        {
+          "pcm": 23040,
+          "codes": [
+            "0xa3"
+          ]
+        },
+        {
+          "pcm": 24064,
+          "codes": [
+            "0xa2"
+          ]
+        },
+        {
+          "pcm": 25088,
+          "codes": [
+            "0xad"
+          ]
+        },
+        {
+          "pcm": 26112,
+          "codes": [
+            "0xac"
+          ]
+        },
+        {
+          "pcm": 27136,
+          "codes": [
+            "0xaf"
+          ]
+        },
+        {
+          "pcm": 28160,
+          "codes": [
+            "0xae"
+          ]
+        },
+        {
+          "pcm": 29184,
+          "codes": [
+            "0xa9"
+          ]
+        },
+        {
+          "pcm": 30208,
+          "codes": [
+            "0xa8"
+          ]
+        },
+        {
+          "pcm": 31232,
+          "codes": [
+            "0xab"
+          ]
+        },
+        {
+          "pcm": 32256,
+          "codes": [
+            "0xaa"
+          ]
+        }
+      ]
+    }
+  },
+  "small_signal": {
+    "method": "1 kHz sine sweep at 8 kHz; absolute error and output DC are checked against half of the first positive A-law/mu-law step.",
+    "max_amplitude_lsb": 32,
+    "codecs": {
+      "mulaw": [
+        {
+          "peak_amplitude_lsb": 1,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 1,
+            "output_peak_lsb": 0,
+            "signal_power_lsb2": 0.75,
+            "noise_power_lsb2": 0.75,
+            "snr_db": 0,
+            "snr_note": null,
+            "max_abs_error_lsb": 1,
+            "rmse_lsb": 0.866025,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 1,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 2,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 2,
+            "output_peak_lsb": 0,
+            "signal_power_lsb2": 1.5,
+            "noise_power_lsb2": 1.5,
+            "snr_db": 0,
+            "snr_note": null,
+            "max_abs_error_lsb": 2,
+            "rmse_lsb": 1.224745,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 1,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 3,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 3,
+            "output_peak_lsb": 0,
+            "signal_power_lsb2": 4.25,
+            "noise_power_lsb2": 4.25,
+            "snr_db": 0,
+            "snr_note": null,
+            "max_abs_error_lsb": 3,
+            "rmse_lsb": 2.061553,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 1,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 4,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 4,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 8.5,
+            "noise_power_lsb2": 8.5,
+            "snr_db": 0,
+            "snr_note": null,
+            "max_abs_error_lsb": 4,
+            "rmse_lsb": 2.915476,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 3,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 8,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 8,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 34,
+            "noise_power_lsb2": 2,
+            "snr_db": 12.304489,
+            "snr_note": null,
+            "max_abs_error_lsb": 2,
+            "rmse_lsb": 1.414214,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 3,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 16,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 16,
+            "output_peak_lsb": 16,
+            "signal_power_lsb2": 124.5,
+            "noise_power_lsb2": 4.5,
+            "snr_db": 14.419568,
+            "snr_note": null,
+            "max_abs_error_lsb": 3,
+            "rmse_lsb": 2.12132,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 24,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 24,
+            "output_peak_lsb": 24,
+            "signal_power_lsb2": 288.5,
+            "noise_power_lsb2": 0.5,
+            "snr_db": 27.611758,
+            "snr_note": null,
+            "max_abs_error_lsb": 1,
+            "rmse_lsb": 0.707107,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 32,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 32,
+            "output_peak_lsb": 32,
+            "signal_power_lsb2": 520.5,
+            "noise_power_lsb2": 0.5,
+            "snr_db": 30.174507,
+            "snr_note": null,
+            "max_abs_error_lsb": 1,
+            "rmse_lsb": 0.707107,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 64,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 64,
+            "output_peak_lsb": 64,
+            "signal_power_lsb2": 2036.5,
+            "noise_power_lsb2": 4.5,
+            "snr_db": 26.556719,
+            "snr_note": null,
+            "max_abs_error_lsb": 3,
+            "rmse_lsb": 2.12132,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        },
+        {
+          "peak_amplitude_lsb": 128,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 128,
+            "output_peak_lsb": 132,
+            "signal_power_lsb2": 8236.5,
+            "noise_power_lsb2": 8.5,
+            "snr_db": 29.863238,
+            "snr_note": null,
+            "max_abs_error_lsb": 4,
+            "rmse_lsb": 2.915476,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        },
+        {
+          "peak_amplitude_lsb": 256,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 256,
+            "output_peak_lsb": 260,
+            "signal_power_lsb2": 32764.5,
+            "noise_power_lsb2": 4.5,
+            "snr_db": 38.62191,
+            "snr_note": null,
+            "max_abs_error_lsb": 4,
+            "rmse_lsb": 2.12132,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        },
+        {
+          "peak_amplitude_lsb": 512,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 512,
+            "output_peak_lsb": 524,
+            "signal_power_lsb2": 131058,
+            "noise_power_lsb2": 54,
+            "snr_db": 33.850698,
+            "snr_note": null,
+            "max_abs_error_lsb": 12,
+            "rmse_lsb": 7.348469,
+            "mean_error_lsb": 0,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 0,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        }
+      ],
+      "alaw": [
+        {
+          "peak_amplitude_lsb": 1,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 1,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 0.75,
+            "noise_power_lsb2": 52.75,
+            "snr_db": -18.471612,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 7.26292,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 2,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 2,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 2,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 1.5,
+            "noise_power_lsb2": 49.5,
+            "snr_db": -15.185139,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 7.035624,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 2,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 3,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 3,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 4.25,
+            "noise_power_lsb2": 40.25,
+            "snr_db": -9.76377,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 6.344289,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 2,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 4,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 4,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 8.5,
+            "noise_power_lsb2": 32.5,
+            "snr_db": -5.824644,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 5.700877,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 2,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 8,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 8,
+            "output_peak_lsb": 8,
+            "signal_power_lsb2": 34,
+            "noise_power_lsb2": 18,
+            "snr_db": 2.762064,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 4.242641,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 2,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 16,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 16,
+            "output_peak_lsb": 24,
+            "signal_power_lsb2": 124.5,
+            "noise_power_lsb2": 36.5,
+            "snr_db": 5.328765,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 6.041523,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 4,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 24,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 24,
+            "output_peak_lsb": 24,
+            "signal_power_lsb2": 288.5,
+            "noise_power_lsb2": 40.5,
+            "snr_db": 8.526908,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 6.363961,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 3,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 32,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 32,
+            "output_peak_lsb": 40,
+            "signal_power_lsb2": 520.5,
+            "noise_power_lsb2": 32.5,
+            "snr_db": 12.045374,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 5.700877,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": true
+        },
+        {
+          "peak_amplitude_lsb": 64,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 64,
+            "output_peak_lsb": 72,
+            "signal_power_lsb2": 2036.5,
+            "noise_power_lsb2": 44.5,
+            "snr_db": 16.605244,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 6.670832,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        },
+        {
+          "peak_amplitude_lsb": 128,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 128,
+            "output_peak_lsb": 136,
+            "signal_power_lsb2": 8236.5,
+            "noise_power_lsb2": 36.5,
+            "snr_db": 23.534498,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 6.041523,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        },
+        {
+          "peak_amplitude_lsb": 256,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 256,
+            "output_peak_lsb": 264,
+            "signal_power_lsb2": 32764.5,
+            "noise_power_lsb2": 36.5,
+            "snr_db": 29.531107,
+            "snr_note": null,
+            "max_abs_error_lsb": 8,
+            "rmse_lsb": 6.041523,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        },
+        {
+          "peak_amplitude_lsb": 512,
+          "metrics": {
+            "samples": 8000,
+            "input_peak_lsb": 512,
+            "output_peak_lsb": 528,
+            "signal_power_lsb2": 131058,
+            "noise_power_lsb2": 82,
+            "snr_db": 32.036497,
+            "snr_note": null,
+            "max_abs_error_lsb": 16,
+            "rmse_lsb": 9.055385,
+            "mean_error_lsb": 2,
+            "input_dc_offset_lsb": 0,
+            "output_dc_offset_lsb": 2,
+            "unique_output_levels": 5,
+            "encoded_codes": null
+          },
+          "within_half_first_step": null
+        }
+      ]
+    },
+    "summary": {
+      "mulaw": {
+        "amplitudes_tested": [
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          24,
+          32
+        ],
+        "half_first_step_lsb": 4,
+        "max_abs_error_lsb": 4,
+        "max_abs_dc_offset_lsb": 0,
+        "dc_offset_within_half_step": true,
+        "absolute_distortion_within_half_step": true,
+        "passed": true
+      },
+      "alaw": {
+        "amplitudes_tested": [
+          1,
+          2,
+          3,
+          4,
+          8,
+          16,
+          24,
+          32
+        ],
+        "half_first_step_lsb": 8,
+        "max_abs_error_lsb": 8,
+        "max_abs_dc_offset_lsb": 2,
+        "dc_offset_within_half_step": true,
+        "absolute_distortion_within_half_step": true,
+        "passed": true
+      }
+    }
+  },
+  "symmetry": {
+    "method": "For every nonzero magnitude compare code(+m), code(-m), decoded magnitudes and PCM loopback magnitudes; also compare all 128 codebook sign pairs.",
+    "codecs": {
+      "mulaw": {
+        "positive_magnitudes_tested": 32767,
+        "code_xor_sign_bit_mismatches": 0,
+        "decoded_magnitude_mismatches": 0,
+        "loopback_magnitude_mismatches": 0,
+        "max_decoded_magnitude_difference_lsb": 0,
+        "max_loopback_magnitude_difference_lsb": 0,
+        "codebook_sign_pairs_tested": 128,
+        "codebook_sign_pair_mismatches": 0,
+        "mismatch_examples": [],
+        "passed": true,
+        "zero_behavior": {
+          "zero_input_code": 255,
+          "zero_input_pcm": 0,
+          "negative_one_input_code": 127,
+          "negative_one_input_pcm": 0,
+          "zero_level_in_codebook": true,
+          "zero_codes_in_codebook": [
+            "0x7f",
+            "0xff"
+          ]
+        },
+        "representative_rows": [
+          {
+            "magnitude": 1,
+            "positive_code": 255,
+            "negative_code": 127,
+            "positive_pcm": 0,
+            "negative_pcm": 0,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 2,
+            "positive_code": 255,
+            "negative_code": 127,
+            "positive_pcm": 0,
+            "negative_pcm": 0,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 3,
+            "positive_code": 255,
+            "negative_code": 127,
+            "positive_pcm": 0,
+            "negative_pcm": 0,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 4,
+            "positive_code": 254,
+            "negative_code": 126,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 5,
+            "positive_code": 254,
+            "negative_code": 126,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 8,
+            "positive_code": 254,
+            "negative_code": 126,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 16,
+            "positive_code": 253,
+            "negative_code": 125,
+            "positive_pcm": 16,
+            "negative_pcm": -16,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 24,
+            "positive_code": 252,
+            "negative_code": 124,
+            "positive_pcm": 24,
+            "negative_pcm": -24,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 32,
+            "positive_code": 251,
+            "negative_code": 123,
+            "positive_pcm": 32,
+            "negative_pcm": -32,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 64,
+            "positive_code": 247,
+            "negative_code": 119,
+            "positive_pcm": 64,
+            "negative_pcm": -64,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 128,
+            "positive_code": 239,
+            "negative_code": 111,
+            "positive_pcm": 132,
+            "negative_pcm": -132,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 256,
+            "positive_code": 231,
+            "negative_code": 103,
+            "positive_pcm": 260,
+            "negative_pcm": -260,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 512,
+            "positive_code": 219,
+            "negative_code": 91,
+            "positive_pcm": 524,
+            "negative_pcm": -524,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 1024,
+            "positive_code": 205,
+            "negative_code": 77,
+            "positive_pcm": 1052,
+            "negative_pcm": -1052,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 16384,
+            "positive_code": 143,
+            "negative_code": 15,
+            "positive_pcm": 16764,
+            "negative_pcm": -16764,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 32635,
+            "positive_code": 128,
+            "negative_code": 0,
+            "positive_pcm": 32124,
+            "negative_pcm": -32124,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 32767,
+            "positive_code": 128,
+            "negative_code": 0,
+            "positive_pcm": 32124,
+            "negative_pcm": -32124,
+            "code_xor": 128
+          }
+        ]
+      },
+      "alaw": {
+        "positive_magnitudes_tested": 32767,
+        "code_xor_sign_bit_mismatches": 0,
+        "decoded_magnitude_mismatches": 0,
+        "loopback_magnitude_mismatches": 0,
+        "max_decoded_magnitude_difference_lsb": 0,
+        "max_loopback_magnitude_difference_lsb": 0,
+        "codebook_sign_pairs_tested": 128,
+        "codebook_sign_pair_mismatches": 0,
+        "mismatch_examples": [],
+        "passed": true,
+        "zero_behavior": {
+          "zero_input_code": 213,
+          "zero_input_pcm": 8,
+          "negative_one_input_code": 85,
+          "negative_one_input_pcm": -8,
+          "zero_level_in_codebook": false,
+          "zero_codes_in_codebook": []
+        },
+        "representative_rows": [
+          {
+            "magnitude": 1,
+            "positive_code": 213,
+            "negative_code": 85,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 2,
+            "positive_code": 213,
+            "negative_code": 85,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 3,
+            "positive_code": 213,
+            "negative_code": 85,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 4,
+            "positive_code": 213,
+            "negative_code": 85,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 5,
+            "positive_code": 213,
+            "negative_code": 85,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 8,
+            "positive_code": 213,
+            "negative_code": 85,
+            "positive_pcm": 8,
+            "negative_pcm": -8,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 16,
+            "positive_code": 212,
+            "negative_code": 84,
+            "positive_pcm": 24,
+            "negative_pcm": -24,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 24,
+            "positive_code": 212,
+            "negative_code": 84,
+            "positive_pcm": 24,
+            "negative_pcm": -24,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 32,
+            "positive_code": 215,
+            "negative_code": 87,
+            "positive_pcm": 40,
+            "negative_pcm": -40,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 64,
+            "positive_code": 209,
+            "negative_code": 81,
+            "positive_pcm": 72,
+            "negative_pcm": -72,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 128,
+            "positive_code": 221,
+            "negative_code": 93,
+            "positive_pcm": 136,
+            "negative_pcm": -136,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 256,
+            "positive_code": 197,
+            "negative_code": 69,
+            "positive_pcm": 264,
+            "negative_pcm": -264,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 512,
+            "positive_code": 245,
+            "negative_code": 117,
+            "positive_pcm": 528,
+            "negative_pcm": -528,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 1024,
+            "positive_code": 229,
+            "negative_code": 101,
+            "positive_pcm": 1056,
+            "negative_pcm": -1056,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 16384,
+            "positive_code": 165,
+            "negative_code": 37,
+            "positive_pcm": 16896,
+            "negative_pcm": -16896,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 32635,
+            "positive_code": 170,
+            "negative_code": 42,
+            "positive_pcm": 32256,
+            "negative_pcm": -32256,
+            "code_xor": 128
+          },
+          {
+            "magnitude": 32767,
+            "positive_code": 170,
+            "negative_code": 42,
+            "positive_pcm": 32256,
+            "negative_pcm": -32256,
+            "code_xor": 128
+          }
+        ]
+      }
+    },
+    "passed": true
+  }
+}

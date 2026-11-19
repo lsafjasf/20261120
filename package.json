@@ -1,0 +1,19 @@
+{
+  "name": "g711-wasm-loopback",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "G.711 mu-law/A-law WASM codecs with full-domain loopback validation",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "test": "node --test",
+    "report": "node scripts/run.mjs",
+    "all": "npm run build && npm test && npm run report"
+  },
+  "devDependencies": {
+    "wabt": "^1.0.39"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
