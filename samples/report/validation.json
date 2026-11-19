@@ -1,0 +1,338 @@
+{
+  "vps_sps_pps_sample": {
+    "file": "/home/hj/userfeedback/uid4-0016/samples/streams/vps_sps_pps_multires.vvc",
+    "provenance": "JVET VVC FDIS conformance bitstream VPS_A_INTEL_3",
+    "parameter_set_first_occurrences": [
+      {
+        "kind": "VPS",
+        "id": 1,
+        "revision": 1,
+        "start_offset": 7,
+        "nal_offset": 11,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": null,
+        "bit_depth": null,
+        "chroma_format": null
+      },
+      {
+        "kind": "SPS",
+        "id": 0,
+        "revision": 1,
+        "start_offset": 34,
+        "nal_offset": 38,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": "208x120",
+        "bit_depth": 10,
+        "chroma_format": "4:2:0"
+      },
+      {
+        "kind": "PPS",
+        "id": 0,
+        "revision": 1,
+        "start_offset": 139,
+        "nal_offset": 143,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": null,
+        "bit_depth": null,
+        "chroma_format": null
+      },
+      {
+        "kind": "SPS",
+        "id": 1,
+        "revision": 1,
+        "start_offset": 1336,
+        "nal_offset": 1340,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": "832x480",
+        "bit_depth": 10,
+        "chroma_format": "4:2:0"
+      },
+      {
+        "kind": "PPS",
+        "id": 1,
+        "revision": 1,
+        "start_offset": 1454,
+        "nal_offset": 1458,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": null,
+        "bit_depth": null,
+        "chroma_format": null
+      }
+    ]
+  },
+  "switch_stream": {
+    "file": "/home/hj/userfeedback/uid4-0016/samples/streams/switch_low_high_low.vvc",
+    "stream_size": 2983,
+    "composition": [
+      "96x64/8-bit",
+      "192x128/10-bit",
+      "96x64/8-bit"
+    ],
+    "sps_events": [
+      {
+        "stream_offset": 937,
+        "before": {
+          "resolution": "96x64",
+          "bit_depth": 8,
+          "chroma_format": "4:2:0",
+          "sps_pic_width_max_in_luma_samples": 96,
+          "sps_pic_height_max_in_luma_samples": 64
+        },
+        "after": {
+          "resolution": "192x128",
+          "bit_depth": 10,
+          "chroma_format": "4:2:0",
+          "sps_pic_width_max_in_luma_samples": 192,
+          "sps_pic_height_max_in_luma_samples": 128
+        },
+        "decoded_byte_boundary": 110592,
+        "next_frame_index": 12
+      },
+      {
+        "stream_offset": 2046,
+        "before": {
+          "resolution": "192x128",
+          "bit_depth": 10,
+          "chroma_format": "4:2:0",
+          "sps_pic_width_max_in_luma_samples": 192,
+          "sps_pic_height_max_in_luma_samples": 128
+        },
+        "after": {
+          "resolution": "96x64",
+          "bit_depth": 8,
+          "chroma_format": "4:2:0",
+          "sps_pic_width_max_in_luma_samples": 96,
+          "sps_pic_height_max_in_luma_samples": 64
+        },
+        "decoded_byte_boundary": 995328,
+        "next_frame_index": 24
+      }
+    ],
+    "parameter_set_first_occurrences": [
+      {
+        "kind": "SPS",
+        "id": 0,
+        "revision": 1,
+        "start_offset": 0,
+        "nal_offset": 4,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 2,
+        "resolution": "96x64",
+        "bit_depth": 8,
+        "chroma_format": "4:2:0"
+      },
+      {
+        "kind": "PPS",
+        "id": 0,
+        "revision": 1,
+        "start_offset": 242,
+        "nal_offset": 246,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 2,
+        "resolution": null,
+        "bit_depth": null,
+        "chroma_format": null
+      },
+      {
+        "kind": "SPS",
+        "id": 0,
+        "revision": 2,
+        "start_offset": 937,
+        "nal_offset": 941,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": "192x128",
+        "bit_depth": 10,
+        "chroma_format": "4:2:0"
+      },
+      {
+        "kind": "PPS",
+        "id": 0,
+        "revision": 2,
+        "start_offset": 1179,
+        "nal_offset": 1183,
+        "start_code_hex": "00000001",
+        "prefix_length": 4,
+        "occurrences": 1,
+        "resolution": null,
+        "bit_depth": null,
+        "chroma_format": null
+      }
+    ],
+    "decoder": {
+      "returncode": 0,
+      "decoded_frames_logged": 36,
+      "size_info_sequence": [
+        {
+          "resolution": "96x64",
+          "bit_depth": 8
+        },
+        {
+          "resolution": "192x128",
+          "bit_depth": 10
+        },
+        {
+          "resolution": "96x64",
+          "bit_depth": 8
+        }
+      ],
+      "has_decode_error": false,
+      "log": "/home/hj/userfeedback/uid4-0016/samples/report/switch_low_high_low.decode.log"
+    },
+    "decoded_bytes": 1105920,
+    "expected_bytes": 1105920,
+    "expected_frames": 36,
+    "actual_frames": 36,
+    "segment_comparisons": [
+      {
+        "part": "low_1",
+        "decoded_byte_offset": 0,
+        "byte_length": 110592,
+        "sha256": "cd5c08496d37487b16a2aa9197d27786d4b78052d87a83101d694793e68c17f2",
+        "reference_sha256": "cd5c08496d37487b16a2aa9197d27786d4b78052d87a83101d694793e68c17f2",
+        "byte_exact_match": true,
+        "frame_count": 12
+      },
+      {
+        "part": "high_1",
+        "decoded_byte_offset": 110592,
+        "byte_length": 884736,
+        "sha256": "af1b1f1f62182db60b02671eba0152a105b2af264b634f7d05388059e758501a",
+        "reference_sha256": "af1b1f1f62182db60b02671eba0152a105b2af264b634f7d05388059e758501a",
+        "byte_exact_match": true,
+        "frame_count": 12
+      },
+      {
+        "part": "low_2",
+        "decoded_byte_offset": 995328,
+        "byte_length": 110592,
+        "sha256": "cd5c08496d37487b16a2aa9197d27786d4b78052d87a83101d694793e68c17f2",
+        "reference_sha256": "cd5c08496d37487b16a2aa9197d27786d4b78052d87a83101d694793e68c17f2",
+        "byte_exact_match": true,
+        "frame_count": 12
+      },
+      {
+        "part": "trailing_bytes",
+        "decoded_byte_offset": 1105920,
+        "byte_length": 0,
+        "byte_exact_match": true,
+        "frame_count": 0
+      }
+    ],
+    "no_frame_loss": true
+  },
+  "unknown_nals": {
+    "file": "/home/hj/userfeedback/uid4-0016/samples/streams/switch_with_unknown.vvc",
+    "distribution": [
+      {
+        "nal_type": 26,
+        "type_name": "RSV_NVCL_26",
+        "count": 1,
+        "total_bytes": 27,
+        "first_start_offset": 0,
+        "sha256": [
+          "404d274292c74b37159976ce6dfe6b072806379a03f01fb534e981dc114ce232"
+        ]
+      },
+      {
+        "nal_type": 27,
+        "type_name": "RSV_NVCL_27",
+        "count": 1,
+        "total_bytes": 27,
+        "first_start_offset": 967,
+        "sha256": [
+          "634be39f56668e7f24610947f8edba25a4b1e465a854e23398ba8084af48d42f"
+        ]
+      },
+      {
+        "nal_type": 29,
+        "type_name": "UNSPEC_29",
+        "count": 1,
+        "total_bytes": 23,
+        "first_start_offset": 2106,
+        "sha256": [
+          "681110dae3776842f582895a6e5e77cfc83f726d60f66b556f7fcd5ea4611e63"
+        ]
+      },
+      {
+        "nal_type": 31,
+        "type_name": "UNSPEC_31",
+        "count": 1,
+        "total_bytes": 23,
+        "first_start_offset": 3069,
+        "sha256": [
+          "643294a16e458cbf5a12e873c1e2bfd18feb02e948cba62dd39d2b9deab8d8f2"
+        ]
+      }
+    ],
+    "preservation": [
+      {
+        "nal_type": 26,
+        "start_offset": 0,
+        "byte_exact_match": true
+      },
+      {
+        "nal_type": 27,
+        "start_offset": 967,
+        "byte_exact_match": true
+      },
+      {
+        "nal_type": 29,
+        "start_offset": 2106,
+        "byte_exact_match": true
+      },
+      {
+        "nal_type": 31,
+        "start_offset": 3069,
+        "byte_exact_match": true
+      }
+    ],
+    "all_preserved": true
+  },
+  "band_switch": {
+    "sample_rate": 48000,
+    "duration_s": 4.95,
+    "sample_count": 237600,
+    "segment_duration_s": 0.45,
+    "transition_ms": 120.0,
+    "transition_count": 10,
+    "switch_times_s": [
+      0.45,
+      0.9,
+      1.35,
+      1.8,
+      2.25,
+      2.7,
+      3.15,
+      3.6,
+      4.05,
+      4.5
+    ],
+    "fft_size": 1024,
+    "hop": 256,
+    "max_high_share_step": 0.013344157588469019,
+    "max_high_amplitude_step": 0.026903019487189178,
+    "max_sample_delta": 0.1260986328125,
+    "low_band_db_range_steady": 0.00038913319644229283,
+    "narrowband_high_share_median": 1.6944564389994858e-09,
+    "wideband_high_share_median": 0.15059843684930502,
+    "clipped_samples": 0,
+    "hard_control_max_high_share_step": 0.09059693440056732,
+    "hard_control_max_high_amplitude_step": 0.19901788466739834,
+    "smooth_to_hard_step_ratio": 0.14729149144792097,
+    "continuous_transition_pass": true
+  }
+}

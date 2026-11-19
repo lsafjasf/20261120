@@ -1,0 +1,33 @@
+{
+  "sample_rate": 48000,
+  "duration_s": 4.95,
+  "sample_count": 237600,
+  "segment_duration_s": 0.45,
+  "transition_ms": 120.0,
+  "transition_count": 10,
+  "switch_times_s": [
+    0.45,
+    0.9,
+    1.35,
+    1.8,
+    2.25,
+    2.7,
+    3.15,
+    3.6,
+    4.05,
+    4.5
+  ],
+  "fft_size": 1024,
+  "hop": 256,
+  "max_high_share_step": 0.013344157588469019,
+  "max_high_amplitude_step": 0.026903019487189178,
+  "max_sample_delta": 0.1260986328125,
+  "low_band_db_range_steady": 0.00038913319644229283,
+  "narrowband_high_share_median": 1.6944564389994858e-09,
+  "wideband_high_share_median": 0.15059843684930502,
+  "clipped_samples": 0,
+  "hard_control_max_high_share_step": 0.09059693440056732,
+  "hard_control_max_high_amplitude_step": 0.19901788466739834,
+  "smooth_to_hard_step_ratio": 0.14729149144792097,
+  "continuous_transition_pass": true
+}

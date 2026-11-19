@@ -1,0 +1,62 @@
+vvencapp: VVenC, the Fraunhofer H.266/VVC Encoder, version 1.14.0 [Linux][GCC 15.2.0][64 bit][SIMD=AVX2]
+Configuration warning: setting IntraPeriod in the range of ( N * GOPSize + 1 ) .. ( N * GOPSize + 4 ), i.e. only a small distance above a multiple of the GOPSize, will lead to degraded results.
+                       consider changing the IntraPeriod for better results. For optimal results, set the IntraPeriod to a multiple of GOPSize.
+
+Configuration warning: setting IntraPeriod in the range of ( N * GOPSize + 1 ) .. ( N * GOPSize + 4 ), i.e. only a small distance above a multiple of the GOPSize, will lead to degraded results.
+                       consider changing the IntraPeriod for better results. For optimal results, set the IntraPeriod to a multiple of GOPSize.
+
+vvenc [notice]: Input File                             : samples/raw/high_192x128_10bit.yuv
+vvenc [notice]: Bitstream File                         : samples/streams/high_192x128_10bit.vvc
+vvenc [notice]: Real Format                            : 192x128  yuv420p10  24 Hz  SDR  12 frames
+vvenc [notice]: Frames                                 : encode 12 frames 
+vvenc [notice]: Internal format                        : 192x128  24 Hz  SDR
+vvenc [notice]: Threads                                : 4  (parallel frames: 4)
+vvenc [notice]: Rate control                           : QP 28
+vvenc [notice]: Perceptual optimization                : Enabled
+vvenc [notice]: Intra period (keyframe)                : 100
+vvenc [notice]: Decoding refresh type                  : IDR
+vvenc [notice]: Sequence PSNR output                   : Linear average only
+vvenc [notice]: Hexadecimal PSNR output                : Disabled
+vvenc [notice]: Sequence MSE output                    : Disabled
+vvenc [notice]: Frame MSE output                       : Disabled
+vvenc [notice]: Cabac-zero-word-padding                : Enabled
+vvenc [notice]: Frame index                            : 12 frames
+vvenc [notice]: Profile                                : main_10
+vvenc [notice]: Level                                  : 2
+vvenc [notice]: CU size                                : 64
+vvenc [notice]: Max TB size                            : 64
+vvenc [notice]: Min CB size                            : 4
+vvenc [notice]: Motion search range                    : 128
+vvenc [notice]: QP                                     : 28
+vvenc [notice]: Max dQP signaling subdiv               : 2
+vvenc [notice]: Cb QP Offset (dual tree)               : 0 (0)
+vvenc [notice]: Cr QP Offset (dual tree)               : 0 (0)
+vvenc [notice]: GOP size                               : 32
+vvenc [notice]: PicReordering                          : 1
+vvenc [notice]: Input bit depth                        : (Y:10, C:10)
+vvenc [notice]: MSB-extended bit depth                 : (Y:10, C:10)
+vvenc [notice]: Internal bit depth                     : (Y:10, C:10)
+vvenc [notice]: cu_chroma_qp_offset_subdiv             : -1
+vvenc [notice]: log2_sao_offset_scale_luma             : 0
+vvenc [notice]: log2_sao_offset_scale_chroma           : 0
+vvenc [notice]: Cost function                          : Lossy coding
+vvenc [notice]: Film grain analysis                    : 0
+
+vvencapp [notice]: started @ Fri Nov 20 04:28:26 2026
+POC     3 TId: 0 (IDR_W_RADL, I-SLICE, QP 18, TF 3)       5920 bits [Y 56.2325 dB    U 65.5596 dB    V 64.0202 dB] [ET     0 ] [L0 ] [L1 ]
+POC     1 TId: 4 (      RADL, B-SLICE, QP 28)              232 bits [Y 56.4394 dB    U 59.3560 dB    V 59.4114 dB] [ET     0 ] [L0 3 ] [L1 3 ]
+POC     0 TId: 5 (      RADL, B-SLICE, QP 26)              248 bits [Y 56.4167 dB    U 60.8765 dB    V 62.9018 dB] [ET     0 ] [L0 1 3 ] [L1 1 3 ]
+POC     2 TId: 5 (      RADL, B-SLICE, QP 29)              192 bits [Y 54.3153 dB    U 63.2507 dB    V 59.7123 dB] [ET     0 ] [L0 1 3 ] [L1 3 1 ]
+POC    11 TId: 2 (      STSA, B-SLICE, QP 24, TF 1)        336 bits [Y 56.3906 dB    U 65.3942 dB    V 60.5406 dB] [ET     0 ] [L0 3 ] [L1 3 ]
+POC     7 TId: 3 (      STSA, B-SLICE, QP 26, TF 0)        352 bits [Y 57.3838 dB    U 65.6610 dB    V 63.0213 dB] [ET     0 ] [L0 3 11 ] [L1 11 3 ]
+POC     5 TId: 4 (      STSA, B-SLICE, QP 28)              264 bits [Y 57.2922 dB    U 61.9266 dB    V 57.6276 dB] [ET     0 ] [L0 3 7 ] [L1 7 11 ]
+POC     4 TId: 5 (      STSA, B-SLICE, QP 29)              248 bits [Y 57.3151 dB    U 59.4466 dB    V 56.2401 dB] [ET     0 ] [L0 3 5 ] [L1 5 7 ]
+POC     6 TId: 5 (      STSA, B-SLICE, QP 29)              240 bits [Y 57.4791 dB    U 61.9884 dB    V 58.8111 dB] [ET     0 ] [L0 5 3 ] [L1 7 11 ]
+POC     9 TId: 4 (      STSA, B-SLICE, QP 28)              320 bits [Y 57.3671 dB    U 65.0138 dB    V 61.4092 dB] [ET     0 ] [L0 7 3 ] [L1 11 7 ]
+POC     8 TId: 5 (      STSA, B-SLICE, QP 29)              240 bits [Y 57.2830 dB    U 61.8844 dB    V 58.9937 dB] [ET     0 ] [L0 7 3 ] [L1 9 11 ]
+POC    10 TId: 5 (      STSA, B-SLICE, QP 29)              280 bits [Y 57.6868 dB    U 61.3615 dB    V 60.6624 dB] [ET     0 ] [L0 9 7 ] [L1 11 9 ]
+
+vvenc [info]:	Total Frames |   Bitrate     Y-PSNR    U-PSNR    V-PSNR    YUV-PSNR   
+vvenc [info]:	       12    a      17.7440   56.8001   62.6433   60.2793   57.6797
+vvencapp [notice]: finished @ Fri Nov 20 04:28:26 2026
+vvencapp [info]: Total Time: 0.042 sec. Fps(avg): 285.714 encoded Frames 12
