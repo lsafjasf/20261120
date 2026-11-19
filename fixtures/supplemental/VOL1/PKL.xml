@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PackingList xmlns="http://www.smpte-ra.org/schemas/429-8/2007/PKL">
+  <Id>urn:uuid:00000000-0000-4000-8000-000000000011</Id>
+  <Annotation>dcp-qc placeholders</Annotation>
+  <IssueDate>2026-11-20T00:00:00+00:00</IssueDate>
+  <Issuer>dcp-qc</Issuer>
+  <Creator>dcp-qc fixture builder</Creator>
+  <AssetList>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000301</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>7b772c0edcf40fec6e77ee32ff36c2dedea40c54ad7509b48f81eced063c761c</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>120</Size>
+      <Type>application/xml</Type>
+      <OriginalFileName>subtitle_r1_v2.xml</OriginalFileName>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000302</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>f21191823f2f15e7bbffb25b5c62c4a3492e8da40dd1dda604dfe2a49e9c5325</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>120</Size>
+      <Type>application/xml</Type>
+      <OriginalFileName>subtitle_r2_v2.xml</OriginalFileName>
+    </Asset>
+  </AssetList>
+</PackingList>

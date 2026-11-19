@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<CompositionPlaylist xmlns="http://www.smpte-ra.org/schemas/429-7/2006/CPL">
+  <Id>urn:uuid:00000000-0000-4000-8000-000000000002</Id>
+  <Annotation>DCP QC two-reel placeholder</Annotation>
+  <IssueDate>2026-11-20T00:00:00+00:00</IssueDate>
+  <Issuer>dcp-qc</Issuer>
+  <Creator>dcp-qc fixture builder</Creator>
+  <ContentTitleText>DCP QC two-reel placeholder</ContentTitleText>
+  <ContentKind>feature</ContentKind>
+  <ReelList>
+    <Reel>
+      <Id>reel-1</Id>
+      <AssetList>
+        <MainPicture>
+          <Id>urn:uuid:00000000-0000-4000-8000-000000000101</Id>
+          <EditRate>24 1</EditRate>
+          <IntrinsicDuration>240</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>240</Duration>
+        </MainPicture>
+        <MainSound>
+          <Id>urn:uuid:00000000-0000-4000-8000-000000000102</Id>
+          <EditRate>48000 1</EditRate>
+          <IntrinsicDuration>480000</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>480000</Duration>
+        </MainSound>
+        <MainSubtitle>
+          <Id>urn:uuid:00000000-0000-4000-8000-000000000103</Id>
+          <EditRate>24 1</EditRate>
+          <IntrinsicDuration>240</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>240</Duration>
+        </MainSubtitle>
+      </AssetList>
+    </Reel>
+    <Reel>
+      <Id>reel-2</Id>
+      <AssetList>
+        <MainPicture>
+          <Id>urn:uuid:00000000-0000-4000-8000-000000000201</Id>
+          <EditRate>24 1</EditRate>
+          <IntrinsicDuration>240</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>240</Duration>
+        </MainPicture>
+        <MainSound>
+          <Id>urn:uuid:00000000-0000-4000-8000-000000000202</Id>
+          <EditRate>48000 1</EditRate>
+          <IntrinsicDuration>480000</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>480000</Duration>
+        </MainSound>
+        <MainSubtitle>
+          <Id>urn:uuid:00000000-0000-4000-8000-000000000203</Id>
+          <EditRate>24 1</EditRate>
+          <IntrinsicDuration>240</IntrinsicDuration>
+          <EntryPoint>0</EntryPoint>
+          <Duration>240</Duration>
+        </MainSubtitle>
+      </AssetList>
+    </Reel>
+  </ReelList>
+</CompositionPlaylist>

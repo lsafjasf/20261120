@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<AssetMap xmlns="http://www.smpte-ra.org/schemas/429-9/2007/AM">
+  <Id>urn:uuid:afb1de7a-0000-4000-8000-000000000000</Id>
+  <Creator>dcp-qc fixture builder</Creator>
+  <VolumeCount>2</VolumeCount>
+  <AssetList>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000011</Id>
+      <PackingList>true</PackingList>
+      <ChunkList>
+        <Chunk>
+          <Path>VOL1/PKL.xml</Path>
+          <VolumeIndex>1</VolumeIndex>
+        </Chunk>
+      </ChunkList>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000012</Id>
+      <ChunkList>
+        <Chunk>
+          <Path>VOL1/CPL.xml</Path>
+          <VolumeIndex>1</VolumeIndex>
+        </Chunk>
+      </ChunkList>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000301</Id>
+      <ChunkList>
+        <Chunk>
+          <Path>VOL1/subtitle_r1_v2.xml</Path>
+          <VolumeIndex>1</VolumeIndex>
+        </Chunk>
+      </ChunkList>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000302</Id>
+      <ChunkList>
+        <Chunk>
+          <Path>VOL1/subtitle_r2_v2.xml</Path>
+          <VolumeIndex>1</VolumeIndex>
+        </Chunk>
+      </ChunkList>
+    </Asset>
+  </AssetList>
+</AssetMap>

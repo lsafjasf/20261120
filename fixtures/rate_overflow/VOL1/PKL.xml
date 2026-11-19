@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<PackingList xmlns="http://www.smpte-ra.org/schemas/429-8/2007/PKL">
+  <Id>urn:uuid:00000000-0000-4000-8000-000000000001</Id>
+  <Annotation>dcp-qc placeholders</Annotation>
+  <IssueDate>2026-11-20T00:00:00+00:00</IssueDate>
+  <Issuer>dcp-qc</Issuer>
+  <Creator>dcp-qc fixture builder</Creator>
+  <AssetList>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000101</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>3d6dfeb252a5e7043086626c952f7fe8ec3b13aa9c50f656db7bfa606025b7cf</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>160</Size>
+      <Type>application/mxf</Type>
+      <OriginalFileName>picture_r1.mxf</OriginalFileName>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000102</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>55823396aa586ef9ce8648960fd7e0cc43068bf5a1597e8ac42c2ba9776925a6</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>160</Size>
+      <Type>audio/mxf</Type>
+      <OriginalFileName>sound_r1.mxf</OriginalFileName>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000103</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>c882ccc9c0863622ca57cbfa557f9edeceaa1cf5943c3babcf0cf0e87541512d</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>120</Size>
+      <Type>application/xml</Type>
+      <OriginalFileName>subtitle_r1.xml</OriginalFileName>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000201</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>06240e021edf159856f33252cdb44b35ea5641e25e1969fff20a9b7d55c0a696</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>160</Size>
+      <Type>application/mxf</Type>
+      <OriginalFileName>picture_r2.mxf</OriginalFileName>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000202</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>4c11043f7ebf2bc2f058853251c4baab25fbcd25189267c9c721fb332948e8e8</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>160</Size>
+      <Type>audio/mxf</Type>
+      <OriginalFileName>sound_r2.part1.mxf</OriginalFileName>
+    </Asset>
+    <Asset>
+      <Id>urn:uuid:00000000-0000-4000-8000-000000000203</Id>
+      <Annotation>test placeholder</Annotation>
+      <Hash>b831e5c98d969df39bd5371b2dbd055e9e60fd9035b67a90438f0fb671e6c6df</Hash>
+      <HashAlgorithm>SHA256</HashAlgorithm>
+      <Size>120</Size>
+      <Type>application/xml</Type>
+      <OriginalFileName>subtitle_r2.xml</OriginalFileName>
+    </Asset>
+  </AssetList>
+</PackingList>
