@@ -1,0 +1,15 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "caf-audio-check"
+version = "1.0.0"
+description = "CAF big-endian PCM, SMPTE timecode, and extended-float checks"
+requires-python = ">=3.10"
+
+[project.scripts]
+caf-audio = "caf_audio.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["caf_audio*"]
