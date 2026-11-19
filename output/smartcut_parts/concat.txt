@@ -1,0 +1,3 @@
+file '/home/hj/userfeedback/uid4-0062/output/smartcut_parts/seg0_reencode.mp4'
+file '/home/hj/userfeedback/uid4-0062/output/smartcut_parts/seg1_copy.mp4'
+file '/home/hj/userfeedback/uid4-0062/output/smartcut_parts/seg2_reencode.mp4'

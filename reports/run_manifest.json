@@ -1,0 +1,51 @@
+{
+  "source": "media/source.mp4",
+  "cut": {
+    "start_frame": 45,
+    "end_frame_exclusive": 215,
+    "expected_frames": 170
+  },
+  "streamcopy_output": "output/streamcopy.mp4",
+  "smartcut_output": "output/smartcut.mp4",
+  "segments": [
+    {
+      "kind": "reencode",
+      "file": "output/smartcut_parts/seg0_reencode.mp4",
+      "src_gop_frames": [
+        30,
+        60
+      ],
+      "kept_frames": [
+        45,
+        60
+      ],
+      "reencoded_frames": 15
+    },
+    {
+      "kind": "copy",
+      "file": "output/smartcut_parts/seg1_copy.mp4",
+      "src_gop_frames": [
+        60,
+        210
+      ],
+      "kept_frames": [
+        60,
+        210
+      ],
+      "reencoded_frames": 0
+    },
+    {
+      "kind": "reencode",
+      "file": "output/smartcut_parts/seg2_reencode.mp4",
+      "src_gop_frames": [
+        210,
+        240
+      ],
+      "kept_frames": [
+        210,
+        215
+      ],
+      "reencoded_frames": 5
+    }
+  ]
+}
