@@ -1,0 +1,160 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>低延迟分区卷积实验室</title>
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">AudioWorklet · 48 kHz · 128-sample block</p>
+        <h1>低延迟分区卷积实验室</h1>
+        <p class="lede">在 2 秒长脉冲响应上实时比较均匀分区与几何非均匀分区，检查分区接缝、输出差异与奈奎斯特附近的相位。</p>
+      </div>
+      <div class="hero-badges">
+        <span>96,000 taps</span>
+        <span>2.667 ms block budget</span>
+        <span>零相位反转检查</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="panel controls" aria-label="控制台">
+        <div class="mode-switch" role="group" aria-label="分区模式">
+          <button class="mode active" data-mode="uniform">均匀分区 UPOLS</button>
+          <button class="mode" data-mode="non-uniform">非均匀 NUPOLS</button>
+        </div>
+        <div class="control-row">
+          <label>长 IR
+            <select id="irDuration">
+              <option value="0.5">0.5 s</option>
+              <option value="1">1 s</option>
+              <option value="2" selected>2 s</option>
+            </select>
+          </label>
+          <label>测试信号
+            <select id="sourceType">
+              <option value="noise">白噪声 + 边界脉冲</option>
+              <option value="sweep">20 Hz–20 kHz 扫频</option>
+              <option value="sine">16 kHz 正弦</option>
+            </select>
+          </label>
+          <label>监听音量
+            <input id="volume" type="range" min="0" max="0.5" step="0.01" value="0.12">
+          </label>
+        </div>
+        <div class="control-row actions">
+          <button id="audioButton" class="primary">启动实时 AudioWorklet</button>
+          <button id="analysisButton">运行离线对比</button>
+          <label class="file-button">载入 IR
+            <input id="irFile" type="file" accept="audio/*">
+          </label>
+        </div>
+        <p id="status" class="status">等待启动。实时处理与离线测量使用同一个卷积内核。</p>
+      </section>
+
+      <section class="metric-grid" aria-label="实时指标">
+        <article class="metric-card accent">
+          <span class="metric-label">实时 CPU 占用</span>
+          <strong id="workletCpu">—</strong>
+          <small id="workletP99">p99 —</small>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">处理延迟</span>
+          <strong id="latencyMetric">2.667 ms</strong>
+          <small>128 samples / 48 kHz</small>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">分区数量</span>
+          <strong id="partitionMetric">750</strong>
+          <small id="fftMetric">2 FFT / block</small>
+        </article>
+        <article class="metric-card">
+          <span class="metric-label">频率域内存</span>
+          <strong id="footprintMetric">4.6 MB</strong>
+          <small>频谱、输入历史与尾输出</small>
+        </article>
+      </section>
+
+      <section class="panel results" aria-label="离线验证">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">Two implementations, one impulse response</p>
+            <h2>边界、差异与相位验证</h2>
+          </div>
+          <span id="analysisStatus" class="pill">尚未运行</span>
+        </div>
+        <div class="verification-grid">
+          <article>
+            <span>最大输出差异</span>
+            <strong id="diffMax">—</strong>
+            <small>uniform − non-uniform</small>
+          </article>
+          <article>
+            <span>边界 / 内部残差</span>
+            <strong id="boundaryRatio">—</strong>
+            <small>越接近 0 dB 越无接缝</small>
+          </article>
+          <article>
+            <span>块率周期分量</span>
+            <strong id="combMetric">—</strong>
+            <small>128-sample 谐波相对邻频</small>
+          </article>
+          <article>
+            <span>最高相位误差</span>
+            <strong id="phaseDelta">—</strong>
+            <small>相对目标 IR，接近 0°</small>
+          </article>
+        </div>
+        <div class="chart-grid">
+          <figure>
+            <figcaption>分区边界附近的输出差异</figcaption>
+            <canvas id="diffCanvas" width="720" height="230"></canvas>
+          </figure>
+          <figure>
+            <figcaption>CPU 占用：每 128-sample 块预算占比</figcaption>
+            <canvas id="cpuCanvas" width="560" height="230"></canvas>
+          </figure>
+        </div>
+      </section>
+
+      <section class="panel phase-panel" aria-label="高频相位">
+        <div class="panel-heading">
+          <div>
+            <p class="eyebrow">0.90–0.995 × Nyquist</p>
+            <h2>奈奎斯特附近相位响应</h2>
+          </div>
+          <span id="phaseBadge" class="pill">等待测量</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Nyquist 比例</th>
+                <th>频率</th>
+                <th>幅度</th>
+                <th>展开相位</th>
+                <th>UPOLS Δφ</th>
+                <th>NUPOLS Δφ</th>
+              </tr>
+            </thead>
+            <tbody id="phaseTable">
+              <tr><td colspan="6">运行离线对比后显示</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <canvas id="phaseCanvas" width="1100" height="260"></canvas>
+      </section>
+
+      <details class="panel raw-report">
+        <summary>查看完整 JSON 测量结果</summary>
+        <pre id="reportPre">运行离线对比后显示。</pre>
+      </details>
+    </main>
+
+    <script type="module" src="./src/app.js"></script>
+  </body>
+</html>
+
