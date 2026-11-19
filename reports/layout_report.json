@@ -1,0 +1,2995 @@
+{
+  "source": {
+    "vtt": "fixtures/sample.vtt",
+    "html": "fixtures/player.html"
+  },
+  "cue_count": 13,
+  "temporal_overlap_groups": [
+    {
+      "cue": "cue1",
+      "active_window_s": [
+        0.0,
+        4.0
+      ],
+      "overlaps_with": [
+        "cue7",
+        "cue5",
+        "cue6",
+        "cue2",
+        "cue8",
+        "cue3",
+        "cue4"
+      ]
+    },
+    {
+      "cue": "cue7",
+      "active_window_s": [
+        0.0,
+        8.0
+      ],
+      "overlaps_with": [
+        "cue5",
+        "cue6",
+        "cue2",
+        "cue8",
+        "cue3",
+        "cue4",
+        "cue9",
+        "cue10",
+        "cue11",
+        "cue12",
+        "cue13"
+      ]
+    },
+    {
+      "cue": "cue5",
+      "active_window_s": [
+        0.5,
+        6.5
+      ],
+      "overlaps_with": [
+        "cue6",
+        "cue2",
+        "cue8",
+        "cue3",
+        "cue4",
+        "cue9",
+        "cue10",
+        "cue11"
+      ]
+    },
+    {
+      "cue": "cue6",
+      "active_window_s": [
+        1.0,
+        5.0
+      ],
+      "overlaps_with": [
+        "cue2",
+        "cue8",
+        "cue3",
+        "cue4",
+        "cue9"
+      ]
+    },
+    {
+      "cue": "cue2",
+      "active_window_s": [
+        2.0,
+        6.0
+      ],
+      "overlaps_with": [
+        "cue8",
+        "cue3",
+        "cue4",
+        "cue9",
+        "cue10"
+      ]
+    },
+    {
+      "cue": "cue8",
+      "active_window_s": [
+        2.0,
+        8.0
+      ],
+      "overlaps_with": [
+        "cue3",
+        "cue4",
+        "cue9",
+        "cue10",
+        "cue11",
+        "cue12",
+        "cue13"
+      ]
+    },
+    {
+      "cue": "cue3",
+      "active_window_s": [
+        2.5,
+        5.5
+      ],
+      "overlaps_with": [
+        "cue4",
+        "cue9",
+        "cue10"
+      ]
+    },
+    {
+      "cue": "cue4",
+      "active_window_s": [
+        3.0,
+        7.0
+      ],
+      "overlaps_with": [
+        "cue9",
+        "cue10",
+        "cue11",
+        "cue12"
+      ]
+    },
+    {
+      "cue": "cue9",
+      "active_window_s": [
+        4.0,
+        8.0
+      ],
+      "overlaps_with": [
+        "cue10",
+        "cue11",
+        "cue12",
+        "cue13"
+      ]
+    },
+    {
+      "cue": "cue10",
+      "active_window_s": [
+        5.0,
+        9.0
+      ],
+      "overlaps_with": [
+        "cue11",
+        "cue12",
+        "cue13"
+      ]
+    },
+    {
+      "cue": "cue11",
+      "active_window_s": [
+        6.0,
+        10.0
+      ],
+      "overlaps_with": [
+        "cue12",
+        "cue13"
+      ]
+    },
+    {
+      "cue": "cue12",
+      "active_window_s": [
+        6.5,
+        9.5
+      ],
+      "overlaps_with": [
+        "cue13"
+      ]
+    }
+  ],
+  "regions": {
+    "newsroll": {
+      "id": "newsroll",
+      "width_pct": 40.0,
+      "lines": 3,
+      "anchor_x": 0.0,
+      "anchor_y": 100.0,
+      "viewport_x": 0.0,
+      "viewport_y": 100.0,
+      "scroll": "up"
+    },
+    "stationary": {
+      "id": "stationary",
+      "width_pct": 36.0,
+      "lines": 2,
+      "anchor_x": 100.0,
+      "anchor_y": 0.0,
+      "viewport_x": 100.0,
+      "viewport_y": 0.0,
+      "scroll": null
+    }
+  },
+  "styles": [
+    {
+      "selector": "::cue",
+      "declarations": {
+        "background-image": "linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.65))",
+        "color": "white",
+        "font-family": "\"DejaVu Sans\", sans-serif",
+        "font-size": "5vh",
+        "line-height": "5.33vh"
+      },
+      "raw": "::cue {\n  background-image: linear-gradient(to bottom, rgba(0,0,0,0.0), rgba(0,0,0,0.65));\n  color: white;\n  font-family: \"DejaVu Sans\", sans-serif;\n  font-size: 5vh;\n  line-height: 5.33vh;\n}"
+    },
+    {
+      "selector": "::cue(.emph)",
+      "declarations": {
+        "color": "#ffd23f",
+        "font-weight": "bold"
+      },
+      "raw": "::cue(.emph) {\n  color: #ffd23f;\n  font-weight: bold;\n}"
+    },
+    {
+      "selector": "::cue(.dim)",
+      "declarations": {
+        "color": "#b8c0cc",
+        "font-style": "italic"
+      },
+      "raw": "::cue(.dim) {\n  color: #b8c0cc;\n  font-style: italic;\n}"
+    },
+    {
+      "selector": "::cue(.fixedpx)",
+      "declarations": {
+        "font-size": "28px",
+        "line-height": "30px"
+      },
+      "raw": "::cue(.fixedpx) {\n  font-size: 28px;\n  line-height: 30px;\n}"
+    },
+    {
+      "selector": "::cue-region(newsroll)",
+      "declarations": {
+        "background": "rgba(12, 18, 28, 0.72)"
+      },
+      "raw": "::cue-region(newsroll) {\n  background: rgba(12, 18, 28, 0.72);\n}"
+    }
+  ],
+  "widths": {
+    "1280x720": {
+      "viewport": {
+        "width": 1280,
+        "height": 720,
+        "font_px": 36.0,
+        "line_height_px": 38.376
+      },
+      "cues": {
+        "cue1": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 0,
+          "first_seen_s": 0.0,
+          "line_breaks": [
+            {
+              "text": "Lower third title that must wrap",
+              "display_width_px": 560.16,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "inside its explicit size box before",
+              "display_width_px": 573.48,
+              "break_before_char_index": 33,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "the next cue enters",
+              "display_width_px": 320.04,
+              "break_before_char_index": 69,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 0.0,
+              "x": 634.86,
+              "y": 575.64,
+              "width": 573.48,
+              "height": 115.13,
+              "right": 1208.34,
+              "bottom": 690.77
+            },
+            {
+              "t": 0.5,
+              "x": 634.86,
+              "y": 575.64,
+              "width": 573.48,
+              "height": 115.13,
+              "right": 1208.34,
+              "bottom": 690.77
+            },
+            {
+              "t": 1.0,
+              "x": 634.86,
+              "y": 575.64,
+              "width": 573.48,
+              "height": 115.13,
+              "right": 1208.34,
+              "bottom": 690.77
+            },
+            {
+              "t": 2.0,
+              "x": 634.86,
+              "y": 575.64,
+              "width": 573.48,
+              "height": 115.13,
+              "right": 1208.34,
+              "bottom": 690.77
+            },
+            {
+              "t": 2.5,
+              "x": 634.86,
+              "y": 575.64,
+              "width": 573.48,
+              "height": 115.13,
+              "right": 1208.34,
+              "bottom": 690.77
+            },
+            {
+              "t": 3.0,
+              "x": 634.86,
+              "y": 575.64,
+              "width": 573.48,
+              "height": 115.13,
+              "right": 1208.34,
+              "bottom": 690.77
+            }
+          ]
+        },
+        "cue7": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 0,
+          "first_seen_s": 0.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line one enters",
+              "display_width_px": 376.56,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 0.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 0.5,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 1.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 2.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 2.5,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 3.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 4.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 489.74,
+              "width": 376.56,
+              "height": 38.38,
+              "right": 384.56,
+              "bottom": 528.12
+            }
+          ]
+        },
+        "cue5": {
+          "region": "stationary",
+          "scroll": null,
+          "layer_order": 0,
+          "first_seen_s": 0.5,
+          "line_breaks": [
+            {
+              "text": "Stationary cue one",
+              "display_width_px": 316.08,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 0.5,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 1.0,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 2.0,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 2.5,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 3.0,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 4.0,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 5.0,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            },
+            {
+              "t": 6.0,
+              "x": 827.2,
+              "y": 0.0,
+              "width": 316.08,
+              "height": 38.38,
+              "right": 1143.28,
+              "bottom": 38.38
+            }
+          ]
+        },
+        "cue6": {
+          "region": "stationary",
+          "scroll": null,
+          "layer_order": 1,
+          "first_seen_s": 1.0,
+          "line_breaks": [
+            {
+              "text": "Stationary cue two",
+              "display_width_px": 320.4,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 1.0,
+              "x": 827.2,
+              "y": 38.38,
+              "width": 320.4,
+              "height": 38.38,
+              "right": 1147.6,
+              "bottom": 76.75
+            },
+            {
+              "t": 2.0,
+              "x": 827.2,
+              "y": 38.38,
+              "width": 320.4,
+              "height": 38.38,
+              "right": 1147.6,
+              "bottom": 76.75
+            },
+            {
+              "t": 2.5,
+              "x": 827.2,
+              "y": 38.38,
+              "width": 320.4,
+              "height": 38.38,
+              "right": 1147.6,
+              "bottom": 76.75
+            },
+            {
+              "t": 3.0,
+              "x": 827.2,
+              "y": 38.38,
+              "width": 320.4,
+              "height": 38.38,
+              "right": 1147.6,
+              "bottom": 76.75
+            },
+            {
+              "t": 4.0,
+              "x": 827.2,
+              "y": 38.38,
+              "width": 320.4,
+              "height": 38.38,
+              "right": 1147.6,
+              "bottom": 76.75
+            }
+          ]
+        },
+        "cue2": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 1,
+          "first_seen_s": 2.0,
+          "line_breaks": [
+            {
+              "text": "Second lower third overlaps",
+              "display_width_px": 498.96,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "cue1 in time and shares the same",
+              "display_width_px": 577.08,
+              "break_before_char_index": 28,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "column",
+              "display_width_px": 123.12,
+              "break_before_char_index": 61,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 2.0,
+              "x": 633.06,
+              "y": 460.51,
+              "width": 577.08,
+              "height": 115.13,
+              "right": 1210.14,
+              "bottom": 575.64
+            },
+            {
+              "t": 2.5,
+              "x": 633.06,
+              "y": 460.51,
+              "width": 577.08,
+              "height": 115.13,
+              "right": 1210.14,
+              "bottom": 575.64
+            },
+            {
+              "t": 3.0,
+              "x": 633.06,
+              "y": 460.51,
+              "width": 577.08,
+              "height": 115.13,
+              "right": 1210.14,
+              "bottom": 575.64
+            },
+            {
+              "t": 4.0,
+              "x": 633.06,
+              "y": 575.64,
+              "width": 577.08,
+              "height": 115.13,
+              "right": 1210.14,
+              "bottom": 690.77
+            },
+            {
+              "t": 5.0,
+              "x": 633.06,
+              "y": 575.64,
+              "width": 577.08,
+              "height": 115.13,
+              "right": 1210.14,
+              "bottom": 690.77
+            }
+          ]
+        },
+        "cue8": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 1,
+          "first_seen_s": 2.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line two pushes up",
+              "display_width_px": 439.56,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 2.0,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 2.5,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 3.0,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 4.0,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 528.12,
+              "width": 439.56,
+              "height": 38.38,
+              "right": 447.56,
+              "bottom": 566.5
+            }
+          ]
+        },
+        "cue3": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 2,
+          "first_seen_s": 2.5,
+          "line_breaks": [
+            {
+              "text": "Right top breaking",
+              "display_width_px": 317.16,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "news banner with an",
+              "display_width_px": 365.76,
+              "break_before_char_index": 19,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "emphasized inline span",
+              "display_width_px": 393.48,
+              "break_before_char_index": 39,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 2.5,
+              "x": 33.66,
+              "y": 0.0,
+              "width": 393.48,
+              "height": 115.13,
+              "right": 427.14,
+              "bottom": 115.13
+            },
+            {
+              "t": 3.0,
+              "x": 33.66,
+              "y": 0.0,
+              "width": 393.48,
+              "height": 115.13,
+              "right": 427.14,
+              "bottom": 115.13
+            },
+            {
+              "t": 4.0,
+              "x": 33.66,
+              "y": 0.0,
+              "width": 393.48,
+              "height": 115.13,
+              "right": 427.14,
+              "bottom": 115.13
+            },
+            {
+              "t": 5.0,
+              "x": 33.66,
+              "y": 0.0,
+              "width": 393.48,
+              "height": 115.13,
+              "right": 427.14,
+              "bottom": 115.13
+            }
+          ]
+        },
+        "cue4": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 3,
+          "first_seen_s": 3.0,
+          "line_breaks": [
+            {
+              "text": "Auto cue moved upward",
+              "display_width_px": 420.48,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "while lower thirds occupy",
+              "display_width_px": 457.56,
+              "break_before_char_index": 22,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "the bottom-right slots",
+              "display_width_px": 366.48,
+              "break_before_char_index": 48,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 3.0,
+              "x": 564.82,
+              "y": 191.88,
+              "width": 457.56,
+              "height": 115.13,
+              "right": 1022.38,
+              "bottom": 307.01
+            },
+            {
+              "t": 4.0,
+              "x": 564.82,
+              "y": 191.88,
+              "width": 457.56,
+              "height": 115.13,
+              "right": 1022.38,
+              "bottom": 307.01
+            },
+            {
+              "t": 5.0,
+              "x": 564.82,
+              "y": 191.88,
+              "width": 457.56,
+              "height": 115.13,
+              "right": 1022.38,
+              "bottom": 307.01
+            },
+            {
+              "t": 6.0,
+              "x": 564.82,
+              "y": 191.88,
+              "width": 457.56,
+              "height": 115.13,
+              "right": 1022.38,
+              "bottom": 307.01
+            },
+            {
+              "t": 6.5,
+              "x": 564.82,
+              "y": 191.88,
+              "width": 457.56,
+              "height": 115.13,
+              "right": 1022.38,
+              "bottom": 307.01
+            }
+          ]
+        },
+        "cue9": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 2,
+          "first_seen_s": 4.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line three starts",
+              "display_width_px": 408.24,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "clipping",
+              "display_width_px": 131.4,
+              "break_before_char_index": 25,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 4.0,
+              "x": 8.0,
+              "y": 566.5,
+              "width": 408.24,
+              "height": 76.75,
+              "right": 416.24,
+              "bottom": 643.25
+            },
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 566.5,
+              "width": 408.24,
+              "height": 76.75,
+              "right": 416.24,
+              "bottom": 643.25
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 566.5,
+              "width": 408.24,
+              "height": 76.75,
+              "right": 416.24,
+              "bottom": 643.25
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 566.5,
+              "width": 408.24,
+              "height": 76.75,
+              "right": 416.24,
+              "bottom": 643.25
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 566.5,
+              "width": 408.24,
+              "height": 76.75,
+              "right": 416.24,
+              "bottom": 643.25
+            }
+          ]
+        },
+        "cue10": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 3,
+          "first_seen_s": 5.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line four keeps",
+              "display_width_px": 395.64,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "clipping",
+              "display_width_px": 131.4,
+              "break_before_char_index": 23,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 643.25,
+              "width": 395.64,
+              "height": 76.75,
+              "right": 403.64,
+              "bottom": 720.0
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 643.25,
+              "width": 395.64,
+              "height": 76.75,
+              "right": 403.64,
+              "bottom": 720.0
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 643.25,
+              "width": 395.64,
+              "height": 76.75,
+              "right": 403.64,
+              "bottom": 720.0
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 643.25,
+              "width": 395.64,
+              "height": 76.75,
+              "right": 403.64,
+              "bottom": 720.0
+            },
+            {
+              "t": 8.0,
+              "x": 8.0,
+              "y": 643.25,
+              "width": 395.64,
+              "height": 76.75,
+              "right": 403.64,
+              "bottom": 720.0
+            }
+          ]
+        },
+        "cue11": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 1,
+          "first_seen_s": 6.0,
+          "line_breaks": [
+            {
+              "text": "CJK boundary wrapping test:",
+              "display_width_px": 511.2,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "字幕排版引擎需要在全角字符",
+              "display_width_px": 504.0,
+              "break_before_char_index": 28,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "之间正确断行并且不遮挡主画",
+              "display_width_px": 504.0,
+              "break_before_char_index": 41,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "面区域",
+              "display_width_px": 108.0,
+              "break_before_char_index": 54,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 6.0,
+              "x": 538.0,
+              "y": 422.14,
+              "width": 511.2,
+              "height": 153.5,
+              "right": 1049.2,
+              "bottom": 575.64
+            },
+            {
+              "t": 6.5,
+              "x": 538.0,
+              "y": 422.14,
+              "width": 511.2,
+              "height": 153.5,
+              "right": 1049.2,
+              "bottom": 575.64
+            },
+            {
+              "t": 7.0,
+              "x": 538.0,
+              "y": 422.14,
+              "width": 511.2,
+              "height": 153.5,
+              "right": 1049.2,
+              "bottom": 575.64
+            },
+            {
+              "t": 8.0,
+              "x": 538.0,
+              "y": 422.14,
+              "width": 511.2,
+              "height": 153.5,
+              "right": 1049.2,
+              "bottom": 575.64
+            },
+            {
+              "t": 9.0,
+              "x": 538.0,
+              "y": 422.14,
+              "width": 511.2,
+              "height": 153.5,
+              "right": 1049.2,
+              "bottom": 575.64
+            }
+          ]
+        },
+        "cue12": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 2,
+          "first_seen_s": 6.5,
+          "line_breaks": [
+            {
+              "text": "Timestamp tag test line word",
+              "display_width_px": 508.68,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "one continues word two with",
+              "display_width_px": 500.76,
+              "break_before_char_index": 29,
+              "hard_break": false,
+              "timestamp_tag_s": 7.0
+            },
+            {
+              "text": "extra wrapping content here",
+              "display_width_px": 482.76,
+              "break_before_char_index": 57,
+              "hard_break": false,
+              "timestamp_tag_s": 8.0
+            }
+          ],
+          "boxes": [
+            {
+              "t": 6.5,
+              "x": 513.66,
+              "y": 307.01,
+              "width": 508.68,
+              "height": 115.13,
+              "right": 1022.34,
+              "bottom": 422.14
+            },
+            {
+              "t": 7.0,
+              "x": 513.66,
+              "y": 307.01,
+              "width": 508.68,
+              "height": 115.13,
+              "right": 1022.34,
+              "bottom": 422.14
+            },
+            {
+              "t": 8.0,
+              "x": 513.66,
+              "y": 307.01,
+              "width": 508.68,
+              "height": 115.13,
+              "right": 1022.34,
+              "bottom": 422.14
+            },
+            {
+              "t": 9.0,
+              "x": 513.66,
+              "y": 307.01,
+              "width": 508.68,
+              "height": 115.13,
+              "right": 1022.34,
+              "bottom": 422.14
+            }
+          ]
+        },
+        "cue13": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 2,
+          "first_seen_s": 7.0,
+          "line_breaks": [
+            {
+              "text": "Fixed pixel width box gains wraps when narrow",
+              "display_width_px": 644.28,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 30.0,
+              "width": 644.28,
+              "height": 30.0,
+              "right": 652.28,
+              "bottom": 60.0
+            },
+            {
+              "t": 8.0,
+              "x": 8.0,
+              "y": 30.0,
+              "width": 644.28,
+              "height": 30.0,
+              "right": 652.28,
+              "bottom": 60.0
+            },
+            {
+              "t": 9.0,
+              "x": 8.0,
+              "y": 30.0,
+              "width": 644.28,
+              "height": 30.0,
+              "right": 652.28,
+              "bottom": 60.0
+            }
+          ]
+        }
+      },
+      "overlap_events": [],
+      "region_clip_events": [
+        "t=4.000s region=newsroll cue=cue7 1 line(s) / 38.4px clipped above top",
+        "t=5.000s region=newsroll cue=cue9 1 line(s) / 38.4px clipped above top",
+        "t=5.000s region=newsroll cue=cue8 1 line(s) / 38.4px clipped above top",
+        "t=5.000s region=newsroll cue=cue7 1 line(s) / 38.4px clipped above top",
+        "t=6.000s region=newsroll cue=cue9 1 line(s) / 38.4px clipped above top",
+        "t=6.000s region=newsroll cue=cue8 1 line(s) / 38.4px clipped above top",
+        "t=6.000s region=newsroll cue=cue7 1 line(s) / 38.4px clipped above top",
+        "t=6.500s region=newsroll cue=cue9 1 line(s) / 38.4px clipped above top",
+        "t=6.500s region=newsroll cue=cue8 1 line(s) / 38.4px clipped above top",
+        "t=6.500s region=newsroll cue=cue7 1 line(s) / 38.4px clipped above top",
+        "t=7.000s region=newsroll cue=cue9 1 line(s) / 38.4px clipped above top",
+        "t=7.000s region=newsroll cue=cue8 1 line(s) / 38.4px clipped above top",
+        "t=7.000s region=newsroll cue=cue7 1 line(s) / 38.4px clipped above top"
+      ],
+      "region_boxes": [
+        {
+          "t": 0.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 0.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 0.5,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 0.5,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 1.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 1.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.5,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.5,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 3.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 3.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 4.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 4.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 5.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 5.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.5,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.5,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 7.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 7.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 8.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 8.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 9.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 9.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        },
+        {
+          "t": 10.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 604.87,
+          "width": 512.0,
+          "height": 115.13,
+          "right": 512.0,
+          "bottom": 720.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 10.0,
+          "region": "stationary",
+          "x": 819.2,
+          "y": 0.0,
+          "width": 460.8,
+          "height": 76.75,
+          "right": 1280.0,
+          "bottom": 76.75,
+          "inside_viewport": true
+        }
+      ],
+      "viewport_checks": {
+        "cue_viewport_violations": [],
+        "region_footprint_px2": 94312.96,
+        "region_footprint_pct_of_viewport": 10.23,
+        "all_regions_inside_viewport": true
+      }
+    },
+    "640x360": {
+      "viewport": {
+        "width": 640,
+        "height": 360,
+        "font_px": 18.0,
+        "line_height_px": 19.188
+      },
+      "cues": {
+        "cue1": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 0,
+          "first_seen_s": 0.0,
+          "line_breaks": [
+            {
+              "text": "Lower third title that must wrap",
+              "display_width_px": 280.08,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "inside its explicit size box before",
+              "display_width_px": 286.74,
+              "break_before_char_index": 33,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "the next cue enters",
+              "display_width_px": 160.02,
+              "break_before_char_index": 69,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 0.0,
+              "x": 317.43,
+              "y": 287.82,
+              "width": 286.74,
+              "height": 57.56,
+              "right": 604.17,
+              "bottom": 345.38
+            },
+            {
+              "t": 0.5,
+              "x": 317.43,
+              "y": 287.82,
+              "width": 286.74,
+              "height": 57.56,
+              "right": 604.17,
+              "bottom": 345.38
+            },
+            {
+              "t": 1.0,
+              "x": 317.43,
+              "y": 287.82,
+              "width": 286.74,
+              "height": 57.56,
+              "right": 604.17,
+              "bottom": 345.38
+            },
+            {
+              "t": 2.0,
+              "x": 317.43,
+              "y": 287.82,
+              "width": 286.74,
+              "height": 57.56,
+              "right": 604.17,
+              "bottom": 345.38
+            },
+            {
+              "t": 2.5,
+              "x": 317.43,
+              "y": 287.82,
+              "width": 286.74,
+              "height": 57.56,
+              "right": 604.17,
+              "bottom": 345.38
+            },
+            {
+              "t": 3.0,
+              "x": 317.43,
+              "y": 287.82,
+              "width": 286.74,
+              "height": 57.56,
+              "right": 604.17,
+              "bottom": 345.38
+            }
+          ]
+        },
+        "cue7": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 0,
+          "first_seen_s": 0.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line one enters",
+              "display_width_px": 188.28,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 0.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 0.5,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 1.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 2.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 2.5,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 3.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 4.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 244.87,
+              "width": 188.28,
+              "height": 19.19,
+              "right": 196.28,
+              "bottom": 264.06
+            }
+          ]
+        },
+        "cue5": {
+          "region": "stationary",
+          "scroll": null,
+          "layer_order": 0,
+          "first_seen_s": 0.5,
+          "line_breaks": [
+            {
+              "text": "Stationary cue one",
+              "display_width_px": 158.04,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 0.5,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 1.0,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 2.0,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 2.5,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 3.0,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 4.0,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 5.0,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            },
+            {
+              "t": 6.0,
+              "x": 417.6,
+              "y": 0.0,
+              "width": 158.04,
+              "height": 19.19,
+              "right": 575.64,
+              "bottom": 19.19
+            }
+          ]
+        },
+        "cue6": {
+          "region": "stationary",
+          "scroll": null,
+          "layer_order": 1,
+          "first_seen_s": 1.0,
+          "line_breaks": [
+            {
+              "text": "Stationary cue two",
+              "display_width_px": 160.2,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 1.0,
+              "x": 417.6,
+              "y": 19.19,
+              "width": 160.2,
+              "height": 19.19,
+              "right": 577.8,
+              "bottom": 38.38
+            },
+            {
+              "t": 2.0,
+              "x": 417.6,
+              "y": 19.19,
+              "width": 160.2,
+              "height": 19.19,
+              "right": 577.8,
+              "bottom": 38.38
+            },
+            {
+              "t": 2.5,
+              "x": 417.6,
+              "y": 19.19,
+              "width": 160.2,
+              "height": 19.19,
+              "right": 577.8,
+              "bottom": 38.38
+            },
+            {
+              "t": 3.0,
+              "x": 417.6,
+              "y": 19.19,
+              "width": 160.2,
+              "height": 19.19,
+              "right": 577.8,
+              "bottom": 38.38
+            },
+            {
+              "t": 4.0,
+              "x": 417.6,
+              "y": 19.19,
+              "width": 160.2,
+              "height": 19.19,
+              "right": 577.8,
+              "bottom": 38.38
+            }
+          ]
+        },
+        "cue2": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 1,
+          "first_seen_s": 2.0,
+          "line_breaks": [
+            {
+              "text": "Second lower third overlaps",
+              "display_width_px": 249.48,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "cue1 in time and shares the same",
+              "display_width_px": 288.54,
+              "break_before_char_index": 28,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "column",
+              "display_width_px": 61.56,
+              "break_before_char_index": 61,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 2.0,
+              "x": 316.53,
+              "y": 230.26,
+              "width": 288.54,
+              "height": 57.56,
+              "right": 605.07,
+              "bottom": 287.82
+            },
+            {
+              "t": 2.5,
+              "x": 316.53,
+              "y": 230.26,
+              "width": 288.54,
+              "height": 57.56,
+              "right": 605.07,
+              "bottom": 287.82
+            },
+            {
+              "t": 3.0,
+              "x": 316.53,
+              "y": 230.26,
+              "width": 288.54,
+              "height": 57.56,
+              "right": 605.07,
+              "bottom": 287.82
+            },
+            {
+              "t": 4.0,
+              "x": 316.53,
+              "y": 287.82,
+              "width": 288.54,
+              "height": 57.56,
+              "right": 605.07,
+              "bottom": 345.38
+            },
+            {
+              "t": 5.0,
+              "x": 316.53,
+              "y": 287.82,
+              "width": 288.54,
+              "height": 57.56,
+              "right": 605.07,
+              "bottom": 345.38
+            }
+          ]
+        },
+        "cue8": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 1,
+          "first_seen_s": 2.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line two pushes up",
+              "display_width_px": 219.78,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 2.0,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 2.5,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 3.0,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 4.0,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 264.06,
+              "width": 219.78,
+              "height": 19.19,
+              "right": 227.78,
+              "bottom": 283.25
+            }
+          ]
+        },
+        "cue3": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 2,
+          "first_seen_s": 2.5,
+          "line_breaks": [
+            {
+              "text": "Right top breaking",
+              "display_width_px": 158.58,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "news banner with an",
+              "display_width_px": 182.88,
+              "break_before_char_index": 19,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "emphasized inline span",
+              "display_width_px": 196.74,
+              "break_before_char_index": 39,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 2.5,
+              "x": 16.83,
+              "y": 0.0,
+              "width": 196.74,
+              "height": 57.56,
+              "right": 213.57,
+              "bottom": 57.56
+            },
+            {
+              "t": 3.0,
+              "x": 16.83,
+              "y": 0.0,
+              "width": 196.74,
+              "height": 57.56,
+              "right": 213.57,
+              "bottom": 57.56
+            },
+            {
+              "t": 4.0,
+              "x": 16.83,
+              "y": 0.0,
+              "width": 196.74,
+              "height": 57.56,
+              "right": 213.57,
+              "bottom": 57.56
+            },
+            {
+              "t": 5.0,
+              "x": 16.83,
+              "y": 0.0,
+              "width": 196.74,
+              "height": 57.56,
+              "right": 213.57,
+              "bottom": 57.56
+            }
+          ]
+        },
+        "cue4": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 3,
+          "first_seen_s": 3.0,
+          "line_breaks": [
+            {
+              "text": "Auto cue moved upward",
+              "display_width_px": 210.24,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "while lower thirds occupy",
+              "display_width_px": 228.78,
+              "break_before_char_index": 22,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "the bottom-right slots",
+              "display_width_px": 183.24,
+              "break_before_char_index": 48,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 3.0,
+              "x": 282.41,
+              "y": 95.94,
+              "width": 228.78,
+              "height": 57.56,
+              "right": 511.19,
+              "bottom": 153.5
+            },
+            {
+              "t": 4.0,
+              "x": 282.41,
+              "y": 95.94,
+              "width": 228.78,
+              "height": 57.56,
+              "right": 511.19,
+              "bottom": 153.5
+            },
+            {
+              "t": 5.0,
+              "x": 282.41,
+              "y": 95.94,
+              "width": 228.78,
+              "height": 57.56,
+              "right": 511.19,
+              "bottom": 153.5
+            },
+            {
+              "t": 6.0,
+              "x": 282.41,
+              "y": 95.94,
+              "width": 228.78,
+              "height": 57.56,
+              "right": 511.19,
+              "bottom": 153.5
+            },
+            {
+              "t": 6.5,
+              "x": 282.41,
+              "y": 95.94,
+              "width": 228.78,
+              "height": 57.56,
+              "right": 511.19,
+              "bottom": 153.5
+            }
+          ]
+        },
+        "cue9": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 2,
+          "first_seen_s": 4.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line three starts",
+              "display_width_px": 204.12,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "clipping",
+              "display_width_px": 65.7,
+              "break_before_char_index": 25,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 4.0,
+              "x": 8.0,
+              "y": 283.25,
+              "width": 204.12,
+              "height": 38.38,
+              "right": 212.12,
+              "bottom": 321.62
+            },
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 283.25,
+              "width": 204.12,
+              "height": 38.38,
+              "right": 212.12,
+              "bottom": 321.62
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 283.25,
+              "width": 204.12,
+              "height": 38.38,
+              "right": 212.12,
+              "bottom": 321.62
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 283.25,
+              "width": 204.12,
+              "height": 38.38,
+              "right": 212.12,
+              "bottom": 321.62
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 283.25,
+              "width": 204.12,
+              "height": 38.38,
+              "right": 212.12,
+              "bottom": 321.62
+            }
+          ]
+        },
+        "cue10": {
+          "region": "newsroll",
+          "scroll": "up",
+          "layer_order": 3,
+          "first_seen_s": 5.0,
+          "line_breaks": [
+            {
+              "text": "Ticker line four keeps",
+              "display_width_px": 197.82,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "clipping",
+              "display_width_px": 65.7,
+              "break_before_char_index": 23,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 5.0,
+              "x": 8.0,
+              "y": 321.62,
+              "width": 197.82,
+              "height": 38.38,
+              "right": 205.82,
+              "bottom": 360.0
+            },
+            {
+              "t": 6.0,
+              "x": 8.0,
+              "y": 321.62,
+              "width": 197.82,
+              "height": 38.38,
+              "right": 205.82,
+              "bottom": 360.0
+            },
+            {
+              "t": 6.5,
+              "x": 8.0,
+              "y": 321.62,
+              "width": 197.82,
+              "height": 38.38,
+              "right": 205.82,
+              "bottom": 360.0
+            },
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 321.62,
+              "width": 197.82,
+              "height": 38.38,
+              "right": 205.82,
+              "bottom": 360.0
+            },
+            {
+              "t": 8.0,
+              "x": 8.0,
+              "y": 321.62,
+              "width": 197.82,
+              "height": 38.38,
+              "right": 205.82,
+              "bottom": 360.0
+            }
+          ]
+        },
+        "cue11": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 1,
+          "first_seen_s": 6.0,
+          "line_breaks": [
+            {
+              "text": "CJK boundary wrapping test:",
+              "display_width_px": 255.6,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "字幕排版引擎需要在全角字符",
+              "display_width_px": 252.0,
+              "break_before_char_index": 28,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "之间正确断行并且不遮挡主画",
+              "display_width_px": 252.0,
+              "break_before_char_index": 41,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "面区域",
+              "display_width_px": 54.0,
+              "break_before_char_index": 54,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 6.0,
+              "x": 269.0,
+              "y": 211.07,
+              "width": 255.6,
+              "height": 76.75,
+              "right": 524.6,
+              "bottom": 287.82
+            },
+            {
+              "t": 6.5,
+              "x": 269.0,
+              "y": 211.07,
+              "width": 255.6,
+              "height": 76.75,
+              "right": 524.6,
+              "bottom": 287.82
+            },
+            {
+              "t": 7.0,
+              "x": 269.0,
+              "y": 211.07,
+              "width": 255.6,
+              "height": 76.75,
+              "right": 524.6,
+              "bottom": 287.82
+            },
+            {
+              "t": 8.0,
+              "x": 269.0,
+              "y": 211.07,
+              "width": 255.6,
+              "height": 76.75,
+              "right": 524.6,
+              "bottom": 287.82
+            },
+            {
+              "t": 9.0,
+              "x": 269.0,
+              "y": 211.07,
+              "width": 255.6,
+              "height": 76.75,
+              "right": 524.6,
+              "bottom": 287.82
+            }
+          ]
+        },
+        "cue12": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 2,
+          "first_seen_s": 6.5,
+          "line_breaks": [
+            {
+              "text": "Timestamp tag test line word",
+              "display_width_px": 254.34,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "one continues word two with",
+              "display_width_px": 250.38,
+              "break_before_char_index": 29,
+              "hard_break": false,
+              "timestamp_tag_s": 7.0
+            },
+            {
+              "text": "extra wrapping content here",
+              "display_width_px": 241.38,
+              "break_before_char_index": 57,
+              "hard_break": false,
+              "timestamp_tag_s": 8.0
+            }
+          ],
+          "boxes": [
+            {
+              "t": 6.5,
+              "x": 256.83,
+              "y": 153.5,
+              "width": 254.34,
+              "height": 57.56,
+              "right": 511.17,
+              "bottom": 211.07
+            },
+            {
+              "t": 7.0,
+              "x": 256.83,
+              "y": 153.5,
+              "width": 254.34,
+              "height": 57.56,
+              "right": 511.17,
+              "bottom": 211.07
+            },
+            {
+              "t": 8.0,
+              "x": 256.83,
+              "y": 153.5,
+              "width": 254.34,
+              "height": 57.56,
+              "right": 511.17,
+              "bottom": 211.07
+            },
+            {
+              "t": 9.0,
+              "x": 256.83,
+              "y": 153.5,
+              "width": 254.34,
+              "height": 57.56,
+              "right": 511.17,
+              "bottom": 211.07
+            }
+          ]
+        },
+        "cue13": {
+          "region": null,
+          "scroll": null,
+          "layer_order": 2,
+          "first_seen_s": 7.0,
+          "line_breaks": [
+            {
+              "text": "Fixed pixel width box gains wraps when",
+              "display_width_px": 541.52,
+              "break_before_char_index": 0,
+              "hard_break": true,
+              "timestamp_tag_s": null
+            },
+            {
+              "text": "narrow",
+              "display_width_px": 102.76,
+              "break_before_char_index": 39,
+              "hard_break": false,
+              "timestamp_tag_s": null
+            }
+          ],
+          "boxes": [
+            {
+              "t": 7.0,
+              "x": 8.0,
+              "y": 30.0,
+              "width": 541.52,
+              "height": 60.0,
+              "right": 549.52,
+              "bottom": 90.0
+            },
+            {
+              "t": 8.0,
+              "x": 8.0,
+              "y": 30.0,
+              "width": 541.52,
+              "height": 60.0,
+              "right": 549.52,
+              "bottom": 90.0
+            },
+            {
+              "t": 9.0,
+              "x": 8.0,
+              "y": 30.0,
+              "width": 541.52,
+              "height": 60.0,
+              "right": 549.52,
+              "bottom": 90.0
+            }
+          ]
+        }
+      },
+      "overlap_events": [],
+      "region_clip_events": [
+        "t=4.000s region=newsroll cue=cue7 1 line(s) / 19.2px clipped above top",
+        "t=5.000s region=newsroll cue=cue9 1 line(s) / 19.2px clipped above top",
+        "t=5.000s region=newsroll cue=cue8 1 line(s) / 19.2px clipped above top",
+        "t=5.000s region=newsroll cue=cue7 1 line(s) / 19.2px clipped above top",
+        "t=6.000s region=newsroll cue=cue9 1 line(s) / 19.2px clipped above top",
+        "t=6.000s region=newsroll cue=cue8 1 line(s) / 19.2px clipped above top",
+        "t=6.000s region=newsroll cue=cue7 1 line(s) / 19.2px clipped above top",
+        "t=6.500s region=newsroll cue=cue9 1 line(s) / 19.2px clipped above top",
+        "t=6.500s region=newsroll cue=cue8 1 line(s) / 19.2px clipped above top",
+        "t=6.500s region=newsroll cue=cue7 1 line(s) / 19.2px clipped above top",
+        "t=7.000s region=newsroll cue=cue9 1 line(s) / 19.2px clipped above top",
+        "t=7.000s region=newsroll cue=cue8 1 line(s) / 19.2px clipped above top",
+        "t=7.000s region=newsroll cue=cue7 1 line(s) / 19.2px clipped above top"
+      ],
+      "region_boxes": [
+        {
+          "t": 0.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 0.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 0.5,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 0.5,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 1.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 1.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.5,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 2.5,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 3.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 3.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 4.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 4.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 5.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 5.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.5,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 6.5,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 7.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 7.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 8.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 8.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 9.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 9.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        },
+        {
+          "t": 10.0,
+          "region": "newsroll",
+          "x": 0.0,
+          "y": 302.44,
+          "width": 256.0,
+          "height": 57.56,
+          "right": 256.0,
+          "bottom": 360.0,
+          "inside_viewport": true
+        },
+        {
+          "t": 10.0,
+          "region": "stationary",
+          "x": 409.6,
+          "y": 0.0,
+          "width": 230.4,
+          "height": 38.38,
+          "right": 640.0,
+          "bottom": 38.38,
+          "inside_viewport": true
+        }
+      ],
+      "viewport_checks": {
+        "cue_viewport_violations": [],
+        "region_footprint_px2": 23578.11,
+        "region_footprint_pct_of_viewport": 10.23,
+        "all_regions_inside_viewport": true
+      }
+    }
+  },
+  "cross_width_comparison": {
+    "break_counts_per_cue": {
+      "cue1": {
+        "wide_lines": 3,
+        "narrow_lines": 3
+      },
+      "cue10": {
+        "wide_lines": 2,
+        "narrow_lines": 2
+      },
+      "cue11": {
+        "wide_lines": 4,
+        "narrow_lines": 4
+      },
+      "cue12": {
+        "wide_lines": 3,
+        "narrow_lines": 3
+      },
+      "cue13": {
+        "wide_lines": 1,
+        "narrow_lines": 2
+      },
+      "cue2": {
+        "wide_lines": 3,
+        "narrow_lines": 3
+      },
+      "cue3": {
+        "wide_lines": 3,
+        "narrow_lines": 3
+      },
+      "cue4": {
+        "wide_lines": 3,
+        "narrow_lines": 3
+      },
+      "cue5": {
+        "wide_lines": 1,
+        "narrow_lines": 1
+      },
+      "cue6": {
+        "wide_lines": 1,
+        "narrow_lines": 1
+      },
+      "cue7": {
+        "wide_lines": 1,
+        "narrow_lines": 1
+      },
+      "cue8": {
+        "wide_lines": 1,
+        "narrow_lines": 1
+      },
+      "cue9": {
+        "wide_lines": 2,
+        "narrow_lines": 2
+      }
+    },
+    "narrow_width_adds_wraps_for": [
+      "cue13"
+    ],
+    "layer_order_stable_across_widths": true,
+    "scroll_direction_stable_across_widths": true,
+    "regions_inside_viewport_at_both_widths": true,
+    "geometric_overlap_events": {
+      "wide": [],
+      "narrow": []
+    }
+  },
+  "frame_rate": {
+    "declared_fps": 25.0,
+    "derived_fps": 24.0,
+    "tolerance": 0.05,
+    "consistent": false,
+    "max_grid_error_s": 0.0,
+    "timestamp_count": 10
+  },
+  "embedded_cue_count": 7
+}
