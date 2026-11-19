@@ -1,0 +1,29 @@
+[
+  {
+    "status": "usable",
+    "playback": "continue",
+    "playerState": "playing",
+    "pause": false,
+    "error": false,
+    "action": "keep-playing",
+    "message": "Playback continues; the key is usable."
+  },
+  {
+    "status": "expired",
+    "playback": "pause",
+    "playerState": "paused-license-renewal",
+    "pause": true,
+    "error": false,
+    "action": "renew-license",
+    "message": "Playback pauses and the player requests a fresh license."
+  },
+  {
+    "status": "output-restricted",
+    "playback": "pause",
+    "playerState": "error-output-restricted",
+    "pause": true,
+    "error": true,
+    "action": "show-hdcp-error",
+    "message": "Playback pauses and an output-protection error is shown."
+  }
+]

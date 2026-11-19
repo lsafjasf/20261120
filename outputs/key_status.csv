@@ -1,0 +1,4 @@
+status,playback,playerState,pause,error,action,message
+usable,continue,playing,False,False,keep-playing,Playback continues; the key is usable.
+expired,pause,paused-license-renewal,True,False,renew-license,Playback pauses and the player requests a fresh license.
+output-restricted,pause,error-output-restricted,True,True,show-hdcp-error,Playback pauses and an output-protection error is shown.

@@ -1,0 +1,182 @@
+{
+  "comparison": {
+    "spearmanFusedVsReference": 0.7212121212121211,
+    "kendallTauFusedVsReference": 0.6,
+    "spearmanFusedVsSubjective": 0.9272727272727272,
+    "spearmanReferenceVsSubjective": 0.6848484848484848
+  },
+  "significantRankDeltaThreshold": 2,
+  "mismatches": [
+    {
+      "id": "clip-02",
+      "start": 2,
+      "end": 4,
+      "distortion": "noise-light",
+      "fusedRank": 3,
+      "referenceRank": 8,
+      "rankDelta": -5,
+      "absoluteRankDelta": 5,
+      "reason": "噪声不破坏边缘与运动，luma SSIM 对颗粒过度惩罚；融合分因细节/运动保留完好而排名更高"
+    },
+    {
+      "id": "clip-03",
+      "start": 4,
+      "end": 6,
+      "distortion": "blur-light",
+      "fusedRank": 4,
+      "referenceRank": 2,
+      "rankDelta": 2,
+      "absoluteRankDelta": 2,
+      "reason": "模糊/降采样摧毁高频细节，SSIM 在平坦区域仍偏高，细节分量大幅下降导致融合排名更低"
+    },
+    {
+      "id": "clip-06",
+      "start": 10,
+      "end": 12,
+      "distortion": "blur-medium",
+      "fusedRank": 6,
+      "referenceRank": 4,
+      "rankDelta": 2,
+      "absoluteRankDelta": 2,
+      "reason": "模糊/降采样摧毁高频细节，SSIM 在平坦区域仍偏高，细节分量大幅下降导致融合排名更低"
+    },
+    {
+      "id": "clip-08",
+      "start": 14,
+      "end": 16,
+      "distortion": "noise-heavy",
+      "fusedRank": 7,
+      "referenceRank": 9,
+      "rankDelta": -2,
+      "absoluteRankDelta": 2,
+      "reason": "噪声不破坏边缘与运动，luma SSIM 对颗粒过度惩罚；融合分因细节/运动保留完好而排名更高"
+    },
+    {
+      "id": "clip-04",
+      "start": 6,
+      "end": 8,
+      "distortion": "downscale-2x",
+      "fusedRank": 8,
+      "referenceRank": 6,
+      "rankDelta": 2,
+      "absoluteRankDelta": 2,
+      "reason": "模糊/降采样摧毁高频细节，SSIM 在平坦区域仍偏高，细节分量大幅下降导致融合排名更低"
+    },
+    {
+      "id": "clip-09",
+      "start": 16,
+      "end": 18,
+      "distortion": "downscale-blur",
+      "fusedRank": 9,
+      "referenceRank": 7,
+      "rankDelta": 2,
+      "absoluteRankDelta": 2,
+      "reason": "模糊/降采样摧毁高频细节，SSIM 在平坦区域仍偏高，细节分量大幅下降导致融合排名更低"
+    }
+  ],
+  "allRankDifferences": [
+    {
+      "id": "clip-02",
+      "start": 2,
+      "end": 4,
+      "rankDelta": -5,
+      "significant": true
+    },
+    {
+      "id": "clip-03",
+      "start": 4,
+      "end": 6,
+      "rankDelta": 2,
+      "significant": true
+    },
+    {
+      "id": "clip-06",
+      "start": 10,
+      "end": 12,
+      "rankDelta": 2,
+      "significant": true
+    },
+    {
+      "id": "clip-08",
+      "start": 14,
+      "end": 16,
+      "rankDelta": -2,
+      "significant": true
+    },
+    {
+      "id": "clip-04",
+      "start": 6,
+      "end": 8,
+      "rankDelta": 2,
+      "significant": true
+    },
+    {
+      "id": "clip-09",
+      "start": 16,
+      "end": 18,
+      "rankDelta": 2,
+      "significant": true
+    },
+    {
+      "id": "clip-05",
+      "start": 8,
+      "end": 10,
+      "rankDelta": -1,
+      "significant": false
+    },
+    {
+      "id": "clip-01",
+      "start": 0,
+      "end": 2,
+      "rankDelta": 0,
+      "significant": false
+    },
+    {
+      "id": "clip-07",
+      "start": 12,
+      "end": 14,
+      "rankDelta": 0,
+      "significant": false
+    },
+    {
+      "id": "clip-10",
+      "start": 18,
+      "end": 20,
+      "rankDelta": 0,
+      "significant": false
+    }
+  ],
+  "lowScoreAudit": {
+    "thresholds": {
+      "fusedScoreBelow": 36.0,
+      "subjectiveMosBelow": 3.0
+    },
+    "fusedLow": [
+      "clip-04",
+      "clip-06",
+      "clip-08",
+      "clip-09",
+      "clip-10"
+    ],
+    "subjectiveLow": [
+      "clip-04",
+      "clip-06",
+      "clip-08",
+      "clip-09",
+      "clip-10"
+    ],
+    "intersection": [
+      "clip-04",
+      "clip-06",
+      "clip-08",
+      "clip-09",
+      "clip-10"
+    ],
+    "fusedOnly": [],
+    "subjectiveOnly": [],
+    "precision": 1.0,
+    "recall": 1.0,
+    "exactSetMatch": true,
+    "f1": 1.0
+  }
+}
